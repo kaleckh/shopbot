@@ -1,0 +1,15 @@
+{
+  "_comment": "Generic price-watch config — first layer of Kale's fashion/shopping bot. Each watch: what to check, where, and the alert threshold. The watcher LLM-checks each entry and alerts when a target is met.",
+  "watches": [
+    {
+      "id": "ssd-2tb-nvme",
+      "goal": "A quality 2TB NVMe SSD (WD SN850X, Samsung 990 Pro/EVO Plus, Crucial T500, Lexar NM790, Teamgroup MP44, SK hynix P41 class) IN STOCK at a US retailer for $170 or less. Cheap DRAM-less QLC drives (Crucial P3/P3 Plus, WD Green) do NOT count.",
+      "maxPriceUSD": 170,
+      "checkUrls": [
+        "https://www.bestbuy.com/product/wd-black-sn850x-2tb-internal-ssd-pcie-gen-4-x4-nvme/JXJ62C6Y95",
+        "https://pcpartpicker.com/products/internal-hard-drive/#A=2000000000000&t=0&sort=price&f=2"
+      ],
+      "notes": "Buyer context: PCIe 3.0 board (B450-F Gaming II) so Gen3/Gen4 both fine, no heatsink needed. NAND shortage market — sub-$160 restocks sell out in hours, so flag anything close."
+    }
+  ]
+}

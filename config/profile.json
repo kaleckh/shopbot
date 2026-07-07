@@ -1,0 +1,38 @@
+{
+  "_comment": "Style/taste profile - the scout layer scores candidates against this. Fill via /shop profile. TODO markers = not yet captured from Kale.",
+  "owner": "Kale",
+  "updated": "2026-07-06",
+  "sizes": {
+    "shirt": "TODO",
+    "pants_waist": "TODO",
+    "pants_inseam": "TODO",
+    "shoe_us": "TODO",
+    "jacket": "TODO",
+    "fit_notes": "TODO - e.g. athletic cut, slim, relaxed; sleeve/torso length quirks"
+  },
+  "style": {
+    "keywords": ["TODO - e.g. minimal, streetwear, techwear, classic"],
+    "colors_preferred": ["TODO"],
+    "colors_avoid": ["TODO"],
+    "reference_brands_liked": ["TODO"],
+    "brands_banned": ["TODO"],
+    "no_gos": ["TODO - materials, logos, patterns you never wear"]
+  },
+  "budgets": {
+    "sneakers": "TODO",
+    "outerwear": "TODO",
+    "tops": "TODO",
+    "pants": "TODO",
+    "splurge_categories": ["TODO - where price matters less"]
+  },
+  "context": {
+    "climate": "Salt Lake City area - four seasons, dry, cold winters",
+    "lifestyle": "TODO - e.g. dev work from home, gym, occasional going out",
+    "current_gaps": ["TODO - what the wardrobe is missing"]
+  },
+  "deal_preferences": {
+    "prefers_waiting_for_deals": true,
+    "acceptable_sources": ["major US retailers", "brand direct", "verified outlet"],
+    "avoid": ["marketplace third-party sellers at inflated prices", "dropship sites"]
+  }
+}
