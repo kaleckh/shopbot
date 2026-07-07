@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>shopbot</title>
+<style>
+  :root {
+    --bg: #0f1115; --panel: #171a21; --card: #1c2029; --line: #2a2f3a;
+    --text: #e8eaf0; --muted: #9aa3b2; --accent: #6ea8fe;
+    --up: #4ade80; --down: #f87171; --warn: #fbbf24;
+    --radius: 10px;
+  }
+  @media (prefers-color-scheme: light) {
+    :root {
+      --bg: #f6f7f9; --panel: #ffffff; --card: #ffffff; --line: #e3e6ec;
+      --text: #1a202c; --muted: #5a6472; --accent: #2563eb;
+      --up: #16a34a; --down: #dc2626; --warn: #b45309;
+    }
+  }
+  * { box-sizing: border-box; margin: 0; }
+  body { background: var(--bg); color: var(--text); font: 15px/1.5 system-ui, -apple-system, "Segoe UI", sans-serif; }
+  a { color: var(--accent); }
+  header {
+    display: flex; flex-wrap: wrap; align-items: center; gap: 12px;
+    padding: 16px 24px; background: var(--panel); border-bottom: 1px solid var(--line);
+    position: sticky; top: 0; z-index: 5;
+  }
+  header h1 { font-size: 18px; margin-right: auto; letter-spacing: 0.5px; }
+  .chip {
+    display: inline-flex; align-items: center; gap: 6px;
+    padding: 4px 12px; border-radius: 999px; border: 1px solid var(--line);
+    font-size: 13px; color: var(--muted); background: var(--card);
+  }
+  .chip .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--muted); flex: none; }
+  .chip.ok .dot { background: var(--up); }
+  .chip.warn .dot { background: var(--warn); }
+  .chip.bad .dot { background: var(--down); }
+  nav { display: flex; flex-wrap: wrap; gap: 8px; padding: 16px 24px 0; }
+  nav button {
+    background: var(--card); color: var(--muted); border: 1px solid var(--line);
+    border-radius: 999px; padding: 6px 14px; font-size: 13px; cursor: pointer;
+  }
+  nav button[aria-pressed="true"] { color: var(--text); border-color: var(--accent); }
+  nav button:focus-visible, .vote button:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+  main { padding: 24px; }
+  .grid {
+    display: grid; gap: 16px;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  }
+  article.s-card {
+    background: var(--card); border: 1px solid var(--line); border-radius: var(--radius);
+    overflow: hidden; display: flex; flex-direction: column;
+  }
+  .s-card .img {
+    aspect-ratio: 4 / 5; background: var(--panel); display: grid; place-items: center;
+    color: var(--muted); font-size: 13px; overflow: hidden;
+  }
+  .s-card .img img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .s-card .body { padding: 12px 14px 14px; display: flex; flex-direction: column; gap: 8px; flex: 1; }
+  .s-card h3 { font-size: 14px; font-weight: 600; }
+  .s-card .price { font-size: 15px; font-weight: 700; }
+  .s-card .verdict { font-size: 13px; color: var(--muted); flex: 1; }
+  .s-card .modes { display: flex; flex-wrap: wrap; gap: 4px; }
+  .s-card .modes span { font-size: 11px; padding: 2px 8px; border-radius: 999px; border: 1px solid var(--line); color: var(--muted); }
+  .s-card footer { display: flex; align-items: center; justify-content: space-between; gap: 8px; }
+  .vote { display: flex; gap: 8px; }
+  .vote button {
+    background: var(--panel); border: 1px solid var(--line); color: var(--muted);
+    border-radius: 8px; padding: 6px 14px; font-size: 15px; cursor: pointer; line-height: 1;
+  }
+  .vote button:hover { color: var(--text); }
+  .vote button.on-up { color: var(--up); border-color: var(--up); }
+  .vote button.on-down { color: var(--down); border-color: var(--down); }
+  .empty {
+    border: 1px dashed var(--line); border-radius: var(--radius);
+    padding: 48px 24px; text-align: center; color: var(--muted);
+    max-width: 560px; margin: 48px auto;
+  }
+  .empty h2 { color: var(--text); font-size: 16px; margin-bottom: 8px; }
+  .empty code { background: var(--card); padding: 2px 8px; border-radius: 6px; font-size: 13px; }
+  .statusline { padding: 8px 24px 0; color: var(--muted); font-size: 13px; }
+</style>
+</head>
+<body>
+<header>
+  <h1>shopbot</h1>
+  <span class="chip" id="chip-pinterest"><span class="dot"></span><span>pinterest: …</span></span>
+  <span class="chip" id="chip-watcher"><span class="dot"></span><span>watcher: …</span></span>
+  <span class="chip" id="chip-votes"><span class="dot"></span><span>votes: …</span></span>
+</header>
+<nav id="filters" aria-label="Filter by style mode"></nav>
+<p class="statusline" id="watchline"></p>
+<main>
+  <div class="grid" id="grid" role="list"></div>
+  <div class="empty" id="empty" hidden>
+    <h2>No suggestions yet</h2>
+    <p>Ask Claude <code>/shop find &lt;what you want&gt;</code> and results land here.
+    Vote on cards to teach the bot your taste — every vote persists into the taste profile.</p>
+  </div>
+</main>
+<script>
+let STATE = null;
+let FILTER = "all";
+
+async function load() {
+  const r = await fetch("/api/state");
+  STATE = await r.json();
+  render();
+}
+
+function chip(id, cls, label) {
+  const el = document.getElementById(id);
+  el.className = "chip " + cls;
+  el.querySelector("span:last-child").textContent = label;
+}
+
+function render() {
+  const { suggestions, votes, pinterest, watcher } = STATE;
+
+  chip("chip-pinterest",
+    pinterest.status === "public" ? "ok" : pinterest.status === "not-connected" ? "warn" : "bad",
+    "pinterest: " + pinterest.status + (pinterest.lastSync ? " · synced " + pinterest.lastSync.slice(0, 10) : ""));
+  chip("chip-watcher", watcher.alert ? "ok" : "warn",
+    "watcher: " + (watcher.at ? "ran " + watcher.at.replace("_", " ") : "no runs"));
+  const nUp = Object.values(votes).filter(v => v.vote === 1).length;
+  const nDown = Object.values(votes).filter(v => v.vote === -1).length;
+  chip("chip-votes", nUp + nDown > 0 ? "ok" : "warn", `votes: ${nUp} up · ${nDown} down`);
+
+  document.getElementById("watchline").textContent = watcher.line || "";
+
+  const modes = ["all", ...new Set(suggestions.flatMap(s => s.modes || []))];
+  const nav = document.getElementById("filters");
+  nav.innerHTML = "";
+  for (const m of modes) {
+    const b = document.createElement("button");
+    b.textContent = m;
+    b.setAttribute("aria-pressed", String(m === FILTER));
+    b.onclick = () => { FILTER = m; render(); };
+    nav.appendChild(b);
+  }
+
+  const shown = suggestions.filter(s => FILTER === "all" || (s.modes || []).includes(FILTER));
+  const grid = document.getElementById("grid");
+  grid.innerHTML = "";
+  document.getElementById("empty").hidden = shown.length > 0;
+
+  for (const s of shown) {
+    const v = votes[s.id]?.vote || 0;
+    const card = document.createElement("article");
+    card.className = "s-card";
+    card.setAttribute("role", "listitem");
+    card.innerHTML = `
+      <div class="img">${s.imageUrl ? `<img src="${s.imageUrl}" alt="${esc(s.title)}" loading="lazy">` : "no image"}</div>
+      <div class="body">
+        <h3>${esc(s.title)}</h3>
+        <div class="price">$${s.priceUSD ?? "?"} <span style="color:var(--muted);font-weight:400;font-size:13px">at <a href="${s.url}" target="_blank" rel="noopener">${esc(s.retailer || "link")}</a></span></div>
+        <div class="modes">${(s.modes || []).map(m => `<span>${esc(m)}</span>`).join("")}</div>
+        <p class="verdict">${esc(s.verdict || "")}</p>
+        <footer>
+          <div class="vote">
+            <button aria-label="Upvote ${esc(s.title)}" class="${v === 1 ? "on-up" : ""}" data-id="${s.id}" data-dir="1">▲</button>
+            <button aria-label="Downvote ${esc(s.title)}" class="${v === -1 ? "on-down" : ""}" data-id="${s.id}" data-dir="-1">▼</button>
+          </div>
+        </footer>
+      </div>`;
+    grid.appendChild(card);
+  }
+  grid.querySelectorAll(".vote button").forEach(b => b.onclick = () => vote(b.dataset.id, +b.dataset.dir));
+}
+
+function esc(s) { return String(s ?? "").replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c])); }
+
+async function vote(id, dir) {
+  const cur = STATE.votes[id]?.vote || 0;
+  const next = cur === dir ? 0 : dir; // click again to clear
+  const r = await fetch("/api/vote", {
+    method: "POST", headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ id, vote: next }),
+  });
+  const j = await r.json();
+  if (j.ok) { STATE.votes = j.votes; render(); }
+}
+
+load();
+setInterval(load, 30000);
+</script>
+</body>
+</html>

@@ -1,0 +1,7 @@
+{
+  "_schema": "Pinterest taste-source connection. status: not-connected | public | private | blocked. /shop sync updates this after each pull attempt.",
+  "status": "not-connected",
+  "boards": [],
+  "lastSync": null,
+  "note": "Waiting on Kale's board/profile URL. Private boards need a public window or a manual image drop into taste/inbox/."
+}

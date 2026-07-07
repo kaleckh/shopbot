@@ -1,0 +1,4 @@
+{
+  "_schema": "Scout output. Each suggestion: {id (kebab, stable), title, imageUrl, priceUSD, retailer, url, modes:[...], verdict (one-line fit reasoning), source (find-query or watch id), addedAt}. /shop find APPENDS here (dedupe by id). Votes live in taste/votes.json keyed by these ids.",
+  "suggestions": []
+}
