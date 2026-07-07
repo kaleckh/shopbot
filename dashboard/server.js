@@ -24,6 +24,17 @@ function readJson(file, fallback) {
   }
 }
 
+function cleanText(value) {
+  return String(value || "")
+    .replace(/â€”/g, "-")
+    .replace(/â‰ˆ/g, "~")
+    .replace(/â‰¤/g, "<=")
+    .replace(/â/g, "-")
+    .replace(/â/g, "~")
+    .replace(/â¤/g, "<=")
+    .replace(/[^\x20-\x7E]/g, "");
+}
+
 function latestWatchStatus() {
   try {
     const dir = path.join(ROOT, "logs");
@@ -33,12 +44,31 @@ function latestWatchStatus() {
     const txt = fs.readFileSync(path.join(dir, file), "utf8");
     const m = txt.match(/^(ALERT|NOALERT):.*$/m);
     return {
-      line: m ? m[0] : "run recorded, no status line",
+      line: cleanText(m ? m[0] : "run recorded, no status line"),
       at: file.replace("watch-", "").replace(".md", ""),
       alert: m ? m[0].startsWith("ALERT") : false,
     };
   } catch {
     return { line: "watcher logs unreadable", at: null };
+  }
+}
+
+function pinterestCorpus() {
+  try {
+    const dir = path.join(ROOT, "taste", "corpus");
+    return fs
+      .readdirSync(dir)
+      .filter((file) => /^clothes-\d+\.jpg$/i.test(file))
+      .sort((a, b) => a.localeCompare(b, undefined, { numeric: true }))
+      .map((file, index) => ({
+        id: file.replace(".jpg", ""),
+        title: `Pinterest reference ${index + 1}`,
+        imageUrl: `/taste/corpus/${file}`,
+        board: "Clothes",
+        source: "pinterest",
+      }));
+  } catch {
+    return [];
   }
 }
 
@@ -50,6 +80,7 @@ const server = http.createServer((req, res) => {
       suggestions: readJson(FILES.suggestions, { suggestions: [] }).suggestions,
       votes: readJson(FILES.votes, {}),
       pinterest: readJson(FILES.pinterest, { status: "not-connected", boards: [] }),
+      pinterestCorpus: pinterestCorpus(),
       watches: readJson(FILES.watches, { watches: [] }).watches,
       watcher: latestWatchStatus(),
     };
@@ -78,6 +109,19 @@ const server = http.createServer((req, res) => {
       }
     });
     return;
+  }
+
+  if (url.pathname.startsWith("/taste/corpus/")) {
+    const file = path.basename(url.pathname);
+    const imagePath = path.join(ROOT, "taste", "corpus", file);
+    if (/^clothes-\d+\.jpg$/i.test(file) && fs.existsSync(imagePath)) {
+      res.writeHead(200, {
+        "Content-Type": "image/jpeg",
+        "Cache-Control": "private, max-age=3600",
+      });
+      fs.createReadStream(imagePath).pipe(res);
+      return;
+    }
   }
 
   if (url.pathname === "/" || url.pathname === "/index.html") {

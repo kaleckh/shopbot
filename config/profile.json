@@ -43,11 +43,20 @@
     "prefers_waiting_for_deals": true
   },
   "taste_signals": {
-    "reference_brands_liked": ["TODO"],
-    "brands_banned": ["TODO"],
-    "colors_preferred": ["TODO"],
-    "colors_avoid": ["TODO"],
-    "no_gos": ["TODO - materials, logos, patterns never worn"]
+    "source": "Extracted from detailed viewing of 36/50 Pinterest Clothes corpus images (2026-07-07). Full extraction: taste/taste-profile.md. Votes in taste/votes.json override everything here.",
+    "style_read": [
+      "vintage-leaning relaxed streetwear on earthy neutrals - washed workwear + chunky knits over baggy light denim / carpenter / cargo pants",
+      "EVERYTHING relaxed-to-baggy; zero slim fits on the board - a slim version of the right item is the wrong item",
+      "layering formula: white tee/tank base -> open chore jacket / overshirt / flannel -> optional varsity or field jacket",
+      "denim is always light-wash or heavily faded; one loud accent piece per outfit max against a muted base",
+      "thrift/vintage finish beats box-fresh: washed, faded, worn-in textures score up",
+      "silver jewelry near-constant (rings, chains); canvas totes; round wire glasses; textured medium-length hair references"
+    ],
+    "reference_brands_liked": ["Nike retro (AF1/Dunk/Jordan 1/Jordan 4)", "Fear of God Essentials", "Kapital", "Dr. Martens", "Converse", "Carhartt-style workwear", "Champion", "Copenhagen Studios (CPH90M caption)", "New Balance", "Birkenstock Boston-style clogs"],
+    "brands_banned": [],
+    "colors_preferred": ["olive/sage", "tan/khaki", "cream", "brown", "washed grey", "faded black", "light-wash denim"],
+    "colors_avoid": ["dark rigid denim (appears once across the whole board)"],
+    "no_gos_inferred_confirm_via_votes": ["slim/skinny fits", "dress shirts/suiting", "logo-mania luxury", "athleisure-as-outfit", "chunky-tech dad shoes (except tonal Yeezy-700 case)", "square-toe dress shoes"]
   },
   "context": {
     "climate": "Salt Lake City area - four seasons, dry, cold winters",

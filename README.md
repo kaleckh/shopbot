@@ -49,3 +49,6 @@ so the engine can be lifted behind a web surface once it's proven on daily perso
   quality 2TB NVMe <= $170 during the NAND shortage). Profile template created,
   /shop skill installed. Next: fill profile via intake session, first real
   fashion watches, scout-mode iteration.
+- 2026-07-06: Pinterest account `https://www.pinterest.com/kaleckh/` synced into
+  `taste/corpus/` with 50 Clothes-board images. Dashboard serves the local taste
+  board at `http://localhost:7877` and persists likes/dislikes to `taste/votes.json`.

@@ -9,7 +9,7 @@
     --bg: #0f1115; --panel: #171a21; --card: #1c2029; --line: #2a2f3a;
     --text: #e8eaf0; --muted: #9aa3b2; --accent: #6ea8fe;
     --up: #4ade80; --down: #f87171; --warn: #fbbf24;
-    --radius: 10px;
+    --radius: 8px;
   }
   @media (prefers-color-scheme: light) {
     :root {
@@ -26,7 +26,7 @@
     padding: 16px 24px; background: var(--panel); border-bottom: 1px solid var(--line);
     position: sticky; top: 0; z-index: 5;
   }
-  header h1 { font-size: 18px; margin-right: auto; letter-spacing: 0.5px; }
+  header h1 { font-size: 18px; margin-right: auto; letter-spacing: 0; }
   .chip {
     display: inline-flex; align-items: center; gap: 6px;
     padding: 4px 12px; border-radius: 999px; border: 1px solid var(--line);
@@ -64,10 +64,12 @@
   .s-card .modes { display: flex; flex-wrap: wrap; gap: 4px; }
   .s-card .modes span { font-size: 11px; padding: 2px 8px; border-radius: 999px; border: 1px solid var(--line); color: var(--muted); }
   .s-card footer { display: flex; align-items: center; justify-content: space-between; gap: 8px; }
+  .s-card.taste-card .body { min-height: 126px; }
+  .s-card.taste-card .source { color: var(--muted); font-size: 12px; }
   .vote { display: flex; gap: 8px; }
   .vote button {
     background: var(--panel); border: 1px solid var(--line); color: var(--muted);
-    border-radius: 8px; padding: 6px 14px; font-size: 15px; cursor: pointer; line-height: 1;
+    border-radius: 8px; width: 42px; height: 34px; padding: 0; font-size: 14px; cursor: pointer; line-height: 1;
   }
   .vote button:hover { color: var(--text); }
   .vote button.on-up { color: var(--up); border-color: var(--up); }
@@ -95,8 +97,7 @@
   <div class="grid" id="grid" role="list"></div>
   <div class="empty" id="empty" hidden>
     <h2>No suggestions yet</h2>
-    <p>Ask Claude <code>/shop find &lt;what you want&gt;</code> and results land here.
-    Vote on cards to teach the bot your taste — every vote persists into the taste profile.</p>
+    <p>No retail candidates in data/suggestions.json.</p>
   </div>
 </main>
 <script>
@@ -116,20 +117,20 @@ function chip(id, cls, label) {
 }
 
 function render() {
-  const { suggestions, votes, pinterest, watcher } = STATE;
+  const { suggestions, votes, pinterest, pinterestCorpus, watcher } = STATE;
 
   chip("chip-pinterest",
     pinterest.status === "public" ? "ok" : pinterest.status === "not-connected" ? "warn" : "bad",
-    "pinterest: " + pinterest.status + (pinterest.lastSync ? " · synced " + pinterest.lastSync.slice(0, 10) : ""));
+    "pinterest: " + pinterest.status + (pinterest.lastSync ? " - synced " + pinterest.lastSync.slice(0, 10) : ""));
   chip("chip-watcher", watcher.alert ? "ok" : "warn",
     "watcher: " + (watcher.at ? "ran " + watcher.at.replace("_", " ") : "no runs"));
   const nUp = Object.values(votes).filter(v => v.vote === 1).length;
   const nDown = Object.values(votes).filter(v => v.vote === -1).length;
-  chip("chip-votes", nUp + nDown > 0 ? "ok" : "warn", `votes: ${nUp} up · ${nDown} down`);
+  chip("chip-votes", nUp + nDown > 0 ? "ok" : "warn", `votes: ${nUp} up - ${nDown} down`);
 
   document.getElementById("watchline").textContent = watcher.line || "";
 
-  const modes = ["all", ...new Set(suggestions.flatMap(s => s.modes || []))];
+  const modes = ["all", "pinterest", ...new Set(suggestions.flatMap(s => s.modes || []))];
   const nav = document.getElementById("filters");
   nav.innerHTML = "";
   for (const m of modes) {
@@ -140,7 +141,9 @@ function render() {
     nav.appendChild(b);
   }
 
-  const shown = suggestions.filter(s => FILTER === "all" || (s.modes || []).includes(FILTER));
+  const retailShown = suggestions.filter(s => FILTER === "all" || (s.modes || []).includes(FILTER));
+  const tasteShown = FILTER === "all" || FILTER === "pinterest" ? pinterestCorpus : [];
+  const shown = [...retailShown, ...tasteShown.map(t => ({ ...t, type: "taste" }))];
   const grid = document.getElementById("grid");
   grid.innerHTML = "";
   document.getElementById("empty").hidden = shown.length > 0;
@@ -148,9 +151,24 @@ function render() {
   for (const s of shown) {
     const v = votes[s.id]?.vote || 0;
     const card = document.createElement("article");
-    card.className = "s-card";
+    card.className = "s-card" + (s.type === "taste" ? " taste-card" : "");
     card.setAttribute("role", "listitem");
-    card.innerHTML = `
+    if (s.type === "taste") {
+      card.innerHTML = `
+      <div class="img"><img src="${s.imageUrl}" alt="${esc(s.title)}" loading="lazy"></div>
+      <div class="body">
+        <h3>${esc(s.title)}</h3>
+        <p class="source">${esc(s.board || "Pinterest")} taste source</p>
+        <p class="verdict">Raw public Pinterest reference.</p>
+        <footer>
+          <div class="vote">
+            <button aria-label="Like ${esc(s.title)}" class="${v === 1 ? "on-up" : ""}" data-id="${s.id}" data-dir="1">+</button>
+            <button aria-label="Dislike ${esc(s.title)}" class="${v === -1 ? "on-down" : ""}" data-id="${s.id}" data-dir="-1">-</button>
+          </div>
+        </footer>
+      </div>`;
+    } else {
+      card.innerHTML = `
       <div class="img">${s.imageUrl ? `<img src="${s.imageUrl}" alt="${esc(s.title)}" loading="lazy">` : "no image"}</div>
       <div class="body">
         <h3>${esc(s.title)}</h3>
@@ -159,11 +177,12 @@ function render() {
         <p class="verdict">${esc(s.verdict || "")}</p>
         <footer>
           <div class="vote">
-            <button aria-label="Upvote ${esc(s.title)}" class="${v === 1 ? "on-up" : ""}" data-id="${s.id}" data-dir="1">▲</button>
-            <button aria-label="Downvote ${esc(s.title)}" class="${v === -1 ? "on-down" : ""}" data-id="${s.id}" data-dir="-1">▼</button>
+            <button aria-label="Like ${esc(s.title)}" class="${v === 1 ? "on-up" : ""}" data-id="${s.id}" data-dir="1">+</button>
+            <button aria-label="Dislike ${esc(s.title)}" class="${v === -1 ? "on-down" : ""}" data-id="${s.id}" data-dir="-1">-</button>
           </div>
         </footer>
       </div>`;
+    }
     grid.appendChild(card);
   }
   grid.querySelectorAll(".vote button").forEach(b => b.onclick = () => vote(b.dataset.id, +b.dataset.dir));
