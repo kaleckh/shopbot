@@ -1,37 +1,60 @@
 {
-  "_comment": "Style/taste profile - the scout layer scores candidates against this. Fill via /shop profile. TODO markers = not yet captured from Kale.",
+  "_comment": "Style/taste profile - scout layer scores candidates against this. DESIGN (per Kale 2026-07-06): sizes and fit are PER STYLE MODE, not flat; budgets are soft priors the judge weighs, never hard filters.",
   "owner": "Kale",
   "updated": "2026-07-06",
-  "sizes": {
-    "shirt": "TODO",
+  "sizes_base": {
+    "shoe_us": "10-10.5",
+    "shirt_base": "TODO - base size, then each mode says how it shifts",
     "pants_waist": "TODO",
-    "pants_inseam": "TODO",
-    "shoe_us": "TODO",
-    "jacket": "TODO",
-    "fit_notes": "TODO - e.g. athletic cut, slim, relaxed; sleeve/torso length quirks"
+    "pants_inseam": "TODO"
   },
-  "style": {
-    "keywords": ["TODO - e.g. minimal, streetwear, techwear, classic"],
-    "colors_preferred": ["TODO"],
-    "colors_avoid": ["TODO"],
+  "style_modes": [
+    {
+      "mode": "streetwear",
+      "fit": "TODO - e.g. baggy/oversized; size up from base?",
+      "notes": "TODO - graphic tolerance, sneaker-led?"
+    },
+    {
+      "mode": "minimal-clean",
+      "fit": "TODO - true to size? slim?",
+      "notes": "solid colors, no big logos"
+    },
+    {
+      "mode": "corporate-presentable",
+      "fit": "TODO - fitted/tailored; base or size down?",
+      "notes": "TODO - how often needed, how formal"
+    },
+    {
+      "mode": "athletic-tech",
+      "fit": "TODO",
+      "notes": "performance fabrics, gym-to-street"
+    },
+    {
+      "mode": "classic-casual",
+      "fit": "TODO",
+      "notes": "denim, boots, everyday workhorses"
+    }
+  ],
+  "mode_mix": "TODO - which modes dominate the week vs occasional",
+  "budget_philosophy": {
+    "rule": "Soft priors, never hard filters. The judge weighs price against how RIGHT the piece is - a perfect item over the prior still gets shown, flagged as a splurge.",
+    "shoes_soft_ceiling": "~$300 - not a hard rule, the right pair overrides it",
+    "other_categories": "TODO - rough comfort zones for outerwear/tops/pants",
+    "prefers_waiting_for_deals": true
+  },
+  "taste_signals": {
     "reference_brands_liked": ["TODO"],
     "brands_banned": ["TODO"],
-    "no_gos": ["TODO - materials, logos, patterns you never wear"]
-  },
-  "budgets": {
-    "sneakers": "TODO",
-    "outerwear": "TODO",
-    "tops": "TODO",
-    "pants": "TODO",
-    "splurge_categories": ["TODO - where price matters less"]
+    "colors_preferred": ["TODO"],
+    "colors_avoid": ["TODO"],
+    "no_gos": ["TODO - materials, logos, patterns never worn"]
   },
   "context": {
     "climate": "Salt Lake City area - four seasons, dry, cold winters",
-    "lifestyle": "TODO - e.g. dev work from home, gym, occasional going out",
-    "current_gaps": ["TODO - what the wardrobe is missing"]
+    "lifestyle": "TODO",
+    "current_gaps": ["TODO"]
   },
   "deal_preferences": {
-    "prefers_waiting_for_deals": true,
     "acceptable_sources": ["major US retailers", "brand direct", "verified outlet"],
     "avoid": ["marketplace third-party sellers at inflated prices", "dropship sites"]
   }
