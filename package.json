@@ -1,0 +1,9 @@
+{
+  "name": "shopbot",
+  "private": true,
+  "scripts": {
+    "test:watcher": "powershell.exe -NoProfile -ExecutionPolicy Bypass -File engine/test-price-watch.ps1",
+    "test:dashboard": "node dashboard/test-dashboard.js",
+    "test": "npm run test:watcher && npm run test:dashboard"
+  }
+}
