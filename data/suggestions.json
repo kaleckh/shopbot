@@ -1,4 +1,266 @@
 {
-  "_schema": "Scout output. Each suggestion: {id (kebab, stable), title, imageUrl, priceUSD, retailer, url, modes:[...], verdict (one-line fit reasoning), source (find-query or watch id), addedAt}. /shop find APPENDS here (dedupe by id). Votes live in taste/votes.json keyed by these ids.",
-  "suggestions": []
+  "_schema": "Scout output v2. Each suggestion: {id (kebab, stable), title, brand, category, imageUrl, priceUSD, listPriceUSD, retailer, url, modes[], verdict, matchReasons[{signal,detail}], provenance{sourceType,retailer,foundVia,evidence,checkedBy}, verification{status,checkedAt,priceObservedUSD,stock}, addedAt}. sourceType: retailer-direct|brand-direct|verified-outlet|tracker-lead. verification.status: verified|lead|stale. stock: in-stock|limited|out-of-stock|unknown. /shop find APPENDS here (dedupe by id). Votes live in taste/votes.json keyed by these ids.",
+  "schemaVersion": 2,
+  "generatedAt": "2026-08-06T05:54:00Z",
+  "suggestions": [
+    {
+      "id": "nike-air-force-1-07-white-wss",
+      "title": "Air Force 1 Low '07 - White/White",
+      "brand": "Nike",
+      "category": "shoes",
+      "imageUrl": null,
+      "priceUSD": 114.99,
+      "listPriceUSD": null,
+      "retailer": "ShopWSS",
+      "url": "https://www.shopwss.com/products/cw2288_111",
+      "modes": ["streetwear", "minimal-clean", "classic-casual"],
+      "verdict": "The single most frequent shoe on the board, at a US retailer with your size in stock and under Nike's own $115.",
+      "matchReasons": [
+        { "signal": "footwear", "detail": "White AF1 is the most-repeated sneaker across the Pinterest corpus - the default under baggy light-wash denim." },
+        { "signal": "palette", "detail": "Bright white is the one exception the profile allows to the worn-in/cream rule, and it is specifically the AF1 exception." },
+        { "signal": "silhouette", "detail": "Retro basketball/court shape, not a chunky tech runner - matches the shoe shapes on the board." },
+        { "signal": "budget", "detail": "$114.99 sits far under the ~$300 soft shoe ceiling." }
+      ],
+      "provenance": {
+        "sourceType": "retailer-direct",
+        "retailer": "ShopWSS",
+        "foundVia": "nike.com blocks automated page reads (HTTP 403), so the price was confirmed at a stocking US retailer instead",
+        "evidence": "Retailer product page read directly 2026-08-06: price $114.99, colorway White/White, men's sizes 10.0 and 10.5 both shown available with no sold-out marker.",
+        "checkedBy": "claude-opus-5 agent page-read (not a watcher run)"
+      },
+      "verification": {
+        "status": "verified",
+        "checkedAt": "2026-08-06T05:50:00Z",
+        "priceObservedUSD": 114.99,
+        "stock": "in-stock"
+      },
+      "addedAt": "2026-08-06T05:54:00Z"
+    },
+    {
+      "id": "dr-martens-1460-smooth-black",
+      "title": "1460 Smooth Leather Lace Up Boots - Black",
+      "brand": "Dr. Martens",
+      "category": "shoes",
+      "imageUrl": null,
+      "priceUSD": 180,
+      "listPriceUSD": null,
+      "retailer": "Dr. Martens (brand direct)",
+      "url": "https://www.drmartens.com/us/en/1460-smooth-leather-lace-up-boots-black/p/11822006",
+      "modes": ["streetwear", "classic-casual"],
+      "verdict": "The exact black 8-eye boot that shows up in the grunge-leaning fits, bought brand-direct so the size run is real.",
+      "matchReasons": [
+        { "signal": "footwear", "detail": "Black Dr. Martens boots are called out by name in the taste profile for the grunge/flannel outfits." },
+        { "signal": "wear-in", "detail": "Smooth leather patinas rather than staying box-fresh, which the profile scores up over pristine finishes." },
+        { "signal": "silhouette", "detail": "Bulky welted boot anchors baggy carpenter pants and pooling denim hems." }
+      ],
+      "provenance": {
+        "sourceType": "brand-direct",
+        "retailer": "drmartens.com",
+        "foundVia": "brand-direct product page for the 1460 Smooth in black",
+        "evidence": "Brand product page read directly 2026-08-06: price $180.00, colorway Black Smooth Leather, men's US 10 and US 11 both reported in stock.",
+        "checkedBy": "claude-opus-5 agent page-read (not a watcher run)"
+      },
+      "verification": {
+        "status": "verified",
+        "checkedAt": "2026-08-06T05:51:00Z",
+        "priceObservedUSD": 180,
+        "stock": "in-stock"
+      },
+      "addedAt": "2026-08-06T05:54:00Z"
+    },
+    {
+      "id": "birkenstock-boston-soft-footbed-taupe",
+      "title": "Boston Soft Footbed Suede Leather - Taupe",
+      "brand": "Birkenstock",
+      "category": "shoes",
+      "imageUrl": null,
+      "priceUSD": 169.95,
+      "listPriceUSD": null,
+      "retailer": "Birkenstock (brand direct)",
+      "url": "https://www.birkenstock.com/us/boston-soft-footbed-suede-leather/boston-suede-suedeleather-softfootbed-eva-u_46.html",
+      "modes": ["minimal-clean", "classic-casual"],
+      "verdict": "The suede clog the profile names for the relaxed-clean fits, in the taupe that sits dead center of your palette.",
+      "matchReasons": [
+        { "signal": "footwear", "detail": "Birkenstock Boston-style suede clogs are listed in the profile's footwear anchors for relaxed-clean outfits." },
+        { "signal": "palette", "detail": "Taupe suede lands inside the tan/khaki/brown core rather than fighting it." },
+        { "signal": "texture", "detail": "Matte suede reads worn-in, consistent with the thrift-finish preference over glossy leather." }
+      ],
+      "provenance": {
+        "sourceType": "brand-direct",
+        "retailer": "birkenstock.com",
+        "foundVia": "brand-direct product page for Boston Soft Footbed suede",
+        "evidence": "Brand product page read directly 2026-08-06: price $169.95, taupe shown as the primary color, size row '10-10.5 US / 43 EU' present and Add to Cart rendered, but per-size stock is not stated on the page.",
+        "checkedBy": "claude-opus-5 agent page-read (not a watcher run)"
+      },
+      "verification": {
+        "status": "verified",
+        "checkedAt": "2026-08-06T05:50:00Z",
+        "priceObservedUSD": 169.95,
+        "stock": "unknown"
+      },
+      "addedAt": "2026-08-06T05:54:00Z"
+    },
+    {
+      "id": "new-balance-990v6-grey-holabird",
+      "title": "990v6 Made in USA - Grey/Grey",
+      "brand": "New Balance",
+      "category": "shoes",
+      "imageUrl": null,
+      "priceUSD": 199.95,
+      "listPriceUSD": null,
+      "retailer": "Holabird Sports",
+      "url": "https://www.holabirdsports.com/products/new-balance-990v6-mens-grey-grey",
+      "modes": ["streetwear", "minimal-clean", "athletic-tech"],
+      "verdict": "The grey New Balance runner from the board, at a real US retailer with both your sizes in D width.",
+      "matchReasons": [
+        { "signal": "footwear", "detail": "Grey New Balance runners appear directly in the corpus footwear set." },
+        { "signal": "palette", "detail": "Tonal grey-on-grey is squarely in the washed-grey core color, no accent required." },
+        { "signal": "silhouette", "detail": "Substantial but not chunky-tech - the profile's stated exception line for dad shoes is respected here." },
+        { "signal": "budget", "detail": "$199.95 is under the ~$300 soft ceiling but is the most expensive shoe in this batch." }
+      ],
+      "provenance": {
+        "sourceType": "retailer-direct",
+        "retailer": "Holabird Sports",
+        "foundVia": "newbalance.com blocks automated page reads (HTTP 403), so a stocking US running retailer was used",
+        "evidence": "Retailer product page read directly 2026-08-06: price $199.95, colorway Grey/Grey, sizes 10 D and 10.5 D both listed available at that price.",
+        "checkedBy": "claude-opus-5 agent page-read (not a watcher run)"
+      },
+      "verification": {
+        "status": "verified",
+        "checkedAt": "2026-08-06T05:51:00Z",
+        "priceObservedUSD": 199.95,
+        "stock": "in-stock"
+      },
+      "addedAt": "2026-08-06T05:54:00Z"
+    },
+    {
+      "id": "converse-chuck-70-hi-black-tactics",
+      "title": "Chuck 70 High Top - Black/Black/Egret",
+      "brand": "Converse",
+      "category": "shoes",
+      "imageUrl": null,
+      "priceUSD": 64.95,
+      "listPriceUSD": null,
+      "retailer": "Tactics",
+      "url": "https://www.tactics.com/converse/chuck-70-high-top-shoes",
+      "modes": ["streetwear", "classic-casual"],
+      "verdict": "Black Chuck 70 with the egret (cream) foxing, marked down ~29% with your sizes live - the cheapest way to hit a board staple.",
+      "matchReasons": [
+        { "signal": "footwear", "detail": "Black Converse high tops are in the profile's footwear anchors." },
+        { "signal": "palette", "detail": "The egret midsole gives the cream/gum tone the profile prefers over bright white on everything except AF1s." },
+        { "signal": "price", "detail": "Discounted well below the usual Chuck 70 retail, and you prefer waiting for deals." }
+      ],
+      "provenance": {
+        "sourceType": "retailer-direct",
+        "retailer": "Tactics",
+        "foundVia": "converse.com blocks automated page reads (HTTP 403), so a stocking US retailer was used",
+        "evidence": "Retailer page read directly 2026-08-06: price $64.95 shown as 29% off, black/black/egret colorway offered, men's US 10 and 10.5 both in stock. The pre-discount list price string was not exposed on the page, so listPriceUSD is left null rather than inferred.",
+        "checkedBy": "claude-opus-5 agent page-read (not a watcher run)"
+      },
+      "verification": {
+        "status": "verified",
+        "checkedAt": "2026-08-06T05:52:00Z",
+        "priceObservedUSD": 64.95,
+        "stock": "in-stock"
+      },
+      "addedAt": "2026-08-06T05:54:00Z"
+    },
+    {
+      "id": "carhartt-a18-watch-hat-black",
+      "title": "A18 Knit Cuffed Beanie (Watch Cap) - Black",
+      "brand": "Carhartt",
+      "category": "accessory",
+      "imageUrl": null,
+      "priceUSD": 19.99,
+      "listPriceUSD": null,
+      "retailer": "Carhartt (brand direct)",
+      "url": "https://www.carhartt.com/product/A18/knit-cuffed-beanie",
+      "modes": ["streetwear", "classic-casual"],
+      "verdict": "The black rolled fisherman beanie the board keeps showing, brand-direct for twenty dollars.",
+      "matchReasons": [
+        { "signal": "accessory", "detail": "Black fisherman roll beanies recur in the corpus accessory set." },
+        { "signal": "brand", "detail": "Carhartt-style workwear is an explicit brand anchor in the profile." },
+        { "signal": "climate", "detail": "Salt Lake City winters make a wool-weight watch cap an actual wardrobe gap, not just a styling piece." }
+      ],
+      "provenance": {
+        "sourceType": "brand-direct",
+        "retailer": "carhartt.com",
+        "foundVia": "brand-direct product page for the A18 watch cap",
+        "evidence": "Brand product page read directly 2026-08-06: price $19.99, black listed among available colors at that price, product shown as available and flagged 'Most Popular'.",
+        "checkedBy": "claude-opus-5 agent page-read (not a watcher run)"
+      },
+      "verification": {
+        "status": "verified",
+        "checkedAt": "2026-08-06T05:52:00Z",
+        "priceObservedUSD": 19.99,
+        "stock": "in-stock"
+      },
+      "addedAt": "2026-08-06T05:54:00Z"
+    },
+    {
+      "id": "mejuri-curb-chain-necklace-silver",
+      "title": "5mm Curb Chain Necklace - 925 Sterling Silver",
+      "brand": "Mejuri",
+      "category": "accessory",
+      "imageUrl": null,
+      "priceUSD": 198,
+      "listPriceUSD": null,
+      "retailer": "Mejuri (brand direct)",
+      "url": "https://mejuri.com/products/curb-chain-necklace",
+      "modes": ["streetwear", "minimal-clean"],
+      "verdict": "Solid sterling curb chain for the near-constant silver signal - the splurge of this batch, priced as a 'from'.",
+      "matchReasons": [
+        { "signal": "accessory", "detail": "Silver chain necklaces are described as near-constant across the corpus, alongside chunky rings." },
+        { "signal": "material", "detail": "Solid 925 sterling rather than plated, so it survives daily wear instead of turning green." },
+        { "signal": "budget-flag", "detail": "SPLURGE: $198 is the highest-priced accessory here and the non-shoe budget prior is still a TODO in config/profile.json." }
+      ],
+      "provenance": {
+        "sourceType": "brand-direct",
+        "retailer": "mejuri.com",
+        "foundVia": "brand-direct product page for the sterling curb chain",
+        "evidence": "Brand product page read directly 2026-08-06: price displayed as 'From $198 USD' across 16/20/22 inch lengths - per-length pricing and stock were not resolved on the page, so $198 is the entry price, not a confirmed price for a specific length.",
+        "checkedBy": "claude-opus-5 agent page-read (not a watcher run)"
+      },
+      "verification": {
+        "status": "verified",
+        "checkedAt": "2026-08-06T05:53:00Z",
+        "priceObservedUSD": 198,
+        "stock": "unknown"
+      },
+      "addedAt": "2026-08-06T05:54:00Z"
+    },
+    {
+      "id": "carhartt-wip-denim-tote-blue-destroy",
+      "title": "Denim Tote - Blue (Destroy Wash, Splatter)",
+      "brand": "Carhartt WIP",
+      "category": "accessory",
+      "imageUrl": null,
+      "priceUSD": 125,
+      "listPriceUSD": null,
+      "retailer": "Carhartt WIP (brand direct)",
+      "url": "https://us.carhartt-wip.com/en-us/products/denim-tote-blue-destroy-wash-splatter-646",
+      "modes": ["streetwear", "classic-casual"],
+      "verdict": "Closest live match to the recurring tote signal - light-wash destroyed denim with paint splatter, which is two board signals in one bag.",
+      "matchReasons": [
+        { "signal": "accessory", "detail": "Totes appear repeatedly in the corpus; this is the tote-shaped option Carhartt WIP currently stocks." },
+        { "signal": "wash", "detail": "Destroy-wash light denim matches the light-wash/faded-only denim rule." },
+        { "signal": "texture", "detail": "Paint splatter echoes the Gallery Dept-adjacent painted workwear already on the board." },
+        { "signal": "caveat", "detail": "The profile says canvas tote specifically - this is 13.5oz cotton denim, so it is an adjacent match, not an exact one." }
+      ],
+      "provenance": {
+        "sourceType": "brand-direct",
+        "retailer": "us.carhartt-wip.com",
+        "foundVia": "Carhartt WIP US accessories-bags listing had no canvas tote in stock; the denim tote was the only tote-shaped item live",
+        "evidence": "Brand product page read directly 2026-08-06: price $125.00, colorway Blue Destroy Wash Splatter, fabric '100% Cotton Smith Denim, 13.5 oz'. Add to Bag present; page reports the size not available for in-store pickup and states no explicit online stock level.",
+        "checkedBy": "claude-opus-5 agent page-read (not a watcher run)"
+      },
+      "verification": {
+        "status": "verified",
+        "checkedAt": "2026-08-06T05:53:00Z",
+        "priceObservedUSD": 125,
+        "stock": "unknown"
+      },
+      "addedAt": "2026-08-06T05:54:00Z"
+    }
+  ]
 }
