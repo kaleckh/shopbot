@@ -1,25 +1,41 @@
 {
   "_schema": "Scout output v2. Each suggestion: {id (kebab, stable), title, brand, category, imageUrl, priceUSD, listPriceUSD, retailer, url, modes[], verdict, matchReasons[{signal,detail}], provenance{sourceType,retailer,foundVia,evidence,checkedBy}, verification{status,checkedAt,priceObservedUSD,stock}, addedAt}. sourceType: retailer-direct|brand-direct|verified-outlet|tracker-lead. verification.status: verified|lead|stale. stock: in-stock|limited|out-of-stock|unknown. /shop find APPENDS here (dedupe by id). Votes live in taste/votes.json keyed by these ids.",
   "schemaVersion": 2,
-  "generatedAt": "2026-08-06T05:54:00Z",
+  "generatedAt": "2026-08-07T23:34:23Z",
   "suggestions": [
     {
       "id": "nike-air-force-1-07-white-wss",
       "title": "Air Force 1 Low '07 - White/White",
       "brand": "Nike",
       "category": "shoes",
-      "imageUrl": null,
+      "imageUrl": "/product-images/nike-air-force-1-07-white-wss.webp",
       "priceUSD": 114.99,
       "listPriceUSD": null,
       "retailer": "ShopWSS",
       "url": "https://www.shopwss.com/products/cw2288_111",
-      "modes": ["streetwear", "minimal-clean", "classic-casual"],
+      "modes": [
+        "streetwear",
+        "minimal-clean",
+        "classic-casual"
+      ],
       "verdict": "The single most frequent shoe on the board, at a US retailer with your size in stock and under Nike's own $115.",
       "matchReasons": [
-        { "signal": "footwear", "detail": "White AF1 is the most-repeated sneaker across the Pinterest corpus - the default under baggy light-wash denim." },
-        { "signal": "palette", "detail": "Bright white is the one exception the profile allows to the worn-in/cream rule, and it is specifically the AF1 exception." },
-        { "signal": "silhouette", "detail": "Retro basketball/court shape, not a chunky tech runner - matches the shoe shapes on the board." },
-        { "signal": "budget", "detail": "$114.99 sits far under the ~$300 soft shoe ceiling." }
+        {
+          "signal": "footwear",
+          "detail": "White AF1 is the most-repeated sneaker across the Pinterest corpus - the default under baggy light-wash denim."
+        },
+        {
+          "signal": "palette",
+          "detail": "Bright white is the one exception the profile allows to the worn-in/cream rule, and it is specifically the AF1 exception."
+        },
+        {
+          "signal": "silhouette",
+          "detail": "Retro basketball/court shape, not a chunky tech runner - matches the shoe shapes on the board."
+        },
+        {
+          "signal": "budget",
+          "detail": "$114.99 sits far under the ~$300 soft shoe ceiling."
+        }
       ],
       "provenance": {
         "sourceType": "retailer-direct",
@@ -41,17 +57,29 @@
       "title": "1460 Smooth Leather Lace Up Boots - Black",
       "brand": "Dr. Martens",
       "category": "shoes",
-      "imageUrl": null,
+      "imageUrl": "/product-images/dr-martens-1460-smooth-black.webp",
       "priceUSD": 180,
       "listPriceUSD": null,
       "retailer": "Dr. Martens (brand direct)",
       "url": "https://www.drmartens.com/us/en/1460-smooth-leather-lace-up-boots-black/p/11822006",
-      "modes": ["streetwear", "classic-casual"],
+      "modes": [
+        "streetwear",
+        "classic-casual"
+      ],
       "verdict": "The exact black 8-eye boot that shows up in the grunge-leaning fits, bought brand-direct so the size run is real.",
       "matchReasons": [
-        { "signal": "footwear", "detail": "Black Dr. Martens boots are called out by name in the taste profile for the grunge/flannel outfits." },
-        { "signal": "wear-in", "detail": "Smooth leather patinas rather than staying box-fresh, which the profile scores up over pristine finishes." },
-        { "signal": "silhouette", "detail": "Bulky welted boot anchors baggy carpenter pants and pooling denim hems." }
+        {
+          "signal": "footwear",
+          "detail": "Black Dr. Martens boots are called out by name in the taste profile for the grunge/flannel outfits."
+        },
+        {
+          "signal": "wear-in",
+          "detail": "Smooth leather patinas rather than staying box-fresh, which the profile scores up over pristine finishes."
+        },
+        {
+          "signal": "silhouette",
+          "detail": "Bulky welted boot anchors baggy carpenter pants and pooling denim hems."
+        }
       ],
       "provenance": {
         "sourceType": "brand-direct",
@@ -73,17 +101,29 @@
       "title": "Boston Soft Footbed Suede Leather - Taupe",
       "brand": "Birkenstock",
       "category": "shoes",
-      "imageUrl": null,
+      "imageUrl": "/product-images/birkenstock-boston-soft-footbed-taupe.avif",
       "priceUSD": 169.95,
       "listPriceUSD": null,
       "retailer": "Birkenstock (brand direct)",
       "url": "https://www.birkenstock.com/us/boston-soft-footbed-suede-leather/boston-suede-suedeleather-softfootbed-eva-u_46.html",
-      "modes": ["minimal-clean", "classic-casual"],
+      "modes": [
+        "minimal-clean",
+        "classic-casual"
+      ],
       "verdict": "The suede clog the profile names for the relaxed-clean fits, in the taupe that sits dead center of your palette.",
       "matchReasons": [
-        { "signal": "footwear", "detail": "Birkenstock Boston-style suede clogs are listed in the profile's footwear anchors for relaxed-clean outfits." },
-        { "signal": "palette", "detail": "Taupe suede lands inside the tan/khaki/brown core rather than fighting it." },
-        { "signal": "texture", "detail": "Matte suede reads worn-in, consistent with the thrift-finish preference over glossy leather." }
+        {
+          "signal": "footwear",
+          "detail": "Birkenstock Boston-style suede clogs are listed in the profile's footwear anchors for relaxed-clean outfits."
+        },
+        {
+          "signal": "palette",
+          "detail": "Taupe suede lands inside the tan/khaki/brown core rather than fighting it."
+        },
+        {
+          "signal": "texture",
+          "detail": "Matte suede reads worn-in, consistent with the thrift-finish preference over glossy leather."
+        }
       ],
       "provenance": {
         "sourceType": "brand-direct",
@@ -105,18 +145,34 @@
       "title": "990v6 Made in USA - Grey/Grey",
       "brand": "New Balance",
       "category": "shoes",
-      "imageUrl": null,
+      "imageUrl": "/product-images/new-balance-990v6-grey-holabird.webp",
       "priceUSD": 199.95,
       "listPriceUSD": null,
       "retailer": "Holabird Sports",
       "url": "https://www.holabirdsports.com/products/new-balance-990v6-mens-grey-grey",
-      "modes": ["streetwear", "minimal-clean", "athletic-tech"],
+      "modes": [
+        "streetwear",
+        "minimal-clean",
+        "athletic-tech"
+      ],
       "verdict": "The grey New Balance runner from the board, at a real US retailer with both your sizes in D width.",
       "matchReasons": [
-        { "signal": "footwear", "detail": "Grey New Balance runners appear directly in the corpus footwear set." },
-        { "signal": "palette", "detail": "Tonal grey-on-grey is squarely in the washed-grey core color, no accent required." },
-        { "signal": "silhouette", "detail": "Substantial but not chunky-tech - the profile's stated exception line for dad shoes is respected here." },
-        { "signal": "budget", "detail": "$199.95 is under the ~$300 soft ceiling but is the most expensive shoe in this batch." }
+        {
+          "signal": "footwear",
+          "detail": "Grey New Balance runners appear directly in the corpus footwear set."
+        },
+        {
+          "signal": "palette",
+          "detail": "Tonal grey-on-grey is squarely in the washed-grey core color, no accent required."
+        },
+        {
+          "signal": "silhouette",
+          "detail": "Substantial but not chunky-tech - the profile's stated exception line for dad shoes is respected here."
+        },
+        {
+          "signal": "budget",
+          "detail": "$199.95 is under the ~$300 soft ceiling but is the most expensive shoe in this batch."
+        }
       ],
       "provenance": {
         "sourceType": "retailer-direct",
@@ -138,17 +194,29 @@
       "title": "Chuck 70 High Top - Black/Black/Egret",
       "brand": "Converse",
       "category": "shoes",
-      "imageUrl": null,
+      "imageUrl": "/product-images/converse-chuck-70-hi-black-tactics.jpg",
       "priceUSD": 64.95,
       "listPriceUSD": null,
       "retailer": "Tactics",
       "url": "https://www.tactics.com/converse/chuck-70-high-top-shoes",
-      "modes": ["streetwear", "classic-casual"],
+      "modes": [
+        "streetwear",
+        "classic-casual"
+      ],
       "verdict": "Black Chuck 70 with the egret (cream) foxing, marked down ~29% with your sizes live - the cheapest way to hit a board staple.",
       "matchReasons": [
-        { "signal": "footwear", "detail": "Black Converse high tops are in the profile's footwear anchors." },
-        { "signal": "palette", "detail": "The egret midsole gives the cream/gum tone the profile prefers over bright white on everything except AF1s." },
-        { "signal": "price", "detail": "Discounted well below the usual Chuck 70 retail, and you prefer waiting for deals." }
+        {
+          "signal": "footwear",
+          "detail": "Black Converse high tops are in the profile's footwear anchors."
+        },
+        {
+          "signal": "palette",
+          "detail": "The egret midsole gives the cream/gum tone the profile prefers over bright white on everything except AF1s."
+        },
+        {
+          "signal": "price",
+          "detail": "Discounted well below the usual Chuck 70 retail, and you prefer waiting for deals."
+        }
       ],
       "provenance": {
         "sourceType": "retailer-direct",
@@ -163,24 +231,37 @@
         "priceObservedUSD": 64.95,
         "stock": "in-stock"
       },
-      "addedAt": "2026-08-06T05:54:00Z"
+      "addedAt": "2026-08-06T05:54:00Z",
+      "imageNote": "Low-resolution (78px) colorway swatch - Tactics only publishes full-size photography for the colorway selected on the page, and the larger size-code paths 404. Correct product, but it will look soft on the card."
     },
     {
       "id": "carhartt-a18-watch-hat-black",
       "title": "A18 Knit Cuffed Beanie (Watch Cap) - Black",
       "brand": "Carhartt",
       "category": "accessory",
-      "imageUrl": null,
+      "imageUrl": "/product-images/carhartt-a18-watch-hat-black.webp",
       "priceUSD": 19.99,
       "listPriceUSD": null,
       "retailer": "Carhartt (brand direct)",
       "url": "https://www.carhartt.com/product/A18/knit-cuffed-beanie",
-      "modes": ["streetwear", "classic-casual"],
+      "modes": [
+        "streetwear",
+        "classic-casual"
+      ],
       "verdict": "The black rolled fisherman beanie the board keeps showing, brand-direct for twenty dollars.",
       "matchReasons": [
-        { "signal": "accessory", "detail": "Black fisherman roll beanies recur in the corpus accessory set." },
-        { "signal": "brand", "detail": "Carhartt-style workwear is an explicit brand anchor in the profile." },
-        { "signal": "climate", "detail": "Salt Lake City winters make a wool-weight watch cap an actual wardrobe gap, not just a styling piece." }
+        {
+          "signal": "accessory",
+          "detail": "Black fisherman roll beanies recur in the corpus accessory set."
+        },
+        {
+          "signal": "brand",
+          "detail": "Carhartt-style workwear is an explicit brand anchor in the profile."
+        },
+        {
+          "signal": "climate",
+          "detail": "Salt Lake City winters make a wool-weight watch cap an actual wardrobe gap, not just a styling piece."
+        }
       ],
       "provenance": {
         "sourceType": "brand-direct",
@@ -202,17 +283,29 @@
       "title": "5mm Curb Chain Necklace - 925 Sterling Silver",
       "brand": "Mejuri",
       "category": "accessory",
-      "imageUrl": null,
+      "imageUrl": "/product-images/mejuri-curb-chain-necklace-silver.webp",
       "priceUSD": 198,
       "listPriceUSD": null,
       "retailer": "Mejuri (brand direct)",
       "url": "https://mejuri.com/products/curb-chain-necklace",
-      "modes": ["streetwear", "minimal-clean"],
+      "modes": [
+        "streetwear",
+        "minimal-clean"
+      ],
       "verdict": "Solid sterling curb chain for the near-constant silver signal - the splurge of this batch, priced as a 'from'.",
       "matchReasons": [
-        { "signal": "accessory", "detail": "Silver chain necklaces are described as near-constant across the corpus, alongside chunky rings." },
-        { "signal": "material", "detail": "Solid 925 sterling rather than plated, so it survives daily wear instead of turning green." },
-        { "signal": "budget-flag", "detail": "SPLURGE: $198 is the highest-priced accessory here and the non-shoe budget prior is still a TODO in config/profile.json." }
+        {
+          "signal": "accessory",
+          "detail": "Silver chain necklaces are described as near-constant across the corpus, alongside chunky rings."
+        },
+        {
+          "signal": "material",
+          "detail": "Solid 925 sterling rather than plated, so it survives daily wear instead of turning green."
+        },
+        {
+          "signal": "budget-flag",
+          "detail": "SPLURGE: $198 is the highest-priced accessory here and the non-shoe budget prior is still a TODO in config/profile.json."
+        }
       ],
       "provenance": {
         "sourceType": "brand-direct",
@@ -234,18 +327,33 @@
       "title": "Denim Tote - Blue (Destroy Wash, Splatter)",
       "brand": "Carhartt WIP",
       "category": "accessory",
-      "imageUrl": null,
+      "imageUrl": "/product-images/carhartt-wip-denim-tote-blue-destroy.webp",
       "priceUSD": 125,
       "listPriceUSD": null,
       "retailer": "Carhartt WIP (brand direct)",
       "url": "https://us.carhartt-wip.com/en-us/products/denim-tote-blue-destroy-wash-splatter-646",
-      "modes": ["streetwear", "classic-casual"],
+      "modes": [
+        "streetwear",
+        "classic-casual"
+      ],
       "verdict": "Closest live match to the recurring tote signal - light-wash destroyed denim with paint splatter, which is two board signals in one bag.",
       "matchReasons": [
-        { "signal": "accessory", "detail": "Totes appear repeatedly in the corpus; this is the tote-shaped option Carhartt WIP currently stocks." },
-        { "signal": "wash", "detail": "Destroy-wash light denim matches the light-wash/faded-only denim rule." },
-        { "signal": "texture", "detail": "Paint splatter echoes the Gallery Dept-adjacent painted workwear already on the board." },
-        { "signal": "caveat", "detail": "The profile says canvas tote specifically - this is 13.5oz cotton denim, so it is an adjacent match, not an exact one." }
+        {
+          "signal": "accessory",
+          "detail": "Totes appear repeatedly in the corpus; this is the tote-shaped option Carhartt WIP currently stocks."
+        },
+        {
+          "signal": "wash",
+          "detail": "Destroy-wash light denim matches the light-wash/faded-only denim rule."
+        },
+        {
+          "signal": "texture",
+          "detail": "Paint splatter echoes the Gallery Dept-adjacent painted workwear already on the board."
+        },
+        {
+          "signal": "caveat",
+          "detail": "The profile says canvas tote specifically - this is 13.5oz cotton denim, so it is an adjacent match, not an exact one."
+        }
       ],
       "provenance": {
         "sourceType": "brand-direct",

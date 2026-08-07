@@ -83,6 +83,7 @@ async function main() {
       pinterest: path.join(tempRoot, "missing-pinterest.json"),
       watches: path.join(tempRoot, "missing-watches.json"),
       corpus: path.join(repoRoot, "taste", "corpus"),
+      productImages: path.join(repoRoot, "data", "images"),
     },
   });
   const port = server.address().port;
@@ -168,6 +169,31 @@ async function main() {
     for (const route of ["/taste/corpus/not-a-clothes-file.jpg", "/taste/corpus/../server.js", "/taste/corpus/%2e%2e%2fserver.js"]) {
       response = await request(port, "GET", route);
       assert.strictEqual(response.status, 404, route + " should be rejected");
+    }
+
+    // Cached product photos: every extension the fetcher can produce must serve with the
+    // matching type, and the route must refuse anything that is not one of those files.
+    const imageDir = path.join(repoRoot, "data", "images");
+    const cached = fs.existsSync(imageDir) ? fs.readdirSync(imageDir).filter((f) => /\.(jpg|png|webp|avif)$/i.test(f)) : [];
+    assert.ok(cached.length > 0, "expected cached product images to serve");
+    const expectedType = { jpg: "image/jpeg", png: "image/png", webp: "image/webp", avif: "image/avif" };
+    for (const file of cached) {
+      response = await request(port, "GET", "/product-images/" + file);
+      assert.strictEqual(response.status, 200, file + " should serve");
+      assert.strictEqual(response.headers["content-type"], expectedType[file.split(".").pop().toLowerCase()]);
+    }
+    for (const route of ["/product-images/server.js", "/product-images/../server.js", "/product-images/%2e%2e%2fserver.js", "/product-images/missing-item.webp", "/product-images/notes.txt"]) {
+      response = await request(port, "GET", route);
+      assert.strictEqual(response.status, 404, route + " should be rejected");
+    }
+
+    // Every published suggestion should point at an image the route can actually serve.
+    const live = JSON.parse(fs.readFileSync(path.join(repoRoot, "data", "suggestions.json"), "utf8")).suggestions;
+    for (const item of live) {
+      if (!item.imageUrl) continue;
+      assert.ok(item.imageUrl.startsWith("/product-images/"), item.id + " image should be locally cached, not hotlinked");
+      response = await request(port, "GET", item.imageUrl);
+      assert.strictEqual(response.status, 200, item.id + " image should resolve");
     }
     console.log("dashboard tests: " + assertions + " assertions passed, 0 failed");
   } finally {

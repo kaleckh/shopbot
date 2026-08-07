@@ -9,6 +9,10 @@ const ROOT = path.join(__dirname, "..");
 const PORT = 7877;
 const MAX_BODY_BYTES = 8 * 1024;
 const ID_RE = /^[a-z0-9][a-z0-9-]{0,63}$/;
+// Product photos are cached locally rather than hotlinked: retailer CDNs reject cross-origin
+// referers and rotate their URLs, so a stored remote URL would rot into a broken card.
+const IMAGE_RE = /^[a-z0-9][a-z0-9-]{0,63}\.(jpg|png|webp|avif)$/i;
+const IMAGE_TYPES = { jpg: "image/jpeg", png: "image/png", webp: "image/webp", avif: "image/avif" };
 const VOTE_SCALE = [
   { value: -2, label: "Strong dislike", shortLabel: "-2" },
   { value: -1, label: "Dislike", shortLabel: "-1" },
@@ -23,6 +27,7 @@ const DEFAULT_PATHS = {
   pinterest: path.join(ROOT, "config", "pinterest.json"),
   watches: path.join(ROOT, "config", "watches.json"),
   corpus: path.join(ROOT, "taste", "corpus"),
+  productImages: path.join(ROOT, "data", "images"),
 };
 
 function readJson(file, fallback) {
@@ -185,6 +190,7 @@ function createServer(options = {}) {
   const root = options.root || ROOT;
   const paths = { ...DEFAULT_PATHS, ...(options.dataPaths || {}) };
   const corpusDir = paths.corpus || path.join(root, "taste", "corpus");
+  const imagesDir = paths.productImages || path.join(root, "data", "images");
   let voteQueue = Promise.resolve();
 
   function state() {
@@ -272,6 +278,20 @@ function createServer(options = {}) {
       return;
     }
 
+    if (url.pathname.startsWith("/product-images/")) {
+      const file = path.basename(url.pathname);
+      const match = IMAGE_RE.exec(file);
+      const imagePath = path.join(imagesDir, file);
+      if (match && fs.existsSync(imagePath)) {
+        res.writeHead(200, {
+          "Content-Type": IMAGE_TYPES[match[1].toLowerCase()],
+          "Cache-Control": "private, max-age=3600",
+        });
+        fs.createReadStream(imagePath).pipe(res);
+        return;
+      }
+    }
+
     if (url.pathname.startsWith("/taste/corpus/")) {
       const file = path.basename(url.pathname);
       const imagePath = path.join(corpusDir, file);
@@ -294,7 +314,7 @@ function createServer(options = {}) {
     res.writeHead(404, { "Cache-Control": "no-store" });
     res.end("not found");
   });
-  server.dashboardOptions = { root, paths: { ...paths, corpus: corpusDir } };
+  server.dashboardOptions = { root, paths: { ...paths, corpus: corpusDir, productImages: imagesDir } };
   return server;
 }
 
