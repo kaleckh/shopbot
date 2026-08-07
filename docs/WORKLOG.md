@@ -1,5 +1,12 @@
 # Worklog
 
+## 2026-08-07
+
+- Cached product photography for all eight suggestions into `data/images/` and added a guarded `/product-images/` route. Every card had shipped with `imageUrl: null`, which made a fashion-voting surface unusable and is the most likely reason the batch sat at zero votes. Photos are cached rather than hotlinked because retailer CDNs reject cross-origin referers and rotate URLs. Suite grows to 130 assertions, including one that every published `imageUrl` actually resolves.
+- Verified the cached photos by eye against the products they claim to be. Seven are correct and full-size; the Converse entry is a correct but 78px colorway swatch, recorded in that record's `imageNote` rather than shipped silently.
+- Finished the taste extraction: images 37-50 had never been individually reviewed, so the prior had been built on 36 of 50. Four corrections came out of the tail — roughly 1 in 8 corpus images is a mood/photography/hair pin and carries no product signal; green and rust are accent colors the first pass missed entirely; the board's answer to "corporate-presentable" is wide pleated trousers, so the old `dress shirts/suiting` no-go would have made the scout reject the right item; and footwear tightened to Chuck 70 with cream foxing and Jordan 1 high.
+- Updated the `/shop` skill, which had drifted into being actively wrong: it described the v1 schema, called votes up/down, and offered `Start-ScheduledTask -TaskName ClaudePriceWatch` for a task that no longer exists.
+
 ## 2026-08-06
 
 - Replaced the flat dashboard grid with accessible Taste and Suggestions tabs, persistent URL/localStorage tab state, five-level roving vote controls, responsive layout, verification/provenance details, and shareable client-side suggestion filters. Implementation delegated to GPT-5.6 Luna against a written spec, then reviewed.
