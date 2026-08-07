@@ -1,7 +1,8 @@
 # Kale's taste profile — extracted from Pinterest "Clothes" board
 
-Source: 36 of 50 corpus images viewed in detail (2026-07-07, board has 111 pins total;
-50 retrievable without auth). Confidence: HIGH — the board is unusually coherent.
+Source: **all 50** corpus images viewed in detail (36 on 2026-07-07, the remaining 14 on
+2026-08-07; board has 111 pins total, 50 retrievable without auth). Confidence: HIGH — the
+board is unusually coherent, and the second pass confirmed rather than revised the core read.
 Votes in `taste/votes.json` override this document wherever they conflict.
 
 ## The one-line read
@@ -78,6 +79,44 @@ of the aesthetic — "the right piece" beats "the right brand."
   dad shoes except the Yeezy-700 tonal case.
 - Weight votes above all of this — this file is the prior, votes are the data.
 
-## Pins not yet individually reviewed
-Images 37-50 of the corpus (viewable on the dashboard). Fold into this profile after
-Kale's votes or a follow-up viewing pass.
+## Second pass: images 37-50 (2026-08-07)
+
+The core read held. Four things it changed or added:
+
+**1. Not every corpus image is an outfit.** Images 46 and 47 are photography with no
+garment focus at all (a neon night-street film still; a rainy DUMBO/Manhattan Bridge
+street shot), and 37 is a hair reference. The board mixes mood and atmosphere pins in
+with fits. **A scout that treats every corpus image as a product reference will invent
+signal that is not there** — roughly 1 in 8 of these pins is not about clothes.
+
+**2. Green is a recurring accent, and it was missing from the palette.** Dark/forest
+green Dunk High (39) and forest-green Chuck 70 high tops with cream foxing (45). Rust /
+burnt orange also appears as a tee (40). The original "one loud accent per fit" rule is
+right, but the accent set is wider than the red/maroon/UNC-blue first recorded.
+
+**3. Wide trousers in dressier fabrics — the real "corporate-presentable" answer.**
+Greige pleated creased trousers with a navy crewneck and white AF1s (48), and grey wool
+wide-leg trousers with an oversized crew (44). Both still relaxed and wide. This is a
+genuine gap in the first pass, which framed bottoms as denim/carpenter/cargo only. For
+the `corporate-presentable` mode, the answer is clearly **pleated wide trousers, not
+slim tailoring**.
+
+**4. Footwear specifics tightened.** Chuck 70 specifically (not generic Converse), and
+the cream/egret foxing is the preferred version. Jordan 1 high in Chicago red/white with
+a yellowed cream midsole (43). White AF1s appear in 38, 41, 48 and 49 — by a wide margin
+the single most-worn shoe on the whole board.
+
+Smaller confirmations and one counter-signal:
+- Raw, frayed and cut hems recur (40, 45, 49), including blown-out knees. Distress is
+  wanted, not tolerated.
+- Beanies are cream (38, 50) and grey (44) as often as black — the "black fisherman roll"
+  note was too narrow.
+- Cream/white jeans (50) and cream canvas totes with type on them (50) confirm the tonal
+  end of the board.
+- Newly visible brands: **Patagonia** (vintage tee, 40) and **Ader Error** (44).
+- Crew socks are deliberately visible above cuffed hems (40).
+- COUNTER-SIGNAL: the chain in 49 reads gold/yellow, not silver. Silver is still ~95% of
+  the jewelry, but "silver only" is slightly too strong a rule to filter on.
+
+## Reviewed
+All 50 retrievable pins. The remaining 61 pins on the board need auth to fetch.

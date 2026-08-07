@@ -43,20 +43,23 @@
     "prefers_waiting_for_deals": true
   },
   "taste_signals": {
-    "source": "Extracted from detailed viewing of 36/50 Pinterest Clothes corpus images (2026-07-07). Full extraction: taste/taste-profile.md. Votes in taste/votes.json override everything here.",
+    "source": "Extracted from detailed viewing of ALL 50 Pinterest Clothes corpus images (36 on 2026-07-07, the remaining 14 on 2026-08-07). Full extraction: taste/taste-profile.md. Votes in taste/votes.json override everything here. NOTE: roughly 1 in 8 corpus images is a mood/photography/hair pin with no garment focus - do not read product signal out of those.",
     "style_read": [
       "vintage-leaning relaxed streetwear on earthy neutrals - washed workwear + chunky knits over baggy light denim / carpenter / cargo pants",
       "EVERYTHING relaxed-to-baggy; zero slim fits on the board - a slim version of the right item is the wrong item",
       "layering formula: white tee/tank base -> open chore jacket / overshirt / flannel -> optional varsity or field jacket",
       "denim is always light-wash or heavily faded; one loud accent piece per outfit max against a muted base",
-      "thrift/vintage finish beats box-fresh: washed, faded, worn-in textures score up",
-      "silver jewelry near-constant (rings, chains); canvas totes; round wire glasses; textured medium-length hair references"
+      "thrift/vintage finish beats box-fresh: washed, faded, worn-in textures score up; raw/frayed/cut hems and blown-out knees are wanted, not merely tolerated",
+      "silver jewelry near-constant (rings, chains); canvas totes; round wire glasses; textured medium-length hair references",
+      "the dressed-up end is WIDE PLEATED TROUSERS in greige/grey wool with an oversized crew and white AF1s - never slim tailoring. This is the corporate-presentable answer the board actually gives (2026-08-07 pass)"
     ],
-    "reference_brands_liked": ["Nike retro (AF1/Dunk/Jordan 1/Jordan 4)", "Fear of God Essentials", "Kapital", "Dr. Martens", "Converse", "Carhartt-style workwear", "Champion", "Copenhagen Studios (CPH90M caption)", "New Balance", "Birkenstock Boston-style clogs"],
+    "reference_brands_liked": ["Nike retro (AF1 white = most-worn shoe on the board by a wide margin; Dunk Low AND Dunk High; Jordan 1 high; Jordan 4)", "Converse Chuck 70 specifically, cream/egret foxing preferred", "Fear of God Essentials", "Kapital", "Dr. Martens", "Carhartt-style workwear", "Champion", "Copenhagen Studios (CPH90M caption)", "New Balance", "Birkenstock Boston-style clogs", "Patagonia (vintage tee)", "Ader Error"],
     "brands_banned": [],
-    "colors_preferred": ["olive/sage", "tan/khaki", "cream", "brown", "washed grey", "faded black", "light-wash denim"],
+    "colors_preferred": ["olive/sage", "tan/khaki", "cream", "brown", "washed grey", "faded black", "light-wash denim", "greige (wide trousers)"],
+    "accent_colors_allowed": ["forest/dark green (Dunk High, Chuck 70)", "rust/burnt orange (vintage tee)", "Chicago red (Jordan 1)", "varsity maroon", "UNC blue"],
     "colors_avoid": ["dark rigid denim (appears once across the whole board)"],
-    "no_gos_inferred_confirm_via_votes": ["slim/skinny fits", "dress shirts/suiting", "logo-mania luxury", "athleisure-as-outfit", "chunky-tech dad shoes (except tonal Yeezy-700 case)", "square-toe dress shoes"]
+    "no_gos_inferred_confirm_via_votes": ["slim/skinny fits", "SLIM tailoring and suiting - but NOT dressy fabric per se: wide pleated greige/grey-wool trousers are on the board and score well, so do not reject a trouser for being dressy, only for being slim", "logo-mania luxury", "athleisure-as-outfit", "chunky-tech dad shoes (except tonal Yeezy-700 case)", "square-toe dress shoes"],
+    "soft_rules_not_filters": ["silver jewelry is ~95% of the board but one gold chain appears (image 49), so treat silver as a strong preference, not a hard filter"]
   },
   "context": {
     "climate": "Salt Lake City area - four seasons, dry, cold winters",
