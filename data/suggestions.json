@@ -1,7 +1,7 @@
 {
   "_schema": "Scout output v2. Each suggestion: {id (kebab, stable), title, brand, category, imageUrl, priceUSD, listPriceUSD, retailer, url, modes[], verdict, matchReasons[{signal,detail}], provenance{sourceType,retailer,foundVia,evidence,checkedBy}, verification{status,checkedAt,priceObservedUSD,stock}, addedAt}. sourceType: retailer-direct|brand-direct|verified-outlet|tracker-lead. verification.status: verified|lead|stale. stock: in-stock|limited|out-of-stock|unknown. /shop find APPENDS here (dedupe by id). Votes live in taste/votes.json keyed by these ids.",
   "schemaVersion": 2,
-  "generatedAt": "2026-08-07T23:34:23Z",
+  "generatedAt": "2026-08-08T00:28:25Z",
   "suggestions": [
     {
       "id": "nike-air-force-1-07-white-wss",
@@ -369,6 +369,743 @@
         "stock": "unknown"
       },
       "addedAt": "2026-08-06T05:54:00Z"
+    },
+    {
+      "id": "carhartt-loose-chore-coat-brown",
+      "title": "Rugged Flex Duck Loose Fit Chore Coat - Brown",
+      "brand": "Carhartt",
+      "category": "outerwear",
+      "imageUrl": "/product-images/carhartt-loose-chore-coat-brown.jpg",
+      "priceUSD": 109.99,
+      "listPriceUSD": null,
+      "retailer": "Carhartt (brand direct)",
+      "url": "https://www.carhartt.com/product/106675/rugged-flex-duck-loose-fit-chore-coat---1-warm-rating",
+      "modes": [
+        "streetwear",
+        "classic-casual"
+      ],
+      "verdict": "The chore coat the layering formula is built on, in the brown that anchors the palette, and explicitly cut loose.",
+      "matchReasons": [
+        {
+          "signal": "silhouette",
+          "detail": "Loose fit is stated by the brand, which matters more than the garment - a slim chore coat is the wrong item."
+        },
+        {
+          "signal": "layer",
+          "detail": "Third layer in the board's tee -> overshirt -> chore/field jacket formula."
+        },
+        {
+          "signal": "palette",
+          "detail": "Brown duck sits in the tan/brown core."
+        }
+      ],
+      "provenance": {
+        "sourceType": "brand-direct",
+        "retailer": "carhartt.com",
+        "foundVia": "brand collection listing read 2026-08-07 (men's jackets/pants grid), not the individual product page",
+        "evidence": "Collection grid listed this product at $109.99 - $119.99. That is a range across sizes/colors where shown, so priceUSD records the low end. The product page was NOT opened, so per-size stock and the final price are unconfirmed.",
+        "checkedBy": "claude-opus-5 agent collection-page read"
+      },
+      "verification": {
+        "status": "lead",
+        "checkedAt": "2026-08-08T00:28:25Z",
+        "priceObservedUSD": 109.99,
+        "stock": "unknown"
+      },
+      "addedAt": "2026-08-08T00:28:25Z"
+    },
+    {
+      "id": "carhartt-montana-jacket-olive",
+      "title": "Montana Rugged Flex Duck Jacket - Olive/Tan",
+      "brand": "Carhartt",
+      "category": "outerwear",
+      "imageUrl": "/product-images/carhartt-montana-jacket-olive.jpg",
+      "priceUSD": 139.99,
+      "listPriceUSD": null,
+      "retailer": "Carhartt (brand direct)",
+      "url": "https://www.carhartt.com/product/106432/montana-rugged-flex-duck-jacket",
+      "modes": [
+        "streetwear",
+        "classic-casual"
+      ],
+      "verdict": "Olive duck work jacket - the OG-107/military-adjacent shell the board keeps showing.",
+      "matchReasons": [
+        {
+          "signal": "palette",
+          "detail": "Olive/sage is the first color listed in the profile's core palette."
+        },
+        {
+          "signal": "reference",
+          "detail": "Military-style olive overshirts and field jackets are a top-3 recurring garment."
+        }
+      ],
+      "provenance": {
+        "sourceType": "brand-direct",
+        "retailer": "carhartt.com",
+        "foundVia": "brand collection listing read 2026-08-07 (men's jackets/pants grid), not the individual product page",
+        "evidence": "Collection grid listed this product at $139.99 - $154.99. That is a range across sizes/colors where shown, so priceUSD records the low end. The product page was NOT opened, so per-size stock and the final price are unconfirmed.",
+        "checkedBy": "claude-opus-5 agent collection-page read"
+      },
+      "verification": {
+        "status": "lead",
+        "checkedAt": "2026-08-08T00:28:25Z",
+        "priceObservedUSD": 139.99,
+        "stock": "unknown"
+      },
+      "addedAt": "2026-08-08T00:28:25Z"
+    },
+    {
+      "id": "carhartt-j01-detroit-jacket-brown",
+      "title": "Iconic J01 Duck Detroit Jacket - Brown",
+      "brand": "Carhartt",
+      "category": "outerwear",
+      "imageUrl": "/product-images/carhartt-j01-detroit-jacket-brown.jpg",
+      "priceUSD": 129.99,
+      "listPriceUSD": null,
+      "retailer": "Carhartt (brand direct)",
+      "url": "https://www.carhartt.com/product/103828/iconic-j01-duck-detroit-jacket",
+      "modes": [
+        "streetwear",
+        "classic-casual"
+      ],
+      "verdict": "The blanket-lined Detroit - the workwear jacket that patinas hardest, which is the finish the board wants.",
+      "matchReasons": [
+        {
+          "signal": "wear-in",
+          "detail": "Duck canvas fades and creases with wear; thrift/vintage finish beats box-fresh."
+        },
+        {
+          "signal": "palette",
+          "detail": "Brown, dead center of the core colors."
+        }
+      ],
+      "provenance": {
+        "sourceType": "brand-direct",
+        "retailer": "carhartt.com",
+        "foundVia": "brand collection listing read 2026-08-07 (men's jackets/pants grid), not the individual product page",
+        "evidence": "Collection grid listed this product at $129.99 - $139.99. That is a range across sizes/colors where shown, so priceUSD records the low end. The product page was NOT opened, so per-size stock and the final price are unconfirmed.",
+        "checkedBy": "claude-opus-5 agent collection-page read"
+      },
+      "verification": {
+        "status": "lead",
+        "checkedAt": "2026-08-08T00:28:25Z",
+        "priceObservedUSD": 129.99,
+        "stock": "unknown"
+      },
+      "addedAt": "2026-08-08T00:28:25Z"
+    },
+    {
+      "id": "carhartt-bartlett-jacket-black",
+      "title": "Washed Duck Bartlett Jacket - Black",
+      "brand": "Carhartt",
+      "category": "outerwear",
+      "imageUrl": "/product-images/carhartt-bartlett-jacket-black.jpg",
+      "priceUSD": 149.99,
+      "listPriceUSD": null,
+      "retailer": "Carhartt (brand direct)",
+      "url": "https://www.carhartt.com/product/103826/washed-duck-bartlett-jacket",
+      "modes": [
+        "streetwear",
+        "minimal-clean"
+      ],
+      "verdict": "Washed black work jacket for the grunge-leaning fits that pair with the Docs.",
+      "matchReasons": [
+        {
+          "signal": "palette",
+          "detail": "Faded black is in the core palette; washed rather than rigid is the point."
+        },
+        {
+          "signal": "pairing",
+          "detail": "Reads with the 1460s already in this batch."
+        }
+      ],
+      "provenance": {
+        "sourceType": "brand-direct",
+        "retailer": "carhartt.com",
+        "foundVia": "brand collection listing read 2026-08-07 (men's jackets/pants grid), not the individual product page",
+        "evidence": "Collection grid listed this product at $149.99 - $164.99. That is a range across sizes/colors where shown, so priceUSD records the low end. The product page was NOT opened, so per-size stock and the final price are unconfirmed.",
+        "checkedBy": "claude-opus-5 agent collection-page read"
+      },
+      "verification": {
+        "status": "lead",
+        "checkedAt": "2026-08-08T00:28:25Z",
+        "priceObservedUSD": 149.99,
+        "stock": "unknown"
+      },
+      "addedAt": "2026-08-08T00:28:25Z"
+    },
+    {
+      "id": "carhartt-berwick-jacket-green",
+      "title": "Rugged Flex Duck Berwick Jacket - Green",
+      "brand": "Carhartt",
+      "category": "outerwear",
+      "imageUrl": "/product-images/carhartt-berwick-jacket-green.jpg",
+      "priceUSD": 109.99,
+      "listPriceUSD": null,
+      "retailer": "Carhartt (brand direct)",
+      "url": "https://www.carhartt.com/product/105748/rugged-flex-duck-berwick-jacket",
+      "modes": [
+        "streetwear",
+        "classic-casual"
+      ],
+      "verdict": "Green duck jacket - green turned out to be a real accent on the board, not an outlier.",
+      "matchReasons": [
+        {
+          "signal": "accent",
+          "detail": "Forest/dark green showed up twice in the 37-50 pass (Dunk High, Chuck 70) and was missing from the original palette."
+        },
+        {
+          "signal": "budget",
+          "detail": "Cheapest outerwear in this batch."
+        }
+      ],
+      "provenance": {
+        "sourceType": "brand-direct",
+        "retailer": "carhartt.com",
+        "foundVia": "brand collection listing read 2026-08-07 (men's jackets/pants grid), not the individual product page",
+        "evidence": "Collection grid listed this product at $109.99 - $119.99. That is a range across sizes/colors where shown, so priceUSD records the low end. The product page was NOT opened, so per-size stock and the final price are unconfirmed.",
+        "checkedBy": "claude-opus-5 agent collection-page read"
+      },
+      "verification": {
+        "status": "lead",
+        "checkedAt": "2026-08-08T00:28:25Z",
+        "priceObservedUSD": 109.99,
+        "stock": "unknown"
+      },
+      "addedAt": "2026-08-08T00:28:25Z"
+    },
+    {
+      "id": "carhartt-denim-chore-coat",
+      "title": "Crafted Series Denim Chore Coat",
+      "brand": "Carhartt",
+      "category": "outerwear",
+      "imageUrl": "/product-images/carhartt-denim-chore-coat.jpg",
+      "priceUSD": 149.99,
+      "listPriceUSD": null,
+      "retailer": "Carhartt (brand direct)",
+      "url": "https://www.carhartt.com/product/107554/crafted-series-denim-chore-coat",
+      "modes": [
+        "streetwear",
+        "classic-casual"
+      ],
+      "verdict": "Denim chore coat - the double-denim option, worth a vote precisely because the board never shows one.",
+      "matchReasons": [
+        {
+          "signal": "silhouette",
+          "detail": "Chore cut is right."
+        },
+        {
+          "signal": "uncertain",
+          "detail": "HONEST FLAG: the board has zero denim outerwear. This is a deliberate probe of a gap in the signal, not a confident match - vote it down freely."
+        }
+      ],
+      "provenance": {
+        "sourceType": "brand-direct",
+        "retailer": "carhartt.com",
+        "foundVia": "brand collection listing read 2026-08-07 (men's jackets/pants grid), not the individual product page",
+        "evidence": "Collection grid listed this product at $149.99 - $164.99. That is a range across sizes/colors where shown, so priceUSD records the low end. The product page was NOT opened, so per-size stock and the final price are unconfirmed.",
+        "checkedBy": "claude-opus-5 agent collection-page read"
+      },
+      "verification": {
+        "status": "lead",
+        "checkedAt": "2026-08-08T00:28:25Z",
+        "priceObservedUSD": 149.99,
+        "stock": "unknown"
+      },
+      "addedAt": "2026-08-08T00:28:25Z"
+    },
+    {
+      "id": "carhartt-twill-dungaree-khaki",
+      "title": "Relaxed Straight Twill Dungaree - Dark Khaki",
+      "brand": "Carhartt",
+      "category": "pants",
+      "imageUrl": "/product-images/carhartt-twill-dungaree-khaki.jpg",
+      "priceUSD": 49.99,
+      "listPriceUSD": null,
+      "retailer": "Carhartt (brand direct)",
+      "url": "https://www.carhartt.com/product/B324/relaxed-straight-twill-dungaree",
+      "modes": [
+        "streetwear",
+        "classic-casual"
+      ],
+      "verdict": "Cheapest way into the khaki work pant the board treats as the anchor of a fit.",
+      "matchReasons": [
+        {
+          "signal": "silhouette",
+          "detail": "Relaxed straight - pants are the anchor and they are never slim."
+        },
+        {
+          "signal": "palette",
+          "detail": "Dark khaki is core."
+        },
+        {
+          "signal": "budget",
+          "detail": "$49.99, the least expensive item in the whole batch."
+        }
+      ],
+      "provenance": {
+        "sourceType": "brand-direct",
+        "retailer": "carhartt.com",
+        "foundVia": "brand collection listing read 2026-08-07 (men's jackets/pants grid), not the individual product page",
+        "evidence": "Collection grid listed this product at $49.99 - $54.99. That is a range across sizes/colors where shown, so priceUSD records the low end. The product page was NOT opened, so per-size stock and the final price are unconfirmed.",
+        "checkedBy": "claude-opus-5 agent collection-page read"
+      },
+      "verification": {
+        "status": "lead",
+        "checkedAt": "2026-08-08T00:28:25Z",
+        "priceObservedUSD": 49.99,
+        "stock": "unknown"
+      },
+      "addedAt": "2026-08-08T00:28:25Z"
+    },
+    {
+      "id": "carhartt-rigby-dungaree-tan",
+      "title": "Relaxed Straight Rigby Dungaree - Tan/Moss",
+      "brand": "Carhartt",
+      "category": "pants",
+      "imageUrl": "/product-images/carhartt-rigby-dungaree-tan.jpg",
+      "priceUSD": 54.99,
+      "listPriceUSD": null,
+      "retailer": "Carhartt (brand direct)",
+      "url": "https://www.carhartt.com/product/102291/relaxed-straight-rigby-dungaree",
+      "modes": [
+        "streetwear",
+        "classic-casual",
+        "athletic-tech"
+      ],
+      "verdict": "Relaxed tan work pant with more stretch than the duck versions - the everyday one.",
+      "matchReasons": [
+        {
+          "signal": "silhouette",
+          "detail": "Relaxed straight."
+        },
+        {
+          "signal": "palette",
+          "detail": "Tan/moss is core."
+        }
+      ],
+      "provenance": {
+        "sourceType": "brand-direct",
+        "retailer": "carhartt.com",
+        "foundVia": "brand collection listing read 2026-08-07 (men's jackets/pants grid), not the individual product page",
+        "evidence": "Collection grid listed this product at $54.99 - $59.99. That is a range across sizes/colors where shown, so priceUSD records the low end. The product page was NOT opened, so per-size stock and the final price are unconfirmed.",
+        "checkedBy": "claude-opus-5 agent collection-page read"
+      },
+      "verification": {
+        "status": "lead",
+        "checkedAt": "2026-08-08T00:28:25Z",
+        "priceObservedUSD": 54.99,
+        "stock": "unknown"
+      },
+      "addedAt": "2026-08-08T00:28:25Z"
+    },
+    {
+      "id": "carhartt-washed-duck-double-front-brown",
+      "title": "Loose Straight Washed Duck Double-Front Dungaree - Dark Brown",
+      "brand": "Carhartt",
+      "category": "pants",
+      "imageUrl": "/product-images/carhartt-washed-duck-double-front-brown.jpg",
+      "priceUSD": 59.99,
+      "listPriceUSD": null,
+      "retailer": "Carhartt (brand direct)",
+      "url": "https://www.carhartt.com/product/B136/loose-straight-washed-duck-double-front-dungaree",
+      "modes": [
+        "streetwear",
+        "classic-casual"
+      ],
+      "verdict": "LOOSE straight double-knee in washed brown - closest thing here to the double-knee work pants all over the board.",
+      "matchReasons": [
+        {
+          "signal": "silhouette",
+          "detail": "Loose straight, the baggiest cut Carhartt lists."
+        },
+        {
+          "signal": "reference",
+          "detail": "Double-knee/carpenter work pants are the #2 recurring garment."
+        },
+        {
+          "signal": "wear-in",
+          "detail": "Washed rather than rigid duck - already broken in."
+        }
+      ],
+      "provenance": {
+        "sourceType": "brand-direct",
+        "retailer": "carhartt.com",
+        "foundVia": "brand collection listing read 2026-08-07 (men's jackets/pants grid), not the individual product page",
+        "evidence": "Collection grid listed this product at $59.99 - $64.99. That is a range across sizes/colors where shown, so priceUSD records the low end. The product page was NOT opened, so per-size stock and the final price are unconfirmed.",
+        "checkedBy": "claude-opus-5 agent collection-page read"
+      },
+      "verification": {
+        "status": "lead",
+        "checkedAt": "2026-08-08T00:28:25Z",
+        "priceObservedUSD": 59.99,
+        "stock": "unknown"
+      },
+      "addedAt": "2026-08-08T00:28:25Z"
+    },
+    {
+      "id": "carhartt-b01-double-front-brown",
+      "title": "Iconic B01 Firm Duck Double-Front Dungaree - Brown",
+      "brand": "Carhartt",
+      "category": "pants",
+      "imageUrl": "/product-images/carhartt-b01-double-front-brown.jpg",
+      "priceUSD": 64.99,
+      "listPriceUSD": null,
+      "retailer": "Carhartt (brand direct)",
+      "url": "https://www.carhartt.com/product/106679/iconic-b01-firm-duck-double-front-dungaree",
+      "modes": [
+        "streetwear",
+        "classic-casual"
+      ],
+      "verdict": "The original stiff-canvas double-knee. Starts rigid and earns its fade over months.",
+      "matchReasons": [
+        {
+          "signal": "reference",
+          "detail": "The archetypal double-knee."
+        },
+        {
+          "signal": "wear-in",
+          "detail": "CAVEAT: firm duck starts board-stiff. Right end state, slow to get there."
+        }
+      ],
+      "provenance": {
+        "sourceType": "brand-direct",
+        "retailer": "carhartt.com",
+        "foundVia": "brand collection listing read 2026-08-07 (men's jackets/pants grid), not the individual product page",
+        "evidence": "Collection grid listed this product at $64.99 - $69.99. That is a range across sizes/colors where shown, so priceUSD records the low end. The product page was NOT opened, so per-size stock and the final price are unconfirmed.",
+        "checkedBy": "claude-opus-5 agent collection-page read"
+      },
+      "verification": {
+        "status": "lead",
+        "checkedAt": "2026-08-08T00:28:25Z",
+        "priceObservedUSD": 64.99,
+        "stock": "unknown"
+      },
+      "addedAt": "2026-08-08T00:28:25Z"
+    },
+    {
+      "id": "carhartt-rigby-double-front-moss",
+      "title": "Relaxed Straight Rigby Double-Front Dungaree - Moss",
+      "brand": "Carhartt",
+      "category": "pants",
+      "imageUrl": "/product-images/carhartt-rigby-double-front-moss.jpg",
+      "priceUSD": 64.99,
+      "listPriceUSD": null,
+      "retailer": "Carhartt (brand direct)",
+      "url": "https://www.carhartt.com/product/102802/relaxed-straight-rigby-double-front-dungaree",
+      "modes": [
+        "streetwear",
+        "classic-casual"
+      ],
+      "verdict": "Double-knee in moss green - the olive end of the work-pant palette.",
+      "matchReasons": [
+        {
+          "signal": "palette",
+          "detail": "Olive/sage leads the core palette."
+        },
+        {
+          "signal": "silhouette",
+          "detail": "Relaxed straight double-front."
+        }
+      ],
+      "provenance": {
+        "sourceType": "brand-direct",
+        "retailer": "carhartt.com",
+        "foundVia": "brand collection listing read 2026-08-07 (men's jackets/pants grid), not the individual product page",
+        "evidence": "Collection grid listed this product at $64.99 - $69.99. That is a range across sizes/colors where shown, so priceUSD records the low end. The product page was NOT opened, so per-size stock and the final price are unconfirmed.",
+        "checkedBy": "claude-opus-5 agent collection-page read"
+      },
+      "verification": {
+        "status": "lead",
+        "checkedAt": "2026-08-08T00:28:25Z",
+        "priceObservedUSD": 64.99,
+        "stock": "unknown"
+      },
+      "addedAt": "2026-08-08T00:28:25Z"
+    },
+    {
+      "id": "carhartt-rigby-cargo-olive",
+      "title": "Relaxed Straight Rigby Cargo Pant - Olive",
+      "brand": "Carhartt",
+      "category": "pants",
+      "imageUrl": "/product-images/carhartt-rigby-cargo-olive.jpg",
+      "priceUSD": 59.99,
+      "listPriceUSD": null,
+      "retailer": "Carhartt (brand direct)",
+      "url": "https://www.carhartt.com/product/103574/relaxed-straight-rigby-cargo-pant",
+      "modes": [
+        "streetwear",
+        "athletic-tech"
+      ],
+      "verdict": "Olive cargo - the board's cargo pants are khaki/cream, this is the olive read on the same shape.",
+      "matchReasons": [
+        {
+          "signal": "reference",
+          "detail": "Khaki/cream cargos are a listed recurring garment."
+        },
+        {
+          "signal": "palette",
+          "detail": "Olive is core."
+        }
+      ],
+      "provenance": {
+        "sourceType": "brand-direct",
+        "retailer": "carhartt.com",
+        "foundVia": "brand collection listing read 2026-08-07 (men's jackets/pants grid), not the individual product page",
+        "evidence": "Collection grid listed this product at $59.99. That is a range across sizes/colors where shown, so priceUSD records the low end. The product page was NOT opened, so per-size stock and the final price are unconfirmed.",
+        "checkedBy": "claude-opus-5 agent collection-page read"
+      },
+      "verification": {
+        "status": "lead",
+        "checkedAt": "2026-08-08T00:28:25Z",
+        "priceObservedUSD": 59.99,
+        "stock": "unknown"
+      },
+      "addedAt": "2026-08-08T00:28:25Z"
+    },
+    {
+      "id": "carhartt-wip-michigan-chore-spring-brown",
+      "title": "Michigan Chore Coat - Hamilton Brown / Tobacco",
+      "brand": "Carhartt WIP",
+      "category": "outerwear",
+      "imageUrl": "/product-images/carhartt-wip-michigan-chore-spring-brown.webp",
+      "priceUSD": 218,
+      "listPriceUSD": null,
+      "retailer": "Carhartt WIP (brand direct)",
+      "url": "https://us.carhartt-wip.com/en-us/products/michigan-coat-hamilton-brown-tobacco-rinsed-1239",
+      "modes": [
+        "streetwear",
+        "classic-casual"
+      ],
+      "verdict": "The WIP Michigan in rinsed brown - the chore coat the aesthetic actually references, at the cheapest WIP price here.",
+      "matchReasons": [
+        {
+          "signal": "reference",
+          "detail": "Carhartt-style workwear is an explicit brand anchor; WIP is the fashion line the board's pins are usually wearing."
+        },
+        {
+          "signal": "palette",
+          "detail": "Hamilton brown / tobacco."
+        },
+        {
+          "signal": "budget",
+          "detail": "SPLURGE: roughly double the main-line chore coat above, which is the honest comparison to make before voting."
+        }
+      ],
+      "provenance": {
+        "sourceType": "brand-direct",
+        "retailer": "us.carhartt-wip.com",
+        "foundVia": "brand collection listing read 2026-08-07 (men's jackets/pants grid), not the individual product page",
+        "evidence": "Collection grid listed this product at $218.00. That is a range across sizes/colors where shown, so priceUSD records the low end. The product page was NOT opened, so per-size stock and the final price are unconfirmed.",
+        "checkedBy": "claude-opus-5 agent collection-page read"
+      },
+      "verification": {
+        "status": "lead",
+        "checkedAt": "2026-08-08T00:28:25Z",
+        "priceObservedUSD": 218,
+        "stock": "unknown"
+      },
+      "addedAt": "2026-08-08T00:28:25Z"
+    },
+    {
+      "id": "carhartt-wip-detroit-jacket-hamilton-brown",
+      "title": "Detroit Jacket - Hamilton Brown / Tobacco",
+      "brand": "Carhartt WIP",
+      "category": "outerwear",
+      "imageUrl": "/product-images/carhartt-wip-detroit-jacket-hamilton-brown.webp",
+      "priceUSD": 255,
+      "listPriceUSD": null,
+      "retailer": "Carhartt WIP (brand direct)",
+      "url": "https://us.carhartt-wip.com/en-us/products/detroit-jacket-hamilton-brown-tobacco-rinsed-1747",
+      "modes": [
+        "streetwear",
+        "classic-casual"
+      ],
+      "verdict": "WIP's corduroy-collar Detroit in rinsed brown - the piece the main-line J01 above is the budget version of.",
+      "matchReasons": [
+        {
+          "signal": "reference",
+          "detail": "Same silhouette as the $129.99 J01; this is the direct A/B on whether the WIP premium is worth it to you."
+        },
+        {
+          "signal": "budget",
+          "detail": "SPLURGE at $255."
+        }
+      ],
+      "provenance": {
+        "sourceType": "brand-direct",
+        "retailer": "us.carhartt-wip.com",
+        "foundVia": "brand collection listing read 2026-08-07 (men's jackets/pants grid), not the individual product page",
+        "evidence": "Collection grid listed this product at $255.00. That is a range across sizes/colors where shown, so priceUSD records the low end. The product page was NOT opened, so per-size stock and the final price are unconfirmed.",
+        "checkedBy": "claude-opus-5 agent collection-page read"
+      },
+      "verification": {
+        "status": "lead",
+        "checkedAt": "2026-08-08T00:28:25Z",
+        "priceObservedUSD": 255,
+        "stock": "unknown"
+      },
+      "addedAt": "2026-08-08T00:28:25Z"
+    },
+    {
+      "id": "carhartt-wip-og-chore-coat-winter-brown",
+      "title": "OG Chore Coat (Winter) - Hamilton Brown / Tobacco",
+      "brand": "Carhartt WIP",
+      "category": "outerwear",
+      "imageUrl": "/product-images/carhartt-wip-og-chore-coat-winter-brown.webp",
+      "priceUSD": 288,
+      "listPriceUSD": null,
+      "retailer": "Carhartt WIP (brand direct)",
+      "url": "https://us.carhartt-wip.com/en-us/products/og-chore-coat-wip-h-brown-tobacco-rigid-152",
+      "modes": [
+        "streetwear",
+        "classic-casual"
+      ],
+      "verdict": "Blanket-lined OG chore in rigid brown duck. Most expensive item in the batch.",
+      "matchReasons": [
+        {
+          "signal": "climate",
+          "detail": "Quilted lining is the one here actually built for a Salt Lake winter."
+        },
+        {
+          "signal": "budget",
+          "detail": "SPLURGE: $288, the top of this batch."
+        }
+      ],
+      "provenance": {
+        "sourceType": "brand-direct",
+        "retailer": "us.carhartt-wip.com",
+        "foundVia": "brand collection listing read 2026-08-07 (men's jackets/pants grid), not the individual product page",
+        "evidence": "Collection grid listed this product at $288.00. That is a range across sizes/colors where shown, so priceUSD records the low end. The product page was NOT opened, so per-size stock and the final price are unconfirmed.",
+        "checkedBy": "claude-opus-5 agent collection-page read"
+      },
+      "verification": {
+        "status": "lead",
+        "checkedAt": "2026-08-08T00:28:25Z",
+        "priceObservedUSD": 288,
+        "stock": "unknown"
+      },
+      "addedAt": "2026-08-08T00:28:25Z"
+    },
+    {
+      "id": "carhartt-wip-michigan-chore-winter-tobacco",
+      "title": "Michigan Chore Coat (Winter) - Tobacco / Black",
+      "brand": "Carhartt WIP",
+      "category": "outerwear",
+      "imageUrl": "/product-images/carhartt-wip-michigan-chore-winter-tobacco.webp",
+      "priceUSD": 255,
+      "listPriceUSD": null,
+      "retailer": "Carhartt WIP (brand direct)",
+      "url": "https://us.carhartt-wip.com/en-us/products/michigan-coat-winter-tobacco-black-rigid-7",
+      "modes": [
+        "streetwear",
+        "classic-casual"
+      ],
+      "verdict": "Lined Michigan in tobacco with black contrast - winter weight.",
+      "matchReasons": [
+        {
+          "signal": "climate",
+          "detail": "Insulated, for the cold half of the SLC year."
+        },
+        {
+          "signal": "palette",
+          "detail": "Tobacco is in the brown family."
+        }
+      ],
+      "provenance": {
+        "sourceType": "brand-direct",
+        "retailer": "us.carhartt-wip.com",
+        "foundVia": "brand collection listing read 2026-08-07 (men's jackets/pants grid), not the individual product page",
+        "evidence": "Collection grid listed this product at $255.00. That is a range across sizes/colors where shown, so priceUSD records the low end. The product page was NOT opened, so per-size stock and the final price are unconfirmed.",
+        "checkedBy": "claude-opus-5 agent collection-page read"
+      },
+      "verification": {
+        "status": "lead",
+        "checkedAt": "2026-08-08T00:28:25Z",
+        "priceObservedUSD": 255,
+        "stock": "unknown"
+      },
+      "addedAt": "2026-08-08T00:28:25Z"
+    },
+    {
+      "id": "carhartt-wip-og-trucker-winter-tobacco",
+      "title": "OG Trucker Jacket (Winter) - Dusty Hamilton / Tobacco",
+      "brand": "Carhartt WIP",
+      "category": "outerwear",
+      "imageUrl": "/product-images/carhartt-wip-og-trucker-winter-tobacco.webp",
+      "priceUSD": 275,
+      "listPriceUSD": null,
+      "retailer": "Carhartt WIP (brand direct)",
+      "url": "https://us.carhartt-wip.com/en-us/products/og-trucker-jacket-wip-dusty-h-tobacco-stone-canvas-134",
+      "modes": [
+        "streetwear",
+        "classic-casual"
+      ],
+      "verdict": "Boxy lined trucker in stone canvas - shorter and boxier than the chore coats.",
+      "matchReasons": [
+        {
+          "signal": "silhouette",
+          "detail": "Cropped boxy trucker sits differently over baggy pants than a long chore coat; worth a separate vote."
+        },
+        {
+          "signal": "budget",
+          "detail": "SPLURGE at $275."
+        }
+      ],
+      "provenance": {
+        "sourceType": "brand-direct",
+        "retailer": "us.carhartt-wip.com",
+        "foundVia": "brand collection listing read 2026-08-07 (men's jackets/pants grid), not the individual product page",
+        "evidence": "Collection grid listed this product at $275.00. That is a range across sizes/colors where shown, so priceUSD records the low end. The product page was NOT opened, so per-size stock and the final price are unconfirmed.",
+        "checkedBy": "claude-opus-5 agent collection-page read"
+      },
+      "verification": {
+        "status": "lead",
+        "checkedAt": "2026-08-08T00:28:25Z",
+        "priceObservedUSD": 275,
+        "stock": "unknown"
+      },
+      "addedAt": "2026-08-08T00:28:25Z"
+    },
+    {
+      "id": "carhartt-wip-active-jacket-winter-tobacco",
+      "title": "Active Jacket (Winter) - Tobacco",
+      "brand": "Carhartt WIP",
+      "category": "outerwear",
+      "imageUrl": "/product-images/carhartt-wip-active-jacket-winter-tobacco.webp",
+      "priceUSD": 265,
+      "listPriceUSD": null,
+      "retailer": "Carhartt WIP (brand direct)",
+      "url": "https://us.carhartt-wip.com/en-us/products/active-jacket-winter-tobacco-rigid-9715",
+      "modes": [
+        "streetwear",
+        "classic-casual"
+      ],
+      "verdict": "Hooded lined work jacket in tobacco - the hood is the differentiator against the chore coats.",
+      "matchReasons": [
+        {
+          "signal": "layer",
+          "detail": "Hooded outer layers over an open overshirt appear repeatedly."
+        },
+        {
+          "signal": "budget",
+          "detail": "SPLURGE at $265."
+        }
+      ],
+      "provenance": {
+        "sourceType": "brand-direct",
+        "retailer": "us.carhartt-wip.com",
+        "foundVia": "brand collection listing read 2026-08-07 (men's jackets/pants grid), not the individual product page",
+        "evidence": "Collection grid listed this product at $265.00. That is a range across sizes/colors where shown, so priceUSD records the low end. The product page was NOT opened, so per-size stock and the final price are unconfirmed.",
+        "checkedBy": "claude-opus-5 agent collection-page read"
+      },
+      "verification": {
+        "status": "lead",
+        "checkedAt": "2026-08-08T00:28:25Z",
+        "priceObservedUSD": 265,
+        "stock": "unknown"
+      },
+      "addedAt": "2026-08-08T00:28:25Z"
     }
   ]
 }

@@ -58,7 +58,16 @@
   article.card { overflow: hidden; display: flex; flex-direction: column; min-width: 0; border: 1px solid var(--line); border-radius: var(--radius); background: var(--card); box-shadow: var(--shadow); }
   .card-image { aspect-ratio: 4 / 5; display: grid; place-items: center; overflow: hidden; background: var(--panel); color: var(--muted); font: 12px "Trebuchet MS", sans-serif; }
   .card-image img { width: 100%; height: 100%; display: block; object-fit: cover; }
-  .card-body { display: flex; flex: 1; flex-direction: column; gap: 10px; padding: 15px; }
+  .card-body { display: flex; flex: 1; flex-direction: column; gap: 8px; padding: 13px 14px 14px; }
+  .card-head { display: flex; align-items: center; justify-content: space-between; gap: 8px; }
+  .status-chip { flex: none; padding: 2px 7px; border: 1px solid var(--line); border-radius: 99px; color: var(--muted); font: 700 10px "Trebuchet MS", sans-serif; letter-spacing: .06em; text-transform: uppercase; }
+  .status-chip.verified { color: var(--up); border-color: var(--up); }
+  .status-chip.lead { color: var(--warn); border-color: var(--warn); }
+  .status-chip.stale { color: var(--down); border-color: var(--down); }
+  .verdict.clamp { display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; font-size: 13px; }
+  .card-details { margin-top: auto; padding-top: 8px; border-top: 1px solid var(--line); }
+  .card-details[open] { padding-bottom: 2px; }
+  .card-details > *:not(summary) { margin-top: 9px; }
   .card h3 { margin: 0; font-size: 17px; line-height: 1.2; }
   .brand { color: var(--muted); font: 700 11px "Trebuchet MS", sans-serif; letter-spacing: .1em; text-transform: uppercase; }
   .price { font-size: 18px; font-weight: 700; }
@@ -83,7 +92,7 @@
   .stock.in-stock { color: var(--up); }
   .stock.limited { color: var(--warn); }
   .stock.out-of-stock { color: var(--down); }
-  .vote-wrap { margin-top: auto; padding-top: 3px; }
+  .vote-wrap { padding-top: 3px; }
   .vote-label { display: block; margin-bottom: 6px; color: var(--muted); font: 10px "Trebuchet MS", sans-serif; letter-spacing: .1em; text-transform: uppercase; }
   .vote { display: grid; grid-template-columns: repeat(5, minmax(42px, 1fr)); gap: 5px; }
   .vote-option { position: relative; min-height: 44px; padding: 7px 3px; border: 1px solid var(--line); border-radius: 8px; background: var(--panel); color: var(--muted); cursor: pointer; font: 700 12px "Trebuchet MS", sans-serif; }
@@ -260,6 +269,9 @@ function reasonList(reasons) {
   return '<div class="detail-block"><div class="detail-title">Why this matches</div><ul class="reasons">' + first + '</ul>' + (rest ? '<details><summary>Why this matched (' + (rows.length - 2) + ' more)</summary><ul class="reasons">' + rest + '</ul></details>' : "") + '</div>';
 }
 
+// Browsing many candidates and auditing one candidate are different jobs. The card shows
+// only what you need to react - photo, price, and whether the price is trustworthy - and
+// keeps the full evidence trail one disclosure away rather than making every card a wall.
 function suggestionCard(item) {
   const vote = STATE.votes[item.id] ? STATE.votes[item.id].vote : 0;
   const url = safeUrl(item.url);
@@ -269,21 +281,35 @@ function suggestionCard(item) {
   const listPrice = validNumber(item.listPriceUSD) && validNumber(item.priceUSD) && item.listPriceUSD > item.priceUSD ? '<span class="list-price"><s>' + esc(money(item.listPriceUSD)) + '</s></span>' : "";
   const modes = Array.isArray(item.modes) ? item.modes.filter(Boolean).map((mode) => '<span class="mode">' + esc(mode) + '</span>').join("") : "";
   const provenance = item.provenance || {};
-  const verifiedLabel = status === "lead" ? "unverified lead" : status === "unknown" ? "verification unavailable" : status;
+  const statusLabel = status === "lead" ? "lead" : status === "unknown" ? "unchecked" : status;
   const stockLabel = stock === "unknown" ? "stock unknown" : stock;
   const checkedAt = typeof verification.checkedAt === "string" ? verification.checkedAt : "";
+  const retailerLine = url
+    ? '<a data-focus-key="link-' + esc(item.id) + '" href="' + esc(url) + '" target="_blank" rel="noopener noreferrer">' + esc(text(item.retailer, "View retailer")) + '</a>'
+    : esc(text(item.retailer, "Retailer unavailable"));
+
   return cardStart(item, "suggestion") +
     (item.brand ? '<p class="brand">' + esc(item.brand) + '</p>' : "") +
-    '<div class="price">' + esc(money(item.priceUSD)) + listPrice + '</div>' +
-    '<p class="retailer">' + (url ? '<a data-focus-key="link-' + esc(item.id) + '" href="' + esc(url) + '" target="_blank" rel="noopener noreferrer">' + esc(text(item.retailer, "View retailer")) + '</a>' : esc(text(item.retailer, "Retailer unavailable"))) + '</p>' +
-    (modes ? '<div class="modes">' + modes + '</div>' : "") +
-    (item.verdict ? '<p class="verdict">' + esc(item.verdict) + '</p>' : "") +
-    reasonList(item.matchReasons) +
-    '<div class="detail-block"><div class="meta-row"><span class="meta-label">Provenance</span> ' + esc(text(provenance.sourceType, "source unavailable")) + (provenance.foundVia ? ' - ' + esc(provenance.foundVia) : "") + '</div>' +
-    (provenance.evidence ? '<div class="meta-row"><span class="meta-label">Evidence</span> ' + esc(provenance.evidence) + '</div>' : "") +
-    '<div class="meta-row verification ' + status + '" title="' + esc(checkedAt) + '"><span class="meta-label">Verification</span> ' + esc(verifiedLabel) + (checkedAt ? ' - ' + esc(relativeTime(checkedAt)) : "") + '</div>' +
-    '<div class="meta-row"><span class="meta-label">Stock</span> <span class="stock ' + stock + '">' + esc(stockLabel) + '</span></div></div>' +
-    voteGroup(item, vote) + (voteErrors[item.id] ? '<p class="error" role="alert">' + esc(voteErrors[item.id]) + '</p>' : "") + '</div></article>';
+    '<div class="card-head"><span class="price">' + esc(money(item.priceUSD)) + listPrice + '</span>' +
+      '<span class="status-chip ' + status + '"' + (checkedAt ? ' title="' + esc(checkedAt) + '"' : "") + '>' + esc(statusLabel) + '</span></div>' +
+    (item.verdict ? '<p class="verdict clamp">' + esc(item.verdict) + '</p>' : "") +
+    voteGroup(item, vote) +
+    (voteErrors[item.id] ? '<p class="error" role="alert">' + esc(voteErrors[item.id]) + '</p>' : "") +
+    '<details class="card-details"><summary>Details and evidence</summary>' +
+      '<p class="retailer">' + retailerLine + '</p>' +
+      (modes ? '<div class="modes">' + modes + '</div>' : "") +
+      reasonList(item.matchReasons) +
+      '<div class="detail-block">' +
+        '<div class="meta-row"><span class="meta-label">Provenance</span> ' + esc(text(provenance.sourceType, "source unavailable")) + (provenance.foundVia ? ' - ' + esc(provenance.foundVia) : "") + '</div>' +
+        (provenance.evidence ? '<div class="meta-row"><span class="meta-label">Evidence</span> ' + esc(provenance.evidence) + '</div>' : "") +
+        (item.imageNote ? '<div class="meta-row"><span class="meta-label">Image</span> ' + esc(item.imageNote) + '</div>' : "") +
+        '<div class="meta-row verification ' + status + '"><span class="meta-label">Verification</span> ' +
+          esc(status === "lead" ? "unverified lead - price read off a listing, not the product page" : status === "unknown" ? "verification unavailable" : status) +
+          (checkedAt ? ' - ' + esc(relativeTime(checkedAt)) : "") + '</div>' +
+        '<div class="meta-row"><span class="meta-label">Stock</span> <span class="stock ' + stock + '">' + esc(stockLabel) + '</span></div>' +
+      '</div>' +
+    '</details>' +
+    '</div></article>';
 }
 
 function preserveFocusKey() {
