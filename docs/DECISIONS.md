@@ -21,6 +21,13 @@
 - Why: `AGENTS.md` treats retailer and tracker data as leads until the retailer page is verified. That rule only holds if the evidence travels with the record instead of living in a chat transcript.
 - Consequences: A producer cannot publish a bare price. Records whose retailer page could not be read directly must say so in `provenance.foundVia`, and per-length or "from" pricing must be described in `evidence` rather than presented as a confirmed price.
 
+## 2026-08-07 - Volume Over Intake; Leads Are Publishable, Silently Unverified Prices Are Not
+
+- Context: The profile carries 14 `TODO` fields and the obvious next step looked like a sizing and lifestyle interview. Asked for it, Kale declined: fit is not one number, it depends on the fit he is going for, and he would rather browse many options than answer questions.
+- Decision: Stop treating the profile as the thing to complete. Generate volume, let votes carry the taste signal, and keep the profile as the fallback it was always designed to be. To make volume affordable, candidates may be published from a brand collection listing as `verification.status: "lead"` with the price range in `evidence` — and are promoted to `verified` only when a vote justifies opening the product page.
+- Why: The repo already holds that votes outrank profile prose. An interview optimizes the fallback while the primary signal sits empty. Publishing leads is consistent with `AGENTS.md` — retailer data is a lead until the retailer page is verified — provided the label is visible on the card rather than buried.
+- Consequences: Most of the catalogue will be unverified at any time, so the card must show the verified/lead distinction at a glance, and any recommendation to actually buy requires promoting that record first. Suggestion cards optimize for scanning, not auditing: evidence moves behind a disclosure. The `TODO`s stay `TODO` deliberately; only base top size and jean waist are worth asking for, because they decide whether an item is orderable at all.
+
 ## 2026-08-06 - Two Independent Health Checks
 
 - Context: Renaming the single `test` script to add dashboard coverage would have broken the hash-pinned Control Tower contract, and folding both suites behind one check id would have made a dashboard failure look like a watcher failure.

@@ -1,5 +1,12 @@
 # Worklog
 
+## 2026-08-07 (later)
+
+- Kale declined the profile intake and redirected the product: he wants volume to react to, not a profile to fill in. Recorded as a decision rather than a deferral, since it inverts which signal the scout leans on.
+- Batch 8 -> 26 across shoes, accessories, outerwear and pants, $19.99 to $288, every item with a cached photo. The first batch was all shoes and accessories while the board is mostly outerwear, knits and bottoms.
+- The 18 new records publish as `lead`: prices came off brand collection grids rather than product pages, several as ranges across sizes, so `priceUSD` holds the low end and `evidence` says so. Verify on vote.
+- Restructured the suggestion card for browsing — photo, price and a verified/lead chip stay visible, everything else moved behind one disclosure. Twenty-six cards each carrying an inline evidence block is not something a person can look through.
+
 ## 2026-08-07
 
 - Cached product photography for all eight suggestions into `data/images/` and added a guarded `/product-images/` route. Every card had shipped with `imageUrl: null`, which made a fashion-voting surface unusable and is the most likely reason the batch sat at zero votes. Photos are cached rather than hotlinked because retailer CDNs reject cross-origin referers and rotate URLs. Suite grows to 130 assertions, including one that every published `imageUrl` actually resolves.
