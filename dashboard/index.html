@@ -179,7 +179,11 @@ function announce(message) { $("live").textContent = message; }
 function readUrl() {
   const hash = location.hash.replace(/^#/, "").split("?")[0];
   const saved = (() => { try { return localStorage.getItem("shopbot-tab"); } catch (_) { return null; } })();
-  TAB = hash === "suggestions" || hash === "taste" ? hash : saved === "suggestions" ? saved : "taste";
+  // Suggestions is the default landing tab: browsing candidates is the job, the corpus is
+  // training data. An explicit hash wins, then a tab the user actually chose before.
+  TAB = hash === "suggestions" || hash === "taste" ? hash
+      : saved === "suggestions" || saved === "taste" ? saved
+      : "suggestions";
   const params = new URLSearchParams(location.search);
   for (const key of Object.keys(FILTERS)) {
     const value = params.get(key);
