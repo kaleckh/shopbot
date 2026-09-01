@@ -1,5 +1,30 @@
 # Worklog
 
+## 2026-09-01
+
+- Published the local repo to GitHub as `kaleckh/shopbot` (`https://github.com/kaleckh/shopbot`) and pushed outstanding local work: Shopify scout, sources roster, cached product images, dashboard/suggestion updates, and the `ClaudePriceWatch` registration script.
+
+## 2026-08-17 (fetch methods)
+
+- Corrected the constraint: we do not only use HTML storefronts. Brand-site HTML failed; Shopify JSON is the niche volume path; stocking retailers are how blocked giants stay in scope.
+- ShopWSS `products.json` works (Nike/Jordan/Converse). Zappos product pages render (Levi 568 Loose Straight, $110, sizes 29-38). Nordstrom PDPs currently return empty. Guessed Uniqlo commerce APIs timed out.
+- Published the Zappos Levi 568 as a verified retailer-direct record so the #1 board garment is not missing just because levi.com 403s.
+
+## 2026-08-17 (later)
+
+- Probed ~100 Shopify storefronts. Roster is now 54 sources / 42 working. New working names include Filson, Ben Davis, Folk, Drake's, Universal Works, YMC, Wax London, Story mfg., Noah, Iron Heart, 3sixteen, Left Field, Railcar, Okayama Denim, Blue Owl, Standard & Strange, plus streetwear (Stussy, Kith, ALD).
+- Scout now uses the product `vendor` as the brand so multi-brand shops (Okayama, Blue Owl) mint real mill names (Samurai, Momotaro, Japan Blue).
+- Published a large lead wave, then stripped junk: Norse DKK-as-USD prices, Snow Peak tents/duffels, women's, slim, socks, neon signs. Catalogue is **206 cards / 62 brands**. Still leads, not PDPs.
+
+## 2026-08-17
+
+## 2026-08-15
+
+- Added the ASCII-only Windows PowerShell 5.1 registration script and restored `ClaudePriceWatch` as an enabled, ready task. It invokes `engine/price-watch.ps1` through `powershell.exe -File` with daily triggers at 9:23 AM and 4:23 PM; the first scheduled run is 2026-08-16 9:23 AM local. Registration did not start the task or run Claude.
+- Made suggestion verification status age-aware in the browser. Missing or more-than-seven-day-old `checkedAt` values now render and filter as `stale` without rewriting `data/suggestions.json`; the chip, evidence detail, and Verification filter share the same effective-status function.
+- Added exact-bind listen diagnostics. A failed `127.0.0.1:7877` bind now reports host, port, code, and the process owning that exact loopback tuple; the live check identified `node.exe` PID 9648, without treating Tailscale listeners as the dashboard or restarting either service.
+- `npm test` passed: the watcher ownership regression passed and the dashboard suite completed 216 assertions with zero failures.
+
 ## 2026-08-07 (later)
 
 - Kale declined the profile intake and redirected the product: he wants volume to react to, not a profile to fill in. Recorded as a decision rather than a deferral, since it inverts which signal the scout leans on.

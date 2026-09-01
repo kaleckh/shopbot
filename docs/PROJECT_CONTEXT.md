@@ -7,7 +7,7 @@ Shopbot is Kale's personal fashion and shopping agent. Its live watcher verifies
 ## Stack and Repository Map
 
 - Windows PowerShell 5.1 watcher: `engine/price-watch.ps1`
-- Watch and profile configuration: `config/`
+- Watch, profile, and scout-source configuration: `config/` (`sources.json` is the brand/retailer roster; `engine/scout-shopify.py` pulls volume from Shopify `products.json`)
 - Taste corpus and votes: `taste/`
 - Local dashboard: `dashboard/` (two-tab taste and suggestions review surface with client-side filters)
 - Runtime data and logs: `data/`, `logs/`
@@ -24,4 +24,4 @@ Shopbot is Kale's personal fashion and shopping agent. Its live watcher verifies
 
 ## Current Priority
 
-Keep the scheduled watcher reliable while using the dashboard as the review surface for taste references and verified retail candidates. Reports use private capture and atomic publication so the final path is never open during producer execution; confirm that behavior on the next scheduled run.
+Keep expanding `config/sources.json` and mining working Shopify JSON. Catalogue jumped from 12 brands to ~60. Pause Carhartt remine. Strip non-clothes and foreign-currency prices before publish. Votes decide which new brands to go deeper on.

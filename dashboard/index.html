@@ -264,6 +264,14 @@ function relativeTime(value) {
   return future ? "verified in " + unit[0] + " " + unit[1] : "verified " + unit[0] + " " + unit[1] + " ago";
 }
 
+const VERIFICATION_STALE_AFTER_MS = 7 * 24 * 60 * 60 * 1000;
+function effectiveStatus(item, now = Date.now()) {
+  const verification = item && item.verification || {};
+  const stored = ["verified", "lead", "stale"].includes(verification.status) ? verification.status : "unknown";
+  const checkedAt = typeof verification.checkedAt === "string" ? new Date(verification.checkedAt).getTime() : NaN;
+  return !Number.isFinite(checkedAt) || now - checkedAt > VERIFICATION_STALE_AFTER_MS ? "stale" : stored;
+}
+
 function reasonList(reasons) {
   if (!Array.isArray(reasons) || !reasons.length) return '<p class="meta-row">No match details supplied.</p>';
   const rows = reasons.filter((reason) => reason && (reason.signal || reason.detail)).map((reason) => '<li><span class="signal">' + esc(text(reason.signal, "signal")) + ':</span> ' + esc(text(reason.detail, "observed match")) + '</li>');
@@ -279,7 +287,7 @@ function reasonList(reasons) {
 function suggestionCard(item) {
   const vote = STATE.votes[item.id] ? STATE.votes[item.id].vote : 0;
   const url = safeUrl(item.url);
-  const status = ["verified", "lead", "stale"].includes(item.verification && item.verification.status) ? item.verification.status : "unknown";
+  const status = effectiveStatus(item);
   const verification = item.verification || {};
   const stock = ["in-stock", "limited", "out-of-stock", "unknown"].includes(verification.stock) ? verification.stock : "unknown";
   const listPrice = validNumber(item.listPriceUSD) && validNumber(item.priceUSD) && item.listPriceUSD > item.priceUSD ? '<span class="list-price"><s>' + esc(money(item.listPriceUSD)) + '</s></span>' : "";
@@ -355,7 +363,7 @@ function updateSelect(id, values, allLabel) {
 
 function filteredSuggestions() {
   let items = (STATE.suggestions || []).filter((item) => {
-    const status = item.verification && item.verification.status;
+    const status = effectiveStatus(item);
     const vote = STATE.votes[item.id] ? STATE.votes[item.id].vote : 0;
     return (FILTERS.mode === "all" || (Array.isArray(item.modes) && item.modes.includes(FILTERS.mode))) &&
       (FILTERS.category === "all" || item.category === FILTERS.category) &&

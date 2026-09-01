@@ -2,6 +2,7 @@
 // Serves the dashboard UI and a tiny JSON API; votes persist into taste/votes.json.
 //   node dashboard/server.js -> http://localhost:7877
 const http = require("http");
+const childProcess = require("child_process");
 const fs = require("fs");
 const path = require("path");
 
@@ -40,6 +41,35 @@ function readJson(file, fallback) {
 
 function cleanText(value) {
   return String(value || "").replace(/[\u0080-\uFFFF]/g, "");
+}
+
+function listeningProcess(host, port) {
+  if (process.platform !== "win32") return null;
+  const command = [
+    "$targetHost = $env:SHOPBOT_LISTEN_HOST",
+    "$targetPort = [int]$env:SHOPBOT_LISTEN_PORT",
+    "$connection = Get-NetTCPConnection -State Listen -LocalAddress $targetHost -LocalPort $targetPort -ErrorAction SilentlyContinue | Select-Object -First 1",
+    "if ($null -eq $connection) { exit 0 }",
+    "$owner = Get-Process -Id $connection.OwningProcess -ErrorAction SilentlyContinue",
+    "if ($null -eq $owner) { Write-Output ('PID {0}' -f $connection.OwningProcess) } else { Write-Output ('{0}.exe (PID {1})' -f $owner.ProcessName, $connection.OwningProcess) }",
+  ].join("; ");
+  try {
+    const output = childProcess.execFileSync("powershell.exe", ["-NoProfile", "-Command", command], {
+      encoding: "utf8",
+      env: { ...process.env, SHOPBOT_LISTEN_HOST: String(host), SHOPBOT_LISTEN_PORT: String(port) },
+      windowsHide: true,
+    });
+    return cleanText(output).trim() || null;
+  } catch {
+    return null;
+  }
+}
+
+function listenFailureMessage(error, host, port, ownerLookup = listeningProcess) {
+  let owner = null;
+  try { owner = ownerLookup(host, port); } catch {}
+  const code = cleanText(error && error.code || "UNKNOWN");
+  return `shopbot dashboard listen failed: host=${host} port=${port} code=${code} owner=${owner || "none found on this address"}`;
 }
 
 function latestWatchStatus(root) {
@@ -325,6 +355,12 @@ function start(options = {}) {
   return new Promise((resolve, reject) => {
     const onError = (error) => {
       server.off("listening", onListening);
+      error.dashboardHost = host;
+      error.dashboardPort = port;
+      if (options.silent !== true) {
+        console.error(listenFailureMessage(error, host, port));
+        error.dashboardReported = true;
+      }
       reject(error);
     };
     const onListening = () => {
@@ -345,9 +381,9 @@ function start(options = {}) {
 
 if (require.main === module) {
   start().catch((error) => {
-    console.error(error);
+    if (!error.dashboardReported) console.error(listenFailureMessage(error, error.dashboardHost || "127.0.0.1", error.dashboardPort || PORT));
     process.exitCode = 1;
   });
 }
 
-module.exports = { createServer, start, VOTE_SCALE, normalizedVotes };
+module.exports = { createServer, start, VOTE_SCALE, normalizedVotes, listenFailureMessage };

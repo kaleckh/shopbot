@@ -1,0 +1,1090 @@
+{
+  "_comment": "Scout source roster. A blocked brand site is not a dropped brand. Try methods in order: shopify-products-json, stocking-retailer-json, search-then-pdp. HTML collection pages are usually empty to bots; that is a fetch failure, not a reason to exclude the brand.",
+  "schemaVersion": 1,
+  "updated": "2026-08-17",
+  "scoutRules": {
+    "skipTitleContains": [
+      "slim",
+      "skinny",
+      "women",
+      "women's",
+      "womens",
+      "aerie",
+      "legging",
+      "yoga",
+      "athletic",
+      "copy of",
+      "appointment",
+      "residency",
+      "styling",
+      "pillow",
+      "scrunchie",
+      "cardholder",
+      "packing cube",
+      "dress",
+      "blouse",
+      "boxer",
+      "playing card",
+      "sock",
+      "keychain",
+      "waistcoat",
+      "blazer",
+      "duffel",
+      "neon",
+      "watch box"
+    ],
+    "preferTitleContains": [
+      "loose",
+      "relaxed",
+      "baggy",
+      "carpenter",
+      "chore",
+      "wide",
+      "surplus",
+      "double knee",
+      "work pant"
+    ],
+    "maxNewPerSource": 5,
+    "publishAs": "lead",
+    "notes": "A collection JSON dump is a lead, not a product-page verification. Skip slim/skinny even when the brand otherwise matches. Marketplace/dropship stay out per profile.deal_preferences.avoid."
+  },
+  "sources": [
+    {
+      "id": "dickies-us",
+      "name": "Dickies",
+      "kind": "brand-direct",
+      "status": "works",
+      "fetch": {
+        "method": "shopify-products-json",
+        "urls": [
+          "https://www.dickies.com/en-us/collections/mens-double-knee-pants/products.json",
+          "https://www.dickies.com/en-us/collections/work-pants/products.json",
+          "https://www.dickies.com/en-us/collections/jackets/products.json"
+        ]
+      },
+      "categories": [
+        "pants",
+        "outerwear"
+      ],
+      "tasteFit": "carpenter / double-knee / chore \u2014 board #2 and #3 garments",
+      "lastProbed": "2026-08-17",
+      "notes": "US storefront is /en-us/. Bare /work-pants 404s."
+    },
+    {
+      "id": "everlane-us",
+      "name": "Everlane",
+      "kind": "brand-direct",
+      "status": "works",
+      "fetch": {
+        "method": "shopify-products-json",
+        "urls": [
+          "https://www.everlane.com/collections/mens-jeans/products.json",
+          "https://www.everlane.com/collections/mens-sweaters/products.json"
+        ]
+      },
+      "categories": [
+        "pants",
+        "knit"
+      ],
+      "tasteFit": "relaxed/loose denim and chunky/crew knits \u2014 board #1 and #4, previously empty",
+      "lastProbed": "2026-08-17",
+      "notes": "HTML collection page loads but product cards are JS. JSON works. First jeans page is slim-heavy; filter required."
+    },
+    {
+      "id": "taylor-stitch",
+      "name": "Taylor Stitch",
+      "kind": "brand-direct",
+      "status": "works",
+      "fetch": {
+        "method": "shopify-products-json",
+        "urls": [
+          "https://www.taylorstitch.com/collections/mens-bottoms/products.json"
+        ]
+      },
+      "categories": [
+        "pants"
+      ],
+      "tasteFit": "wide/surplus/work-adjacent trousers in olive/khaki",
+      "lastProbed": "2026-08-17",
+      "notes": "Priced higher (~$118-148). Soft budget prior, not a hard filter."
+    },
+    {
+      "id": "stan-ray",
+      "name": "Stan Ray",
+      "kind": "brand-direct",
+      "status": "works",
+      "fetch": {
+        "method": "shopify-products-json",
+        "urls": [
+          "https://stanray.com/collections/all/products.json"
+        ]
+      },
+      "categories": [
+        "pants",
+        "outerwear"
+      ],
+      "tasteFit": "utility jackets, cargo, stonewash denim",
+      "lastProbed": "2026-08-17",
+      "notes": "Small catalog; /collections/all JSON is enough."
+    },
+    {
+      "id": "carhartt-us",
+      "name": "Carhartt",
+      "kind": "brand-direct",
+      "status": "works",
+      "fetch": {
+        "method": "html-collection",
+        "urls": [
+          "https://www.carhartt.com/"
+        ]
+      },
+      "categories": [
+        "outerwear",
+        "pants",
+        "accessory"
+      ],
+      "tasteFit": "already over-represented in the 2026-08-07 batch",
+      "lastProbed": "2026-08-07",
+      "notes": "Do not mine this again until the catalogue is mixed. 18 of 26 current cards are Carhartt/WIP."
+    },
+    {
+      "id": "carhartt-wip-us",
+      "name": "Carhartt WIP",
+      "kind": "brand-direct",
+      "status": "works",
+      "fetch": {
+        "method": "html-collection",
+        "urls": [
+          "https://us.carhartt-wip.com/"
+        ]
+      },
+      "categories": [
+        "outerwear",
+        "accessory"
+      ],
+      "tasteFit": "already over-represented",
+      "lastProbed": "2026-08-07",
+      "notes": "Same pause as carhartt-us."
+    },
+    {
+      "id": "filson",
+      "name": "Filson",
+      "kind": "brand-direct",
+      "status": "works",
+      "fetch": {
+        "method": "shopify-products-json",
+        "urls": [
+          "https://www.filson.com/collections/mens/products.json"
+        ]
+      },
+      "categories": [
+        "outerwear"
+      ],
+      "tasteFit": "tin cloth / cruiser / heritage field jackets",
+      "lastProbed": "2026-08-17",
+      "notes": "Root products.json is events. /collections/mens works."
+    },
+    {
+      "id": "champion",
+      "name": "Champion",
+      "kind": "brand-direct",
+      "status": "js-only",
+      "fetch": {
+        "method": "shopify-products-json",
+        "urls": [
+          "https://www.champion.com/collections/hoodies-and-sweatshirts/products.json"
+        ]
+      },
+      "categories": [
+        "knit"
+      ],
+      "tasteFit": "oversized crew/hoodie, board #5",
+      "lastProbed": "2026-08-17",
+      "notes": "JSON returned zero products. HTML is JS. Price at a stocking retailer."
+    },
+    {
+      "id": "uniqlo",
+      "name": "Uniqlo",
+      "kind": "brand-direct",
+      "status": "blocked",
+      "fetch": {
+        "method": "html-collection",
+        "urls": [
+          "https://www.uniqlo.com/us/en/men/bottoms/jeans"
+        ]
+      },
+      "categories": [
+        "pants",
+        "knit"
+      ],
+      "tasteFit": "wide jeans and cheap knits",
+      "lastProbed": "2026-08-17",
+      "notes": "uniqlo.com times out including guessed commerce API paths. Not Shopify. Next: Zappos/Nordstrom/Uniqlo app feed search, not 'skip Uniqlo'."
+    },
+    {
+      "id": "levis",
+      "name": "Levi's",
+      "kind": "brand-direct",
+      "status": "blocked-brand-reachable-via-retailer",
+      "fetch": {
+        "method": "html-collection",
+        "urls": [
+          "https://www.levis.com/en-us/clothing/men/jeans"
+        ]
+      },
+      "categories": [
+        "pants"
+      ],
+      "tasteFit": "baggy/loose light wash",
+      "lastProbed": "2026-08-07",
+      "notes": "levi.com 403s. Zappos PDP for 568 Loose Straight was readable 2026-08-17 at $110. Keep searching stocking retailers; do not treat the brand as unavailable."
+    },
+    {
+      "id": "urban-outfitters",
+      "name": "Urban Outfitters",
+      "kind": "retailer-direct",
+      "status": "js-only",
+      "fetch": {
+        "method": "html-collection",
+        "urls": [
+          "https://www.urbanoutfitters.com/mens-jeans"
+        ]
+      },
+      "categories": [
+        "pants",
+        "knit"
+      ],
+      "tasteFit": "multi-brand baggy denim and vintage-adjacent knits",
+      "lastProbed": "2026-08-17",
+      "notes": "HTML is a JS/ad-blocker wall. No products.json."
+    },
+    {
+      "id": "ae",
+      "name": "American Eagle",
+      "kind": "brand-direct",
+      "status": "js-only",
+      "fetch": {
+        "method": "html-collection",
+        "urls": [
+          "https://www.ae.com/us/en/c/men/bottoms/jeans/cat4840006"
+        ]
+      },
+      "categories": [
+        "pants"
+      ],
+      "tasteFit": "baggy/loose jeans",
+      "lastProbed": "2026-08-17",
+      "notes": "Wrong cat id redirected to Aerie women's. Need a confirmed mens jeans URL."
+    },
+    {
+      "id": "patagonia",
+      "name": "Patagonia",
+      "kind": "brand-direct",
+      "status": "blocked",
+      "fetch": {
+        "method": "html-collection",
+        "urls": [
+          "https://www.patagonia.com/shop/mens-jackets-vests"
+        ]
+      },
+      "categories": [
+        "outerwear"
+      ],
+      "tasteFit": "vintage tee signal; field/synchilla not logo-mania",
+      "lastProbed": "2026-08-17",
+      "notes": "Collection URL 404 to this fetcher. Not Shopify."
+    },
+    {
+      "id": "fog-essentials",
+      "name": "Fear of God Essentials",
+      "kind": "brand-direct",
+      "status": "blocked",
+      "fetch": {
+        "method": "shopify-products-json",
+        "urls": [
+          "https://fogessentials.com/products.json"
+        ]
+      },
+      "categories": [
+        "knit"
+      ],
+      "tasteFit": "cream tonal sets on the board",
+      "lastProbed": "2026-08-17",
+      "notes": "products.json is not JSON. HTML/JS only."
+    },
+    {
+      "id": "nike",
+      "name": "Nike",
+      "kind": "brand-direct",
+      "status": "blocked",
+      "fetch": {
+        "method": "html-pdp",
+        "urls": [
+          "https://www.nike.com/"
+        ]
+      },
+      "categories": [
+        "shoes"
+      ],
+      "tasteFit": "AF1 / Dunk / Jordan",
+      "lastProbed": "2026-08-06",
+      "notes": "403/416. Price at a stocking US retailer and record the substitution."
+    },
+    {
+      "id": "new-balance",
+      "name": "New Balance",
+      "kind": "brand-direct",
+      "status": "blocked",
+      "lastProbed": "2026-08-06",
+      "notes": "403/416. Use a stocking retailer."
+    },
+    {
+      "id": "converse",
+      "name": "Converse",
+      "kind": "brand-direct",
+      "status": "blocked",
+      "lastProbed": "2026-08-06",
+      "notes": "403/416. Use a stocking retailer."
+    },
+    {
+      "id": "end-clothing",
+      "name": "END.",
+      "kind": "retailer-direct",
+      "status": "blocked",
+      "lastProbed": "2026-08-06",
+      "notes": "403/416."
+    },
+    {
+      "id": "ben-davis",
+      "name": "Ben Davis",
+      "kind": "brand-direct",
+      "status": "works",
+      "fetch": {
+        "method": "shopify-products-json",
+        "urls": [
+          "https://www.bendavis.com/products.json"
+        ]
+      },
+      "categories": [
+        "pants"
+      ],
+      "tasteFit": "gorilla-cut / carpenter work pants",
+      "lastProbed": "2026-08-17",
+      "notes": ""
+    },
+    {
+      "id": "marine-layer",
+      "name": "Marine Layer",
+      "kind": "brand-direct",
+      "status": "works",
+      "fetch": {
+        "method": "shopify-products-json",
+        "urls": [
+          "https://www.marinelayer.com/products.json"
+        ]
+      },
+      "categories": [
+        "outerwear",
+        "other"
+      ],
+      "tasteFit": "washed layers, barn jackets",
+      "lastProbed": "2026-08-17",
+      "notes": ""
+    },
+    {
+      "id": "corridor",
+      "name": "Corridor",
+      "kind": "brand-direct",
+      "status": "works",
+      "fetch": {
+        "method": "shopify-products-json",
+        "urls": [
+          "https://corridornyc.com/products.json"
+        ]
+      },
+      "categories": [
+        "pants",
+        "other"
+      ],
+      "tasteFit": "wide trousers, textured shirts",
+      "lastProbed": "2026-08-17",
+      "notes": ""
+    },
+    {
+      "id": "outerknown",
+      "name": "Outerknown",
+      "kind": "brand-direct",
+      "status": "works",
+      "fetch": {
+        "method": "shopify-products-json",
+        "urls": [
+          "https://www.outerknown.com/products.json"
+        ]
+      },
+      "categories": [
+        "other"
+      ],
+      "tasteFit": "relaxed coastal / work-adjacent shirts",
+      "lastProbed": "2026-08-17",
+      "notes": "First page can be women's. Title skip handles it."
+    },
+    {
+      "id": "norse-projects",
+      "name": "Norse Projects",
+      "kind": "brand-direct",
+      "status": "js-only",
+      "fetch": {
+        "method": "shopify-products-json",
+        "urls": [
+          "https://www.norseprojects.com/products.json"
+        ]
+      },
+      "categories": [
+        "pants",
+        "knit"
+      ],
+      "tasteFit": "chinos, merino, muted scandi street",
+      "lastProbed": "2026-08-17",
+      "notes": "JSON works but prices are DKK (1400+ labeled as USD). Do not publish until currency is handled."
+    },
+    {
+      "id": "universal-works",
+      "name": "Universal Works",
+      "kind": "brand-direct",
+      "status": "works",
+      "fetch": {
+        "method": "shopify-products-json",
+        "urls": [
+          "https://www.universalworks.co.uk/products.json",
+          "https://universalworks.com/products.json"
+        ]
+      },
+      "categories": [
+        "pants",
+        "knit"
+      ],
+      "tasteFit": "dutch pants, chore, merino tees",
+      "lastProbed": "2026-08-17",
+      "notes": "UK and .com both serve JSON."
+    },
+    {
+      "id": "folk",
+      "name": "Folk",
+      "kind": "brand-direct",
+      "status": "works",
+      "fetch": {
+        "method": "shopify-products-json",
+        "urls": [
+          "https://www.folkclothing.com/products.json"
+        ]
+      },
+      "categories": [
+        "pants"
+      ],
+      "tasteFit": "drawcord loose trousers, olive/navy ripstop",
+      "lastProbed": "2026-08-17",
+      "notes": ""
+    },
+    {
+      "id": "drakes",
+      "name": "Drake's",
+      "kind": "brand-direct",
+      "status": "works",
+      "fetch": {
+        "method": "shopify-products-json",
+        "urls": [
+          "https://www.drakes.com/products.json"
+        ]
+      },
+      "categories": [
+        "outerwear",
+        "other"
+      ],
+      "tasteFit": "chore jackets, selvedge shirts, wide-leg adjacent",
+      "lastProbed": "2026-08-17",
+      "notes": ""
+    },
+    {
+      "id": "apc",
+      "name": "A.P.C.",
+      "kind": "brand-direct",
+      "status": "works",
+      "fetch": {
+        "method": "shopify-products-json",
+        "urls": [
+          "https://www.apc-us.com/products.json"
+        ]
+      },
+      "categories": [
+        "knit",
+        "other"
+      ],
+      "tasteFit": "boxy knits and oxfords; skip slim denim",
+      "lastProbed": "2026-08-17",
+      "notes": ""
+    },
+    {
+      "id": "edwin",
+      "name": "Edwin",
+      "kind": "brand-direct",
+      "status": "works",
+      "fetch": {
+        "method": "shopify-products-json",
+        "urls": [
+          "https://edwin-usa.com/products.json"
+        ]
+      },
+      "categories": [
+        "pants"
+      ],
+      "tasteFit": "Japanese denim; slim/skinny titles are skipped",
+      "lastProbed": "2026-08-17",
+      "notes": "Front page is slim-heavy."
+    },
+    {
+      "id": "3sixteen",
+      "name": "3sixteen",
+      "kind": "brand-direct",
+      "status": "works",
+      "fetch": {
+        "method": "shopify-products-json",
+        "urls": [
+          "https://www.3sixteen.com/products.json"
+        ]
+      },
+      "categories": [
+        "pants",
+        "other"
+      ],
+      "tasteFit": "raw/selvedge denim and work shirts",
+      "lastProbed": "2026-08-17",
+      "notes": ""
+    },
+    {
+      "id": "iron-heart",
+      "name": "Iron Heart",
+      "kind": "brand-direct",
+      "status": "works",
+      "fetch": {
+        "method": "shopify-products-json",
+        "urls": [
+          "https://ironheart.co.uk/products.json"
+        ]
+      },
+      "categories": [
+        "other",
+        "outerwear"
+      ],
+      "tasteFit": "heavy Japanese work shirts and jackets",
+      "lastProbed": "2026-08-17",
+      "notes": "UK storefront. US domain is a redirect wall."
+    },
+    {
+      "id": "left-field",
+      "name": "Left Field NYC",
+      "kind": "brand-direct",
+      "status": "works",
+      "fetch": {
+        "method": "shopify-products-json",
+        "urls": [
+          "https://leftfieldnyc.com/products.json"
+        ]
+      },
+      "categories": [
+        "other",
+        "pants"
+      ],
+      "tasteFit": "work shirts, madras, drawstring trousers",
+      "lastProbed": "2026-08-17",
+      "notes": ""
+    },
+    {
+      "id": "imogene-willie",
+      "name": "Imogene + Willie",
+      "kind": "brand-direct",
+      "status": "works",
+      "fetch": {
+        "method": "shopify-products-json",
+        "urls": [
+          "https://www.imogeneandwillie.com/products.json"
+        ]
+      },
+      "categories": [
+        "pants",
+        "other"
+      ],
+      "tasteFit": "selvage denim, vintage-graphic tees",
+      "lastProbed": "2026-08-17",
+      "notes": ""
+    },
+    {
+      "id": "railcar",
+      "name": "Railcar Fine Goods",
+      "kind": "brand-direct",
+      "status": "works",
+      "fetch": {
+        "method": "shopify-products-json",
+        "urls": [
+          "https://railcarfinegoods.com/products.json"
+        ]
+      },
+      "categories": [
+        "pants"
+      ],
+      "tasteFit": "US-made selvedge, straight/modern legs",
+      "lastProbed": "2026-08-17",
+      "notes": ""
+    },
+    {
+      "id": "raleigh",
+      "name": "Raleigh Denim",
+      "kind": "brand-direct",
+      "status": "works",
+      "fetch": {
+        "method": "shopify-products-json",
+        "urls": [
+          "https://raleighdenimworkshop.com/products.json"
+        ]
+      },
+      "categories": [
+        "pants"
+      ],
+      "tasteFit": "workshop denim",
+      "lastProbed": "2026-08-17",
+      "notes": ""
+    },
+    {
+      "id": "naked-famous",
+      "name": "Naked & Famous",
+      "kind": "brand-direct",
+      "status": "works",
+      "fetch": {
+        "method": "shopify-products-json",
+        "urls": [
+          "https://nakedandfamousdenim.com/products.json"
+        ]
+      },
+      "categories": [
+        "pants"
+      ],
+      "tasteFit": "weird/selvedge fits; Strong/True Guy not skinny",
+      "lastProbed": "2026-08-17",
+      "notes": "Skip Super Skinny if it appears."
+    },
+    {
+      "id": "noah",
+      "name": "Noah",
+      "kind": "brand-direct",
+      "status": "works",
+      "fetch": {
+        "method": "shopify-products-json",
+        "urls": [
+          "https://noahny.com/products.json"
+        ]
+      },
+      "categories": [
+        "knit",
+        "outerwear"
+      ],
+      "tasteFit": "shetland, merino, coaches jackets",
+      "lastProbed": "2026-08-17",
+      "notes": ""
+    },
+    {
+      "id": "stussy",
+      "name": "Stussy",
+      "kind": "brand-direct",
+      "status": "works",
+      "fetch": {
+        "method": "shopify-products-json",
+        "urls": [
+          "https://www.stussy.com/products.json"
+        ]
+      },
+      "categories": [
+        "other",
+        "outerwear"
+      ],
+      "tasteFit": "relaxed street; vote on logo tolerance",
+      "lastProbed": "2026-08-17",
+      "notes": ""
+    },
+    {
+      "id": "kith",
+      "name": "Kith",
+      "kind": "brand-direct",
+      "status": "works",
+      "fetch": {
+        "method": "shopify-products-json",
+        "urls": [
+          "https://kith.com/products.json"
+        ]
+      },
+      "categories": [
+        "other"
+      ],
+      "tasteFit": "premium street; first page can be collabs",
+      "lastProbed": "2026-08-17",
+      "notes": ""
+    },
+    {
+      "id": "aime-leon-dore",
+      "name": "Aime Leon Dore",
+      "kind": "brand-direct",
+      "status": "works",
+      "fetch": {
+        "method": "shopify-products-json",
+        "urls": [
+          "https://www.aimeleondore.com/products.json"
+        ]
+      },
+      "categories": [
+        "shoes",
+        "other"
+      ],
+      "tasteFit": "retro court + prep-street",
+      "lastProbed": "2026-08-17",
+      "notes": ""
+    },
+    {
+      "id": "saturdays",
+      "name": "Saturdays NYC",
+      "kind": "brand-direct",
+      "status": "works",
+      "fetch": {
+        "method": "shopify-products-json",
+        "urls": [
+          "https://www.saturdaysnyc.com/products.json"
+        ]
+      },
+      "categories": [
+        "pants",
+        "other"
+      ],
+      "tasteFit": "wide-leg pants, relaxed tees",
+      "lastProbed": "2026-08-17",
+      "notes": ""
+    },
+    {
+      "id": "save-khaki",
+      "name": "Save Khaki",
+      "kind": "brand-direct",
+      "status": "works",
+      "fetch": {
+        "method": "shopify-products-json",
+        "urls": [
+          "https://www.savekhaki.com/products.json"
+        ]
+      },
+      "categories": [
+        "other"
+      ],
+      "tasteFit": "garment-dyed shirts, relaxed khakis",
+      "lastProbed": "2026-08-17",
+      "notes": ""
+    },
+    {
+      "id": "gitman",
+      "name": "Gitman Vintage",
+      "kind": "brand-direct",
+      "status": "works",
+      "fetch": {
+        "method": "shopify-products-json",
+        "urls": [
+          "https://gitman.com/products.json",
+          "https://www.gitmanvintage.com/products.json"
+        ]
+      },
+      "categories": [
+        "other"
+      ],
+      "tasteFit": "camp shirts, madras, oxfords as overshirts",
+      "lastProbed": "2026-08-17",
+      "notes": ""
+    },
+    {
+      "id": "story-mfg",
+      "name": "Story mfg.",
+      "kind": "brand-direct",
+      "status": "works",
+      "fetch": {
+        "method": "shopify-products-json",
+        "urls": [
+          "https://www.storymfg.com/products.json"
+        ]
+      },
+      "categories": [
+        "outerwear",
+        "other"
+      ],
+      "tasteFit": "indigo railroad, wander jackets, tote",
+      "lastProbed": "2026-08-17",
+      "notes": ""
+    },
+    {
+      "id": "reigning-champ",
+      "name": "Reigning Champ",
+      "kind": "brand-direct",
+      "status": "works",
+      "fetch": {
+        "method": "shopify-products-json",
+        "urls": [
+          "https://www.reigningchamp.com/products.json"
+        ]
+      },
+      "categories": [
+        "knit"
+      ],
+      "tasteFit": "heavyweight terry / crew \u2014 only if not athleisure-as-outfit",
+      "lastProbed": "2026-08-17",
+      "notes": "Vote will decide if this is gym-kit or a knit."
+    },
+    {
+      "id": "percival",
+      "name": "Percival",
+      "kind": "brand-direct",
+      "status": "works",
+      "fetch": {
+        "method": "shopify-products-json",
+        "urls": [
+          "https://www.percivalclo.com/products.json"
+        ]
+      },
+      "categories": [
+        "other",
+        "knit"
+      ],
+      "tasteFit": "wide-ranging UK casual; filter hard",
+      "lastProbed": "2026-08-17",
+      "notes": ""
+    },
+    {
+      "id": "ymc",
+      "name": "YMC",
+      "kind": "brand-direct",
+      "status": "works",
+      "fetch": {
+        "method": "shopify-products-json",
+        "urls": [
+          "https://www.youmustcreate.com/products.json"
+        ]
+      },
+      "categories": [
+        "pants",
+        "other"
+      ],
+      "tasteFit": "deadbeat trousers, loose shirts",
+      "lastProbed": "2026-08-17",
+      "notes": ""
+    },
+    {
+      "id": "wax-london",
+      "name": "Wax London",
+      "kind": "brand-direct",
+      "status": "works",
+      "fetch": {
+        "method": "shopify-products-json",
+        "urls": [
+          "https://www.waxlondon.com/products.json"
+        ]
+      },
+      "categories": [
+        "knit",
+        "pants"
+      ],
+      "tasteFit": "bubble knits, pleated trousers",
+      "lastProbed": "2026-08-17",
+      "notes": ""
+    },
+    {
+      "id": "oliver-spencer",
+      "name": "Oliver Spencer",
+      "kind": "brand-direct",
+      "status": "works",
+      "fetch": {
+        "method": "shopify-products-json",
+        "urls": [
+          "https://www.oliverspencer.co.uk/products.json"
+        ]
+      },
+      "categories": [
+        "outerwear",
+        "knit"
+      ],
+      "tasteFit": "unstructured jackets, knits",
+      "lastProbed": "2026-08-17",
+      "notes": ""
+    },
+    {
+      "id": "private-white",
+      "name": "Private White V.C.",
+      "kind": "brand-direct",
+      "status": "works",
+      "fetch": {
+        "method": "shopify-products-json",
+        "urls": [
+          "https://www.privatewhitevc.com/products.json"
+        ]
+      },
+      "categories": [
+        "outerwear"
+      ],
+      "tasteFit": "macs, shackets, Manchester workwear-luxe",
+      "lastProbed": "2026-08-17",
+      "notes": "Expensive. Soft prior."
+    },
+    {
+      "id": "snow-peak",
+      "name": "Snow Peak",
+      "kind": "brand-direct",
+      "status": "works",
+      "fetch": {
+        "method": "shopify-products-json",
+        "urls": [
+          "https://www.snowpeak.com/products.json"
+        ]
+      },
+      "categories": [
+        "other"
+      ],
+      "tasteFit": "camp/utility; skip packing cubes",
+      "lastProbed": "2026-08-17",
+      "notes": "Front page is gear. Title skip for packing cube."
+    },
+    {
+      "id": "blue-owl",
+      "name": "Blue Owl",
+      "kind": "retailer-direct",
+      "status": "works",
+      "fetch": {
+        "method": "shopify-products-json",
+        "urls": [
+          "https://www.blueowl.us/products.json"
+        ]
+      },
+      "categories": [
+        "outerwear",
+        "other"
+      ],
+      "tasteFit": "multi-brand Japanese/US workwear. Use product vendor as brand.",
+      "lastProbed": "2026-08-17",
+      "notes": "Niche denim/workwear boutique."
+    },
+    {
+      "id": "standard-strange",
+      "name": "Standard & Strange",
+      "kind": "retailer-direct",
+      "status": "works",
+      "fetch": {
+        "method": "shopify-products-json",
+        "urls": [
+          "https://www.standardandstrange.com/products.json"
+        ]
+      },
+      "categories": [
+        "outerwear"
+      ],
+      "tasteFit": "farmer/fisherman jackets, heritage multi-brand",
+      "lastProbed": "2026-08-17",
+      "notes": ""
+    },
+    {
+      "id": "okayama-denim",
+      "name": "Okayama Denim",
+      "kind": "retailer-direct",
+      "status": "works",
+      "fetch": {
+        "method": "shopify-products-json",
+        "urls": [
+          "https://www.okayamadenim.com/products.json"
+        ]
+      },
+      "categories": [
+        "pants"
+      ],
+      "tasteFit": "Samurai / Momotaro / Japan Blue and other Okayama mills",
+      "lastProbed": "2026-08-17",
+      "notes": "Vendor field is the brand. Wide-straight exists."
+    },
+    {
+      "id": "notre",
+      "name": "Notre",
+      "kind": "retailer-direct",
+      "status": "works",
+      "fetch": {
+        "method": "shopify-products-json",
+        "urls": [
+          "https://www.notre-shop.com/products.json"
+        ]
+      },
+      "categories": [
+        "pants",
+        "shoes"
+      ],
+      "tasteFit": "mixed street; carpenter work pants appeared on the first page",
+      "lastProbed": "2026-08-17",
+      "notes": "Also sells Jordans. Skip if title is only a sneaker restock you already have."
+    },
+    {
+      "id": "shopwss",
+      "name": "ShopWSS",
+      "kind": "retailer-direct",
+      "status": "works",
+      "fetch": {
+        "method": "stocking-retailer-json",
+        "urls": [
+          "https://www.shopwss.com/products.json"
+        ]
+      },
+      "categories": [
+        "shoes"
+      ],
+      "tasteFit": "Nike / Jordan / Converse / NB when brand sites 403",
+      "lastProbed": "2026-08-17",
+      "notes": "Shopify JSON works. Front page is kids/sneakers-heavy; filter adult + skip slim/kids."
+    },
+    {
+      "id": "zappos",
+      "name": "Zappos",
+      "kind": "retailer-direct",
+      "status": "works",
+      "fetch": {
+        "method": "search-then-pdp",
+        "urls": [
+          "https://www.zappos.com/"
+        ]
+      },
+      "categories": [
+        "pants",
+        "shoes"
+      ],
+      "tasteFit": "Levi 568 and other blocked-brand PDPs",
+      "lastProbed": "2026-08-17",
+      "notes": "No products.json. Individual product pages render price, sizes, and photos. Use WebSearch then fetch the PDP."
+    },
+    {
+      "id": "nordstrom",
+      "name": "Nordstrom",
+      "kind": "retailer-direct",
+      "status": "blocked",
+      "fetch": {
+        "method": "search-then-pdp",
+        "urls": [
+          "https://www.nordstrom.com/"
+        ]
+      },
+      "categories": [
+        "pants"
+      ],
+      "tasteFit": "Levi 568 and wide-leg denim listings exist",
+      "lastProbed": "2026-08-17",
+      "notes": "Search finds URLs. PDP fetch returned empty. Do not drop; retry later or use Zappos for the same SKU."
+    }
+  ],
+  "fetchMethods": {
+    "shopify-products-json": "Public /products.json on Shopify stores. Volume path for niche brands.",
+    "stocking-retailer-json": "Same JSON, but the store carries many brands (ShopWSS). Use product vendor as brand.",
+    "search-then-pdp": "WebSearch for the blocked brand + cut, then read a stocking-retailer product page. Zappos PDPs currently render. Nordstrom PDPs currently do not.",
+    "html-collection": "Last resort. Usually JS-empty. Do not treat a failed collection page as the brand being out of scope."
+  }
+}

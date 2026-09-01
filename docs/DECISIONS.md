@@ -1,5 +1,19 @@
 # Decisions
 
+## 2026-08-17 - A Blocked Brand Site Is Not a Dropped Brand
+
+- Context: Kale pushed back on treating "HTML collection pages don't render" as a reason to drop stores. That reading would exclude Uniqlo, Levi's, Nike, AE, Gap, Nordstrom — most of the useful mass market.
+- Decision: Three fetch methods, in order: (1) Shopify `products.json`, (2) stocking-retailer JSON (ShopWSS), (3) WebSearch then a readable PDP (Zappos works; Nordstrom currently empty). A 403/timeout on the brand homepage stays on the roster as `blocked-brand-reachable-via-retailer`. Never remove Levi/Uniqlo/Nike from scope because their own site bot-blocks.
+- Why: The board's #1 garment is baggy light-wash jeans. That lives at Levi/Uniqlo/AE more than at Carhartt. Losing those brands because of HTML emptiness is a fetch-method failure, not a taste decision.
+- Consequences: `config/sources.json` documents `fetchMethods`. Levi 568 was published from a Zappos PDP at $110 after levi.com 403'd. Uniqlo still has no working path; keep probing, don't skip.
+
+## 2026-08-15 - Reproducible Watcher Registration, Seven-Day Display Staleness, and Exact-Bind Diagnostics
+
+- Context: The watcher task had disappeared, old suggestion records still displayed their stored status as fresh, and a generic localhost probe could hit a different listener while hiding which process blocked the dashboard's actual bind.
+- Decision: Keep `engine/register-price-watch.ps1` as the ASCII-only, PowerShell 5.1-compatible task definition for the two daily triggers, pointing directly to `engine/price-watch.ps1` through `powershell.exe -File` without a content-log wrapper or embedded watch config. In the dashboard, derive an effective `stale` status when `checkedAt` is missing or more than seven days old while preserving stored JSON. On listen failure, diagnose the exact configured host and port and report its owning process; production remains bound to `127.0.0.1`.
+- Why: Scheduled state must be reproducible without reintroducing shared log ownership, verification labels must decay with their evidence, and address-specific diagnostics prevent Tailscale listeners on other local addresses from masquerading as dashboard health.
+- Consequences: Restore the watcher by running the registration script but never start a live shopping run as a registration test. The status chip, detail line, and Verification filter must all use the same effective status. Dashboard availability checks and bind failures must name `127.0.0.1:7877`, not generic `localhost` or all interfaces.
+
 ## 2026-07-13 - Separate Wrapper and Content Log Ownership
 
 - Context: Scheduled watcher runs repeatedly left their header log open, so the content producer could not atomically replace or append the same file on Windows.

@@ -12,7 +12,8 @@ const fs = require("fs");
 const http = require("http");
 const os = require("os");
 const path = require("path");
-const { start } = require("./server");
+const vm = require("vm");
+const { start, listenFailureMessage } = require("./server");
 
 const repoRoot = path.join(__dirname, "..");
 const tempRoot = fs.mkdtempSync(path.join(os.tmpdir(), "shopbot-dashboard-"));
@@ -71,7 +72,64 @@ function assertRejectedWithoutWrite(port, before, response, message) {
   assert.deepStrictEqual(JSON.parse(fs.readFileSync(votesFile, "utf8")), JSON.parse(before), message + " changed votes");
 }
 
+function assertEffectiveVerificationStatus() {
+  const html = fs.readFileSync(path.join(__dirname, "index.html"), "utf8");
+  const scriptMatch = html.match(/<script>([\s\S]*?)<\/script>/);
+  assert.ok(scriptMatch, "dashboard client script should exist");
+  const initMarker = "\ndocument.querySelectorAll('[role=\"tab\"]').forEach((tab) => { tab.addEventListener";
+  const initAt = scriptMatch[1].lastIndexOf(initMarker);
+  assert.ok(initAt > 0, "dashboard client initialization should exist");
+  const clientCore = scriptMatch[1].slice(0, initAt);
+  const now = Date.now();
+  const items = [
+    { id: "old-verified", title: "Old verified", verification: { status: "verified", checkedAt: new Date(now - 8 * 86400000).toISOString() } },
+    { id: "fresh-verified", title: "Fresh verified", verification: { status: "verified", checkedAt: new Date(now - 6 * 86400000).toISOString() } },
+    { id: "missing-lead", title: "Missing time", verification: { status: "lead" } },
+    { id: "fresh-lead", title: "Fresh lead", verification: { status: "lead", checkedAt: new Date(now - 6 * 86400000).toISOString() } },
+  ];
+  const context = {};
+  vm.runInNewContext(clientCore + `
+    STATE = { suggestions: ${JSON.stringify(items)}, votes: {}, voteScale: [] };
+    const testItems = STATE.suggestions;
+    FILTERS = { ...FILTER_DEFAULTS, status: "stale" };
+    const staleIds = filteredSuggestions().map((item) => item.id).sort();
+    FILTERS.status = "verified";
+    const verifiedIds = filteredSuggestions().map((item) => item.id).sort();
+    FILTERS.status = "lead";
+    const leadIds = filteredSuggestions().map((item) => item.id).sort();
+    globalThis.results = {
+      statuses: testItems.map((item) => effectiveStatus(item, ${now})),
+      staleIds,
+      verifiedIds,
+      leadIds,
+      oldCard: suggestionCard(testItems[0]),
+      missingCard: suggestionCard(testItems[2])
+    };
+  `, context);
+  assert.deepStrictEqual(Array.from(context.results.statuses), ["stale", "verified", "stale", "lead"]);
+  assert.deepStrictEqual(Array.from(context.results.staleIds), ["missing-lead", "old-verified"]);
+  assert.deepStrictEqual(Array.from(context.results.verifiedIds), ["fresh-verified"]);
+  assert.deepStrictEqual(Array.from(context.results.leadIds), ["fresh-lead"]);
+  assert.ok(context.results.oldCard.includes('status-chip stale'), "old verified chip should render stale");
+  assert.ok(context.results.oldCard.includes('verification stale'), "old verified details should render stale");
+  assert.ok(context.results.missingCard.includes('status-chip stale'), "missing checkedAt chip should render stale");
+  assert.ok(context.results.missingCard.includes('verification stale'), "missing checkedAt details should render stale");
+}
+
+function assertListenDiagnostics() {
+  let lookupTarget = null;
+  const message = listenFailureMessage({ code: "EADDRINUSE" }, "127.0.0.1", 7877, (host, port) => {
+    lookupTarget = { host, port };
+    return "node.exe (PID 4242)";
+  });
+  assert.deepStrictEqual(lookupTarget, { host: "127.0.0.1", port: 7877 });
+  assert.ok(message.includes("host=127.0.0.1 port=7877 code=EADDRINUSE"));
+  assert.ok(message.includes("owner=node.exe (PID 4242)"));
+}
+
 async function main() {
+  assertEffectiveVerificationStatus();
+  assertListenDiagnostics();
   writeFixture();
   const server = await start({
     port: 0,
@@ -88,6 +146,9 @@ async function main() {
   });
   const port = server.address().port;
   try {
+    await assert.rejects(start({ port, host: "127.0.0.1", silent: true }), (error) =>
+      error.code === "EADDRINUSE" && error.dashboardHost === "127.0.0.1" && error.dashboardPort === port
+    );
     const initial = await getState(port);
     assert.deepStrictEqual(initial.voteScale.map((entry) => entry.value), [-2, -1, 0, 1, 2]);
     const corpusCount = fs.readdirSync(path.join(repoRoot, "taste", "corpus")).filter((f) => /^clothes-\d+\.jpg$/i.test(f)).length;
