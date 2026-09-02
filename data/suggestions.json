@@ -1,7 +1,7 @@
 {
   "_schema": "Scout output v2. Each suggestion: {id (kebab, stable), title, brand, category, imageUrl, priceUSD, listPriceUSD, retailer, url, modes[], verdict, matchReasons[{signal,detail}], provenance{sourceType,retailer,foundVia,evidence,checkedBy}, verification{status,checkedAt,priceObservedUSD,stock}, addedAt}. sourceType: retailer-direct|brand-direct|verified-outlet|tracker-lead. verification.status: verified|lead|stale. stock: in-stock|limited|out-of-stock|unknown. /shop find APPENDS here (dedupe by id). Votes live in taste/votes.json keyed by these ids.",
   "schemaVersion": 2,
-  "generatedAt": "2026-08-17T04:10:23Z",
+  "generatedAt": "2026-09-01T19:04:17Z",
   "suggestions": [
     {
       "id": "nike-air-force-1-07-white-wss",
@@ -238,7 +238,7 @@
       "id": "carhartt-a18-watch-hat-black",
       "title": "A18 Knit Cuffed Beanie (Watch Cap) - Black",
       "brand": "Carhartt",
-      "category": "accessory",
+      "category": "accessories",
       "imageUrl": "/product-images/carhartt-a18-watch-hat-black.webp",
       "priceUSD": 19.99,
       "listPriceUSD": null,
@@ -282,7 +282,7 @@
       "id": "mejuri-curb-chain-necklace-silver",
       "title": "5mm Curb Chain Necklace - 925 Sterling Silver",
       "brand": "Mejuri",
-      "category": "accessory",
+      "category": "accessories",
       "imageUrl": "/product-images/mejuri-curb-chain-necklace-silver.webp",
       "priceUSD": 198,
       "listPriceUSD": null,
@@ -326,7 +326,7 @@
       "id": "carhartt-wip-denim-tote-blue-destroy",
       "title": "Denim Tote - Blue (Destroy Wash, Splatter)",
       "brand": "Carhartt WIP",
-      "category": "accessory",
+      "category": "accessories",
       "imageUrl": "/product-images/carhartt-wip-denim-tote-blue-destroy.webp",
       "priceUSD": 125,
       "listPriceUSD": null,
@@ -1118,7 +1118,6 @@
       "retailer": "Dickies (brand direct)",
       "url": "https://www.dickies.com/en-us/products/loose-fit-double-knee-work-pants-dk0852830bk",
       "modes": [
-        "streetwear",
         "classic-casual"
       ],
       "verdict": "carpenter / double-knee / chore \u2014 board #2 and #3 garments from Dickies.",
@@ -1158,7 +1157,6 @@
       "retailer": "Everlane (brand direct)",
       "url": "https://www.everlane.com/products/mens-relaxed-taper-fit-performance-jean-indigo-fade",
       "modes": [
-        "streetwear",
         "classic-casual"
       ],
       "verdict": "relaxed/loose denim and chunky/crew knits \u2014 board #1 and #4, previously empty from Everlane.",
@@ -1198,7 +1196,6 @@
       "retailer": "Everlane (brand direct)",
       "url": "https://www.everlane.com/products/mens-relaxed-taper-fit-performance-jean-indigo",
       "modes": [
-        "streetwear",
         "classic-casual"
       ],
       "verdict": "relaxed/loose denim and chunky/crew knits \u2014 board #1 and #4, previously empty from Everlane.",
@@ -1238,7 +1235,6 @@
       "retailer": "Everlane (brand direct)",
       "url": "https://www.everlane.com/products/mens-selvedge-straight-fit-jean-indigo-rinse",
       "modes": [
-        "streetwear",
         "classic-casual"
       ],
       "verdict": "relaxed/loose denim and chunky/crew knits \u2014 board #1 and #4, previously empty from Everlane.",
@@ -1278,7 +1274,6 @@
       "retailer": "Taylor Stitch (brand direct)",
       "url": "https://www.taylorstitch.com/products/emlen-pant-in-smoked-olive-herringbone-2608",
       "modes": [
-        "streetwear",
         "classic-casual"
       ],
       "verdict": "wide/surplus/work-adjacent trousers in olive/khaki from Taylor Stitch.",
@@ -1318,7 +1313,6 @@
       "retailer": "Taylor Stitch (brand direct)",
       "url": "https://www.taylorstitch.com/products/emlen-pant-in-khaki-herringbone-2608",
       "modes": [
-        "streetwear",
         "classic-casual"
       ],
       "verdict": "wide/surplus/work-adjacent trousers in olive/khaki from Taylor Stitch.",
@@ -1358,7 +1352,6 @@
       "retailer": "Taylor Stitch (brand direct)",
       "url": "https://www.taylorstitch.com/products/breakwater-pant-in-cypress-sashiko-2607",
       "modes": [
-        "streetwear",
         "classic-casual"
       ],
       "verdict": "wide/surplus/work-adjacent trousers in olive/khaki from Taylor Stitch.",
@@ -1398,7 +1391,6 @@
       "retailer": "Taylor Stitch (brand direct)",
       "url": "https://www.taylorstitch.com/products/breakwater-pant-in-charcoal-sashiko-2601",
       "modes": [
-        "streetwear",
         "classic-casual"
       ],
       "verdict": "wide/surplus/work-adjacent trousers in olive/khaki from Taylor Stitch.",
@@ -1438,8 +1430,7 @@
       "retailer": "Stan Ray (brand direct)",
       "url": "https://stanray.com/products/tiger-stripe-cargo-ripstop-pants",
       "modes": [
-        "streetwear",
-        "classic-casual"
+        "streetwear"
       ],
       "verdict": "utility jackets, cargo, stonewash denim from Stan Ray.",
       "matchReasons": [
@@ -1518,7 +1509,6 @@
       "retailer": "Stan Ray (brand direct)",
       "url": "https://stanray.com/products/copy-of-4-pocket-jacket-black",
       "modes": [
-        "streetwear",
         "classic-casual"
       ],
       "verdict": "utility jackets, cargo, stonewash denim from Stan Ray.",
@@ -1558,7 +1548,6 @@
       "retailer": "Stan Ray (brand direct)",
       "url": "https://stanray.com/products/4-pocket-jacket-tigerstripe-ripstop",
       "modes": [
-        "streetwear",
         "classic-casual"
       ],
       "verdict": "utility jackets, cargo, stonewash denim from Stan Ray.",
@@ -1598,7 +1587,6 @@
       "retailer": "Dickies (brand direct)",
       "url": "https://www.dickies.com/en-us/products/flex-regular-fit-duck-carpenter-pants-dk0dp802ssl",
       "modes": [
-        "streetwear",
         "classic-casual"
       ],
       "verdict": "carpenter / double-knee / chore \u2014 board #2 and #3 garments from Dickies.",
@@ -1638,7 +1626,6 @@
       "retailer": "Dickies (brand direct)",
       "url": "https://www.dickies.com/en-us/products/water-repellent-duck-hooded-shirt-jacket-dk0tj2130bk",
       "modes": [
-        "streetwear",
         "classic-casual"
       ],
       "verdict": "carpenter / double-knee / chore \u2014 board #2 and #3 garments from Dickies.",
@@ -1678,7 +1665,6 @@
       "retailer": "Everlane (brand direct)",
       "url": "https://www.everlane.com/products/mens-relaxed-taper-fit-performance-jean-black",
       "modes": [
-        "streetwear",
         "classic-casual"
       ],
       "verdict": "relaxed/loose denim and chunky/crew knits \u2014 board #1 and #4, previously empty from Everlane.",
@@ -1718,7 +1704,6 @@
       "retailer": "Everlane (brand direct)",
       "url": "https://www.everlane.com/products/mens-selvedge-straight-fit-jean-longbay",
       "modes": [
-        "streetwear",
         "classic-casual"
       ],
       "verdict": "relaxed/loose denim and chunky/crew knits \u2014 board #1 and #4, previously empty from Everlane.",
@@ -1758,7 +1743,6 @@
       "retailer": "Everlane (brand direct)",
       "url": "https://www.everlane.com/products/mens-no-sweat-cotton-sweater-heather-midnight",
       "modes": [
-        "streetwear",
         "classic-casual"
       ],
       "verdict": "relaxed/loose denim and chunky/crew knits \u2014 board #1 and #4, previously empty from Everlane.",
@@ -1798,8 +1782,7 @@
       "retailer": "Everlane (brand direct)",
       "url": "https://www.everlane.com/products/mens-felted-wool-hoodie-charcoal",
       "modes": [
-        "streetwear",
-        "classic-casual"
+        "streetwear"
       ],
       "verdict": "relaxed/loose denim and chunky/crew knits \u2014 board #1 and #4, previously empty from Everlane.",
       "matchReasons": [
@@ -1838,8 +1821,7 @@
       "retailer": "Taylor Stitch (brand direct)",
       "url": "https://www.taylorstitch.com/products/surplus-pant-in-smoked-olive-reverse-sateen-2408",
       "modes": [
-        "streetwear",
-        "classic-casual"
+        "streetwear"
       ],
       "verdict": "wide/surplus/work-adjacent trousers in olive/khaki from Taylor Stitch.",
       "matchReasons": [
@@ -1878,7 +1860,6 @@
       "retailer": "Taylor Stitch (brand direct)",
       "url": "https://www.taylorstitch.com/products/sunset-pant-in-washed-indigo-terry-2607",
       "modes": [
-        "streetwear",
         "classic-casual"
       ],
       "verdict": "wide/surplus/work-adjacent trousers in olive/khaki from Taylor Stitch.",
@@ -1918,7 +1899,6 @@
       "retailer": "Taylor Stitch (brand direct)",
       "url": "https://www.taylorstitch.com/products/apres-pant-in-rinsed-indigo-sashiko-2407",
       "modes": [
-        "streetwear",
         "classic-casual"
       ],
       "verdict": "wide/surplus/work-adjacent trousers in olive/khaki from Taylor Stitch.",
@@ -1958,7 +1938,6 @@
       "retailer": "Taylor Stitch (brand direct)",
       "url": "https://www.taylorstitch.com/products/apres-pant-in-black-indigo-sashiko-2508",
       "modes": [
-        "streetwear",
         "classic-casual"
       ],
       "verdict": "wide/surplus/work-adjacent trousers in olive/khaki from Taylor Stitch.",
@@ -1998,7 +1977,6 @@
       "retailer": "Stan Ray (brand direct)",
       "url": "https://stanray.com/products/5-pocket-straight-mid-stonewash-denim-fw22",
       "modes": [
-        "streetwear",
         "classic-casual"
       ],
       "verdict": "utility jackets, cargo, stonewash denim from Stan Ray.",
@@ -2038,7 +2016,6 @@
       "retailer": "Stan Ray (brand direct)",
       "url": "https://stanray.com/products/5-pocket-taper-mid-stonewash-denim-fw22",
       "modes": [
-        "streetwear",
         "classic-casual"
       ],
       "verdict": "utility jackets, cargo, stonewash denim from Stan Ray.",
@@ -2071,14 +2048,13 @@
       "id": "filson-tin-cloth-short-lined-cruiser-jacket-military-green",
       "title": "Tin Cloth Short Lined Cruiser Jacket - Military Green",
       "brand": "Filson",
-      "category": "outerwear",
+      "category": "shorts",
       "imageUrl": "/product-images/filson-tin-cloth-short-lined-cruiser-jacket-military-green.png",
       "priceUSD": 251.3,
       "listPriceUSD": 359.0,
       "retailer": "Filson (brand direct)",
       "url": "https://www.filson.com/products/tin-cloth-short-lined-cruiser-jacket-military-green",
       "modes": [
-        "streetwear",
         "classic-casual"
       ],
       "verdict": "tin cloth / cruiser / heritage field jackets from Filson.",
@@ -2111,14 +2087,13 @@
       "id": "filson-tin-cloth-short-lined-cruiser-jacket-dark-tan",
       "title": "Tin Cloth Short Lined Cruiser Jacket - Dark Tan",
       "brand": "Filson",
-      "category": "outerwear",
+      "category": "shorts",
       "imageUrl": "/product-images/filson-tin-cloth-short-lined-cruiser-jacket-dark-tan.jpg",
       "priceUSD": 359.0,
       "listPriceUSD": null,
       "retailer": "Filson (brand direct)",
       "url": "https://www.filson.com/products/tin-cloth-short-lined-cruiser-jacket-dark-tan",
       "modes": [
-        "streetwear",
         "classic-casual"
       ],
       "verdict": "tin cloth / cruiser / heritage field jackets from Filson.",
@@ -2158,8 +2133,7 @@
       "retailer": "Filson (brand direct)",
       "url": "https://www.filson.com/products/prospector-hoodie-black",
       "modes": [
-        "streetwear",
-        "classic-casual"
+        "streetwear"
       ],
       "verdict": "tin cloth / cruiser / heritage field jackets from Filson.",
       "matchReasons": [
@@ -2198,7 +2172,6 @@
       "retailer": "Filson (brand direct)",
       "url": "https://www.filson.com/products/dry-tin-cloth-5-pocket-pants-whiskey-1",
       "modes": [
-        "streetwear",
         "classic-casual"
       ],
       "verdict": "tin cloth / cruiser / heritage field jackets from Filson.",
@@ -2231,14 +2204,13 @@
       "id": "filson-tin-cloth-short-lined-cruiser-jacket-black",
       "title": "Tin Cloth Short Lined Cruiser Jacket - Black",
       "brand": "Filson",
-      "category": "outerwear",
+      "category": "shorts",
       "imageUrl": "/product-images/filson-tin-cloth-short-lined-cruiser-jacket-black.jpg",
       "priceUSD": 359.0,
       "listPriceUSD": null,
       "retailer": "Filson (brand direct)",
       "url": "https://www.filson.com/products/tin-cloth-short-lined-cruiser-jacket-black",
       "modes": [
-        "streetwear",
         "classic-casual"
       ],
       "verdict": "tin cloth / cruiser / heritage field jackets from Filson.",
@@ -2278,7 +2250,6 @@
       "retailer": "Ben Davis Co (brand direct)",
       "url": "https://www.bendavis.com/products/gorilla-cut-pants-brown",
       "modes": [
-        "streetwear",
         "classic-casual"
       ],
       "verdict": "gorilla-cut / carpenter work pants from Ben Davis Co.",
@@ -2311,14 +2282,13 @@
       "id": "ben-davis-long-sleeve-solid-half-zip-shirt-charcoal",
       "title": "Long Sleeve Solid 1/2 Zip Shirt - Charcoal",
       "brand": "Ben Davis Co",
-      "category": "other",
+      "category": "tops",
       "imageUrl": "/product-images/ben-davis-long-sleeve-solid-half-zip-shirt-charcoal.jpg",
       "priceUSD": 51.0,
       "listPriceUSD": null,
       "retailer": "Ben Davis Co (brand direct)",
       "url": "https://www.bendavis.com/products/long-sleeve-solid-half-zip-shirt-charcoal",
       "modes": [
-        "streetwear",
         "classic-casual"
       ],
       "verdict": "gorilla-cut / carpenter work pants from Ben Davis Co.",
@@ -2351,14 +2321,13 @@
       "id": "ben-davis-carpenter-shorts-charcoal-denim",
       "title": "Carpenter Shorts - Charcoal Denim",
       "brand": "Ben Davis Co",
-      "category": "pants",
+      "category": "shorts",
       "imageUrl": "/product-images/ben-davis-carpenter-shorts-charcoal-denim.jpg",
       "priceUSD": 46.0,
       "listPriceUSD": null,
       "retailer": "Ben Davis Co (brand direct)",
       "url": "https://www.bendavis.com/products/carpenter-shorts-charcoal-denim",
       "modes": [
-        "streetwear",
         "classic-casual"
       ],
       "verdict": "gorilla-cut / carpenter work pants from Ben Davis Co.",
@@ -2398,7 +2367,6 @@
       "retailer": "Ben Davis Co (brand direct)",
       "url": "https://www.bendavis.com/products/flannel-jacket-khaki",
       "modes": [
-        "streetwear",
         "classic-casual"
       ],
       "verdict": "gorilla-cut / carpenter work pants from Ben Davis Co.",
@@ -2438,7 +2406,6 @@
       "retailer": "Ben Davis Co (brand direct)",
       "url": "https://www.bendavis.com/products/flannel-jacket-green",
       "modes": [
-        "streetwear",
         "classic-casual"
       ],
       "verdict": "gorilla-cut / carpenter work pants from Ben Davis Co.",
@@ -2468,137 +2435,17 @@
       "addedAt": "2026-08-17T03:52:25Z"
     },
     {
-      "id": "marine-layer-riley-denim-barn-jacket",
-      "title": "Riley Denim Barn Jacket",
-      "brand": "Marine Layer",
-      "category": "outerwear",
-      "imageUrl": "/product-images/marine-layer-riley-denim-barn-jacket.jpg",
-      "priceUSD": 268.0,
-      "listPriceUSD": null,
-      "retailer": "Marine Layer (brand direct)",
-      "url": "https://www.marinelayer.com/products/riley-denim-barn-jacket",
-      "modes": [
-        "streetwear",
-        "classic-casual"
-      ],
-      "verdict": "washed layers, barn jackets from Marine Layer.",
-      "matchReasons": [
-        {
-          "signal": "source",
-          "detail": "washed layers, barn jackets"
-        },
-        {
-          "signal": "silhouette-filter",
-          "detail": "Title passed the slim/skinny/women skip list. Confirm the actual cut on vote."
-        }
-      ],
-      "provenance": {
-        "sourceType": "brand-direct",
-        "retailer": "www.marinelayer.com",
-        "foundVia": "Shopify products.json for marine-layer on 2026-08-17, not the individual product page",
-        "evidence": "Collection JSON listed this product at $268.00. That is a listing price from the catalog endpoint, so per-size stock and the final PDP price are unconfirmed.",
-        "checkedBy": "shopbot scout-shopify.py"
-      },
-      "verification": {
-        "status": "lead",
-        "checkedAt": "2026-08-17T03:52:25Z",
-        "priceObservedUSD": 268.0,
-        "stock": "unknown"
-      },
-      "addedAt": "2026-08-17T03:52:25Z"
-    },
-    {
-      "id": "marine-layer-sierra-utility-pant-1",
-      "title": "Sierra Utility Pant",
-      "brand": "Marine Layer",
-      "category": "pants",
-      "imageUrl": "/product-images/marine-layer-sierra-utility-pant-1.jpg",
-      "priceUSD": 138.0,
-      "listPriceUSD": null,
-      "retailer": "Marine Layer (brand direct)",
-      "url": "https://www.marinelayer.com/products/sierra-utility-pant-1",
-      "modes": [
-        "streetwear",
-        "classic-casual"
-      ],
-      "verdict": "washed layers, barn jackets from Marine Layer.",
-      "matchReasons": [
-        {
-          "signal": "source",
-          "detail": "washed layers, barn jackets"
-        },
-        {
-          "signal": "silhouette-filter",
-          "detail": "Title passed the slim/skinny/women skip list. Confirm the actual cut on vote."
-        }
-      ],
-      "provenance": {
-        "sourceType": "brand-direct",
-        "retailer": "www.marinelayer.com",
-        "foundVia": "Shopify products.json for marine-layer on 2026-08-17, not the individual product page",
-        "evidence": "Collection JSON listed this product at $138.00. That is a listing price from the catalog endpoint, so per-size stock and the final PDP price are unconfirmed.",
-        "checkedBy": "shopbot scout-shopify.py"
-      },
-      "verification": {
-        "status": "lead",
-        "checkedAt": "2026-08-17T03:52:25Z",
-        "priceObservedUSD": 138.0,
-        "stock": "unknown"
-      },
-      "addedAt": "2026-08-17T03:52:25Z"
-    },
-    {
-      "id": "marine-layer-reversible-raglan-15",
-      "title": "Juno Reversible Raglan",
-      "brand": "Marine Layer",
-      "category": "pants",
-      "imageUrl": "/product-images/marine-layer-reversible-raglan-15.jpg",
-      "priceUSD": 94.0,
-      "listPriceUSD": null,
-      "retailer": "Marine Layer (brand direct)",
-      "url": "https://www.marinelayer.com/products/reversible-raglan-15",
-      "modes": [
-        "streetwear",
-        "classic-casual"
-      ],
-      "verdict": "washed layers, barn jackets from Marine Layer.",
-      "matchReasons": [
-        {
-          "signal": "source",
-          "detail": "washed layers, barn jackets"
-        },
-        {
-          "signal": "silhouette-filter",
-          "detail": "Title passed the slim/skinny/women skip list. Confirm the actual cut on vote."
-        }
-      ],
-      "provenance": {
-        "sourceType": "brand-direct",
-        "retailer": "www.marinelayer.com",
-        "foundVia": "Shopify products.json for marine-layer on 2026-08-17, not the individual product page",
-        "evidence": "Collection JSON listed this product at $94.00. That is a listing price from the catalog endpoint, so per-size stock and the final PDP price are unconfirmed.",
-        "checkedBy": "shopbot scout-shopify.py"
-      },
-      "verification": {
-        "status": "lead",
-        "checkedAt": "2026-08-17T03:52:25Z",
-        "priceObservedUSD": 94.0,
-        "stock": "unknown"
-      },
-      "addedAt": "2026-08-17T03:52:25Z"
-    },
-    {
       "id": "marine-layer-classic-stretch-selvage-shirt-67",
       "title": "Stretch Selvage Short Sleeve Shirt",
       "brand": "Marine Layer",
-      "category": "other",
+      "category": "tops",
       "imageUrl": "/product-images/marine-layer-classic-stretch-selvage-shirt-67.jpg",
       "priceUSD": 118.0,
       "listPriceUSD": null,
       "retailer": "Marine Layer (brand direct)",
       "url": "https://www.marinelayer.com/products/classic-stretch-selvage-shirt-67",
       "modes": [
-        "streetwear",
+        "minimal-clean",
         "classic-casual"
       ],
       "verdict": "washed layers, barn jackets from Marine Layer.",
@@ -2631,14 +2478,13 @@
       "id": "corridor-mini-stripe-t-shirt-black",
       "title": "Mini Stripe T-Shirt - Black",
       "brand": "Black Q",
-      "category": "other",
+      "category": "tops",
       "imageUrl": "/product-images/corridor-mini-stripe-t-shirt-black.jpg",
       "priceUSD": 125.0,
       "listPriceUSD": null,
       "retailer": "Black Q (brand direct)",
       "url": "https://corridornyc.com/products/mini-stripe-t-shirt-black",
       "modes": [
-        "streetwear",
         "classic-casual"
       ],
       "verdict": "wide trousers, textured shirts from Black Q.",
@@ -2671,15 +2517,15 @@
       "id": "corridor-stripe-oxford-ls-red",
       "title": "Stripe Oxford LS - Red",
       "brand": "Somelos",
-      "category": "other",
+      "category": "tops",
       "imageUrl": "/product-images/corridor-stripe-oxford-ls-red.jpg",
       "priceUSD": 225.0,
       "listPriceUSD": null,
       "retailer": "Somelos (brand direct)",
       "url": "https://corridornyc.com/products/stripe-oxford-ls-red",
       "modes": [
-        "streetwear",
-        "classic-casual"
+        "minimal-clean",
+        "corporate-presentable"
       ],
       "verdict": "wide trousers, textured shirts from Somelos.",
       "matchReasons": [
@@ -2718,7 +2564,6 @@
       "retailer": "Real (brand direct)",
       "url": "https://corridornyc.com/products/wide-twill-pant-brown",
       "modes": [
-        "streetwear",
         "classic-casual"
       ],
       "verdict": "wide trousers, textured shirts from Real.",
@@ -2751,15 +2596,14 @@
       "id": "corridor-garment-dye-tee-burgundy",
       "title": "Garment Dye Tee - Wine",
       "brand": "Siena",
-      "category": "other",
+      "category": "tops",
       "imageUrl": "/product-images/corridor-garment-dye-tee-burgundy.jpg",
       "priceUSD": 95.0,
       "listPriceUSD": null,
       "retailer": "Siena (brand direct)",
       "url": "https://corridornyc.com/products/garment-dye-tee-burgundy",
       "modes": [
-        "streetwear",
-        "classic-casual"
+        "streetwear"
       ],
       "verdict": "wide trousers, textured shirts from Siena.",
       "matchReasons": [
@@ -2791,15 +2635,15 @@
       "id": "corridor-ls-pique-polo-brown",
       "title": "LS Pique Polo - Brown",
       "brand": "Siena",
-      "category": "other",
+      "category": "tops",
       "imageUrl": "/product-images/corridor-ls-pique-polo-brown.jpg",
       "priceUSD": 165.0,
       "listPriceUSD": null,
       "retailer": "Siena (brand direct)",
       "url": "https://corridornyc.com/products/ls-pique-polo-brown",
       "modes": [
-        "streetwear",
-        "classic-casual"
+        "minimal-clean",
+        "corporate-presentable"
       ],
       "verdict": "wide trousers, textured shirts from Siena.",
       "matchReasons": [
@@ -2828,57 +2672,16 @@
       "addedAt": "2026-08-17T03:52:25Z"
     },
     {
-      "id": "outerknown-sybil-utility-shorts-kmdheuvsar-resale",
-      "title": "Sybil Utility Shorts - Outerworn",
-      "brand": "Trove",
-      "category": "pants",
-      "imageUrl": "/product-images/outerknown-sybil-utility-shorts-kmdheuvsar-resale.jpg",
-      "priceUSD": 77.5,
-      "listPriceUSD": 118.0,
-      "retailer": "Trove (brand direct)",
-      "url": "https://www.outerknown.com/products/sybil-utility-shorts-kmdheuvsar-resale",
-      "modes": [
-        "streetwear",
-        "classic-casual"
-      ],
-      "verdict": "relaxed coastal / work-adjacent shirts from Trove.",
-      "matchReasons": [
-        {
-          "signal": "source",
-          "detail": "relaxed coastal / work-adjacent shirts"
-        },
-        {
-          "signal": "silhouette-filter",
-          "detail": "Title passed the slim/skinny/women skip list. Confirm the actual cut on vote."
-        }
-      ],
-      "provenance": {
-        "sourceType": "brand-direct",
-        "retailer": "www.outerknown.com",
-        "foundVia": "Shopify products.json for outerknown on 2026-08-17, not the individual product page",
-        "evidence": "Collection JSON listed this product at $77.50 (compare-at $118.00). That is a listing price from the catalog endpoint, so per-size stock and the final PDP price are unconfirmed.",
-        "checkedBy": "shopbot scout-shopify.py"
-      },
-      "verification": {
-        "status": "lead",
-        "checkedAt": "2026-08-17T03:52:25Z",
-        "priceObservedUSD": 77.5,
-        "stock": "unknown"
-      },
-      "addedAt": "2026-08-17T03:52:25Z"
-    },
-    {
       "id": "outerknown-sea-ss-shirt-grwypavdce-resale",
       "title": "S.E.A. S/S Shirt - Outerworn",
       "brand": "Trove",
-      "category": "other",
+      "category": "tops",
       "imageUrl": "/product-images/outerknown-sea-ss-shirt-grwypavdce-resale.jpg",
       "priceUSD": 50.0,
       "listPriceUSD": 98.0,
       "retailer": "Trove (brand direct)",
       "url": "https://www.outerknown.com/products/sea-ss-shirt-grwypavdce-resale",
       "modes": [
-        "streetwear",
         "classic-casual"
       ],
       "verdict": "relaxed coastal / work-adjacent shirts from Trove.",
@@ -2911,15 +2714,14 @@
       "id": "outerknown-twill-trail-short-woefzhk-kt-resale",
       "title": "Twill Trail Short - Outerworn",
       "brand": "Trove",
-      "category": "pants",
+      "category": "shorts",
       "imageUrl": "/product-images/outerknown-twill-trail-short-woefzhk-kt-resale.jpg",
       "priceUSD": 65.0,
       "listPriceUSD": 118.0,
       "retailer": "Trove (brand direct)",
       "url": "https://www.outerknown.com/products/twill-trail-short-woefzhk-kt-resale",
       "modes": [
-        "streetwear",
-        "classic-casual"
+        "athletic-tech"
       ],
       "verdict": "relaxed coastal / work-adjacent shirts from Trove.",
       "matchReasons": [
@@ -2958,8 +2760,7 @@
       "retailer": "Trove (brand direct)",
       "url": "https://www.outerknown.com/products/landreth-blanket-hoodie-gbi_73bnga-resale",
       "modes": [
-        "streetwear",
-        "classic-casual"
+        "streetwear"
       ],
       "verdict": "relaxed coastal / work-adjacent shirts from Trove.",
       "matchReasons": [
@@ -2998,7 +2799,6 @@
       "retailer": "Taion x Universal Works (brand direct)",
       "url": "https://www.universalworks.co.uk/products/taion-x-universal-works-reversible-dark-olive-military-line-parka",
       "modes": [
-        "streetwear",
         "classic-casual"
       ],
       "verdict": "dutch pants, chore, merino tees from Taion x Universal Works.",
@@ -3078,7 +2878,6 @@
       "retailer": "Universal Works (brand direct)",
       "url": "https://www.universalworks.co.uk/products/brown-peached-poplin-dutch-pant",
       "modes": [
-        "streetwear",
         "classic-casual"
       ],
       "verdict": "dutch pants, chore, merino tees from Universal Works.",
@@ -3118,7 +2917,6 @@
       "retailer": "Universal Works (brand direct)",
       "url": "https://www.universalworks.co.uk/products/navy-twill-franck-jacket",
       "modes": [
-        "streetwear",
         "classic-casual"
       ],
       "verdict": "dutch pants, chore, merino tees from Universal Works.",
@@ -3158,8 +2956,8 @@
       "retailer": "Folk (brand direct)",
       "url": "https://www.folkclothing.com/products/folk-drawcord-loose-trousers-navy-ripstop",
       "modes": [
-        "streetwear",
-        "classic-casual"
+        "minimal-clean",
+        "corporate-presentable"
       ],
       "verdict": "drawcord loose trousers, olive/navy ripstop from Folk.",
       "matchReasons": [
@@ -3198,8 +2996,8 @@
       "retailer": "Folk (brand direct)",
       "url": "https://www.folkclothing.com/products/folk-drawcord-loose-trousers-dark-olive-ripstop",
       "modes": [
-        "streetwear",
-        "classic-casual"
+        "minimal-clean",
+        "corporate-presentable"
       ],
       "verdict": "drawcord loose trousers, olive/navy ripstop from Folk.",
       "matchReasons": [
@@ -3238,7 +3036,6 @@
       "retailer": "Folk (brand direct)",
       "url": "https://www.folkclothing.com/products/folk-drawcord-assembly-pant-khaki-lightweight-moleskin",
       "modes": [
-        "streetwear",
         "classic-casual"
       ],
       "verdict": "drawcord loose trousers, olive/navy ripstop from Folk.",
@@ -3278,7 +3075,6 @@
       "retailer": "Folk (brand direct)",
       "url": "https://www.folkclothing.com/products/folk-assembly-pant-khaki-lightweight-moleskin",
       "modes": [
-        "streetwear",
         "classic-casual"
       ],
       "verdict": "drawcord loose trousers, olive/navy ripstop from Folk.",
@@ -3318,7 +3114,6 @@
       "retailer": "Folk (brand direct)",
       "url": "https://www.folkclothing.com/products/folk-signal-pant-navy-lightweight-moleskin",
       "modes": [
-        "streetwear",
         "classic-casual"
       ],
       "verdict": "drawcord loose trousers, olive/navy ripstop from Folk.",
@@ -3351,15 +3146,14 @@
       "id": "drakes-blue-linen-drawstring-shorts",
       "title": "Blue Linen Drawstring Shorts",
       "brand": "Drakes - UK/ROW",
-      "category": "other",
+      "category": "shorts",
       "imageUrl": "/product-images/drakes-blue-linen-drawstring-shorts.jpg",
       "priceUSD": 195.0,
       "listPriceUSD": null,
       "retailer": "Drakes - UK/ROW (brand direct)",
       "url": "https://www.drakes.com/products/blue-linen-drawstring-shorts",
       "modes": [
-        "streetwear",
-        "classic-casual"
+        "minimal-clean"
       ],
       "verdict": "chore jackets, selvedge shirts, wide-leg adjacent from Drakes - UK/ROW.",
       "matchReasons": [
@@ -3398,7 +3192,6 @@
       "retailer": "Drakes - UK/ROW (brand direct)",
       "url": "https://www.drakes.com/products/indigo-dyed-chore-jacket",
       "modes": [
-        "streetwear",
         "classic-casual"
       ],
       "verdict": "chore jackets, selvedge shirts, wide-leg adjacent from Drakes - UK/ROW.",
@@ -3431,14 +3224,13 @@
       "id": "drakes-stone-wash-selvedge-denim-field-shirt",
       "title": "Stone Wash Selvedge Denim Field Shirt",
       "brand": "Drakes - UK/ROW",
-      "category": "outerwear",
+      "category": "tops",
       "imageUrl": "/product-images/drakes-stone-wash-selvedge-denim-field-shirt.jpg",
       "priceUSD": 595.0,
       "listPriceUSD": null,
       "retailer": "Drakes - UK/ROW (brand direct)",
       "url": "https://www.drakes.com/products/stone-wash-selvedge-denim-field-shirt",
       "modes": [
-        "streetwear",
         "classic-casual"
       ],
       "verdict": "chore jackets, selvedge shirts, wide-leg adjacent from Drakes - UK/ROW.",
@@ -3478,7 +3270,6 @@
       "retailer": "Drakes - UK/ROW (brand direct)",
       "url": "https://www.drakes.com/products/stone-wash-selvedge-denim-naval-pant",
       "modes": [
-        "streetwear",
         "classic-casual"
       ],
       "verdict": "chore jackets, selvedge shirts, wide-leg adjacent from Drakes - UK/ROW.",
@@ -3518,7 +3309,6 @@
       "retailer": "Drakes - UK/ROW (brand direct)",
       "url": "https://www.drakes.com/products/stone-wash-selvedge-denim-artist-chore-jacket",
       "modes": [
-        "streetwear",
         "classic-casual"
       ],
       "verdict": "chore jackets, selvedge shirts, wide-leg adjacent from Drakes - UK/ROW.",
@@ -3548,57 +3338,18 @@
       "addedAt": "2026-08-17T03:52:25Z"
     },
     {
-      "id": "apc-boxy-wool-sweater-woasw-f23498-lae",
-      "title": "Anna Sweater - Boxy Wool Sweater",
-      "brand": "APC",
-      "category": "knit",
-      "imageUrl": "/product-images/apc-boxy-wool-sweater-woasw-f23498-lae.jpg",
-      "priceUSD": 490.0,
-      "listPriceUSD": null,
-      "retailer": "APC (brand direct)",
-      "url": "https://www.apc-us.com/products/boxy-wool-sweater-woasw-f23498_lae",
-      "modes": [
-        "streetwear",
-        "classic-casual"
-      ],
-      "verdict": "boxy knits and oxfords; skip slim denim from APC.",
-      "matchReasons": [
-        {
-          "signal": "source",
-          "detail": "boxy knits and oxfords; skip slim denim"
-        },
-        {
-          "signal": "silhouette-filter",
-          "detail": "Title passed the slim/skinny/women skip list. Confirm the actual cut on vote."
-        }
-      ],
-      "provenance": {
-        "sourceType": "brand-direct",
-        "retailer": "www.apc-us.com",
-        "foundVia": "Shopify products.json for apc on 2026-08-17, not the individual product page",
-        "evidence": "Collection JSON listed this product at $490.00. That is a listing price from the catalog endpoint, so per-size stock and the final PDP price are unconfirmed.",
-        "checkedBy": "shopbot scout-shopify.py"
-      },
-      "verification": {
-        "status": "lead",
-        "checkedAt": "2026-08-17T03:52:25Z",
-        "priceObservedUSD": 490.0,
-        "stock": "unknown"
-      },
-      "addedAt": "2026-08-17T03:52:25Z"
-    },
-    {
       "id": "apc-chemise-new-greg-cohna-h12651-aab",
       "title": "Greg Oxford Shirt",
       "brand": "APC",
-      "category": "shoes",
+      "category": "tops",
       "imageUrl": "/product-images/apc-chemise-new-greg-cohna-h12651-aab.jpg",
       "priceUSD": 275.0,
       "listPriceUSD": null,
       "retailer": "APC (brand direct)",
       "url": "https://www.apc-us.com/products/chemise-new-greg-cohna-h12651_aab",
       "modes": [
-        "streetwear",
+        "minimal-clean",
+        "corporate-presentable",
         "classic-casual"
       ],
       "verdict": "boxy knits and oxfords; skip slim denim from APC.",
@@ -3628,217 +3379,16 @@
       "addedAt": "2026-08-17T03:52:25Z"
     },
     {
-      "id": "edwin-pixie-dreamland",
-      "title": "Pixie || Dreamland",
-      "brand": "Edwin USA",
-      "category": "pants",
-      "imageUrl": "/product-images/edwin-pixie-dreamland.jpg",
-      "priceUSD": 88.0,
-      "listPriceUSD": null,
-      "retailer": "Edwin USA (brand direct)",
-      "url": "https://edwin-usa.com/products/pixie-dreamland",
-      "modes": [
-        "streetwear",
-        "classic-casual"
-      ],
-      "verdict": "Japanese denim; slim/skinny titles are skipped from Edwin USA.",
-      "matchReasons": [
-        {
-          "signal": "source",
-          "detail": "Japanese denim; slim/skinny titles are skipped"
-        },
-        {
-          "signal": "silhouette-filter",
-          "detail": "Title passed the slim/skinny/women skip list. Confirm the actual cut on vote."
-        }
-      ],
-      "provenance": {
-        "sourceType": "brand-direct",
-        "retailer": "edwin-usa.com",
-        "foundVia": "Shopify products.json for edwin on 2026-08-17, not the individual product page",
-        "evidence": "Collection JSON listed this product at $88.00. That is a listing price from the catalog endpoint, so per-size stock and the final PDP price are unconfirmed.",
-        "checkedBy": "shopbot scout-shopify.py"
-      },
-      "verification": {
-        "status": "lead",
-        "checkedAt": "2026-08-17T03:52:25Z",
-        "priceObservedUSD": 88.0,
-        "stock": "unknown"
-      },
-      "addedAt": "2026-08-17T03:52:25Z"
-    },
-    {
-      "id": "edwin-bree-slim-skinny-deja-blue",
-      "title": "Bree Stovepipe || Deja Blue",
-      "brand": "EDWIN USA",
-      "category": "pants",
-      "imageUrl": "/product-images/edwin-bree-slim-skinny-deja-blue.jpg",
-      "priceUSD": 99.0,
-      "listPriceUSD": null,
-      "retailer": "EDWIN USA (brand direct)",
-      "url": "https://edwin-usa.com/products/bree-slim-skinny-deja-blue",
-      "modes": [
-        "streetwear",
-        "classic-casual"
-      ],
-      "verdict": "Japanese denim; slim/skinny titles are skipped from EDWIN USA.",
-      "matchReasons": [
-        {
-          "signal": "source",
-          "detail": "Japanese denim; slim/skinny titles are skipped"
-        },
-        {
-          "signal": "silhouette-filter",
-          "detail": "Title passed the slim/skinny/women skip list. Confirm the actual cut on vote."
-        }
-      ],
-      "provenance": {
-        "sourceType": "brand-direct",
-        "retailer": "edwin-usa.com",
-        "foundVia": "Shopify products.json for edwin on 2026-08-17, not the individual product page",
-        "evidence": "Collection JSON listed this product at $99.00. That is a listing price from the catalog endpoint, so per-size stock and the final PDP price are unconfirmed.",
-        "checkedBy": "shopbot scout-shopify.py"
-      },
-      "verification": {
-        "status": "lead",
-        "checkedAt": "2026-08-17T03:52:25Z",
-        "priceObservedUSD": 99.0,
-        "stock": "unknown"
-      },
-      "addedAt": "2026-08-17T03:52:25Z"
-    },
-    {
-      "id": "edwin-evie-jacket-in-candid",
-      "title": "Evie Jacket || Candid",
-      "brand": "Edwin USA",
-      "category": "outerwear",
-      "imageUrl": "/product-images/edwin-evie-jacket-in-candid.jpg",
-      "priceUSD": 98.0,
-      "listPriceUSD": null,
-      "retailer": "Edwin USA (brand direct)",
-      "url": "https://edwin-usa.com/products/evie-jacket-in-candid",
-      "modes": [
-        "streetwear",
-        "classic-casual"
-      ],
-      "verdict": "Japanese denim; slim/skinny titles are skipped from Edwin USA.",
-      "matchReasons": [
-        {
-          "signal": "source",
-          "detail": "Japanese denim; slim/skinny titles are skipped"
-        },
-        {
-          "signal": "silhouette-filter",
-          "detail": "Title passed the slim/skinny/women skip list. Confirm the actual cut on vote."
-        }
-      ],
-      "provenance": {
-        "sourceType": "brand-direct",
-        "retailer": "edwin-usa.com",
-        "foundVia": "Shopify products.json for edwin on 2026-08-17, not the individual product page",
-        "evidence": "Collection JSON listed this product at $98.00. That is a listing price from the catalog endpoint, so per-size stock and the final PDP price are unconfirmed.",
-        "checkedBy": "shopbot scout-shopify.py"
-      },
-      "verification": {
-        "status": "lead",
-        "checkedAt": "2026-08-17T03:52:25Z",
-        "priceObservedUSD": 98.0,
-        "stock": "unknown"
-      },
-      "addedAt": "2026-08-17T03:52:25Z"
-    },
-    {
-      "id": "edwin-tash-relaxed-straight-leg-melody",
-      "title": "Tash Relaxed Straight Leg || Melody",
-      "brand": "Edwin USA",
-      "category": "pants",
-      "imageUrl": "/product-images/edwin-tash-relaxed-straight-leg-melody.jpg",
-      "priceUSD": 99.0,
-      "listPriceUSD": null,
-      "retailer": "Edwin USA (brand direct)",
-      "url": "https://edwin-usa.com/products/tash-relaxed-straight-leg-melody",
-      "modes": [
-        "streetwear",
-        "classic-casual"
-      ],
-      "verdict": "Japanese denim; slim/skinny titles are skipped from Edwin USA.",
-      "matchReasons": [
-        {
-          "signal": "source",
-          "detail": "Japanese denim; slim/skinny titles are skipped"
-        },
-        {
-          "signal": "silhouette-filter",
-          "detail": "Title passed the slim/skinny/women skip list. Confirm the actual cut on vote."
-        }
-      ],
-      "provenance": {
-        "sourceType": "brand-direct",
-        "retailer": "edwin-usa.com",
-        "foundVia": "Shopify products.json for edwin on 2026-08-17, not the individual product page",
-        "evidence": "Collection JSON listed this product at $99.00. That is a listing price from the catalog endpoint, so per-size stock and the final PDP price are unconfirmed.",
-        "checkedBy": "shopbot scout-shopify.py"
-      },
-      "verification": {
-        "status": "lead",
-        "checkedAt": "2026-08-17T03:52:25Z",
-        "priceObservedUSD": 99.0,
-        "stock": "unknown"
-      },
-      "addedAt": "2026-08-17T03:52:25Z"
-    },
-    {
-      "id": "edwin-jodi-jacket-in-borderline",
-      "title": "Jodi Cropped Jacket || Borderline",
-      "brand": "EDWIN USA",
-      "category": "outerwear",
-      "imageUrl": "/product-images/edwin-jodi-jacket-in-borderline.jpg",
-      "priceUSD": 98.0,
-      "listPriceUSD": null,
-      "retailer": "EDWIN USA (brand direct)",
-      "url": "https://edwin-usa.com/products/jodi-jacket-in-borderline",
-      "modes": [
-        "streetwear",
-        "classic-casual"
-      ],
-      "verdict": "Japanese denim; slim/skinny titles are skipped from EDWIN USA.",
-      "matchReasons": [
-        {
-          "signal": "source",
-          "detail": "Japanese denim; slim/skinny titles are skipped"
-        },
-        {
-          "signal": "silhouette-filter",
-          "detail": "Title passed the slim/skinny/women skip list. Confirm the actual cut on vote."
-        }
-      ],
-      "provenance": {
-        "sourceType": "brand-direct",
-        "retailer": "edwin-usa.com",
-        "foundVia": "Shopify products.json for edwin on 2026-08-17, not the individual product page",
-        "evidence": "Collection JSON listed this product at $98.00. That is a listing price from the catalog endpoint, so per-size stock and the final PDP price are unconfirmed.",
-        "checkedBy": "shopbot scout-shopify.py"
-      },
-      "verification": {
-        "status": "lead",
-        "checkedAt": "2026-08-17T03:52:25Z",
-        "priceObservedUSD": 98.0,
-        "stock": "unknown"
-      },
-      "addedAt": "2026-08-17T03:52:25Z"
-    },
-    {
       "id": "3sixteen-mule-black-pony-hair",
       "title": "Mule ~ Black Pony Hair",
       "brand": "3sixteen",
-      "category": "other",
+      "category": "shoes",
       "imageUrl": "/product-images/3sixteen-mule-black-pony-hair.jpg",
       "priceUSD": 240.0,
       "listPriceUSD": null,
       "retailer": "3sixteen (brand direct)",
       "url": "https://www.3sixteen.com/products/mule-black-pony-hair",
       "modes": [
-        "streetwear",
         "classic-casual"
       ],
       "verdict": "raw/selvedge denim and work shirts from 3sixteen.",
@@ -3871,14 +3421,13 @@
       "id": "3sixteen-mule-natural-calf-leather",
       "title": "Mule ~ Natural Calf Leather",
       "brand": "3sixteen",
-      "category": "other",
+      "category": "shoes",
       "imageUrl": "/product-images/3sixteen-mule-natural-calf-leather.jpg",
       "priceUSD": 240.0,
       "listPriceUSD": null,
       "retailer": "3sixteen (brand direct)",
       "url": "https://www.3sixteen.com/products/mule-natural-calf-leather",
       "modes": [
-        "streetwear",
         "classic-casual"
       ],
       "verdict": "raw/selvedge denim and work shirts from 3sixteen.",
@@ -3911,14 +3460,13 @@
       "id": "3sixteen-mule-black-calf-leather",
       "title": "Mule ~ Black Calf Leather",
       "brand": "3sixteen",
-      "category": "other",
+      "category": "shoes",
       "imageUrl": "/product-images/3sixteen-mule-black-calf-leather.jpg",
       "priceUSD": 240.0,
       "listPriceUSD": null,
       "retailer": "3sixteen (brand direct)",
       "url": "https://www.3sixteen.com/products/mule-black-calf-leather",
       "modes": [
-        "streetwear",
         "classic-casual"
       ],
       "verdict": "raw/selvedge denim and work shirts from 3sixteen.",
@@ -3951,15 +3499,15 @@
       "id": "3sixteen-saddle-loafer-brown-calf-suede",
       "title": "Saddle Loafer ~ Brown Calf Suede",
       "brand": "3sixteen",
-      "category": "other",
+      "category": "shoes",
       "imageUrl": "/product-images/3sixteen-saddle-loafer-brown-calf-suede.jpg",
       "priceUSD": 495.0,
       "listPriceUSD": null,
       "retailer": "3sixteen (brand direct)",
       "url": "https://www.3sixteen.com/products/saddle-loafer-brown-calf-suede",
       "modes": [
-        "streetwear",
-        "classic-casual"
+        "minimal-clean",
+        "corporate-presentable"
       ],
       "verdict": "raw/selvedge denim and work shirts from 3sixteen.",
       "matchReasons": [
@@ -3991,14 +3539,13 @@
       "id": "3sixteen-vacation-shirt-pink-rayon-cube",
       "title": "Vacation Shirt ~ Pink Rayon Cube",
       "brand": "3sixteen",
-      "category": "other",
+      "category": "tops",
       "imageUrl": "/product-images/3sixteen-vacation-shirt-pink-rayon-cube.jpg",
       "priceUSD": 175.0,
       "listPriceUSD": null,
       "retailer": "3sixteen (brand direct)",
       "url": "https://www.3sixteen.com/products/vacation-shirt-pink-rayon-cube",
       "modes": [
-        "streetwear",
         "classic-casual"
       ],
       "verdict": "raw/selvedge denim and work shirts from 3sixteen.",
@@ -4038,7 +3585,6 @@
       "retailer": "STF (brand direct)",
       "url": "https://ironheart.co.uk/products/stf-jkt101-nav",
       "modes": [
-        "streetwear",
         "classic-casual"
       ],
       "verdict": "heavy Japanese work shirts and jackets from STF.",
@@ -4071,14 +3617,14 @@
       "id": "iron-heart-stf-sh101-tig",
       "title": "STF 3.5oz Linen Short Sleeve Shirt - Tiger",
       "brand": "STF",
-      "category": "other",
+      "category": "tops",
       "imageUrl": "/product-images/iron-heart-stf-sh101-tig.jpg",
       "priceUSD": 245.0,
       "listPriceUSD": null,
       "retailer": "STF (brand direct)",
       "url": "https://ironheart.co.uk/products/stf-sh101-tig",
       "modes": [
-        "streetwear",
+        "minimal-clean",
         "classic-casual"
       ],
       "verdict": "heavy Japanese work shirts and jackets from STF.",
@@ -4111,14 +3657,13 @@
       "id": "iron-heart-stf-sh101-brn",
       "title": "STF 3oz Japanese Seersucker Short Sleeve Shirt - Brown",
       "brand": "STF",
-      "category": "other",
+      "category": "tops",
       "imageUrl": "/product-images/iron-heart-stf-sh101-brn.jpg",
       "priceUSD": 236.0,
       "listPriceUSD": null,
       "retailer": "STF (brand direct)",
       "url": "https://ironheart.co.uk/products/stf-sh101-brn",
       "modes": [
-        "streetwear",
         "classic-casual"
       ],
       "verdict": "heavy Japanese work shirts and jackets from STF.",
@@ -4151,14 +3696,13 @@
       "id": "iron-heart-stf-sh101-nav",
       "title": "STF 3oz Japanese Seersucker Short Sleeve Shirt - Navy",
       "brand": "STF",
-      "category": "other",
+      "category": "tops",
       "imageUrl": "/product-images/iron-heart-stf-sh101-nav.jpg",
       "priceUSD": 236.0,
       "listPriceUSD": null,
       "retailer": "STF (brand direct)",
       "url": "https://ironheart.co.uk/products/stf-sh101-nav",
       "modes": [
-        "streetwear",
         "classic-casual"
       ],
       "verdict": "heavy Japanese work shirts and jackets from STF.",
@@ -4191,14 +3735,13 @@
       "id": "left-field-pale-blue-japanese-cotton-linen-jacquard-camp-shirt-c",
       "title": "Classic 90's Japanese cotton seersucker stripe crazy shirt w/ Trocus Pearl cat's eye buttons.",
       "brand": "Left Field NYC",
-      "category": "other",
+      "category": "tops",
       "imageUrl": "/product-images/left-field-pale-blue-japanese-cotton-linen-jacquard-camp-shirt-c.jpg",
       "priceUSD": 200.0,
       "listPriceUSD": null,
       "retailer": "Left Field NYC (brand direct)",
       "url": "https://leftfieldnyc.com/products/pale-blue-japanese-cotton-linen-jacquard-camp-shirt-copy",
       "modes": [
-        "streetwear",
         "classic-casual"
       ],
       "verdict": "work shirts, madras, drawstring trousers from Left Field NYC.",
@@ -4231,14 +3774,13 @@
       "id": "left-field-camp-shirt-2-copy",
       "title": "Japanese woven Madras plaid patch camp shirt with Trocus Pearl buttons",
       "brand": "Left Field NYC",
-      "category": "other",
+      "category": "tops",
       "imageUrl": "/product-images/left-field-camp-shirt-2-copy.jpg",
       "priceUSD": 200.0,
       "listPriceUSD": null,
       "retailer": "Left Field NYC (brand direct)",
       "url": "https://leftfieldnyc.com/products/camp-shirt-2-copy",
       "modes": [
-        "streetwear",
         "classic-casual"
       ],
       "verdict": "work shirts, madras, drawstring trousers from Left Field NYC.",
@@ -4278,8 +3820,7 @@
       "retailer": "Left Field NYC (brand direct)",
       "url": "https://leftfieldnyc.com/products/copy-of-selvedge-chambray-lounge-pants-nihon-menpu-linen-cotton-selvedge-lounge-pants",
       "modes": [
-        "streetwear",
-        "classic-casual"
+        "minimal-clean"
       ],
       "verdict": "work shirts, madras, drawstring trousers from Left Field NYC.",
       "matchReasons": [
@@ -4311,14 +3852,13 @@
       "id": "left-field-japanese-frogskin-double-sided-camo-short-copy",
       "title": "Light Tan Camo Japanese \"Frogskin\" Double sided  drawstring shorts",
       "brand": "Left Field NYC",
-      "category": "other",
+      "category": "shorts",
       "imageUrl": "/product-images/left-field-japanese-frogskin-double-sided-camo-short-copy.jpg",
       "priceUSD": 175.0,
       "listPriceUSD": null,
       "retailer": "Left Field NYC (brand direct)",
       "url": "https://leftfieldnyc.com/products/japanese-frogskin-double-sided-camo-short-copy",
       "modes": [
-        "streetwear",
         "classic-casual"
       ],
       "verdict": "work shirts, madras, drawstring trousers from Left Field NYC.",
@@ -4351,14 +3891,13 @@
       "id": "left-field-japanese-frogskin-double-sided-camo-short",
       "title": "Green Japanese \"Frogskin\" Double sided Camo drawstring shorts",
       "brand": "Left Field NYC",
-      "category": "other",
+      "category": "shorts",
       "imageUrl": "/product-images/left-field-japanese-frogskin-double-sided-camo-short.jpg",
       "priceUSD": 175.0,
       "listPriceUSD": null,
       "retailer": "Left Field NYC (brand direct)",
       "url": "https://leftfieldnyc.com/products/japanese-frogskin-double-sided-camo-short",
       "modes": [
-        "streetwear",
         "classic-casual"
       ],
       "verdict": "work shirts, madras, drawstring trousers from Left Field NYC.",
@@ -4391,15 +3930,14 @@
       "id": "imogene-willie-the-last-laugh-tee",
       "title": "the \"last laugh\" tee",
       "brand": "i+w graphic tees",
-      "category": "other",
+      "category": "tops",
       "imageUrl": "/product-images/imogene-willie-the-last-laugh-tee.jpg",
       "priceUSD": 68.0,
       "listPriceUSD": null,
       "retailer": "i+w graphic tees (brand direct)",
       "url": "https://www.imogeneandwillie.com/products/the-last-laugh-tee",
       "modes": [
-        "streetwear",
-        "classic-casual"
+        "streetwear"
       ],
       "verdict": "selvage denim, vintage-graphic tees from i+w graphic tees.",
       "matchReasons": [
@@ -4431,15 +3969,14 @@
       "id": "imogene-willie-the-be-happy-tee",
       "title": "the \"be happy\" tee",
       "brand": "i+w graphic tees",
-      "category": "other",
+      "category": "tops",
       "imageUrl": "/product-images/imogene-willie-the-be-happy-tee.jpg",
       "priceUSD": 88.0,
       "listPriceUSD": null,
       "retailer": "i+w graphic tees (brand direct)",
       "url": "https://www.imogeneandwillie.com/products/the-be-happy-tee",
       "modes": [
-        "streetwear",
-        "classic-casual"
+        "streetwear"
       ],
       "verdict": "selvage denim, vintage-graphic tees from i+w graphic tees.",
       "matchReasons": [
@@ -4471,15 +4008,14 @@
       "id": "imogene-willie-the-when-im-dead-tee",
       "title": "the \"when i'm dead\" tee",
       "brand": "i+w graphic tees",
-      "category": "other",
+      "category": "tops",
       "imageUrl": "/product-images/imogene-willie-the-when-im-dead-tee.jpg",
       "priceUSD": 88.0,
       "listPriceUSD": null,
       "retailer": "i+w graphic tees (brand direct)",
       "url": "https://www.imogeneandwillie.com/products/the-when-im-dead-tee",
       "modes": [
-        "streetwear",
-        "classic-casual"
+        "streetwear"
       ],
       "verdict": "selvage denim, vintage-graphic tees from i+w graphic tees.",
       "matchReasons": [
@@ -4511,14 +4047,13 @@
       "id": "railcar-red-wing-mens-6-inch-classic-moc-in-tidal-muleskinner-le",
       "title": "Red Wing Men's 6-Inch Classic Moc in Tidal Muleskinner Leather 8809",
       "brand": "Red Wing Heritage",
-      "category": "other",
+      "category": "shoes",
       "imageUrl": "/product-images/railcar-red-wing-mens-6-inch-classic-moc-in-tidal-muleskinner-le.jpg",
       "priceUSD": 329.99,
       "listPriceUSD": null,
       "retailer": "Red Wing Heritage (brand direct)",
       "url": "https://railcarfinegoods.com/products/red-wing-mens-6-inch-classic-moc-in-tidal-muleskinner-leather-8809",
       "modes": [
-        "streetwear",
         "classic-casual"
       ],
       "verdict": "US-made selvedge, straight/modern legs from Red Wing Heritage.",
@@ -4558,7 +4093,6 @@
       "retailer": "Railcar Fine Goods (brand direct)",
       "url": "https://railcarfinegoods.com/products/super-nep-combo-x123-type-2-and-jeans",
       "modes": [
-        "streetwear",
         "classic-casual"
       ],
       "verdict": "US-made selvedge, straight/modern legs from Railcar Fine Goods.",
@@ -4591,14 +4125,13 @@
       "id": "railcar-rebels-x123-modern-straight-leg-15-oz-super-nep-indigo-s",
       "title": "Rebels X123 Modern Straight Leg 15 Oz Super Nep Indigo Selvedge",
       "brand": "Railcar Fine Goods",
-      "category": "other",
+      "category": "pants",
       "imageUrl": "/product-images/railcar-rebels-x123-modern-straight-leg-15-oz-super-nep-indigo-s.jpg",
       "priceUSD": 268.0,
       "listPriceUSD": null,
       "retailer": "Railcar Fine Goods (brand direct)",
       "url": "https://railcarfinegoods.com/products/rebels-x123-modern-straight-leg-15-oz-super-nep-indigo-selvedge",
       "modes": [
-        "streetwear",
         "classic-casual"
       ],
       "verdict": "US-made selvedge, straight/modern legs from Railcar Fine Goods.",
@@ -4638,7 +4171,6 @@
       "retailer": "Railcar Fine Goods (brand direct)",
       "url": "https://railcarfinegoods.com/products/spikes-x123-taper-leg-15-oz-super-nep-indigo-selvedge",
       "modes": [
-        "streetwear",
         "classic-casual"
       ],
       "verdict": "US-made selvedge, straight/modern legs from Railcar Fine Goods.",
@@ -4678,7 +4210,6 @@
       "retailer": "Railcar Fine Goods (brand direct)",
       "url": "https://railcarfinegoods.com/products/type-2-x123-15-oz-super-nep-indigo-selvedge",
       "modes": [
-        "streetwear",
         "classic-casual"
       ],
       "verdict": "US-made selvedge, straight/modern legs from Railcar Fine Goods.",
@@ -4711,14 +4242,13 @@
       "id": "raleigh-tote-211",
       "title": "Tote | 211",
       "brand": "Raleigh Denim",
-      "category": "other",
+      "category": "accessories",
       "imageUrl": "/product-images/raleigh-tote-211.png",
       "priceUSD": 65.0,
       "listPriceUSD": null,
       "retailer": "Raleigh Denim (brand direct)",
       "url": "https://raleighdenimworkshop.com/products/tote-211",
       "modes": [
-        "streetwear",
         "classic-casual"
       ],
       "verdict": "workshop denim from Raleigh Denim.",
@@ -4751,14 +4281,13 @@
       "id": "raleigh-alexander-stretch-thyme",
       "title": "Alexander Stretch | Thyme",
       "brand": "Raleigh Denim",
-      "category": "pants",
+      "category": "other",
       "imageUrl": "/product-images/raleigh-alexander-stretch-thyme.jpg",
       "priceUSD": 245.0,
       "listPriceUSD": null,
       "retailer": "Raleigh Denim (brand direct)",
       "url": "https://raleighdenimworkshop.com/products/alexander-stretch-thyme",
       "modes": [
-        "streetwear",
         "classic-casual"
       ],
       "verdict": "workshop denim from Raleigh Denim.",
@@ -4791,15 +4320,14 @@
       "id": "raleigh-alexander-selvage-raw-new-american",
       "title": "Alexander | Vidalia 14 Oz. Selvage",
       "brand": "Raleigh Denim",
-      "category": "pants",
+      "category": "other",
       "imageUrl": "/product-images/raleigh-alexander-selvage-raw-new-american.png",
       "priceUSD": 445.0,
       "listPriceUSD": null,
       "retailer": "Raleigh Denim (brand direct)",
       "url": "https://raleighdenimworkshop.com/products/alexander-selvage-raw-new-american",
       "modes": [
-        "streetwear",
-        "classic-casual"
+        "minimal-clean"
       ],
       "verdict": "workshop denim from Raleigh Denim.",
       "matchReasons": [
@@ -4831,15 +4359,14 @@
       "id": "raleigh-stokes-full-length-black-copy",
       "title": "RD Logo Short Sleeve Tee | Pollen",
       "brand": "Raleigh Denim",
-      "category": "other",
+      "category": "tops",
       "imageUrl": "/product-images/raleigh-stokes-full-length-black-copy.jpg",
       "priceUSD": 70.0,
       "listPriceUSD": null,
       "retailer": "Raleigh Denim (brand direct)",
       "url": "https://raleighdenimworkshop.com/products/stokes-full-length-black-copy",
       "modes": [
-        "streetwear",
-        "classic-casual"
+        "streetwear"
       ],
       "verdict": "workshop denim from Raleigh Denim.",
       "matchReasons": [
@@ -4871,15 +4398,14 @@
       "id": "raleigh-graham-12oz-canvas-selvage",
       "title": "Graham | Pine 12oz Canvas Selvage",
       "brand": "Raleigh Denim",
-      "category": "pants",
+      "category": "other",
       "imageUrl": "/product-images/raleigh-graham-12oz-canvas-selvage.jpg",
       "priceUSD": 325.0,
       "listPriceUSD": null,
       "retailer": "Raleigh Denim (brand direct)",
       "url": "https://raleighdenimworkshop.com/products/graham-12oz-canvas-selvage",
       "modes": [
-        "streetwear",
-        "classic-casual"
+        "minimal-clean"
       ],
       "verdict": "workshop denim from Raleigh Denim.",
       "matchReasons": [
@@ -4918,7 +4444,6 @@
       "retailer": "Naked & Famous Denim (brand direct)",
       "url": "https://nakedandfamousdenim.com/products/true-guy-mij19-amaterasu-selvedge-blue",
       "modes": [
-        "streetwear",
         "classic-casual"
       ],
       "verdict": "weird/selvedge fits; Strong/True Guy not skinny from Naked & Famous Denim.",
@@ -4958,7 +4483,6 @@
       "retailer": "Naked & Famous Denim (brand direct)",
       "url": "https://nakedandfamousdenim.com/products/strong-guy-mij19-amaterasu-selvedge-blue",
       "modes": [
-        "streetwear",
         "classic-casual"
       ],
       "verdict": "weird/selvedge fits; Strong/True Guy not skinny from Naked & Famous Denim.",
@@ -4998,7 +4522,6 @@
       "retailer": "Naked & Famous Denim (brand direct)",
       "url": "https://nakedandfamousdenim.com/products/easy-guy-mij19-amaterasu-selvedge-blue",
       "modes": [
-        "streetwear",
         "classic-casual"
       ],
       "verdict": "weird/selvedge fits; Strong/True Guy not skinny from Naked & Famous Denim.",
@@ -5038,7 +4561,6 @@
       "retailer": "Naked & Famous Denim (brand direct)",
       "url": "https://nakedandfamousdenim.com/products/weird-guy-mij19-amaterasu-selvedge-blue",
       "modes": [
-        "streetwear",
         "classic-casual"
       ],
       "verdict": "weird/selvedge fits; Strong/True Guy not skinny from Naked & Famous Denim.",
@@ -5078,7 +4600,6 @@
       "retailer": "Noah (brand direct)",
       "url": "https://noahny.com/products/classic-shetland-sweater-2",
       "modes": [
-        "streetwear",
         "classic-casual"
       ],
       "verdict": "shetland, merino, coaches jackets from Noah.",
@@ -5118,7 +4639,7 @@
       "retailer": "0 (brand direct)",
       "url": "https://noahny.com/products/reversible-wool-jacket",
       "modes": [
-        "streetwear",
+        "corporate-presentable",
         "classic-casual"
       ],
       "verdict": "shetland, merino, coaches jackets from 0.",
@@ -5158,7 +4679,6 @@
       "retailer": "0 (brand direct)",
       "url": "https://noahny.com/products/v-neck-merino-sweater-1",
       "modes": [
-        "streetwear",
         "classic-casual"
       ],
       "verdict": "shetland, merino, coaches jackets from 0.",
@@ -5191,14 +4711,13 @@
       "id": "noah-tri-color-logo-tote",
       "title": "Tri-Color Logo Tote",
       "brand": "Noah",
-      "category": "other",
+      "category": "accessories",
       "imageUrl": "/product-images/noah-tri-color-logo-tote.jpg",
       "priceUSD": 58.0,
       "listPriceUSD": null,
       "retailer": "Noah (brand direct)",
       "url": "https://noahny.com/products/tri-color-logo-tote",
       "modes": [
-        "streetwear",
         "classic-casual"
       ],
       "verdict": "shetland, merino, coaches jackets from Noah.",
@@ -5231,14 +4750,13 @@
       "id": "noah-tri-color-beanie-6",
       "title": "Tri-Color Beanie",
       "brand": "Noah",
-      "category": "other",
+      "category": "accessories",
       "imageUrl": "/product-images/noah-tri-color-beanie-6.jpg",
       "priceUSD": 48.0,
       "listPriceUSD": null,
       "retailer": "Noah (brand direct)",
       "url": "https://noahny.com/products/tri-color-beanie-6",
       "modes": [
-        "streetwear",
         "classic-casual"
       ],
       "verdict": "shetland, merino, coaches jackets from Noah.",
@@ -5271,15 +4789,14 @@
       "id": "stussy-115880-gore-tex-guide-shell-woodland-camo",
       "title": "GORE-TEX\u00ae GUIDE SHELL",
       "brand": "Radial",
-      "category": "other",
+      "category": "outerwear",
       "imageUrl": "/product-images/stussy-115880-gore-tex-guide-shell-woodland-camo.jpg",
       "priceUSD": 475.0,
       "listPriceUSD": null,
       "retailer": "Radial (brand direct)",
       "url": "https://www.stussy.com/products/115880-gore-tex-guide-shell-woodland-camo",
       "modes": [
-        "streetwear",
-        "classic-casual"
+        "athletic-tech"
       ],
       "verdict": "relaxed street; vote on logo tolerance from Radial.",
       "matchReasons": [
@@ -5311,15 +4828,14 @@
       "id": "stussy-1905218-big-love-tee-ash-heather",
       "title": "BIG LOVE TEE",
       "brand": "Radial",
-      "category": "other",
+      "category": "tops",
       "imageUrl": "/product-images/stussy-1905218-big-love-tee-ash-heather.jpg",
       "priceUSD": 45.0,
       "listPriceUSD": null,
       "retailer": "Radial (brand direct)",
       "url": "https://www.stussy.com/products/1905218-big-love-tee-ash-heather",
       "modes": [
-        "streetwear",
-        "classic-casual"
+        "streetwear"
       ],
       "verdict": "relaxed street; vote on logo tolerance from Radial.",
       "matchReasons": [
@@ -5351,14 +4867,13 @@
       "id": "stussy-1140372-striped-rugby-shirt-blue",
       "title": "STRIPED RUGBY SHIRT",
       "brand": "Radial",
-      "category": "knit",
+      "category": "tops",
       "imageUrl": "/product-images/stussy-1140372-striped-rugby-shirt-blue.jpg",
       "priceUSD": 125.0,
       "listPriceUSD": null,
       "retailer": "Radial (brand direct)",
       "url": "https://www.stussy.com/products/1140372-striped-rugby-shirt-blue",
       "modes": [
-        "streetwear",
         "classic-casual"
       ],
       "verdict": "relaxed street; vote on logo tolerance from Radial.",
@@ -5391,15 +4906,14 @@
       "id": "stussy-1140364-garment-dyed-ss-tee-brown",
       "title": "GARMENT DYED SS TEE",
       "brand": "Radial",
-      "category": "other",
+      "category": "tops",
       "imageUrl": "/product-images/stussy-1140364-garment-dyed-ss-tee-brown.jpg",
       "priceUSD": 50.0,
       "listPriceUSD": null,
       "retailer": "Radial (brand direct)",
       "url": "https://www.stussy.com/products/1140364-garment-dyed-ss-tee-brown",
       "modes": [
-        "streetwear",
-        "classic-casual"
+        "streetwear"
       ],
       "verdict": "relaxed street; vote on logo tolerance from Radial.",
       "matchReasons": [
@@ -5431,14 +4945,13 @@
       "id": "kith-khma030365-001-ph",
       "title": "Kith for BMW Windshirt - Black - PH",
       "brand": "Kith",
-      "category": "other",
+      "category": "outerwear",
       "imageUrl": "/product-images/kith-khma030365-001-ph.jpg",
       "priceUSD": 185.0,
       "listPriceUSD": null,
       "retailer": "Kith (brand direct)",
       "url": "https://kith.com/products/khma030365-001-ph",
       "modes": [
-        "streetwear",
         "classic-casual"
       ],
       "verdict": "premium street; first page can be collabs from Kith.",
@@ -5478,7 +4991,6 @@
       "retailer": "Kith (brand direct)",
       "url": "https://kith.com/products/khma010134-599-ph",
       "modes": [
-        "streetwear",
         "classic-casual"
       ],
       "verdict": "premium street; first page can be collabs from Kith.",
@@ -5518,7 +5030,6 @@
       "retailer": "Kith (brand direct)",
       "url": "https://kith.com/products/khma010134-185-ph",
       "modes": [
-        "streetwear",
         "classic-casual"
       ],
       "verdict": "premium street; first page can be collabs from Kith.",
@@ -5558,8 +5069,8 @@
       "retailer": "Aim\u00e9 Leon Dore (brand direct)",
       "url": "https://www.aimeleondore.com/products/ald-nb-p550-basketball-oxfords-9",
       "modes": [
-        "streetwear",
-        "classic-casual"
+        "minimal-clean",
+        "corporate-presentable"
       ],
       "verdict": "retro court + prep-street from Aim\u00e9 Leon Dore.",
       "matchReasons": [
@@ -5591,15 +5102,14 @@
       "id": "aime-leon-dore-ald-new-balance-fuelcell-supercomp-elite-v5",
       "title": "ALD / New Balance FuelCell SuperComp Elite v5",
       "brand": "Aim\u00e9 Leon Dore",
-      "category": "other",
+      "category": "shoes",
       "imageUrl": "/product-images/aime-leon-dore-ald-new-balance-fuelcell-supercomp-elite-v5.jpg",
       "priceUSD": 270.0,
       "listPriceUSD": null,
       "retailer": "Aim\u00e9 Leon Dore (brand direct)",
       "url": "https://www.aimeleondore.com/products/ald-new-balance-fuelcell-supercomp-elite-v5",
       "modes": [
-        "streetwear",
-        "classic-casual"
+        "athletic-tech"
       ],
       "verdict": "retro court + prep-street from Aim\u00e9 Leon Dore.",
       "matchReasons": [
@@ -5631,15 +5141,14 @@
       "id": "aime-leon-dore-ald-new-balance-fuelcell-rebel-v5",
       "title": "ALD / New Balance FuelCell Rebel v5",
       "brand": "Aim\u00e9 Leon Dore",
-      "category": "other",
+      "category": "shoes",
       "imageUrl": "/product-images/aime-leon-dore-ald-new-balance-fuelcell-rebel-v5.jpg",
       "priceUSD": 150.0,
       "listPriceUSD": null,
       "retailer": "Aim\u00e9 Leon Dore (brand direct)",
       "url": "https://www.aimeleondore.com/products/ald-new-balance-fuelcell-rebel-v5",
       "modes": [
-        "streetwear",
-        "classic-casual"
+        "athletic-tech"
       ],
       "verdict": "retro court + prep-street from Aim\u00e9 Leon Dore.",
       "matchReasons": [
@@ -5671,15 +5180,14 @@
       "id": "saturdays-325scriptemblstee-3",
       "title": "Script Embroidered Long Sleeve Tee",
       "brand": "Saturdays NYC",
-      "category": "other",
+      "category": "tops",
       "imageUrl": "/product-images/saturdays-325scriptemblstee-3.jpg",
       "priceUSD": 27.0,
       "listPriceUSD": 67.0,
       "retailer": "Saturdays NYC (brand direct)",
       "url": "https://www.saturdaysnyc.com/products/325scriptemblstee-3",
       "modes": [
-        "streetwear",
-        "classic-casual"
+        "streetwear"
       ],
       "verdict": "wide-leg pants, relaxed tees from Saturdays NYC.",
       "matchReasons": [
@@ -5718,7 +5226,6 @@
       "retailer": "Saturdays NYC (brand direct)",
       "url": "https://www.saturdaysnyc.com/products/325morriswidelegpant-2",
       "modes": [
-        "streetwear",
         "classic-casual"
       ],
       "verdict": "wide-leg pants, relaxed tees from Saturdays NYC.",
@@ -5751,15 +5258,14 @@
       "id": "saturdays-325danjocargoswimshort-2",
       "title": "Danjo Cargo Swim Short",
       "brand": "Saturdays NYC",
-      "category": "pants",
+      "category": "shorts",
       "imageUrl": "/product-images/saturdays-325danjocargoswimshort-2.jpg",
       "priceUSD": 53.0,
       "listPriceUSD": 134.0,
       "retailer": "Saturdays NYC (brand direct)",
       "url": "https://www.saturdaysnyc.com/products/325danjocargoswimshort-2",
       "modes": [
-        "streetwear",
-        "classic-casual"
+        "streetwear"
       ],
       "verdict": "wide-leg pants, relaxed tees from Saturdays NYC.",
       "matchReasons": [
@@ -5791,14 +5297,13 @@
       "id": "saturdays-325talleyswimshort-2",
       "title": "Talley Swim Short",
       "brand": "Saturdays NYC",
-      "category": "other",
+      "category": "shorts",
       "imageUrl": "/product-images/saturdays-325talleyswimshort-2.jpg",
       "priceUSD": 51.0,
       "listPriceUSD": 127.0,
       "retailer": "Saturdays NYC (brand direct)",
       "url": "https://www.saturdaysnyc.com/products/325talleyswimshort-2",
       "modes": [
-        "streetwear",
         "classic-casual"
       ],
       "verdict": "wide-leg pants, relaxed tees from Saturdays NYC.",
@@ -5838,7 +5343,6 @@
       "retailer": "Saturdays NYC (brand direct)",
       "url": "https://www.saturdaysnyc.com/products/325deanonetuckpant-3",
       "modes": [
-        "streetwear",
         "classic-casual"
       ],
       "verdict": "wide-leg pants, relaxed tees from Saturdays NYC.",
@@ -5871,14 +5375,13 @@
       "id": "save-khaki-s-s-triple-gauze-shirt",
       "title": "SS Triple gauze shirt",
       "brand": "SAVE KHAKI UNITED",
-      "category": "other",
+      "category": "tops",
       "imageUrl": "/product-images/save-khaki-s-s-triple-gauze-shirt.jpg",
       "priceUSD": 200.0,
       "listPriceUSD": null,
       "retailer": "SAVE KHAKI UNITED (brand direct)",
       "url": "https://www.savekhaki.com/products/s-s-triple-gauze-shirt",
       "modes": [
-        "streetwear",
         "classic-casual"
       ],
       "verdict": "garment-dyed shirts, relaxed khakis from SAVE KHAKI UNITED.",
@@ -5911,15 +5414,15 @@
       "id": "save-khaki-new-cotton-pique",
       "title": "Pique Polo in Cotton Hemp",
       "brand": "SAVE KHAKI UNITED",
-      "category": "other",
+      "category": "tops",
       "imageUrl": "/product-images/save-khaki-new-cotton-pique.jpg",
       "priceUSD": 140.0,
       "listPriceUSD": null,
       "retailer": "SAVE KHAKI UNITED (brand direct)",
       "url": "https://www.savekhaki.com/products/new-cotton-pique",
       "modes": [
-        "streetwear",
-        "classic-casual"
+        "minimal-clean",
+        "corporate-presentable"
       ],
       "verdict": "garment-dyed shirts, relaxed khakis from SAVE KHAKI UNITED.",
       "matchReasons": [
@@ -5951,14 +5454,13 @@
       "id": "save-khaki-cotton-hemp-pique-easy-shirt",
       "title": "LS Pique Easy Shirt in Cotton Hemp",
       "brand": "SAVE KHAKI UNITED",
-      "category": "other",
+      "category": "tops",
       "imageUrl": "/product-images/save-khaki-cotton-hemp-pique-easy-shirt.png",
       "priceUSD": 160.0,
       "listPriceUSD": null,
       "retailer": "SAVE KHAKI UNITED (brand direct)",
       "url": "https://www.savekhaki.com/products/cotton-hemp-pique-easy-shirt",
       "modes": [
-        "streetwear",
         "classic-casual"
       ],
       "verdict": "garment-dyed shirts, relaxed khakis from SAVE KHAKI UNITED.",
@@ -5991,14 +5493,13 @@
       "id": "save-khaki-cord-surf-short",
       "title": "Boyville Cord Surf Short",
       "brand": "SAVE KHAKI UNITED",
-      "category": "other",
+      "category": "shorts",
       "imageUrl": "/product-images/save-khaki-cord-surf-short.jpg",
       "priceUSD": 120.0,
       "listPriceUSD": null,
       "retailer": "SAVE KHAKI UNITED (brand direct)",
       "url": "https://www.savekhaki.com/products/cord-surf-short",
       "modes": [
-        "streetwear",
         "classic-casual"
       ],
       "verdict": "garment-dyed shirts, relaxed khakis from SAVE KHAKI UNITED.",
@@ -6038,8 +5539,7 @@
       "retailer": "Gitman (brand direct)",
       "url": "https://gitman.com/products/multi-gingham-cotton-linen-1",
       "modes": [
-        "streetwear",
-        "classic-casual"
+        "minimal-clean"
       ],
       "verdict": "camp shirts, madras, oxfords as overshirts from Gitman.",
       "matchReasons": [
@@ -6071,15 +5571,15 @@
       "id": "gitman-red-oxford",
       "title": "Red Oxford",
       "brand": "Gitman",
-      "category": "other",
+      "category": "tops",
       "imageUrl": "/product-images/gitman-red-oxford.jpg",
       "priceUSD": 255.0,
       "listPriceUSD": null,
       "retailer": "Gitman (brand direct)",
       "url": "https://gitman.com/products/red-oxford",
       "modes": [
-        "streetwear",
-        "classic-casual"
+        "minimal-clean",
+        "corporate-presentable"
       ],
       "verdict": "camp shirts, madras, oxfords as overshirts from Gitman.",
       "matchReasons": [
@@ -6111,14 +5611,13 @@
       "id": "gitman-black-summer-sauna-camp-shirt",
       "title": "Black Summer Sauna Camp Shirt",
       "brand": "Gitman Vintage",
-      "category": "other",
+      "category": "tops",
       "imageUrl": "/product-images/gitman-black-summer-sauna-camp-shirt.jpg",
       "priceUSD": 159.0,
       "listPriceUSD": 265.0,
       "retailer": "Gitman Vintage (brand direct)",
       "url": "https://gitman.com/products/black-summer-sauna-camp-shirt",
       "modes": [
-        "streetwear",
         "classic-casual"
       ],
       "verdict": "camp shirts, madras, oxfords as overshirts from Gitman Vintage.",
@@ -6151,14 +5650,13 @@
       "id": "gitman-white-summer-sauna",
       "title": "White Summer Sauna Camp Shirt",
       "brand": "Gitman Vintage",
-      "category": "other",
+      "category": "tops",
       "imageUrl": "/product-images/gitman-white-summer-sauna.jpg",
       "priceUSD": 159.0,
       "listPriceUSD": 265.0,
       "retailer": "Gitman Vintage (brand direct)",
       "url": "https://gitman.com/products/white-summer-sauna",
       "modes": [
-        "streetwear",
         "classic-casual"
       ],
       "verdict": "camp shirts, madras, oxfords as overshirts from Gitman Vintage.",
@@ -6191,14 +5689,13 @@
       "id": "story-mfg-big-shop-tote-indigo-railroad-stripe",
       "title": "Big Shop Tote - Indigo Railroad Stripe",
       "brand": "Story mfg.",
-      "category": "other",
+      "category": "accessories",
       "imageUrl": "/product-images/story-mfg-big-shop-tote-indigo-railroad-stripe.jpg",
       "priceUSD": 235.0,
       "listPriceUSD": null,
       "retailer": "Story mfg. (brand direct)",
       "url": "https://www.storymfg.com/products/big-shop-tote-indigo-railroad-stripe",
       "modes": [
-        "streetwear",
         "classic-casual"
       ],
       "verdict": "indigo railroad, wander jackets, tote from Story mfg..",
@@ -6238,7 +5735,6 @@
       "retailer": "Story mfg. (brand direct)",
       "url": "https://www.storymfg.com/products/555-jacket-indigo-railroad-stripe",
       "modes": [
-        "streetwear",
         "classic-casual"
       ],
       "verdict": "indigo railroad, wander jackets, tote from Story mfg..",
@@ -6278,7 +5774,6 @@
       "retailer": "Story mfg. (brand direct)",
       "url": "https://www.storymfg.com/products/wander-jacket-overgrown",
       "modes": [
-        "streetwear",
         "classic-casual"
       ],
       "verdict": "indigo railroad, wander jackets, tote from Story mfg..",
@@ -6311,14 +5806,13 @@
       "id": "story-mfg-polite-pullover-sunrise-loved",
       "title": "Polite Pullover - Sunrise Loved",
       "brand": "Story mfg.",
-      "category": "other",
+      "category": "knit",
       "imageUrl": "/product-images/story-mfg-polite-pullover-sunrise-loved.jpg",
       "priceUSD": 555.0,
       "listPriceUSD": null,
       "retailer": "Story mfg. (brand direct)",
       "url": "https://www.storymfg.com/products/polite-pullover-sunrise-loved",
       "modes": [
-        "streetwear",
         "classic-casual"
       ],
       "verdict": "indigo railroad, wander jackets, tote from Story mfg..",
@@ -6358,7 +5852,6 @@
       "retailer": "Story mfg. (brand direct)",
       "url": "https://www.storymfg.com/products/poetry-pants-olive-heart-repair",
       "modes": [
-        "streetwear",
         "classic-casual"
       ],
       "verdict": "indigo railroad, wander jackets, tote from Story mfg..",
@@ -6398,7 +5891,6 @@
       "retailer": "Reigning Champ (brand direct)",
       "url": "https://www.reigningchamp.com/products/silk-cashmere-gallery-crewneck-navy",
       "modes": [
-        "streetwear",
         "classic-casual"
       ],
       "verdict": "heavyweight terry / crew \u2014 only if not athleisure-as-outfit from Reigning Champ.",
@@ -6431,14 +5923,13 @@
       "id": "reigning-champ-midweight-terry-standard-sweatshort-7-heather-gre",
       "title": "Midweight Terry Standard Sweatshort 7\"",
       "brand": "Reigning Champ",
-      "category": "other",
+      "category": "shorts",
       "imageUrl": "/product-images/reigning-champ-midweight-terry-standard-sweatshort-7-heather-gre.jpg",
       "priceUSD": 98.0,
       "listPriceUSD": null,
       "retailer": "Reigning Champ (brand direct)",
       "url": "https://www.reigningchamp.com/products/midweight-terry-standard-sweatshort-7-heather-grey",
       "modes": [
-        "streetwear",
         "classic-casual"
       ],
       "verdict": "heavyweight terry / crew \u2014 only if not athleisure-as-outfit from Reigning Champ.",
@@ -6478,8 +5969,7 @@
       "retailer": "Reigning Champ (brand direct)",
       "url": "https://www.reigningchamp.com/products/midweight-terry-standard-hoodie-coffee",
       "modes": [
-        "streetwear",
-        "classic-casual"
+        "streetwear"
       ],
       "verdict": "heavyweight terry / crew \u2014 only if not athleisure-as-outfit from Reigning Champ.",
       "matchReasons": [
@@ -6511,14 +6001,13 @@
       "id": "reigning-champ-heavyweight-jersey-standard-rugby-shirt-black",
       "title": "Heavyweight Jersey Standard Rugby Shirt",
       "brand": "Reigning Champ",
-      "category": "other",
+      "category": "tops",
       "imageUrl": "/product-images/reigning-champ-heavyweight-jersey-standard-rugby-shirt-black.jpg",
       "priceUSD": 98.0,
       "listPriceUSD": null,
       "retailer": "Reigning Champ (brand direct)",
       "url": "https://www.reigningchamp.com/products/heavyweight-jersey-standard-rugby-shirt-black",
       "modes": [
-        "streetwear",
         "classic-casual"
       ],
       "verdict": "heavyweight terry / crew \u2014 only if not athleisure-as-outfit from Reigning Champ.",
@@ -6551,14 +6040,13 @@
       "id": "reigning-champ-classic-rib-beanie-heather-grey",
       "title": "Classic Rib Beanie",
       "brand": "Reigning Champ",
-      "category": "other",
+      "category": "accessories",
       "imageUrl": "/product-images/reigning-champ-classic-rib-beanie-heather-grey.jpg",
       "priceUSD": 58.0,
       "listPriceUSD": null,
       "retailer": "Reigning Champ (brand direct)",
       "url": "https://www.reigningchamp.com/products/classic-rib-beanie-heather-grey",
       "modes": [
-        "streetwear",
         "classic-casual"
       ],
       "verdict": "heavyweight terry / crew \u2014 only if not athleisure-as-outfit from Reigning Champ.",
@@ -6591,15 +6079,15 @@
       "id": "percival-g-h-bass-weejuns-loafers-larson-flag-black-leather",
       "title": "G.H.Bass | Easy Weejun Larson Flag Penny Loafer | Black",
       "brand": "Percival Menswear",
-      "category": "other",
+      "category": "shoes",
       "imageUrl": "/product-images/percival-g-h-bass-weejuns-loafers-larson-flag-black-leather.jpg",
       "priceUSD": 165.0,
       "listPriceUSD": null,
       "retailer": "Percival Menswear (brand direct)",
       "url": "https://www.percivalclo.com/products/g-h-bass-weejuns-loafers-larson-flag-black-leather",
       "modes": [
-        "streetwear",
-        "classic-casual"
+        "minimal-clean",
+        "corporate-presentable"
       ],
       "verdict": "wide-ranging UK casual; filter hard from Percival Menswear.",
       "matchReasons": [
@@ -6631,14 +6119,14 @@
       "id": "percival-plain-regular-t-shirt-organic-cotton-navy",
       "title": "Plain Regular Fit T Shirt | Organic Cotton | Navy",
       "brand": "Percival",
-      "category": "other",
+      "category": "tops",
       "imageUrl": "/product-images/percival-plain-regular-t-shirt-organic-cotton-navy.jpg",
       "priceUSD": 50.0,
       "listPriceUSD": null,
       "retailer": "Percival (brand direct)",
       "url": "https://www.percivalclo.com/products/plain-regular-t-shirt-organic-cotton-navy",
       "modes": [
-        "streetwear",
+        "minimal-clean",
         "classic-casual"
       ],
       "verdict": "wide-ranging UK casual; filter hard from Percival.",
@@ -6678,8 +6166,8 @@
       "retailer": "Percival (brand direct)",
       "url": "https://www.percivalclo.com/products/stanley-pleated-trousers-herringbone-wool-navy",
       "modes": [
-        "streetwear",
-        "classic-casual"
+        "minimal-clean",
+        "corporate-presentable"
       ],
       "verdict": "wide-ranging UK casual; filter hard from Percival.",
       "matchReasons": [
@@ -6711,14 +6199,13 @@
       "id": "ymc-q2cza01-marianne-shirt-black",
       "title": "Marianne Shirt",
       "brand": "YMC",
-      "category": "other",
+      "category": "tops",
       "imageUrl": "/product-images/ymc-q2cza01-marianne-shirt-black.jpg",
       "priceUSD": 150.0,
       "listPriceUSD": null,
       "retailer": "YMC (brand direct)",
       "url": "https://www.youmustcreate.com/products/q2cza01-marianne-shirt-black",
       "modes": [
-        "streetwear",
         "classic-casual"
       ],
       "verdict": "deadbeat trousers, loose shirts from YMC.",
@@ -6758,8 +6245,8 @@
       "retailer": "YMC (brand direct)",
       "url": "https://www.youmustcreate.com/products/q4czd01-deadbeat-trouser-black",
       "modes": [
-        "streetwear",
-        "classic-casual"
+        "minimal-clean",
+        "corporate-presentable"
       ],
       "verdict": "deadbeat trousers, loose shirts from YMC.",
       "matchReasons": [
@@ -6791,14 +6278,13 @@
       "id": "ymc-u2baf42-anti-shirt-blue",
       "title": "Anti Shirt",
       "brand": "YMC",
-      "category": "other",
+      "category": "tops",
       "imageUrl": "/product-images/ymc-u2baf42-anti-shirt-blue.jpg",
       "priceUSD": 225.0,
       "listPriceUSD": null,
       "retailer": "YMC (brand direct)",
       "url": "https://www.youmustcreate.com/products/u2baf42-anti-shirt-blue",
       "modes": [
-        "streetwear",
         "classic-casual"
       ],
       "verdict": "deadbeat trousers, loose shirts from YMC.",
@@ -6838,7 +6324,6 @@
       "retailer": "YMC (brand direct)",
       "url": "https://www.youmustcreate.com/products/u2bab21-pj-overshirt-brown-multi",
       "modes": [
-        "streetwear",
         "classic-casual"
       ],
       "verdict": "deadbeat trousers, loose shirts from YMC.",
@@ -6878,7 +6363,6 @@
       "retailer": "YMC (brand direct)",
       "url": "https://www.youmustcreate.com/products/q8bat22-natalie-cardigan-dark-brown",
       "modes": [
-        "streetwear",
         "classic-casual"
       ],
       "verdict": "deadbeat trousers, loose shirts from YMC.",
@@ -6918,7 +6402,8 @@
       "retailer": "Wax London (brand direct)",
       "url": "https://www.waxlondon.com/products/lennox-black-and-beige-milano-stripe-knitted-polo",
       "modes": [
-        "streetwear",
+        "minimal-clean",
+        "corporate-presentable",
         "classic-casual"
       ],
       "verdict": "bubble knits, pleated trousers from Wax London.",
@@ -6958,8 +6443,8 @@
       "retailer": "Wax London (brand direct)",
       "url": "https://www.waxlondon.com/products/aubyn-black-wool-blend-twill-pleated-trousers",
       "modes": [
-        "streetwear",
-        "classic-casual"
+        "minimal-clean",
+        "corporate-presentable"
       ],
       "verdict": "bubble knits, pleated trousers from Wax London.",
       "matchReasons": [
@@ -6998,7 +6483,6 @@
       "retailer": "Wax London (brand direct)",
       "url": "https://www.waxlondon.com/products/walker-black-and-ecru-bubble-knit-cardigan",
       "modes": [
-        "streetwear",
         "classic-casual"
       ],
       "verdict": "bubble knits, pleated trousers from Wax London.",
@@ -7031,15 +6515,15 @@
       "id": "wax-london-pendal-navy-and-brown-long-sleeve-organic-cotton-polo",
       "title": "Pendal - Navy And Brown Long-Sleeve Organic Cotton Polo",
       "brand": "Wax London",
-      "category": "other",
+      "category": "tops",
       "imageUrl": "/product-images/wax-london-pendal-navy-and-brown-long-sleeve-organic-cotton-polo.jpg",
       "priceUSD": 80.0,
       "listPriceUSD": null,
       "retailer": "Wax London (brand direct)",
       "url": "https://www.waxlondon.com/products/pendal-navy-and-brown-long-sleeve-organic-cotton-polo",
       "modes": [
-        "streetwear",
-        "classic-casual"
+        "minimal-clean",
+        "corporate-presentable"
       ],
       "verdict": "bubble knits, pleated trousers from Wax London.",
       "matchReasons": [
@@ -7071,15 +6555,15 @@
       "id": "wax-london-pendal-black-and-brown-long-sleeve-organic-cotton-pol",
       "title": "Pendal - Black And Brown Long-Sleeve Organic Cotton Polo",
       "brand": "Wax London",
-      "category": "other",
+      "category": "tops",
       "imageUrl": "/product-images/wax-london-pendal-black-and-brown-long-sleeve-organic-cotton-pol.jpg",
       "priceUSD": 80.0,
       "listPriceUSD": null,
       "retailer": "Wax London (brand direct)",
       "url": "https://www.waxlondon.com/products/pendal-black-and-brown-long-sleeve-organic-cotton-polo",
       "modes": [
-        "streetwear",
-        "classic-casual"
+        "minimal-clean",
+        "corporate-presentable"
       ],
       "verdict": "bubble knits, pleated trousers from Wax London.",
       "matchReasons": [
@@ -7118,7 +6602,6 @@
       "retailer": "Oliver Spencer (brand direct)",
       "url": "https://www.oliverspencer.co.uk/products/wyndhams-jacket-drescher-blue",
       "modes": [
-        "streetwear",
         "classic-casual"
       ],
       "verdict": "unstructured jackets, knits from Oliver Spencer.",
@@ -7158,7 +6641,8 @@
       "retailer": "Oliver Spencer (brand direct)",
       "url": "https://www.oliverspencer.co.uk/products/pablo-knitted-polo-shirt-eversley-sand",
       "modes": [
-        "streetwear",
+        "minimal-clean",
+        "corporate-presentable",
         "classic-casual"
       ],
       "verdict": "unstructured jackets, knits from Oliver Spencer.",
@@ -7198,7 +6682,6 @@
       "retailer": "Oliver Spencer (brand direct)",
       "url": "https://www.oliverspencer.co.uk/products/hawes-v-neck-jumper-colvin-charcoal",
       "modes": [
-        "streetwear",
         "classic-casual"
       ],
       "verdict": "unstructured jackets, knits from Oliver Spencer.",
@@ -7238,7 +6721,6 @@
       "retailer": "Oliver Spencer (brand direct)",
       "url": "https://www.oliverspencer.co.uk/products/hawes-v-neck-jumper-colvin-black",
       "modes": [
-        "streetwear",
         "classic-casual"
       ],
       "verdict": "unstructured jackets, knits from Oliver Spencer.",
@@ -7278,7 +6760,6 @@
       "retailer": "Oliver Spencer (brand direct)",
       "url": "https://www.oliverspencer.co.uk/products/graves-v-neck-vest-flynn-multi",
       "modes": [
-        "streetwear",
         "classic-casual"
       ],
       "verdict": "unstructured jackets, knits from Oliver Spencer.",
@@ -7318,7 +6799,6 @@
       "retailer": "PrivateWhite V.C. (brand direct)",
       "url": "https://www.privatewhitevc.com/products/the-crews-swetpants-2-0",
       "modes": [
-        "streetwear",
         "classic-casual"
       ],
       "verdict": "macs, shackets, Manchester workwear-luxe from PrivateWhite V.C..",
@@ -7351,14 +6831,13 @@
       "id": "private-white-the-ventile-mac-3-0-caramel",
       "title": "The Ventile\u00ae Mac - Caramel",
       "brand": "PrivateWhite V.C.",
-      "category": "outerwear",
+      "category": "other",
       "imageUrl": "/product-images/private-white-the-ventile-mac-3-0-caramel.jpg",
       "priceUSD": 398.0,
       "listPriceUSD": 795.0,
       "retailer": "PrivateWhite V.C. (brand direct)",
       "url": "https://www.privatewhitevc.com/products/the-ventile\u00ae-mac-3-0-caramel",
       "modes": [
-        "streetwear",
         "classic-casual"
       ],
       "verdict": "macs, shackets, Manchester workwear-luxe from PrivateWhite V.C..",
@@ -7398,7 +6877,6 @@
       "retailer": "PrivateWhite V.C. (brand direct)",
       "url": "https://www.privatewhitevc.com/products/the-stamford-seersucker-shacket",
       "modes": [
-        "streetwear",
         "classic-casual"
       ],
       "verdict": "macs, shackets, Manchester workwear-luxe from PrivateWhite V.C..",
@@ -7431,15 +6909,15 @@
       "id": "private-white-the-ashley-zip-polo",
       "title": "The Ashley Zip Polo",
       "brand": "PrivateWhite V.C.",
-      "category": "other",
+      "category": "tops",
       "imageUrl": "/product-images/private-white-the-ashley-zip-polo.jpg",
       "priceUSD": 59.0,
       "listPriceUSD": 195.0,
       "retailer": "PrivateWhite V.C. (brand direct)",
       "url": "https://www.privatewhitevc.com/products/the-ashley-zip-polo",
       "modes": [
-        "streetwear",
-        "classic-casual"
+        "minimal-clean",
+        "corporate-presentable"
       ],
       "verdict": "macs, shackets, Manchester workwear-luxe from PrivateWhite V.C..",
       "matchReasons": [
@@ -7471,15 +6949,15 @@
       "id": "private-white-the-edmond-pique-polo-flake-white",
       "title": "The Edmond Pique Polo - Flake White",
       "brand": "Private White V.C.",
-      "category": "other",
+      "category": "tops",
       "imageUrl": "/product-images/private-white-the-edmond-pique-polo-flake-white.jpg",
       "priceUSD": 63.0,
       "listPriceUSD": 125.0,
       "retailer": "Private White V.C. (brand direct)",
       "url": "https://www.privatewhitevc.com/products/the-edmond-pique-polo-flake-white",
       "modes": [
-        "streetwear",
-        "classic-casual"
+        "minimal-clean",
+        "corporate-presentable"
       ],
       "verdict": "macs, shackets, Manchester workwear-luxe from Private White V.C..",
       "matchReasons": [
@@ -7518,7 +6996,6 @@
       "retailer": "RRL (brand direct)",
       "url": "https://www.blueowl.us/products/holland-jacket-in-faded-indigo",
       "modes": [
-        "streetwear",
         "classic-casual"
       ],
       "verdict": "multi-brand Japanese/US workwear. Use product vendor as brand. from RRL.",
@@ -7558,7 +7035,6 @@
       "retailer": "RRL (brand direct)",
       "url": "https://www.blueowl.us/products/corduroy-collar-bower-deck-jacket-in-dark-navy",
       "modes": [
-        "streetwear",
         "classic-casual"
       ],
       "verdict": "multi-brand Japanese/US workwear. Use product vendor as brand. from RRL.",
@@ -7591,14 +7067,14 @@
       "id": "blue-owl-jesse-wool-camp-shirt-in-orange-yellow",
       "title": "Jesse Wool Camp Shirt in Orange/Yellow",
       "brand": "RRL",
-      "category": "other",
+      "category": "tops",
       "imageUrl": "/product-images/blue-owl-jesse-wool-camp-shirt-in-orange-yellow.jpg",
       "priceUSD": 295.0,
       "listPriceUSD": null,
       "retailer": "RRL (brand direct)",
       "url": "https://www.blueowl.us/products/jesse-wool-camp-shirt-in-orange-yellow",
       "modes": [
-        "streetwear",
+        "corporate-presentable",
         "classic-casual"
       ],
       "verdict": "multi-brand Japanese/US workwear. Use product vendor as brand. from RRL.",
@@ -7638,7 +7114,6 @@
       "retailer": "RRL (brand direct)",
       "url": "https://www.blueowl.us/products/givins-wash-16oz-selvedge-denim-vintage-5-pocket-full-straight-fit",
       "modes": [
-        "streetwear",
         "classic-casual"
       ],
       "verdict": "multi-brand Japanese/US workwear. Use product vendor as brand. from RRL.",
@@ -7678,7 +7153,6 @@
       "retailer": "Fullcount (brand direct)",
       "url": "https://www.blueowl.us/products/1101-dartford-13-75oz-selvedge-denim-classic-straight",
       "modes": [
-        "streetwear",
         "classic-casual"
       ],
       "verdict": "multi-brand Japanese/US workwear. Use product vendor as brand. from Fullcount.",
@@ -7718,7 +7192,6 @@
       "retailer": "Gathering (brand direct)",
       "url": "https://www.standardandstrange.com/products/farmer-jacket-cream-stone-washed-linen",
       "modes": [
-        "streetwear",
         "classic-casual"
       ],
       "verdict": "farmer/fisherman jackets, heritage multi-brand from Gathering.",
@@ -7758,7 +7231,6 @@
       "retailer": "Gathering (brand direct)",
       "url": "https://www.standardandstrange.com/products/farmer-jacket-white-handloom-cotton",
       "modes": [
-        "streetwear",
         "classic-casual"
       ],
       "verdict": "farmer/fisherman jackets, heritage multi-brand from Gathering.",
@@ -7798,7 +7270,7 @@
       "retailer": "Gathering (brand direct)",
       "url": "https://www.standardandstrange.com/products/fisherman-jacket-black-linen-stonewash",
       "modes": [
-        "streetwear",
+        "minimal-clean",
         "classic-casual"
       ],
       "verdict": "farmer/fisherman jackets, heritage multi-brand from Gathering.",
@@ -7838,8 +7310,7 @@
       "retailer": "Gathering (brand direct)",
       "url": "https://www.standardandstrange.com/products/fisherman-pant-black-linen-stonewash",
       "modes": [
-        "streetwear",
-        "classic-casual"
+        "minimal-clean"
       ],
       "verdict": "farmer/fisherman jackets, heritage multi-brand from Gathering.",
       "matchReasons": [
@@ -7878,8 +7349,7 @@
       "retailer": "Gathering (brand direct)",
       "url": "https://www.standardandstrange.com/products/farmer-pant-off-white-handloom-cotton-linen",
       "modes": [
-        "streetwear",
-        "classic-casual"
+        "minimal-clean"
       ],
       "verdict": "farmer/fisherman jackets, heritage multi-brand from Gathering.",
       "matchReasons": [
@@ -7918,7 +7388,6 @@
       "retailer": "Samurai Jeans (brand direct)",
       "url": "https://www.okayamadenim.com/products/samurai-jeans-s101ax-ai-plus-selvedge-jacket",
       "modes": [
-        "streetwear",
         "classic-casual"
       ],
       "verdict": "Samurai / Momotaro / Japan Blue and other Okayama mills from Samurai Jeans.",
@@ -7958,7 +7427,6 @@
       "retailer": "Momotaro (brand direct)",
       "url": "https://www.okayamadenim.com/products/momotaro-standard-black-type-2-selvedge-jacket",
       "modes": [
-        "streetwear",
         "classic-casual"
       ],
       "verdict": "Samurai / Momotaro / Japan Blue and other Okayama mills from Momotaro.",
@@ -7998,7 +7466,6 @@
       "retailer": "Japan Blue (brand direct)",
       "url": "https://www.okayamadenim.com/products/japan-blue-12oz-selvedge-jeans-wide-straight",
       "modes": [
-        "streetwear",
         "classic-casual"
       ],
       "verdict": "Samurai / Momotaro / Japan Blue and other Okayama mills from Japan Blue.",
@@ -8031,14 +7498,13 @@
       "id": "okayama-denim-the-flat-head-uk-saddle-leather-garrison-belt-blac",
       "title": "The Flat Head UK Saddle Leather Garrison Belt (Black)",
       "brand": "The Flat Head",
-      "category": "other",
+      "category": "accessories",
       "imageUrl": "/product-images/okayama-denim-the-flat-head-uk-saddle-leather-garrison-belt-blac.jpg",
       "priceUSD": 175.0,
       "listPriceUSD": null,
       "retailer": "The Flat Head (brand direct)",
       "url": "https://www.okayamadenim.com/products/the-flat-head-uk-saddle-leather-garrison-belt-black",
       "modes": [
-        "streetwear",
         "classic-casual"
       ],
       "verdict": "Samurai / Momotaro / Japan Blue and other Okayama mills from The Flat Head.",
@@ -8071,14 +7537,13 @@
       "id": "okayama-denim-the-flat-head-uk-saddle-leather-garrison-belt-brow",
       "title": "The Flat Head UK Saddle Leather Garrison Belt (Brown)",
       "brand": "The Flat Head",
-      "category": "other",
+      "category": "accessories",
       "imageUrl": "/product-images/okayama-denim-the-flat-head-uk-saddle-leather-garrison-belt-brow.jpg",
       "priceUSD": 175.0,
       "listPriceUSD": null,
       "retailer": "The Flat Head (brand direct)",
       "url": "https://www.okayamadenim.com/products/the-flat-head-uk-saddle-leather-garrison-belt-brown",
       "modes": [
-        "streetwear",
         "classic-casual"
       ],
       "verdict": "Samurai / Momotaro / Japan Blue and other Okayama mills from The Flat Head.",
@@ -8118,8 +7583,7 @@
       "retailer": "Jordan (brand direct)",
       "url": "https://www.notre-shop.com/products/air-jordan-3-retro-sneaker-in-obsidian-chalk-track-red",
       "modes": [
-        "streetwear",
-        "classic-casual"
+        "streetwear"
       ],
       "verdict": "mixed street; carpenter work pants appeared on the first page from Jordan.",
       "matchReasons": [
@@ -8158,8 +7622,7 @@
       "retailer": "Les Tien (brand direct)",
       "url": "https://www.notre-shop.com/products/heavyweight-carpenter-workwear-pant-in-vintage-faded-black",
       "modes": [
-        "streetwear",
-        "classic-casual"
+        "streetwear"
       ],
       "verdict": "mixed street; carpenter work pants appeared on the first page from Les Tien.",
       "matchReasons": [
@@ -8198,7 +7661,6 @@
       "retailer": "Les Tien (brand direct)",
       "url": "https://www.notre-shop.com/products/heavyweight-party-snap-pant-in-jet-black",
       "modes": [
-        "streetwear",
         "classic-casual"
       ],
       "verdict": "mixed street; carpenter work pants appeared on the first page from Les Tien.",
@@ -8238,7 +7700,6 @@
       "retailer": "Les Tien (brand direct)",
       "url": "https://www.notre-shop.com/products/heavyweight-party-pant-in-vintage-black",
       "modes": [
-        "streetwear",
         "classic-casual"
       ],
       "verdict": "mixed street; carpenter work pants appeared on the first page from Les Tien.",
@@ -8278,7 +7739,6 @@
       "retailer": "Les Tien (brand direct)",
       "url": "https://www.notre-shop.com/products/heavyweight-party-pant-in-dark-denim",
       "modes": [
-        "streetwear",
         "classic-casual"
       ],
       "verdict": "mixed street; carpenter work pants appeared on the first page from Les Tien.",
@@ -8346,6 +7806,1811 @@
         "stock": "in-stock"
       },
       "addedAt": "2026-08-17T04:10:23Z"
+    },
+    {
+      "id": "zara-us-washed-relaxed-fit-jeans-p04470364",
+      "title": "WASHED RELAXED FIT JEANS",
+      "brand": "ZARA",
+      "category": "pants",
+      "imageUrl": "/product-images/zara-us-washed-relaxed-fit-jeans-p04470364.jpg",
+      "priceUSD": 89.9,
+      "listPriceUSD": null,
+      "retailer": "Zara (brand direct)",
+      "url": "https://www.zara.com/us/en/washed-relaxed-fit-jeans-p04470364.html",
+      "modes": [
+        "classic-casual"
+      ],
+      "verdict": "affordable loose and baggy denim, relaxed trousers, textured shirts, and minimal seasonal layers from ZARA.",
+      "matchReasons": [
+        {
+          "signal": "source",
+          "detail": "affordable loose and baggy denim, relaxed trousers, textured shirts, and minimal seasonal layers"
+        },
+        {
+          "signal": "audience",
+          "detail": "Linked from an official men's category page; product metadata passed the exclusion rules."
+        }
+      ],
+      "provenance": {
+        "sourceType": "brand-direct",
+        "retailer": "www.zara.com",
+        "foundVia": "Firecrawl search of an official men's category followed by Firecrawl product-page extraction",
+        "evidence": "Product page returned 4 variants; lowest current USD price $89.90; stock derived from variant availability.",
+        "audienceEvidence": {
+          "audience": "men",
+          "categoryUrl": "https://www.zara.com/us/en/man-jeans-l659.html",
+          "categoryTitle": "Jeans Men's Fashion | ZARA United States",
+          "method": "product linked from official men's category search result"
+        },
+        "checkedBy": "shopbot scout-firecrawl.py",
+        "sourceId": "zara-us"
+      },
+      "verification": {
+        "status": "verified",
+        "checkedAt": "2026-09-01T17:44:05Z",
+        "priceObservedUSD": 89.9,
+        "stock": "in-stock"
+      },
+      "addedAt": "2026-09-01T17:44:05Z"
+    },
+    {
+      "id": "zara-us-cotton-hemp-relaxed-straight-jeans-p03991300",
+      "title": "COTTON & HEMP RELAXED STRAIGHT JEANS",
+      "brand": "ZARA",
+      "category": "pants",
+      "imageUrl": "/product-images/zara-us-cotton-hemp-relaxed-straight-jeans-p03991300.jpg",
+      "priceUSD": 99.9,
+      "listPriceUSD": null,
+      "retailer": "Zara (brand direct)",
+      "url": "https://www.zara.com/us/en/cotton-hemp-relaxed-straight-jeans-p03991300.html",
+      "modes": [
+        "classic-casual"
+      ],
+      "verdict": "affordable loose and baggy denim, relaxed trousers, textured shirts, and minimal seasonal layers from ZARA.",
+      "matchReasons": [
+        {
+          "signal": "source",
+          "detail": "affordable loose and baggy denim, relaxed trousers, textured shirts, and minimal seasonal layers"
+        },
+        {
+          "signal": "audience",
+          "detail": "Linked from an official men's category page; product metadata passed the exclusion rules."
+        }
+      ],
+      "provenance": {
+        "sourceType": "brand-direct",
+        "retailer": "www.zara.com",
+        "foundVia": "Firecrawl search of an official men's category followed by Firecrawl product-page extraction",
+        "evidence": "Product page returned 4 variants; lowest current USD price $99.90; stock derived from variant availability.",
+        "audienceEvidence": {
+          "audience": "men",
+          "categoryUrl": "https://www.zara.com/us/en/man-jeans-l659.html",
+          "categoryTitle": "Jeans Men's Fashion | ZARA United States",
+          "method": "product linked from official men's category search result"
+        },
+        "checkedBy": "shopbot scout-firecrawl.py",
+        "sourceId": "zara-us"
+      },
+      "verification": {
+        "status": "verified",
+        "checkedAt": "2026-09-01T17:44:05Z",
+        "priceObservedUSD": 99.9,
+        "stock": "in-stock"
+      },
+      "addedAt": "2026-09-01T17:44:05Z"
+    },
+    {
+      "id": "zara-us-relaxed-wide-fit-pleated-pants-p00706928",
+      "title": "RELAXED WIDE-FIT PLEATED PANTS",
+      "brand": "ZARA",
+      "category": "pants",
+      "imageUrl": "/product-images/zara-us-relaxed-wide-fit-pleated-pants-p00706928.jpg",
+      "priceUSD": 99.9,
+      "listPriceUSD": null,
+      "retailer": "Zara (brand direct)",
+      "url": "https://www.zara.com/us/en/relaxed-wide-fit-pleated-pants-p00706928.html",
+      "modes": [
+        "minimal-clean",
+        "corporate-presentable"
+      ],
+      "verdict": "affordable loose and baggy denim, relaxed trousers, textured shirts, and minimal seasonal layers from ZARA.",
+      "matchReasons": [
+        {
+          "signal": "source",
+          "detail": "affordable loose and baggy denim, relaxed trousers, textured shirts, and minimal seasonal layers"
+        },
+        {
+          "signal": "audience",
+          "detail": "Linked from an official men's category page; product metadata passed the exclusion rules."
+        }
+      ],
+      "provenance": {
+        "sourceType": "brand-direct",
+        "retailer": "www.zara.com",
+        "foundVia": "Firecrawl search of an official men's category followed by Firecrawl product-page extraction",
+        "evidence": "Product page returned 5 variants; lowest current USD price $99.90; stock derived from variant availability.",
+        "audienceEvidence": {
+          "audience": "men",
+          "categoryUrl": "https://www.zara.com/us/en/man-trousers-wide-l4143.html",
+          "categoryTitle": "Men Wide Leg Pants | ZARA United States",
+          "method": "product linked from official men's category search result"
+        },
+        "checkedBy": "shopbot scout-firecrawl.py",
+        "sourceId": "zara-us"
+      },
+      "verification": {
+        "status": "verified",
+        "checkedAt": "2026-09-01T17:44:05Z",
+        "priceObservedUSD": 99.9,
+        "stock": "in-stock"
+      },
+      "addedAt": "2026-09-01T17:44:05Z"
+    },
+    {
+      "id": "zara-us-relaxed-fit-pleated-suit-pants-p04702872",
+      "title": "RELAXED FIT PLEATED SUIT PANTS",
+      "brand": "ZARA",
+      "category": "pants",
+      "imageUrl": "/product-images/zara-us-relaxed-fit-pleated-suit-pants-p04702872.jpg",
+      "priceUSD": 99.9,
+      "listPriceUSD": null,
+      "retailer": "Zara (brand direct)",
+      "url": "https://www.zara.com/us/en/relaxed-fit-pleated-suit-pants-p04702872.html",
+      "modes": [
+        "minimal-clean",
+        "corporate-presentable"
+      ],
+      "verdict": "affordable loose and baggy denim, relaxed trousers, textured shirts, and minimal seasonal layers from ZARA.",
+      "matchReasons": [
+        {
+          "signal": "source",
+          "detail": "affordable loose and baggy denim, relaxed trousers, textured shirts, and minimal seasonal layers"
+        },
+        {
+          "signal": "audience",
+          "detail": "Linked from an official men's category page; product metadata passed the exclusion rules."
+        }
+      ],
+      "provenance": {
+        "sourceType": "brand-direct",
+        "retailer": "www.zara.com",
+        "foundVia": "Firecrawl search of an official men's category followed by Firecrawl product-page extraction",
+        "evidence": "Product page returned 5 variants; lowest current USD price $99.90; stock derived from variant availability.",
+        "audienceEvidence": {
+          "audience": "men",
+          "categoryUrl": "https://www.zara.com/us/en/man-trousers-wide-l4143.html",
+          "categoryTitle": "Men Wide Leg Pants | ZARA United States",
+          "method": "product linked from official men's category search result"
+        },
+        "checkedBy": "shopbot scout-firecrawl.py",
+        "sourceId": "zara-us"
+      },
+      "verification": {
+        "status": "verified",
+        "checkedAt": "2026-09-01T17:44:05Z",
+        "priceObservedUSD": 99.9,
+        "stock": "in-stock"
+      },
+      "addedAt": "2026-09-01T17:44:05Z"
+    },
+    {
+      "id": "zara-us-relaxed-fit-denim-hooded-jacket-p04365303",
+      "title": "RELAXED-FIT DENIM HOODIE JACKET",
+      "brand": "ZARA",
+      "category": "outerwear",
+      "imageUrl": "/product-images/zara-us-relaxed-fit-denim-hooded-jacket-p04365303.jpg",
+      "priceUSD": 79.9,
+      "listPriceUSD": null,
+      "retailer": "Zara (brand direct)",
+      "url": "https://www.zara.com/us/en/relaxed-fit-denim-hooded-jacket-p04365303.html",
+      "modes": [
+        "streetwear",
+        "classic-casual"
+      ],
+      "verdict": "affordable loose and baggy denim, relaxed trousers, textured shirts, and minimal seasonal layers from ZARA.",
+      "matchReasons": [
+        {
+          "signal": "source",
+          "detail": "affordable loose and baggy denim, relaxed trousers, textured shirts, and minimal seasonal layers"
+        },
+        {
+          "signal": "audience",
+          "detail": "Linked from an official men's category page; product metadata passed the exclusion rules."
+        }
+      ],
+      "provenance": {
+        "sourceType": "brand-direct",
+        "retailer": "www.zara.com",
+        "foundVia": "Firecrawl search of an official men's category followed by Firecrawl product-page extraction",
+        "evidence": "Product page returned 8 variants; lowest current USD price $79.90; stock derived from variant availability.",
+        "audienceEvidence": {
+          "audience": "men",
+          "categoryUrl": "https://www.zara.com/us/en/man-jackets-denim-l648.html",
+          "categoryTitle": "Men\u00b4s Denim Jackets | ZARA United States",
+          "method": "product linked from official men's category search result"
+        },
+        "checkedBy": "shopbot scout-firecrawl.py",
+        "sourceId": "zara-us"
+      },
+      "verification": {
+        "status": "verified",
+        "checkedAt": "2026-09-01T17:44:05Z",
+        "priceObservedUSD": 79.9,
+        "stock": "in-stock"
+      },
+      "addedAt": "2026-09-01T17:44:05Z"
+    },
+    {
+      "id": "zara-us-basic-denim-jacket-p06987314",
+      "title": "BASIC DENIM JACKET",
+      "brand": "ZARA",
+      "category": "outerwear",
+      "imageUrl": "/product-images/zara-us-basic-denim-jacket-p06987314.jpg",
+      "priceUSD": 69.9,
+      "listPriceUSD": null,
+      "retailer": "Zara (brand direct)",
+      "url": "https://www.zara.com/us/en/basic-denim-jacket-p06987314.html",
+      "modes": [
+        "classic-casual"
+      ],
+      "verdict": "affordable loose and baggy denim, relaxed trousers, textured shirts, and minimal seasonal layers from ZARA.",
+      "matchReasons": [
+        {
+          "signal": "source",
+          "detail": "affordable loose and baggy denim, relaxed trousers, textured shirts, and minimal seasonal layers"
+        },
+        {
+          "signal": "audience",
+          "detail": "Linked from an official men's category page; product metadata passed the exclusion rules."
+        }
+      ],
+      "provenance": {
+        "sourceType": "brand-direct",
+        "retailer": "www.zara.com",
+        "foundVia": "Firecrawl search of an official men's category followed by Firecrawl product-page extraction",
+        "evidence": "Product page returned 8 variants; lowest current USD price $69.90; stock derived from variant availability.",
+        "audienceEvidence": {
+          "audience": "men",
+          "categoryUrl": "https://www.zara.com/us/en/man-jackets-denim-l648.html",
+          "categoryTitle": "Men\u00b4s Denim Jackets | ZARA United States",
+          "method": "product linked from official men's category search result"
+        },
+        "checkedBy": "shopbot scout-firecrawl.py",
+        "sourceId": "zara-us"
+      },
+      "verification": {
+        "status": "verified",
+        "checkedAt": "2026-09-01T17:44:05Z",
+        "priceObservedUSD": 69.9,
+        "stock": "in-stock"
+      },
+      "addedAt": "2026-09-01T17:44:05Z"
+    },
+    {
+      "id": "zara-us-open-knit-textured-polo-p03166306",
+      "title": "OPEN-KNIT TEXTURED POLO",
+      "brand": "ZARA",
+      "category": "knit",
+      "imageUrl": "/product-images/zara-us-open-knit-textured-polo-p03166306.jpg",
+      "priceUSD": 59.9,
+      "listPriceUSD": null,
+      "retailer": "Zara (brand direct)",
+      "url": "https://www.zara.com/us/en/open-knit-textured-polo-p03166306.html",
+      "modes": [
+        "minimal-clean",
+        "corporate-presentable",
+        "classic-casual"
+      ],
+      "verdict": "affordable loose and baggy denim, relaxed trousers, textured shirts, and minimal seasonal layers from ZARA.",
+      "matchReasons": [
+        {
+          "signal": "source",
+          "detail": "affordable loose and baggy denim, relaxed trousers, textured shirts, and minimal seasonal layers"
+        },
+        {
+          "signal": "audience",
+          "detail": "Linked from an official men's category page; product metadata passed the exclusion rules."
+        },
+        {
+          "signal": "taste",
+          "detail": "Discovery title matched: knit, textured."
+        }
+      ],
+      "provenance": {
+        "sourceId": "zara-us",
+        "sourceType": "brand-direct",
+        "retailer": "www.zara.com",
+        "foundVia": "Firecrawl search of an official men's category followed by Firecrawl product-page extraction",
+        "evidence": "Product page returned 12 variants; lowest current USD price $59.90; stock derived from variant availability.",
+        "audienceEvidence": {
+          "audience": "men",
+          "categoryUrl": "https://www.zara.com/us/en/man-polos-l733.html",
+          "categoryTitle": "Men\u00b4s Polo Shirts | ZARA United States",
+          "method": "product linked from official men's category search result"
+        },
+        "checkedBy": "shopbot scout-firecrawl.py"
+      },
+      "verification": {
+        "status": "verified",
+        "checkedAt": "2026-09-01T18:10:33Z",
+        "priceObservedUSD": 59.9,
+        "stock": "in-stock"
+      },
+      "addedAt": "2026-09-01T18:10:33Z"
+    },
+    {
+      "id": "zara-us-relaxed-fit-embroidered-text-polo-p04087350",
+      "title": "RELAXED FIT TEXTURED EMBROIDERED POLO",
+      "brand": "ZARA",
+      "category": "tops",
+      "imageUrl": "/product-images/zara-us-relaxed-fit-embroidered-text-polo-p04087350.jpg",
+      "priceUSD": 59.9,
+      "listPriceUSD": null,
+      "retailer": "Zara (brand direct)",
+      "url": "https://www.zara.com/us/en/relaxed-fit-embroidered-text-polo-p04087350.html",
+      "modes": [
+        "minimal-clean",
+        "corporate-presentable",
+        "classic-casual"
+      ],
+      "verdict": "affordable loose and baggy denim, relaxed trousers, textured shirts, and minimal seasonal layers from ZARA.",
+      "matchReasons": [
+        {
+          "signal": "source",
+          "detail": "affordable loose and baggy denim, relaxed trousers, textured shirts, and minimal seasonal layers"
+        },
+        {
+          "signal": "audience",
+          "detail": "Linked from an official men's category page; product metadata passed the exclusion rules."
+        },
+        {
+          "signal": "taste",
+          "detail": "Discovery title matched: relaxed, textured."
+        }
+      ],
+      "provenance": {
+        "sourceId": "zara-us",
+        "sourceType": "brand-direct",
+        "retailer": "www.zara.com",
+        "foundVia": "Firecrawl search of an official men's category followed by Firecrawl product-page extraction",
+        "evidence": "Product page returned 12 variants; lowest current USD price $59.90; stock derived from variant availability.",
+        "audienceEvidence": {
+          "audience": "men",
+          "categoryUrl": "https://www.zara.com/us/en/man-polos-l733.html",
+          "categoryTitle": "Men\u00b4s Polo Shirts | ZARA United States",
+          "method": "product linked from official men's category search result"
+        },
+        "checkedBy": "shopbot scout-firecrawl.py"
+      },
+      "verification": {
+        "status": "verified",
+        "checkedAt": "2026-09-01T18:10:33Z",
+        "priceObservedUSD": 59.9,
+        "stock": "in-stock"
+      },
+      "addedAt": "2026-09-01T18:10:33Z"
+    },
+    {
+      "id": "zara-us-minimal-sneakers-p12200720",
+      "title": "MINIMAL SNEAKERS",
+      "brand": "ZARA",
+      "category": "shoes",
+      "imageUrl": "/product-images/zara-us-minimal-sneakers-p12200720.jpg",
+      "priceUSD": 55.9,
+      "listPriceUSD": null,
+      "retailer": "Zara (brand direct)",
+      "url": "https://www.zara.com/us/en/minimal-sneakers-p12200720.html",
+      "modes": [
+        "streetwear",
+        "minimal-clean"
+      ],
+      "verdict": "affordable loose and baggy denim, relaxed trousers, textured shirts, and minimal seasonal layers from ZARA.",
+      "matchReasons": [
+        {
+          "signal": "source",
+          "detail": "affordable loose and baggy denim, relaxed trousers, textured shirts, and minimal seasonal layers"
+        },
+        {
+          "signal": "audience",
+          "detail": "Linked from an official men's category page; product metadata passed the exclusion rules."
+        },
+        {
+          "signal": "taste",
+          "detail": "Discovery title matched: minimal."
+        }
+      ],
+      "provenance": {
+        "sourceId": "zara-us",
+        "sourceType": "brand-direct",
+        "retailer": "www.zara.com",
+        "foundVia": "Firecrawl search of an official men's category followed by Firecrawl product-page extraction",
+        "evidence": "Product page returned 18 variants; lowest current USD price $55.90; stock derived from variant availability.",
+        "audienceEvidence": {
+          "audience": "men",
+          "categoryUrl": "https://www.zara.com/us/en/man-shoes-sneakers-l797.html",
+          "categoryTitle": "Men\u00b4s Sneakers | ZARA United States",
+          "method": "product linked from official men's category search result"
+        },
+        "checkedBy": "shopbot scout-firecrawl.py"
+      },
+      "verification": {
+        "status": "verified",
+        "checkedAt": "2026-09-01T18:10:33Z",
+        "priceObservedUSD": 55.9,
+        "stock": "in-stock"
+      },
+      "addedAt": "2026-09-01T18:10:33Z"
+    },
+    {
+      "id": "zara-us-striped-jacquard-knit-polo-p05536303",
+      "title": "STRIPED JACQUARD KNIT POLO",
+      "brand": "ZARA",
+      "category": "knit",
+      "imageUrl": "/product-images/zara-us-striped-jacquard-knit-polo-p05536303.jpg",
+      "priceUSD": 59.9,
+      "listPriceUSD": null,
+      "retailer": "Zara (brand direct)",
+      "url": "https://www.zara.com/us/en/striped-jacquard-knit-polo-p05536303.html",
+      "modes": [
+        "minimal-clean",
+        "corporate-presentable",
+        "classic-casual"
+      ],
+      "verdict": "affordable loose and baggy denim, relaxed trousers, textured shirts, and minimal seasonal layers from ZARA.",
+      "matchReasons": [
+        {
+          "signal": "source",
+          "detail": "affordable loose and baggy denim, relaxed trousers, textured shirts, and minimal seasonal layers"
+        },
+        {
+          "signal": "audience",
+          "detail": "Linked from an official men's category page; product metadata passed the exclusion rules."
+        },
+        {
+          "signal": "taste",
+          "detail": "Discovery title matched: knit."
+        }
+      ],
+      "provenance": {
+        "sourceId": "zara-us",
+        "sourceType": "brand-direct",
+        "retailer": "www.zara.com",
+        "foundVia": "Firecrawl search of an official men's category followed by Firecrawl product-page extraction",
+        "evidence": "Product page returned 3 variants; lowest current USD price $59.90; stock derived from variant availability.",
+        "audienceEvidence": {
+          "audience": "men",
+          "categoryUrl": "https://www.zara.com/us/en/man-polos-stripes-l1700.html",
+          "categoryTitle": "Men\u00b4s Striped Polo Shirts | ZARA United States",
+          "method": "product linked from official men's category search result"
+        },
+        "checkedBy": "shopbot scout-firecrawl.py"
+      },
+      "verification": {
+        "status": "verified",
+        "checkedAt": "2026-09-01T18:10:33Z",
+        "priceObservedUSD": 59.9,
+        "stock": "in-stock"
+      },
+      "addedAt": "2026-09-01T18:10:33Z"
+    },
+    {
+      "id": "zara-us-relaxed-fit-striped-pique-polo-shirt-p00526325",
+      "title": "RELAXED FIT STRIPED PIQU\u00c9 POLO SHIRT",
+      "brand": "ZARA",
+      "category": "tops",
+      "imageUrl": "/product-images/zara-us-relaxed-fit-striped-pique-polo-shirt-p00526325.jpg",
+      "priceUSD": 59.9,
+      "listPriceUSD": null,
+      "retailer": "Zara (brand direct)",
+      "url": "https://www.zara.com/us/en/relaxed-fit-striped-pique-polo-shirt-p00526325.html",
+      "modes": [
+        "minimal-clean",
+        "corporate-presentable",
+        "classic-casual"
+      ],
+      "verdict": "affordable loose and baggy denim, relaxed trousers, textured shirts, and minimal seasonal layers from ZARA.",
+      "matchReasons": [
+        {
+          "signal": "source",
+          "detail": "affordable loose and baggy denim, relaxed trousers, textured shirts, and minimal seasonal layers"
+        },
+        {
+          "signal": "audience",
+          "detail": "Linked from an official men's category page; product metadata passed the exclusion rules."
+        },
+        {
+          "signal": "taste",
+          "detail": "Discovery title matched: relaxed."
+        }
+      ],
+      "provenance": {
+        "sourceId": "zara-us",
+        "sourceType": "brand-direct",
+        "retailer": "www.zara.com",
+        "foundVia": "Firecrawl search of an official men's category followed by Firecrawl product-page extraction",
+        "evidence": "Product page returned 20 variants; lowest current USD price $59.90; stock derived from variant availability.",
+        "audienceEvidence": {
+          "audience": "men",
+          "categoryUrl": "https://www.zara.com/us/en/man-polos-l733.html",
+          "categoryTitle": "Men\u00b4s Polo Shirts | ZARA United States",
+          "method": "product linked from official men's category search result"
+        },
+        "checkedBy": "shopbot scout-firecrawl.py"
+      },
+      "verification": {
+        "status": "verified",
+        "checkedAt": "2026-09-01T18:10:33Z",
+        "priceObservedUSD": 59.9,
+        "stock": "in-stock"
+      },
+      "addedAt": "2026-09-01T18:10:33Z"
+    },
+    {
+      "id": "zara-us-minimal-sneakers-p12203620",
+      "title": "MINIMAL SNEAKERS",
+      "brand": "ZARA",
+      "category": "shoes",
+      "imageUrl": "/product-images/zara-us-minimal-sneakers-p12203620.jpg",
+      "priceUSD": 55.9,
+      "listPriceUSD": null,
+      "retailer": "Zara (brand direct)",
+      "url": "https://www.zara.com/us/en/minimal-sneakers-p12203620.html",
+      "modes": [
+        "streetwear",
+        "minimal-clean"
+      ],
+      "verdict": "affordable loose and baggy denim, relaxed trousers, textured shirts, and minimal seasonal layers from ZARA.",
+      "matchReasons": [
+        {
+          "signal": "source",
+          "detail": "affordable loose and baggy denim, relaxed trousers, textured shirts, and minimal seasonal layers"
+        },
+        {
+          "signal": "audience",
+          "detail": "Linked from an official men's category page; product metadata passed the exclusion rules."
+        },
+        {
+          "signal": "taste",
+          "detail": "Discovery title matched: minimal."
+        }
+      ],
+      "provenance": {
+        "sourceId": "zara-us",
+        "sourceType": "brand-direct",
+        "retailer": "www.zara.com",
+        "foundVia": "Firecrawl search of an official men's category followed by Firecrawl product-page extraction",
+        "evidence": "Product page returned 9 variants; lowest current USD price $55.90; stock derived from variant availability.",
+        "audienceEvidence": {
+          "audience": "men",
+          "categoryUrl": "https://www.zara.com/us/en/man-shoes-sneakers-l797.html",
+          "categoryTitle": "Men\u00b4s Sneakers | ZARA United States",
+          "method": "product linked from official men's category search result"
+        },
+        "checkedBy": "shopbot scout-firecrawl.py"
+      },
+      "verification": {
+        "status": "verified",
+        "checkedAt": "2026-09-01T18:10:33Z",
+        "priceObservedUSD": 55.9,
+        "stock": "in-stock"
+      },
+      "addedAt": "2026-09-01T18:10:33Z"
+    },
+    {
+      "id": "zara-us-basic-denim-jacket-p06987354",
+      "title": "BASIC DENIM JACKET",
+      "brand": "ZARA",
+      "category": "outerwear",
+      "imageUrl": "/product-images/zara-us-basic-denim-jacket-p06987354.jpg",
+      "priceUSD": 69.9,
+      "listPriceUSD": null,
+      "retailer": "Zara (brand direct)",
+      "url": "https://www.zara.com/us/en/basic-denim-jacket-p06987354.html",
+      "modes": [
+        "classic-casual"
+      ],
+      "verdict": "affordable loose and baggy denim, relaxed trousers, textured shirts, and minimal seasonal layers from ZARA.",
+      "matchReasons": [
+        {
+          "signal": "source",
+          "detail": "affordable loose and baggy denim, relaxed trousers, textured shirts, and minimal seasonal layers"
+        },
+        {
+          "signal": "audience",
+          "detail": "Linked from an official men's category page; product metadata passed the exclusion rules."
+        },
+        {
+          "signal": "taste",
+          "detail": "Discovery title matched: denim."
+        }
+      ],
+      "provenance": {
+        "sourceId": "zara-us",
+        "sourceType": "brand-direct",
+        "retailer": "www.zara.com",
+        "foundVia": "Firecrawl search of an official men's category followed by Firecrawl product-page extraction",
+        "evidence": "Product page returned 4 variants; lowest current USD price $69.90; stock derived from variant availability.",
+        "audienceEvidence": {
+          "audience": "men",
+          "categoryUrl": "https://www.zara.com/us/en/man-jackets-denim-l648.html",
+          "categoryTitle": "Men\u00b4s Denim Jackets | ZARA United States",
+          "method": "product linked from official men's category search result"
+        },
+        "checkedBy": "shopbot scout-firecrawl.py"
+      },
+      "verification": {
+        "status": "verified",
+        "checkedAt": "2026-09-01T18:10:33Z",
+        "priceObservedUSD": 69.9,
+        "stock": "in-stock"
+      },
+      "addedAt": "2026-09-01T18:10:33Z"
+    },
+    {
+      "id": "zara-us-retro-soccer-relaxed-fit-polo-p04087327",
+      "title": "RETRO SOCCER RELAXED FIT POLO",
+      "brand": "ZARA",
+      "category": "tops",
+      "imageUrl": "/product-images/zara-us-retro-soccer-relaxed-fit-polo-p04087327.jpg",
+      "priceUSD": 59.9,
+      "listPriceUSD": null,
+      "retailer": "Zara (brand direct)",
+      "url": "https://www.zara.com/us/en/retro-soccer-relaxed-fit-polo-p04087327.html",
+      "modes": [
+        "streetwear",
+        "minimal-clean",
+        "corporate-presentable",
+        "classic-casual"
+      ],
+      "verdict": "affordable loose and baggy denim, relaxed trousers, textured shirts, and minimal seasonal layers from ZARA.",
+      "matchReasons": [
+        {
+          "signal": "source",
+          "detail": "affordable loose and baggy denim, relaxed trousers, textured shirts, and minimal seasonal layers"
+        },
+        {
+          "signal": "audience",
+          "detail": "Linked from an official men's category page; product metadata passed the exclusion rules."
+        },
+        {
+          "signal": "taste",
+          "detail": "Discovery title matched: relaxed."
+        }
+      ],
+      "provenance": {
+        "sourceId": "zara-us",
+        "sourceType": "brand-direct",
+        "retailer": "www.zara.com",
+        "foundVia": "Firecrawl search of an official men's category followed by Firecrawl product-page extraction",
+        "evidence": "Product page returned 4 variants; lowest current USD price $59.90; stock derived from variant availability.",
+        "audienceEvidence": {
+          "audience": "men",
+          "categoryUrl": "https://www.zara.com/us/en/man-polos-l733.html",
+          "categoryTitle": "Men\u00b4s Polo Shirts | ZARA United States",
+          "method": "product linked from official men's category search result"
+        },
+        "checkedBy": "shopbot scout-firecrawl.py"
+      },
+      "verification": {
+        "status": "verified",
+        "checkedAt": "2026-09-01T18:10:33Z",
+        "priceObservedUSD": 59.9,
+        "stock": "in-stock"
+      },
+      "addedAt": "2026-09-01T18:10:33Z"
+    },
+    {
+      "id": "zara-us-basic-denim-jacket-p08062391",
+      "title": "BASIC DENIM JACKET",
+      "brand": "ZARA",
+      "category": "outerwear",
+      "imageUrl": "/product-images/zara-us-basic-denim-jacket-p08062391.jpg",
+      "priceUSD": 59.9,
+      "listPriceUSD": null,
+      "retailer": "Zara (brand direct)",
+      "url": "https://www.zara.com/us/en/basic-denim-jacket-p08062391.html",
+      "modes": [
+        "classic-casual"
+      ],
+      "verdict": "affordable loose and baggy denim, relaxed trousers, textured shirts, and minimal seasonal layers from ZARA.",
+      "matchReasons": [
+        {
+          "signal": "source",
+          "detail": "affordable loose and baggy denim, relaxed trousers, textured shirts, and minimal seasonal layers"
+        },
+        {
+          "signal": "audience",
+          "detail": "Linked from an official men's category page; product metadata passed the exclusion rules."
+        },
+        {
+          "signal": "taste",
+          "detail": "Discovery title matched: denim."
+        }
+      ],
+      "provenance": {
+        "sourceId": "zara-us",
+        "sourceType": "brand-direct",
+        "retailer": "www.zara.com",
+        "foundVia": "Firecrawl search of an official men's category followed by Firecrawl product-page extraction",
+        "evidence": "Product page returned 4 variants; lowest current USD price $59.90; stock derived from variant availability.",
+        "audienceEvidence": {
+          "audience": "men",
+          "categoryUrl": "https://www.zara.com/us/en/man-jackets-denim-l648.html",
+          "categoryTitle": "Men\u00b4s Denim Jackets | ZARA United States",
+          "method": "product linked from official men's category search result"
+        },
+        "checkedBy": "shopbot scout-firecrawl.py"
+      },
+      "verification": {
+        "status": "verified",
+        "checkedAt": "2026-09-01T18:10:33Z",
+        "priceObservedUSD": 59.9,
+        "stock": "in-stock"
+      },
+      "addedAt": "2026-09-01T18:10:33Z"
+    },
+    {
+      "id": "zara-us-vertical-textured-polo-p00526410",
+      "title": "VERTICAL TEXTURED POLO",
+      "brand": "ZARA",
+      "category": "tops",
+      "imageUrl": "/product-images/zara-us-vertical-textured-polo-p00526410.jpg",
+      "priceUSD": 45.9,
+      "listPriceUSD": null,
+      "retailer": "Zara (brand direct)",
+      "url": "https://www.zara.com/us/en/vertical-textured-polo-p00526410.html",
+      "modes": [
+        "minimal-clean",
+        "corporate-presentable",
+        "classic-casual"
+      ],
+      "verdict": "affordable loose and baggy denim, relaxed trousers, textured shirts, and minimal seasonal layers from ZARA.",
+      "matchReasons": [
+        {
+          "signal": "source",
+          "detail": "affordable loose and baggy denim, relaxed trousers, textured shirts, and minimal seasonal layers"
+        },
+        {
+          "signal": "audience",
+          "detail": "Linked from an official men's category page; product metadata passed the exclusion rules."
+        },
+        {
+          "signal": "taste",
+          "detail": "Discovery title matched: textured."
+        }
+      ],
+      "provenance": {
+        "sourceId": "zara-us",
+        "sourceType": "brand-direct",
+        "retailer": "www.zara.com",
+        "foundVia": "Firecrawl search of an official men's category followed by Firecrawl product-page extraction",
+        "evidence": "Product page returned 25 variants; lowest current USD price $45.90; stock derived from variant availability.",
+        "audienceEvidence": {
+          "audience": "men",
+          "categoryUrl": "https://www.zara.com/us/en/man-polos-l733.html",
+          "categoryTitle": "Men\u00b4s Polo Shirts | ZARA United States",
+          "method": "product linked from official men's category search result"
+        },
+        "checkedBy": "shopbot scout-firecrawl.py"
+      },
+      "verification": {
+        "status": "verified",
+        "checkedAt": "2026-09-01T18:10:33Z",
+        "priceObservedUSD": 45.9,
+        "stock": "in-stock"
+      },
+      "addedAt": "2026-09-01T18:10:33Z"
+    },
+    {
+      "id": "zara-us-embroidered-hooded-denim-jacket-p03409305",
+      "title": "DENIM HOODED JACKET WITH EMBROIDERY",
+      "brand": "ZARA",
+      "category": "outerwear",
+      "imageUrl": "/product-images/zara-us-embroidered-hooded-denim-jacket-p03409305.jpg",
+      "priceUSD": 89.9,
+      "listPriceUSD": null,
+      "retailer": "Zara (brand direct)",
+      "url": "https://www.zara.com/us/en/embroidered-hooded-denim-jacket-p03409305.html",
+      "modes": [
+        "classic-casual"
+      ],
+      "verdict": "affordable loose and baggy denim, relaxed trousers, textured shirts, and minimal seasonal layers from ZARA.",
+      "matchReasons": [
+        {
+          "signal": "source",
+          "detail": "affordable loose and baggy denim, relaxed trousers, textured shirts, and minimal seasonal layers"
+        },
+        {
+          "signal": "audience",
+          "detail": "Linked from an official men's category page; product metadata passed the exclusion rules."
+        },
+        {
+          "signal": "taste",
+          "detail": "Discovery title matched: denim."
+        }
+      ],
+      "provenance": {
+        "sourceId": "zara-us",
+        "sourceType": "brand-direct",
+        "retailer": "www.zara.com",
+        "foundVia": "Firecrawl search of an official men's category followed by Firecrawl product-page extraction",
+        "evidence": "Product page returned 4 variants; lowest current USD price $89.90; stock derived from variant availability.",
+        "audienceEvidence": {
+          "audience": "men",
+          "categoryUrl": "https://www.zara.com/us/en/man-jackets-grey-l2498.html",
+          "categoryTitle": "Men\u00b4s Grey Jackets | ZARA United States",
+          "method": "product linked from official men's category search result"
+        },
+        "checkedBy": "shopbot scout-firecrawl.py"
+      },
+      "verification": {
+        "status": "verified",
+        "checkedAt": "2026-09-01T18:10:33Z",
+        "priceObservedUSD": 89.9,
+        "stock": "in-stock"
+      },
+      "addedAt": "2026-09-01T18:10:33Z"
+    },
+    {
+      "id": "zara-us-100-linen-relaxed-fit-knit-polo-shirt-p04216302",
+      "title": "100% LINEN RELAXED FIT POLO SHIRT",
+      "brand": "ZARA",
+      "category": "tops",
+      "imageUrl": "/product-images/zara-us-100-linen-relaxed-fit-knit-polo-shirt-p04216302.jpg",
+      "priceUSD": 69.9,
+      "listPriceUSD": null,
+      "retailer": "Zara (brand direct)",
+      "url": "https://www.zara.com/us/en/100-linen-relaxed-fit-knit-polo-shirt-p04216302.html",
+      "modes": [
+        "minimal-clean",
+        "corporate-presentable",
+        "classic-casual"
+      ],
+      "verdict": "affordable loose and baggy denim, relaxed trousers, textured shirts, and minimal seasonal layers from ZARA.",
+      "matchReasons": [
+        {
+          "signal": "source",
+          "detail": "affordable loose and baggy denim, relaxed trousers, textured shirts, and minimal seasonal layers"
+        },
+        {
+          "signal": "audience",
+          "detail": "Linked from an official men's category page; product metadata passed the exclusion rules."
+        },
+        {
+          "signal": "taste",
+          "detail": "Discovery title matched: knit, relaxed."
+        }
+      ],
+      "provenance": {
+        "sourceId": "zara-us",
+        "sourceType": "brand-direct",
+        "retailer": "www.zara.com",
+        "foundVia": "Shopbot self-hosted browser crawl of an official men's category followed by deterministic product-page extraction",
+        "evidence": "Product page returned 3 variants; lowest current USD price $69.90; stock derived from variant availability.",
+        "audienceEvidence": {
+          "audience": "men",
+          "categoryUrl": "https://www.zara.com/us/en/man-polos-l733.html",
+          "categoryTitle": "Men\u00b4s Polo Shirts | ZARA United StatesBack ButtonFilter Button",
+          "method": "product linked from official men's category page crawled by Shopbot's browser"
+        },
+        "checkedBy": "shopbot scout-browser.py"
+      },
+      "verification": {
+        "status": "verified",
+        "checkedAt": "2026-09-01T18:52:10Z",
+        "priceObservedUSD": 69.9,
+        "stock": "in-stock"
+      },
+      "addedAt": "2026-09-01T18:52:10Z"
+    },
+    {
+      "id": "zara-us-aaron-levine-x-zara-leather-sneakers-p12272820",
+      "title": "AARON LEVINE X ZARA LEATHER SNEAKERS",
+      "brand": "ZARA",
+      "category": "shoes",
+      "imageUrl": "/product-images/zara-us-aaron-levine-x-zara-leather-sneakers-p12272820.jpg",
+      "priceUSD": 169.0,
+      "listPriceUSD": null,
+      "retailer": "Zara (brand direct)",
+      "url": "https://www.zara.com/us/en/aaron-levine-x-zara-leather-sneakers-p12272820.html",
+      "modes": [
+        "streetwear"
+      ],
+      "verdict": "affordable loose and baggy denim, relaxed trousers, textured shirts, and minimal seasonal layers from ZARA.",
+      "matchReasons": [
+        {
+          "signal": "source",
+          "detail": "affordable loose and baggy denim, relaxed trousers, textured shirts, and minimal seasonal layers"
+        },
+        {
+          "signal": "audience",
+          "detail": "Linked from an official men's category page; product metadata passed the exclusion rules."
+        }
+      ],
+      "provenance": {
+        "sourceId": "zara-us",
+        "sourceType": "brand-direct",
+        "retailer": "www.zara.com",
+        "foundVia": "Shopbot self-hosted browser crawl of an official men's category followed by deterministic product-page extraction",
+        "evidence": "Product page returned 7 variants; lowest current USD price $169.00; stock derived from variant availability.",
+        "audienceEvidence": {
+          "audience": "men",
+          "categoryUrl": "https://www.zara.com/us/en/man-shoes-sneakers-l797.html",
+          "categoryTitle": "Men\u00b4s Sneakers | ZARA United StatesBack ButtonFilter Button",
+          "method": "product linked from official men's category page crawled by Shopbot's browser"
+        },
+        "checkedBy": "shopbot scout-browser.py"
+      },
+      "verification": {
+        "status": "verified",
+        "checkedAt": "2026-09-01T18:52:10Z",
+        "priceObservedUSD": 169.0,
+        "stock": "in-stock"
+      },
+      "addedAt": "2026-09-01T18:52:10Z"
+    },
+    {
+      "id": "zara-us-regular-fit-textured-knit-polo-p03284445",
+      "title": "REGULAR FIT TEXTURED KNIT POLO",
+      "brand": "ZARA",
+      "category": "knit",
+      "imageUrl": "/product-images/zara-us-regular-fit-textured-knit-polo-p03284445.jpg",
+      "priceUSD": 59.9,
+      "listPriceUSD": null,
+      "retailer": "Zara (brand direct)",
+      "url": "https://www.zara.com/us/en/regular-fit-textured-knit-polo-p03284445.html",
+      "modes": [
+        "minimal-clean",
+        "corporate-presentable",
+        "classic-casual"
+      ],
+      "verdict": "affordable loose and baggy denim, relaxed trousers, textured shirts, and minimal seasonal layers from ZARA.",
+      "matchReasons": [
+        {
+          "signal": "source",
+          "detail": "affordable loose and baggy denim, relaxed trousers, textured shirts, and minimal seasonal layers"
+        },
+        {
+          "signal": "audience",
+          "detail": "Linked from an official men's category page; product metadata passed the exclusion rules."
+        },
+        {
+          "signal": "taste",
+          "detail": "Discovery title matched: knit, textured."
+        }
+      ],
+      "provenance": {
+        "sourceId": "zara-us",
+        "sourceType": "brand-direct",
+        "retailer": "www.zara.com",
+        "foundVia": "Shopbot self-hosted browser crawl of an official men's category followed by deterministic product-page extraction",
+        "evidence": "Product page returned 3 variants; lowest current USD price $59.90; stock derived from variant availability.",
+        "audienceEvidence": {
+          "audience": "men",
+          "categoryUrl": "https://www.zara.com/us/en/man-polos-l733.html",
+          "categoryTitle": "Men\u00b4s Polo Shirts | ZARA United StatesBack ButtonFilter Button",
+          "method": "product linked from official men's category page crawled by Shopbot's browser"
+        },
+        "checkedBy": "shopbot scout-browser.py"
+      },
+      "verification": {
+        "status": "verified",
+        "checkedAt": "2026-09-01T18:52:10Z",
+        "priceObservedUSD": 59.9,
+        "stock": "in-stock"
+      },
+      "addedAt": "2026-09-01T18:52:10Z"
+    },
+    {
+      "id": "zara-us-aaron-levine-x-zara-leather-sneakers-p12272821",
+      "title": "AARON LEVINE X ZARA LEATHER SNEAKERS",
+      "brand": "ZARA",
+      "category": "shoes",
+      "imageUrl": "/product-images/zara-us-aaron-levine-x-zara-leather-sneakers-p12272821.jpg",
+      "priceUSD": 169.0,
+      "listPriceUSD": null,
+      "retailer": "Zara (brand direct)",
+      "url": "https://www.zara.com/us/en/aaron-levine-x-zara-leather-sneakers-p12272821.html",
+      "modes": [
+        "streetwear"
+      ],
+      "verdict": "affordable loose and baggy denim, relaxed trousers, textured shirts, and minimal seasonal layers from ZARA.",
+      "matchReasons": [
+        {
+          "signal": "source",
+          "detail": "affordable loose and baggy denim, relaxed trousers, textured shirts, and minimal seasonal layers"
+        },
+        {
+          "signal": "audience",
+          "detail": "Linked from an official men's category page; product metadata passed the exclusion rules."
+        }
+      ],
+      "provenance": {
+        "sourceId": "zara-us",
+        "sourceType": "brand-direct",
+        "retailer": "www.zara.com",
+        "foundVia": "Shopbot self-hosted browser crawl of an official men's category followed by deterministic product-page extraction",
+        "evidence": "Product page returned 7 variants; lowest current USD price $169.00; stock derived from variant availability.",
+        "audienceEvidence": {
+          "audience": "men",
+          "categoryUrl": "https://www.zara.com/us/en/man-shoes-sneakers-l797.html",
+          "categoryTitle": "Men\u00b4s Sneakers | ZARA United StatesBack ButtonFilter Button",
+          "method": "product linked from official men's category page crawled by Shopbot's browser"
+        },
+        "checkedBy": "shopbot scout-browser.py"
+      },
+      "verification": {
+        "status": "verified",
+        "checkedAt": "2026-09-01T18:52:10Z",
+        "priceObservedUSD": 169.0,
+        "stock": "in-stock"
+      },
+      "addedAt": "2026-09-01T18:52:10Z"
+    },
+    {
+      "id": "zara-us-pinstripe-boxy-fit-denim-shirt-p00840335",
+      "title": "PINSTRIPE BOXY FIT DENIM SHIRT",
+      "brand": "ZARA",
+      "category": "tops",
+      "imageUrl": "/product-images/zara-us-pinstripe-boxy-fit-denim-shirt-p00840335.jpg",
+      "priceUSD": 79.9,
+      "listPriceUSD": null,
+      "retailer": "Zara (brand direct)",
+      "url": "https://www.zara.com/us/en/pinstripe-boxy-fit-denim-shirt-p00840335.html",
+      "modes": [
+        "classic-casual"
+      ],
+      "verdict": "affordable loose and baggy denim, relaxed trousers, textured shirts, and minimal seasonal layers from ZARA.",
+      "matchReasons": [
+        {
+          "signal": "source",
+          "detail": "affordable loose and baggy denim, relaxed trousers, textured shirts, and minimal seasonal layers"
+        },
+        {
+          "signal": "audience",
+          "detail": "Linked from an official men's category page; product metadata passed the exclusion rules."
+        },
+        {
+          "signal": "taste",
+          "detail": "Discovery title matched: boxy, denim."
+        }
+      ],
+      "provenance": {
+        "sourceId": "zara-us",
+        "sourceType": "brand-direct",
+        "retailer": "www.zara.com",
+        "foundVia": "Shopbot self-hosted browser crawl of an official men's category followed by deterministic product-page extraction",
+        "evidence": "Product page returned 4 variants; lowest current USD price $79.90; stock derived from variant availability.",
+        "audienceEvidence": {
+          "audience": "men",
+          "categoryUrl": "https://www.zara.com/us/en/man-polos-l733.html",
+          "categoryTitle": "Men\u00b4s Polo Shirts | ZARA United StatesBack ButtonFilter Button",
+          "method": "product linked from official men's category page crawled by Shopbot's browser"
+        },
+        "checkedBy": "shopbot scout-browser.py"
+      },
+      "verification": {
+        "status": "verified",
+        "checkedAt": "2026-09-01T18:52:10Z",
+        "priceObservedUSD": 79.9,
+        "stock": "in-stock"
+      },
+      "addedAt": "2026-09-01T18:52:10Z"
+    },
+    {
+      "id": "zara-us-relaxed-fit-pleated-pants-p08281740",
+      "title": "RELAXED FIT PLEATED PANTS",
+      "brand": "ZARA",
+      "category": "pants",
+      "imageUrl": "/product-images/zara-us-relaxed-fit-pleated-pants-p08281740.jpg",
+      "priceUSD": 79.9,
+      "listPriceUSD": null,
+      "retailer": "Zara (brand direct)",
+      "url": "https://www.zara.com/us/en/relaxed-fit-pleated-pants-p08281740.html",
+      "modes": [
+        "corporate-presentable"
+      ],
+      "verdict": "affordable loose and baggy denim, relaxed trousers, textured shirts, and minimal seasonal layers from ZARA.",
+      "matchReasons": [
+        {
+          "signal": "source",
+          "detail": "affordable loose and baggy denim, relaxed trousers, textured shirts, and minimal seasonal layers"
+        },
+        {
+          "signal": "audience",
+          "detail": "Linked from an official men's category page; product metadata passed the exclusion rules."
+        },
+        {
+          "signal": "taste",
+          "detail": "Discovery title matched: pleated, relaxed."
+        }
+      ],
+      "provenance": {
+        "sourceId": "zara-us",
+        "sourceType": "brand-direct",
+        "retailer": "www.zara.com",
+        "foundVia": "Shopbot self-hosted browser crawl of an official men's category followed by deterministic product-page extraction",
+        "evidence": "Product page returned 25 variants; lowest current USD price $79.90; stock derived from variant availability.",
+        "audienceEvidence": {
+          "audience": "men",
+          "categoryUrl": "https://www.zara.com/us/en/man-collection-l622.html",
+          "categoryTitle": "Collection Men's Fashion | ZARA United StatesBack ButtonFilter Button",
+          "method": "product linked from official men's category page crawled by Shopbot's browser"
+        },
+        "checkedBy": "shopbot scout-browser.py"
+      },
+      "verification": {
+        "status": "verified",
+        "checkedAt": "2026-09-01T18:52:10Z",
+        "priceObservedUSD": 79.9,
+        "stock": "in-stock"
+      },
+      "addedAt": "2026-09-01T18:52:10Z"
+    },
+    {
+      "id": "zara-us-regular-fit-textured-knit-polo-p03332410",
+      "title": "REGULAR FIT TEXTURED KNIT POLO",
+      "brand": "ZARA",
+      "category": "knit",
+      "imageUrl": "/product-images/zara-us-regular-fit-textured-knit-polo-p03332410.jpg",
+      "priceUSD": 59.9,
+      "listPriceUSD": null,
+      "retailer": "Zara (brand direct)",
+      "url": "https://www.zara.com/us/en/regular-fit-textured-knit-polo-p03332410.html",
+      "modes": [
+        "minimal-clean",
+        "corporate-presentable",
+        "classic-casual"
+      ],
+      "verdict": "affordable loose and baggy denim, relaxed trousers, textured shirts, and minimal seasonal layers from ZARA.",
+      "matchReasons": [
+        {
+          "signal": "source",
+          "detail": "affordable loose and baggy denim, relaxed trousers, textured shirts, and minimal seasonal layers"
+        },
+        {
+          "signal": "audience",
+          "detail": "Linked from an official men's category page; product metadata passed the exclusion rules."
+        },
+        {
+          "signal": "taste",
+          "detail": "Discovery title matched: knit, textured."
+        }
+      ],
+      "provenance": {
+        "sourceId": "zara-us",
+        "sourceType": "brand-direct",
+        "retailer": "www.zara.com",
+        "foundVia": "Shopbot self-hosted browser crawl of an official men's category followed by deterministic product-page extraction",
+        "evidence": "Product page returned 12 variants; lowest current USD price $59.90; stock derived from variant availability.",
+        "audienceEvidence": {
+          "audience": "men",
+          "categoryUrl": "https://www.zara.com/us/en/man-polos-l733.html",
+          "categoryTitle": "Men\u00b4s Polo Shirts | ZARA United StatesBack ButtonFilter Button",
+          "method": "product linked from official men's category page crawled by Shopbot's browser"
+        },
+        "checkedBy": "shopbot scout-browser.py"
+      },
+      "verification": {
+        "status": "verified",
+        "checkedAt": "2026-09-01T18:52:10Z",
+        "priceObservedUSD": 59.9,
+        "stock": "in-stock"
+      },
+      "addedAt": "2026-09-01T18:52:10Z"
+    },
+    {
+      "id": "ae-0111-7596-401",
+      "title": "AE Original Straight Carpenter Jean",
+      "brand": "AE",
+      "category": "pants",
+      "imageUrl": "/product-images/ae-0111-7596-401.jpg",
+      "priceUSD": 29.99,
+      "listPriceUSD": null,
+      "retailer": "American Eagle (brand direct)",
+      "url": "https://www.ae.com/us/en/p/men/jeans/straight-leg-jeans/ae-original-straight-carpenter-jean/0111_7596_401",
+      "modes": [
+        "streetwear",
+        "classic-casual"
+      ],
+      "verdict": "baggy/loose jeans from AE.",
+      "matchReasons": [
+        {
+          "signal": "source",
+          "detail": "baggy/loose jeans"
+        },
+        {
+          "signal": "audience",
+          "detail": "Linked from an official men's category page; product metadata passed the exclusion rules."
+        },
+        {
+          "signal": "taste",
+          "detail": "Discovery title matched: carpenter, straight."
+        }
+      ],
+      "provenance": {
+        "sourceId": "ae",
+        "sourceType": "brand-direct",
+        "retailer": "www.ae.com",
+        "foundVia": "Shopbot self-hosted browser crawl of an official men's category followed by deterministic product-page extraction",
+        "evidence": "Product page returned 1 variants through json-ld-product; lowest current USD price $29.99; stock derived from variant availability.",
+        "extractionMethod": "json-ld-product",
+        "audienceEvidence": {
+          "audience": "men",
+          "categoryUrl": "https://www.ae.com/us/en/c/men/bottoms/jeans/cat6430041",
+          "categoryTitle": "Men's Jeans | American Eagle",
+          "method": "product linked from official men's category page crawled by Shopbot's browser"
+        },
+        "checkedBy": "shopbot scout-browser.py"
+      },
+      "verification": {
+        "status": "verified",
+        "checkedAt": "2026-09-01T19:04:17Z",
+        "priceObservedUSD": 29.99,
+        "stock": "in-stock"
+      },
+      "addedAt": "2026-09-01T19:04:17Z"
+    },
+    {
+      "id": "ae-0112-6926-074",
+      "title": "AE Relaxed Straight Jean",
+      "brand": "AE",
+      "category": "pants",
+      "imageUrl": "/product-images/ae-0112-6926-074.jpg",
+      "priceUSD": 29.97,
+      "listPriceUSD": null,
+      "retailer": "American Eagle (brand direct)",
+      "url": "https://www.ae.com/us/en/p/men/jeans/straight-leg-jeans/ae-relaxed-straight-jean/0112_6926_074",
+      "modes": [
+        "classic-casual"
+      ],
+      "verdict": "baggy/loose jeans from AE.",
+      "matchReasons": [
+        {
+          "signal": "source",
+          "detail": "baggy/loose jeans"
+        },
+        {
+          "signal": "audience",
+          "detail": "Linked from an official men's category page; product metadata passed the exclusion rules."
+        },
+        {
+          "signal": "taste",
+          "detail": "Discovery title matched: relaxed, straight."
+        }
+      ],
+      "provenance": {
+        "sourceId": "ae",
+        "sourceType": "brand-direct",
+        "retailer": "www.ae.com",
+        "foundVia": "Shopbot self-hosted browser crawl of an official men's category followed by deterministic product-page extraction",
+        "evidence": "Product page returned 1 variants through json-ld-product; lowest current USD price $29.97; stock derived from variant availability.",
+        "extractionMethod": "json-ld-product",
+        "audienceEvidence": {
+          "audience": "men",
+          "categoryUrl": "https://www.ae.com/us/en/c/men/bottoms/jeans/cat6430041",
+          "categoryTitle": "Men's Jeans | American Eagle",
+          "method": "product linked from official men's category page crawled by Shopbot's browser"
+        },
+        "checkedBy": "shopbot scout-browser.py"
+      },
+      "verification": {
+        "status": "verified",
+        "checkedAt": "2026-09-01T19:04:17Z",
+        "priceObservedUSD": 29.97,
+        "stock": "in-stock"
+      },
+      "addedAt": "2026-09-01T19:04:17Z"
+    },
+    {
+      "id": "ae-0112-6950-947",
+      "title": "AE Relaxed Straight Jean",
+      "brand": "AE",
+      "category": "pants",
+      "imageUrl": "/product-images/ae-0112-6950-947.jpg",
+      "priceUSD": 24.97,
+      "listPriceUSD": null,
+      "retailer": "American Eagle (brand direct)",
+      "url": "https://www.ae.com/us/en/p/men/jeans/straight-leg-jeans/ae-relaxed-straight-jean/0112_6950_947",
+      "modes": [
+        "classic-casual"
+      ],
+      "verdict": "baggy/loose jeans from AE.",
+      "matchReasons": [
+        {
+          "signal": "source",
+          "detail": "baggy/loose jeans"
+        },
+        {
+          "signal": "audience",
+          "detail": "Linked from an official men's category page; product metadata passed the exclusion rules."
+        },
+        {
+          "signal": "taste",
+          "detail": "Discovery title matched: relaxed, straight."
+        }
+      ],
+      "provenance": {
+        "sourceId": "ae",
+        "sourceType": "brand-direct",
+        "retailer": "www.ae.com",
+        "foundVia": "Shopbot self-hosted browser crawl of an official men's category followed by deterministic product-page extraction",
+        "evidence": "Product page returned 1 variants through json-ld-product; lowest current USD price $24.97; stock derived from variant availability.",
+        "extractionMethod": "json-ld-product",
+        "audienceEvidence": {
+          "audience": "men",
+          "categoryUrl": "https://www.ae.com/us/en/c/men/bottoms/jeans/cat6430041",
+          "categoryTitle": "Men's Jeans | American Eagle",
+          "method": "product linked from official men's category page crawled by Shopbot's browser"
+        },
+        "checkedBy": "shopbot scout-browser.py"
+      },
+      "verification": {
+        "status": "verified",
+        "checkedAt": "2026-09-01T19:04:17Z",
+        "priceObservedUSD": 24.97,
+        "stock": "in-stock"
+      },
+      "addedAt": "2026-09-01T19:04:17Z"
+    },
+    {
+      "id": "ae-0112-7330-001",
+      "title": "AE Relaxed Straight Jean",
+      "brand": "AE",
+      "category": "pants",
+      "imageUrl": "/product-images/ae-0112-7330-001.jpg",
+      "priceUSD": 35.97,
+      "listPriceUSD": null,
+      "retailer": "American Eagle (brand direct)",
+      "url": "https://www.ae.com/us/en/p/men/jeans/straight-leg-jeans/ae-relaxed-straight-jean/0112_7330_001",
+      "modes": [
+        "classic-casual"
+      ],
+      "verdict": "baggy/loose jeans from AE.",
+      "matchReasons": [
+        {
+          "signal": "source",
+          "detail": "baggy/loose jeans"
+        },
+        {
+          "signal": "audience",
+          "detail": "Linked from an official men's category page; product metadata passed the exclusion rules."
+        },
+        {
+          "signal": "taste",
+          "detail": "Discovery title matched: relaxed, straight."
+        }
+      ],
+      "provenance": {
+        "sourceId": "ae",
+        "sourceType": "brand-direct",
+        "retailer": "www.ae.com",
+        "foundVia": "Shopbot self-hosted browser crawl of an official men's category followed by deterministic product-page extraction",
+        "evidence": "Product page returned 1 variants through json-ld-product; lowest current USD price $35.97; stock derived from variant availability.",
+        "extractionMethod": "json-ld-product",
+        "audienceEvidence": {
+          "audience": "men",
+          "categoryUrl": "https://www.ae.com/us/en/c/men/bottoms/jeans/cat6430041",
+          "categoryTitle": "Men's Jeans | American Eagle",
+          "method": "product linked from official men's category page crawled by Shopbot's browser"
+        },
+        "checkedBy": "shopbot scout-browser.py"
+      },
+      "verification": {
+        "status": "verified",
+        "checkedAt": "2026-09-01T19:04:17Z",
+        "priceObservedUSD": 35.97,
+        "stock": "in-stock"
+      },
+      "addedAt": "2026-09-01T19:04:17Z"
+    },
+    {
+      "id": "ae-0112-7411-042",
+      "title": "AE Relaxed Straight Jean",
+      "brand": "AE",
+      "category": "pants",
+      "imageUrl": "/product-images/ae-0112-7411-042.jpg",
+      "priceUSD": 29.99,
+      "listPriceUSD": null,
+      "retailer": "American Eagle (brand direct)",
+      "url": "https://www.ae.com/us/en/p/men/jeans/straight-leg-jeans/ae-relaxed-straight-jean/0112_7411_042",
+      "modes": [
+        "classic-casual"
+      ],
+      "verdict": "baggy/loose jeans from AE.",
+      "matchReasons": [
+        {
+          "signal": "source",
+          "detail": "baggy/loose jeans"
+        },
+        {
+          "signal": "audience",
+          "detail": "Linked from an official men's category page; product metadata passed the exclusion rules."
+        },
+        {
+          "signal": "taste",
+          "detail": "Discovery title matched: relaxed, straight."
+        }
+      ],
+      "provenance": {
+        "sourceId": "ae",
+        "sourceType": "brand-direct",
+        "retailer": "www.ae.com",
+        "foundVia": "Shopbot self-hosted browser crawl of an official men's category followed by deterministic product-page extraction",
+        "evidence": "Product page returned 1 variants through json-ld-product; lowest current USD price $29.99; stock derived from variant availability.",
+        "extractionMethod": "json-ld-product",
+        "audienceEvidence": {
+          "audience": "men",
+          "categoryUrl": "https://www.ae.com/us/en/c/men/bottoms/jeans/cat6430041",
+          "categoryTitle": "Men's Jeans | American Eagle",
+          "method": "product linked from official men's category page crawled by Shopbot's browser"
+        },
+        "checkedBy": "shopbot scout-browser.py"
+      },
+      "verification": {
+        "status": "verified",
+        "checkedAt": "2026-09-01T19:04:17Z",
+        "priceObservedUSD": 29.99,
+        "stock": "in-stock"
+      },
+      "addedAt": "2026-09-01T19:04:17Z"
+    },
+    {
+      "id": "ae-0112-7659-540",
+      "title": "AE Relaxed Straight Jean",
+      "brand": "AE",
+      "category": "pants",
+      "imageUrl": "/product-images/ae-0112-7659-540.jpg",
+      "priceUSD": 34.97,
+      "listPriceUSD": null,
+      "retailer": "American Eagle (brand direct)",
+      "url": "https://www.ae.com/us/en/p/men/jeans/straight-leg-jeans/ae-relaxed-straight-jean/0112_7659_540",
+      "modes": [
+        "classic-casual"
+      ],
+      "verdict": "baggy/loose jeans from AE.",
+      "matchReasons": [
+        {
+          "signal": "source",
+          "detail": "baggy/loose jeans"
+        },
+        {
+          "signal": "audience",
+          "detail": "Linked from an official men's category page; product metadata passed the exclusion rules."
+        },
+        {
+          "signal": "taste",
+          "detail": "Discovery title matched: relaxed, straight."
+        }
+      ],
+      "provenance": {
+        "sourceId": "ae",
+        "sourceType": "brand-direct",
+        "retailer": "www.ae.com",
+        "foundVia": "Shopbot self-hosted browser crawl of an official men's category followed by deterministic product-page extraction",
+        "evidence": "Product page returned 1 variants through json-ld-product; lowest current USD price $34.97; stock derived from variant availability.",
+        "extractionMethod": "json-ld-product",
+        "audienceEvidence": {
+          "audience": "men",
+          "categoryUrl": "https://www.ae.com/us/en/c/men/bottoms/jeans/cat6430041",
+          "categoryTitle": "Men's Jeans | American Eagle",
+          "method": "product linked from official men's category page crawled by Shopbot's browser"
+        },
+        "checkedBy": "shopbot scout-browser.py"
+      },
+      "verification": {
+        "status": "verified",
+        "checkedAt": "2026-09-01T19:04:17Z",
+        "priceObservedUSD": 34.97,
+        "stock": "in-stock"
+      },
+      "addedAt": "2026-09-01T19:04:17Z"
+    },
+    {
+      "id": "ae-0178-5416-281",
+      "title": "AE Loose Jean",
+      "brand": "AE",
+      "category": "pants",
+      "imageUrl": "/product-images/ae-0178-5416-281.jpg",
+      "priceUSD": 35.97,
+      "listPriceUSD": null,
+      "retailer": "American Eagle (brand direct)",
+      "url": "https://www.ae.com/us/en/p/men/jeans/baggy-loose-jeans/ae-loose-jean/0178_5416_281",
+      "modes": [
+        "classic-casual"
+      ],
+      "verdict": "baggy/loose jeans from AE.",
+      "matchReasons": [
+        {
+          "signal": "source",
+          "detail": "baggy/loose jeans"
+        },
+        {
+          "signal": "audience",
+          "detail": "Linked from an official men's category page; product metadata passed the exclusion rules."
+        },
+        {
+          "signal": "taste",
+          "detail": "Discovery title matched: loose."
+        }
+      ],
+      "provenance": {
+        "sourceId": "ae",
+        "sourceType": "brand-direct",
+        "retailer": "www.ae.com",
+        "foundVia": "Shopbot self-hosted browser crawl of an official men's category followed by deterministic product-page extraction",
+        "evidence": "Product page returned 1 variants through json-ld-product; lowest current USD price $35.97; stock derived from variant availability.",
+        "extractionMethod": "json-ld-product",
+        "audienceEvidence": {
+          "audience": "men",
+          "categoryUrl": "https://www.ae.com/us/en/c/men/bottoms/jeans/cat6430041",
+          "categoryTitle": "Men's Jeans | American Eagle",
+          "method": "product linked from official men's category page crawled by Shopbot's browser"
+        },
+        "checkedBy": "shopbot scout-browser.py"
+      },
+      "verification": {
+        "status": "verified",
+        "checkedAt": "2026-09-01T19:04:17Z",
+        "priceObservedUSD": 35.97,
+        "stock": "in-stock"
+      },
+      "addedAt": "2026-09-01T19:04:17Z"
+    },
+    {
+      "id": "ae-0178-5485-200",
+      "title": "AE Loose Jean",
+      "brand": "AE",
+      "category": "pants",
+      "imageUrl": "/product-images/ae-0178-5485-200.jpg",
+      "priceUSD": 35.97,
+      "listPriceUSD": null,
+      "retailer": "American Eagle (brand direct)",
+      "url": "https://www.ae.com/us/en/p/men/jeans/baggy-loose-jeans/ae-loose-jean/0178_5485_200",
+      "modes": [
+        "classic-casual"
+      ],
+      "verdict": "baggy/loose jeans from AE.",
+      "matchReasons": [
+        {
+          "signal": "source",
+          "detail": "baggy/loose jeans"
+        },
+        {
+          "signal": "audience",
+          "detail": "Linked from an official men's category page; product metadata passed the exclusion rules."
+        },
+        {
+          "signal": "taste",
+          "detail": "Discovery title matched: loose."
+        }
+      ],
+      "provenance": {
+        "sourceId": "ae",
+        "sourceType": "brand-direct",
+        "retailer": "www.ae.com",
+        "foundVia": "Shopbot self-hosted browser crawl of an official men's category followed by deterministic product-page extraction",
+        "evidence": "Product page returned 1 variants through json-ld-product; lowest current USD price $35.97; stock derived from variant availability.",
+        "extractionMethod": "json-ld-product",
+        "audienceEvidence": {
+          "audience": "men",
+          "categoryUrl": "https://www.ae.com/us/en/c/men/bottoms/jeans/cat6430041",
+          "categoryTitle": "Men's Jeans | American Eagle",
+          "method": "product linked from official men's category page crawled by Shopbot's browser"
+        },
+        "checkedBy": "shopbot scout-browser.py"
+      },
+      "verification": {
+        "status": "verified",
+        "checkedAt": "2026-09-01T19:04:17Z",
+        "priceObservedUSD": 35.97,
+        "stock": "in-stock"
+      },
+      "addedAt": "2026-09-01T19:04:17Z"
+    },
+    {
+      "id": "ae-1114-7251-001",
+      "title": "AE Loose Jean",
+      "brand": "AE",
+      "category": "pants",
+      "imageUrl": "/product-images/ae-1114-7251-001.jpg",
+      "priceUSD": 35.97,
+      "listPriceUSD": null,
+      "retailer": "American Eagle (brand direct)",
+      "url": "https://www.ae.com/us/en/p/men/jeans/baggy-loose-jeans/ae-loose-jean/1114_7251_001",
+      "modes": [
+        "classic-casual"
+      ],
+      "verdict": "baggy/loose jeans from AE.",
+      "matchReasons": [
+        {
+          "signal": "source",
+          "detail": "baggy/loose jeans"
+        },
+        {
+          "signal": "audience",
+          "detail": "Linked from an official men's category page; product metadata passed the exclusion rules."
+        },
+        {
+          "signal": "taste",
+          "detail": "Discovery title matched: loose."
+        }
+      ],
+      "provenance": {
+        "sourceId": "ae",
+        "sourceType": "brand-direct",
+        "retailer": "www.ae.com",
+        "foundVia": "Shopbot self-hosted browser crawl of an official men's category followed by deterministic product-page extraction",
+        "evidence": "Product page returned 1 variants through json-ld-product; lowest current USD price $35.97; stock derived from variant availability.",
+        "extractionMethod": "json-ld-product",
+        "audienceEvidence": {
+          "audience": "men",
+          "categoryUrl": "https://www.ae.com/us/en/c/men/bottoms/jeans/cat6430041",
+          "categoryTitle": "Men's Jeans | American Eagle",
+          "method": "product linked from official men's category page crawled by Shopbot's browser"
+        },
+        "checkedBy": "shopbot scout-browser.py"
+      },
+      "verification": {
+        "status": "verified",
+        "checkedAt": "2026-09-01T19:04:17Z",
+        "priceObservedUSD": 35.97,
+        "stock": "in-stock"
+      },
+      "addedAt": "2026-09-01T19:04:17Z"
+    },
+    {
+      "id": "ae-1114-7468-975",
+      "title": "AE Loose Jean",
+      "brand": "AE",
+      "category": "pants",
+      "imageUrl": "/product-images/ae-1114-7468-975.jpg",
+      "priceUSD": 29.99,
+      "listPriceUSD": null,
+      "retailer": "American Eagle (brand direct)",
+      "url": "https://www.ae.com/us/en/p/men/jeans/baggy-loose-jeans/ae-loose-jean/1114_7468_975",
+      "modes": [
+        "classic-casual"
+      ],
+      "verdict": "baggy/loose jeans from AE.",
+      "matchReasons": [
+        {
+          "signal": "source",
+          "detail": "baggy/loose jeans"
+        },
+        {
+          "signal": "audience",
+          "detail": "Linked from an official men's category page; product metadata passed the exclusion rules."
+        },
+        {
+          "signal": "taste",
+          "detail": "Discovery title matched: loose."
+        }
+      ],
+      "provenance": {
+        "sourceId": "ae",
+        "sourceType": "brand-direct",
+        "retailer": "www.ae.com",
+        "foundVia": "Shopbot self-hosted browser crawl of an official men's category followed by deterministic product-page extraction",
+        "evidence": "Product page returned 1 variants through json-ld-product; lowest current USD price $29.99; stock derived from variant availability.",
+        "extractionMethod": "json-ld-product",
+        "audienceEvidence": {
+          "audience": "men",
+          "categoryUrl": "https://www.ae.com/us/en/c/men/bottoms/jeans/cat6430041",
+          "categoryTitle": "Men's Jeans | American Eagle",
+          "method": "product linked from official men's category page crawled by Shopbot's browser"
+        },
+        "checkedBy": "shopbot scout-browser.py"
+      },
+      "verification": {
+        "status": "verified",
+        "checkedAt": "2026-09-01T19:04:17Z",
+        "priceObservedUSD": 29.99,
+        "stock": "in-stock"
+      },
+      "addedAt": "2026-09-01T19:04:17Z"
+    },
+    {
+      "id": "ae-1114-7583-826",
+      "title": "AE Loose Jean",
+      "brand": "AE",
+      "category": "pants",
+      "imageUrl": "/product-images/ae-1114-7583-826.jpg",
+      "priceUSD": 41.97,
+      "listPriceUSD": null,
+      "retailer": "American Eagle (brand direct)",
+      "url": "https://www.ae.com/us/en/p/men/jeans/baggy-loose-jeans/ae-loose-jean/1114_7583_826",
+      "modes": [
+        "classic-casual"
+      ],
+      "verdict": "baggy/loose jeans from AE.",
+      "matchReasons": [
+        {
+          "signal": "source",
+          "detail": "baggy/loose jeans"
+        },
+        {
+          "signal": "audience",
+          "detail": "Linked from an official men's category page; product metadata passed the exclusion rules."
+        },
+        {
+          "signal": "taste",
+          "detail": "Discovery title matched: loose."
+        }
+      ],
+      "provenance": {
+        "sourceId": "ae",
+        "sourceType": "brand-direct",
+        "retailer": "www.ae.com",
+        "foundVia": "Shopbot self-hosted browser crawl of an official men's category followed by deterministic product-page extraction",
+        "evidence": "Product page returned 1 variants through json-ld-product; lowest current USD price $41.97; stock derived from variant availability.",
+        "extractionMethod": "json-ld-product",
+        "audienceEvidence": {
+          "audience": "men",
+          "categoryUrl": "https://www.ae.com/us/en/c/men/bottoms/jeans/cat6430041",
+          "categoryTitle": "Men's Jeans | American Eagle",
+          "method": "product linked from official men's category page crawled by Shopbot's browser"
+        },
+        "checkedBy": "shopbot scout-browser.py"
+      },
+      "verification": {
+        "status": "verified",
+        "checkedAt": "2026-09-01T19:04:17Z",
+        "priceObservedUSD": 41.97,
+        "stock": "in-stock"
+      },
+      "addedAt": "2026-09-01T19:04:17Z"
+    },
+    {
+      "id": "ae-1114-7584-952",
+      "title": "AE Loose Jean",
+      "brand": "AE",
+      "category": "pants",
+      "imageUrl": "/product-images/ae-1114-7584-952.jpg",
+      "priceUSD": 35.97,
+      "listPriceUSD": null,
+      "retailer": "American Eagle (brand direct)",
+      "url": "https://www.ae.com/us/en/p/men/jeans/baggy-loose-jeans/ae-loose-jean/1114_7584_952",
+      "modes": [
+        "classic-casual"
+      ],
+      "verdict": "baggy/loose jeans from AE.",
+      "matchReasons": [
+        {
+          "signal": "source",
+          "detail": "baggy/loose jeans"
+        },
+        {
+          "signal": "audience",
+          "detail": "Linked from an official men's category page; product metadata passed the exclusion rules."
+        },
+        {
+          "signal": "taste",
+          "detail": "Discovery title matched: loose."
+        }
+      ],
+      "provenance": {
+        "sourceId": "ae",
+        "sourceType": "brand-direct",
+        "retailer": "www.ae.com",
+        "foundVia": "Shopbot self-hosted browser crawl of an official men's category followed by deterministic product-page extraction",
+        "evidence": "Product page returned 1 variants through json-ld-product; lowest current USD price $35.97; stock derived from variant availability.",
+        "extractionMethod": "json-ld-product",
+        "audienceEvidence": {
+          "audience": "men",
+          "categoryUrl": "https://www.ae.com/us/en/c/men/bottoms/jeans/cat6430041",
+          "categoryTitle": "Men's Jeans | American Eagle",
+          "method": "product linked from official men's category page crawled by Shopbot's browser"
+        },
+        "checkedBy": "shopbot scout-browser.py"
+      },
+      "verification": {
+        "status": "verified",
+        "checkedAt": "2026-09-01T19:04:17Z",
+        "priceObservedUSD": 35.97,
+        "stock": "in-stock"
+      },
+      "addedAt": "2026-09-01T19:04:17Z"
     }
   ]
 }

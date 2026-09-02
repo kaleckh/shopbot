@@ -23,8 +23,20 @@ SKIP_DEFAULT = [
     "slim",
     "skinny",
     "women",
+    "woman",
     "women's",
     "womens",
+    "female",
+    "ladies",
+    "gals",
+    "girl",
+    "girls",
+    "boy",
+    "boys",
+    "kids",
+    "youth",
+    "toddler",
+    "baby",
     "aerie",
     "legging",
     "yoga",
@@ -53,11 +65,30 @@ def kebab(value: str) -> str:
     return value.strip("-")[:64]
 
 
-def skip_title(title: str, rules: dict) -> bool:
-    text = (title or "").lower()
-    for needle in rules.get("skipTitleContains") or SKIP_DEFAULT:
+def product_search_text(product: dict) -> str:
+    tags = product.get("tags") or []
+    if isinstance(tags, str):
+        tags = [tags]
+    return " ".join(
+        [
+            str(product.get("title") or ""),
+            str(product.get("handle") or ""),
+            str(product.get("product_type") or ""),
+            " ".join(str(tag) for tag in tags),
+            str(product.get("vendor") or ""),
+        ]
+    ).lower()
+
+
+def skip_product(product: dict, source: dict, rules: dict) -> bool:
+    text = product_search_text(product)
+    needles = rules.get("skipProductContains") or rules.get("skipTitleContains") or SKIP_DEFAULT
+    for needle in needles:
         if needle.lower() in text:
             return True
+    handle = str(product.get("handle") or "").lower()
+    if handle in {str(value).lower() for value in source.get("excludeHandles") or []}:
+        return True
     return False
 
 
@@ -109,17 +140,65 @@ def guess_category(product: dict) -> str:
             " ".join(product.get("tags") or []),
         ]
     ).lower()
-    if any(word in blob for word in ("jean", "denim")) and "jacket" not in blob:
-        return "pants"
-    if any(word in blob for word in ("pant", "trouser", "chino", "cargo")):
-        return "pants"
-    if any(word in blob for word in ("sweater", "knit", "hoodie", "crew", "cardigan")):
-        return "knit"
-    if any(word in blob for word in ("jacket", "coat", "chore", "overshirt")):
-        return "outerwear"
-    if any(word in blob for word in ("shoe", "boot", "sneaker")):
+    if any(word in blob for word in ("shoe", "boot", "sneaker", "loafer", "mule", "clog", "weejun", "fuelcell", "p550")):
         return "shoes"
+    if any(word in blob for word in ("tote", "beanie", "belt", "cap", "hat", "bag", "scarf")):
+        return "accessories"
+    shorts_blob = blob.replace("short sleeve", "").replace("short-sleeve", "")
+    if re.search(r"\b(short|shorts|sweatshort|swimshort)\b", shorts_blob):
+        return "shorts"
+    if any(word in blob for word in ("jean", "denim")) and not any(word in blob for word in ("jacket", "shirt", "tote")):
+        return "pants"
+    if any(word in blob for word in ("pant", "trouser", "chino", "cargo", "straight leg", "stovepipe", "true guy", "strong guy", "easy guy", "weird guy")):
+        return "pants"
+    if any(word in blob for word in ("jacket", "coat", "chore", "overshirt", "shell", "windshirt", "parka", "shacket", "type 2", "ventile mac")):
+        return "outerwear"
+    if any(word in blob for word in ("sweater", "knit", "hoodie", "crew", "cardigan", "pullover", "jumper", "v neck vest")):
+        return "knit"
+    if any(word in blob for word in ("shirt", "tee", "t-shirt", "polo", "rugby", "raglan", "oxford")):
+        return "tops"
     return "other"
+
+
+def guess_modes(product: dict) -> list[str]:
+    blob = " ".join(
+        [
+            str(product.get("product_type") or ""),
+            str(product.get("title") or ""),
+            " ".join(product.get("tags") or []),
+        ]
+    ).lower()
+    modes = []
+    if any(word in blob for word in ("baggy", "cargo", "hoodie", "graphic", "varsity", "skate", "workwear", "sneaker", "tee")):
+        modes.append("streetwear")
+    if any(word in blob for word in ("plain", "minimal", "oxford", "polo", "trouser", "loafer", "linen", "selvage")):
+        modes.append("minimal-clean")
+    if any(word in blob for word in ("gore-tex", "goretex", "running", "fuelcell", "performance", "technical", "trail", "shell")):
+        modes.append("athletic-tech")
+    if any(word in blob for word in ("trouser", "oxford", "polo", "loafer", "dress", "pleated", "wool")):
+        modes.append("corporate-presentable")
+    if any(word in blob for word in ("denim", "jean", "chino", "jacket", "coat", "boot", "shirt", "knit", "sweater", "cardigan", "mule", "clog")):
+        modes.append("classic-casual")
+    return modes or ["classic-casual"]
+
+
+def normalize_existing_scout_records(existing: dict) -> dict:
+    changed = 0
+    for item in existing.get("suggestions") or []:
+        before = (item.get("category"), item.get("modes"))
+        if item.get("category") == "accessory":
+            item["category"] = "accessories"
+        if (item.get("provenance") or {}).get("checkedBy") != "shopbot scout-shopify.py":
+            if before != (item.get("category"), item.get("modes")):
+                changed += 1
+            continue
+        category = guess_category(item)
+        modes = guess_modes(item)
+        item["category"] = category
+        item["modes"] = modes
+        if before != (category, modes):
+            changed += 1
+    return {"changed": changed, "data": existing}
 
 
 def pick_price(product: dict) -> tuple[float | None, float | None]:
@@ -171,7 +250,7 @@ def to_record(product: dict, source: dict, now: str) -> dict | None:
         "listPriceUSD": list_price,
         "retailer": f"{brand} (brand direct)",
         "url": pdp,
-        "modes": ["streetwear", "classic-casual"],
+        "modes": guess_modes(product),
         "verdict": f"{source.get('tasteFit') or 'Taste-matched lead'} from {brand}.",
         "matchReasons": [
             {
@@ -180,7 +259,7 @@ def to_record(product: dict, source: dict, now: str) -> dict | None:
             },
             {
                 "signal": "silhouette-filter",
-                "detail": "Title passed the slim/skinny/women skip list. Confirm the actual cut on vote.",
+                "detail": "Product title, handle, type, and tags passed the menswear and silhouette filters. Confirm the actual cut on vote.",
             },
         ],
         "provenance": {
@@ -207,7 +286,15 @@ def main() -> int:
     parser.add_argument("--source", action="append", dest="source_ids")
     parser.add_argument("--exclude", action="append", dest="exclude_ids")
     parser.add_argument("--dry-run", action="store_true")
+    parser.add_argument("--normalize-existing", action="store_true")
     args = parser.parse_args()
+
+    if args.normalize_existing:
+        result = normalize_existing_scout_records(load_json(SUGGESTIONS_PATH, {"suggestions": []}))
+        print(f"normalized {result['changed']} existing scout records")
+        if not args.dry_run:
+            SUGGESTIONS_PATH.write_text(json.dumps(result["data"], indent=2) + "\n", encoding="utf-8")
+        return 0
 
     roster = load_json(SOURCES_PATH, {})
     rules = roster.get("scoutRules") or {}
@@ -251,7 +338,7 @@ def main() -> int:
                 if handle in seen_handles or title_key in seen_titles:
                     continue
                 seen_handles.add(handle)
-                if skip_title(product.get("title") or "", rules):
+                if skip_product(product, source, rules):
                     continue
                 record = to_record(product, source, now)
                 if record is None or record["id"] in known:

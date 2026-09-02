@@ -1,0 +1,62 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-09-01T18:16:06Z",
+  "dryRun": false,
+  "authenticated": false,
+  "sources": [
+    {
+      "sourceId": "zara-us",
+      "existingBefore": 17,
+      "normalizedCategories": 0,
+      "activeBefore": 17,
+      "unreviewedBefore": 17,
+      "backpressure": false,
+      "policy": {
+        "initialTarget": 24,
+        "maxUnreviewed": 24,
+        "newPerRefresh": 8,
+        "activeCeiling": 50,
+        "bootstrapPerCategory": 4,
+        "refreshLikedLimit": 8
+      },
+      "newBudget": 1,
+      "discovery": {
+        "searchResults": 0,
+        "uniqueProductLinks": 0
+      },
+      "rejectedBeforeScrape": {},
+      "eligibleByCategory": {},
+      "selectedByCategory": {},
+      "candidateQueueNew": 0,
+      "attemptedNew": 0,
+      "scheduledRefresh": 0,
+      "verifiedNew": 0,
+      "refreshed": 0,
+      "rejectedAfterScrape": {},
+      "rejectionDetails": [],
+      "verifiedCategories": {},
+      "failures": [
+        "search: Firecrawl rate limit reached (HTTP 429, retry-after=unknown)"
+      ],
+      "reportedCreditsUsed": 0,
+      "requests": {
+        "search": 1
+      },
+      "networkAttempts": {
+        "search": 1
+      }
+    }
+  ],
+  "reportedCreditsUsed": 0,
+  "requests": {
+    "search": 1
+  },
+  "networkAttempts": {
+    "search": 1
+  },
+  "normalizedCategories": 0,
+  "published": {
+    "added": 0,
+    "updated": 0
+  }
+}

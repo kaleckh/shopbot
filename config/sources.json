@@ -1,14 +1,26 @@
 {
-  "_comment": "Scout source roster. A blocked brand site is not a dropped brand. Try methods in order: shopify-products-json, stocking-retailer-json, search-then-pdp. HTML collection pages are usually empty to bots; that is a fetch failure, not a reason to exclude the brand.",
+  "_comment": "Scout source roster. A blocked brand site is not a dropped brand. Try methods in order: shopify-products-json, stocking-retailer-json, self-hosted-browser, search-then-pdp. HTML collection pages are usually empty to bots; that is a fetch failure, not a reason to exclude the brand.",
   "schemaVersion": 1,
-  "updated": "2026-08-17",
+  "updated": "2026-09-01",
   "scoutRules": {
-    "skipTitleContains": [
+    "skipProductContains": [
       "slim",
       "skinny",
       "women",
+      "woman",
       "women's",
       "womens",
+      "female",
+      "ladies",
+      "gals",
+      "girl",
+      "girls",
+      "boy",
+      "boys",
+      "kids",
+      "youth",
+      "toddler",
+      "baby",
       "aerie",
       "legging",
       "yoga",
@@ -203,6 +215,47 @@
       "notes": "JSON returned zero products. HTML is JS. Price at a stocking retailer."
     },
     {
+      "id": "zara-us",
+      "name": "Zara",
+      "kind": "brand-direct",
+      "status": "works",
+      "fetch": {
+        "method": "self-hosted-browser",
+        "urls": [
+          "https://www.zara.com/us/en/man-collection-l622.html",
+          "https://www.zara.com/us/en/man-jeans-l659.html",
+          "https://www.zara.com/us/en/man-jackets-denim-l648.html",
+          "https://www.zara.com/us/en/man-polos-l733.html",
+          "https://www.zara.com/us/en/man-shoes-sneakers-l797.html"
+        ],
+        "delaySeconds": 1.0,
+        "allowedHosts": [
+          "www.zara.com"
+        ],
+        "audienceCategoryPathPattern": "^/us/en/man-.*-l\\d+\\.html$",
+        "productPathPattern": "^/us/en/.+-p\\d+\\.html$"
+      },
+      "catalogPolicy": {
+        "initialTarget": 24,
+        "maxUnreviewed": 24,
+        "newPerRefresh": 8,
+        "activeCeiling": 50,
+        "bootstrapPerCategory": 4,
+        "refreshLikedLimit": 8
+      },
+      "categories": [
+        "pants",
+        "outerwear",
+        "knit",
+        "tops",
+        "shorts",
+        "shoes"
+      ],
+      "tasteFit": "affordable loose and baggy denim, relaxed trousers, textured shirts, and minimal seasonal layers",
+      "lastProbed": "2026-09-01",
+      "notes": "Shopbot owns the Crawl4AI browser and persistent local profile. Only PDP links rendered by configured official men's category pages may cross the audience gate; product JSON-LD or standard product metadata then verifies price, stock, and images. Blocks preserve the last good catalogue and are never bypassed with identity or proxy rotation."
+    },
+    {
       "id": "uniqlo",
       "name": "Uniqlo",
       "kind": "brand-direct",
@@ -225,19 +278,27 @@
       "id": "levis",
       "name": "Levi's",
       "kind": "brand-direct",
-      "status": "blocked-brand-reachable-via-retailer",
+      "status": "works-discovery-only",
       "fetch": {
-        "method": "html-collection",
+        "method": "sitemap-xml",
         "urls": [
-          "https://www.levis.com/en-us/clothing/men/jeans"
-        ]
+          "https://www.levi.com/US/en_US/sitemap.xml"
+        ],
+        "allowedHosts": [
+          "www.levi.com"
+        ],
+        "sitemapPathPattern": "^/US/en_US/sitemap(?:\\.xml|/medias/Product-en-US-USD-\\d+\\.xml(?:\\.gz)?)$",
+        "productPathPattern": "^/US/en_US/(?:clothing/men/|jeans-by-fit-number/men/).+/p/\\d+$",
+        "maxSitemaps": 120,
+        "maxCandidates": 10000,
+        "delaySeconds": 0.1
       },
       "categories": [
         "pants"
       ],
       "tasteFit": "baggy/loose light wash",
-      "lastProbed": "2026-08-07",
-      "notes": "levi.com 403s. Zappos PDP for 568 Loose Straight was readable 2026-08-17 at $110. Keep searching stocking retailers; do not treat the brand as unavailable."
+      "lastProbed": "2026-09-01",
+      "notes": "The public US sitemap index and 110 Product sitemap shards are readable and provide canonical men's PDP URLs, images, and last-modified dates. These records remain discovery leads because the sitemap has no current price or stock. Levi PDP verification still uses a normal browser session or an authorized stocking retailer; blocks are not bypassed."
     },
     {
       "id": "urban-outfitters",
@@ -262,19 +323,33 @@
       "id": "ae",
       "name": "American Eagle",
       "kind": "brand-direct",
-      "status": "js-only",
+      "status": "works",
       "fetch": {
-        "method": "html-collection",
+        "method": "self-hosted-browser",
         "urls": [
-          "https://www.ae.com/us/en/c/men/bottoms/jeans/cat4840006"
-        ]
+          "https://www.ae.com/us/en/c/men/bottoms/jeans/cat6430041"
+        ],
+        "delaySeconds": 1.0,
+        "allowedHosts": [
+          "www.ae.com"
+        ],
+        "audienceCategoryPathPattern": "^/us/en/c/men/bottoms/jeans/cat\\d+$",
+        "productPathPattern": "^/us/en/p/men/.+/\\d{4}_\\d{4}_\\d{3}$"
+      },
+      "catalogPolicy": {
+        "initialTarget": 12,
+        "maxUnreviewed": 12,
+        "newPerRefresh": 4,
+        "activeCeiling": 30,
+        "bootstrapPerCategory": 12,
+        "refreshLikedLimit": 4
       },
       "categories": [
         "pants"
       ],
       "tasteFit": "baggy/loose jeans",
       "lastProbed": "2026-08-17",
-      "notes": "Wrong cat id redirected to Aerie women's. Need a confirmed mens jeans URL."
+      "notes": "The confirmed men's jeans page renders through Shopbot's self-hosted browser and exposes 120 same-host men's PDPs. Generic Product JSON-LD extraction verifies PDP price, stock, and images."
     },
     {
       "id": "patagonia",
@@ -387,9 +462,14 @@
         "outerwear",
         "other"
       ],
+      "excludeHandles": [
+        "riley-denim-barn-jacket",
+        "sierra-utility-pant-1",
+        "reversible-raglan-15"
+      ],
       "tasteFit": "washed layers, barn jackets",
       "lastProbed": "2026-08-17",
-      "notes": ""
+      "notes": "The general feed mixes men's and women's products. Full product metadata is filtered, with known ambiguous women's handles explicitly excluded."
     },
     {
       "id": "corridor",
@@ -424,9 +504,12 @@
       "categories": [
         "other"
       ],
+      "excludeHandles": [
+        "sybil-utility-shorts-kmdheuvsar-resale"
+      ],
       "tasteFit": "relaxed coastal / work-adjacent shirts",
       "lastProbed": "2026-08-17",
-      "notes": "First page can be women's. Title skip handles it."
+      "notes": "The general feed mixes men's and women's products. Full product metadata is filtered, with known ambiguous women's handles explicitly excluded."
     },
     {
       "id": "norse-projects",
@@ -519,9 +602,12 @@
         "knit",
         "other"
       ],
+      "excludeHandles": [
+        "boxy-wool-sweater-woasw-f23498_lae"
+      ],
       "tasteFit": "boxy knits and oxfords; skip slim denim",
       "lastProbed": "2026-08-17",
-      "notes": ""
+      "notes": "The general feed mixes men's and women's products. Full product metadata is filtered, with known ambiguous women's handles explicitly excluded."
     },
     {
       "id": "edwin",
@@ -537,9 +623,16 @@
       "categories": [
         "pants"
       ],
+      "excludeHandles": [
+        "pixie-dreamland",
+        "bree-slim-skinny-deja-blue",
+        "evie-jacket-in-candid",
+        "tash-relaxed-straight-leg-melody",
+        "jodi-jacket-in-borderline"
+      ],
       "tasteFit": "Japanese denim; slim/skinny titles are skipped",
       "lastProbed": "2026-08-17",
-      "notes": "Front page is slim-heavy."
+      "notes": "The general product feed mixes men's and women's products. Full product metadata is filtered, with known ambiguous women's handles explicitly excluded."
     },
     {
       "id": "3sixteen",
@@ -1082,8 +1175,13 @@
     }
   ],
   "fetchMethods": {
+    "sitemap-xml": "Public XML sitemap indexes and URL sets. Recurses within configured HTTPS hosts and paths, retaining canonical PDP URLs, images, and last-modified evidence as leads.",
+    "json-feed": "Declarative JSON product or affiliate feed. Configure itemsPath and field mapping; pagination may use a bounded {page} URL template.",
+    "csv-feed": "Declarative CSV affiliate or merchant feed with field mapping. Authentication headers reference environment-variable names, never secrets in config.",
+    "xml-feed": "Declarative XML/RSS affiliate or merchant feed with itemPath and field mapping. Feed evidence remains a lead until PDP verification.",
     "shopify-products-json": "Public /products.json on Shopify stores. Volume path for niche brands.",
     "stocking-retailer-json": "Same JSON, but the store carries many brands (ShopWSS). Use product vendor as brand.",
+    "self-hosted-browser": "Shopbot-owned Crawl4AI browser with a persistent local profile and deterministic extraction. Require an allowed official men's category page to carry each product link.",
     "search-then-pdp": "WebSearch for the blocked brand + cut, then read a stocking-retailer product page. Zappos PDPs currently render. Nordstrom PDPs currently do not.",
     "html-collection": "Last resort. Usually JS-empty. Do not treat a failed collection page as the brand being out of scope."
   }

@@ -1,0 +1,1866 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-09-02T01:49:14Z",
+  "candidates": [
+    {
+      "id": "brand-omoto-denim",
+      "brand": "Omoto Denim",
+      "confidence": "exploratory",
+      "score": 19,
+      "reason": "Exploratory match from Okayama Denim: denim, loose, selvedge, straight product signals overlap your current taste prior.",
+      "matchedSignals": [
+        "denim",
+        "loose",
+        "selvedge",
+        "straight",
+        "wide"
+      ],
+      "learnedSignals": [
+        "loose"
+      ],
+      "retailers": [
+        "Okayama Denim"
+      ],
+      "representativeProducts": [
+        {
+          "id": "okayama-denim-omoto-denim-15oz-ori-sashi-sashiko-pants-loose-str",
+          "title": "Omoto Denim 15oz. \"Ori-Sashi\" Sashiko Pants (Loose Straight)",
+          "priceUSD": 295.0,
+          "listPriceUSD": null,
+          "imageUrl": "/product-images/okayama-denim-omoto-denim-15oz-ori-sashi-sashiko-pants-loose-str.jpg",
+          "url": "https://www.okayamadenim.com/products/omoto-denim-15oz-ori-sashi-sashiko-pants-loose-straight",
+          "retailer": "Okayama Denim",
+          "category": "pants",
+          "modes": [
+            "classic-casual"
+          ],
+          "tasteScore": 8,
+          "matchedSignals": [
+            "denim",
+            "loose",
+            "selvedge",
+            "straight",
+            "wide"
+          ]
+        },
+        {
+          "id": "okayama-denim-omoto-denim-0815bch-13-5oz-indigo-overdyed-selvedg",
+          "title": "Omoto Denim 0815BCH 13.5oz. Sumi Overdyed Selvedge Jeans (Loose Straight)",
+          "priceUSD": 375.0,
+          "listPriceUSD": null,
+          "imageUrl": "/product-images/okayama-denim-omoto-denim-0815bch-13-5oz-indigo-overdyed-selvedg.jpg",
+          "url": "https://www.okayamadenim.com/products/omoto-denim-0815bch-13-5oz-indigo-overdyed-selvedge-jeans-loose-straight",
+          "retailer": "Okayama Denim",
+          "category": "pants",
+          "modes": [
+            "classic-casual"
+          ],
+          "tasteScore": 8,
+          "matchedSignals": [
+            "denim",
+            "loose",
+            "selvedge",
+            "straight",
+            "wide"
+          ]
+        },
+        {
+          "id": "okayama-denim-omoto-denim-0615bch-13-5oz-indigo-overdyed-selvedg",
+          "title": "Omoto Denim 0615BCH 13.5oz. Sumi Overdyed Selvedge Jeans (Regular Straight)",
+          "priceUSD": 375.0,
+          "listPriceUSD": null,
+          "imageUrl": "/product-images/okayama-denim-omoto-denim-0615bch-13-5oz-indigo-overdyed-selvedg.jpg",
+          "url": "https://www.okayamadenim.com/products/omoto-denim-0615bch-13-5oz-indigo-overdyed-selvedge-jeans-regular-straight",
+          "retailer": "Okayama Denim",
+          "category": "pants",
+          "modes": [
+            "classic-casual"
+          ],
+          "tasteScore": 3,
+          "matchedSignals": [
+            "denim",
+            "selvedge",
+            "straight"
+          ]
+        }
+      ],
+      "evidence": {
+        "sampledMatchingProducts": 5,
+        "discoveryMethod": "trusted multi-brand retailer catalog"
+      },
+      "firstFoundAt": "2026-09-01T17:18:16Z",
+      "lastSeenAt": "2026-09-02T01:49:14Z"
+    },
+    {
+      "id": "brand-studio-d-artisan",
+      "brand": "Studio D'Artisan",
+      "confidence": "exploratory",
+      "score": 17,
+      "reason": "Exploratory match from Okayama Denim: denim, loose, selvedge, straight product signals overlap your current taste prior.",
+      "matchedSignals": [
+        "denim",
+        "loose",
+        "selvedge",
+        "straight",
+        "relaxed",
+        "workwear",
+        "wide"
+      ],
+      "learnedSignals": [
+        "loose",
+        "relaxed"
+      ],
+      "retailers": [
+        "Okayama Denim"
+      ],
+      "representativeProducts": [
+        {
+          "id": "okayama-denim-pre-order-studio-dartisan-ishikawadai-selvedge-jea",
+          "title": "Studio D'Artisan \"Ishikawadai\" Selvedge Jeans (Loose Straight)",
+          "priceUSD": 235.0,
+          "listPriceUSD": null,
+          "imageUrl": "/product-images/okayama-denim-pre-order-studio-dartisan-ishikawadai-selvedge-jea.jpg",
+          "url": "https://www.okayamadenim.com/products/pre-order-studio-dartisan-ishikawadai-selvedge-jeans-loose-straight",
+          "retailer": "Okayama Denim",
+          "category": "pants",
+          "modes": [
+            "classic-casual"
+          ],
+          "tasteScore": 7,
+          "matchedSignals": [
+            "denim",
+            "loose",
+            "selvedge",
+            "straight"
+          ]
+        },
+        {
+          "id": "okayama-denim-studio-dartisan-sd-108-relaxed-tapered",
+          "title": "Studio D'Artisan SD-108 (Relax Tapered)",
+          "priceUSD": 250.0,
+          "listPriceUSD": null,
+          "imageUrl": "/product-images/okayama-denim-studio-dartisan-sd-108-relaxed-tapered.jpg",
+          "url": "https://www.okayamadenim.com/products/studio-dartisan-sd-108-relaxed-tapered",
+          "retailer": "Okayama Denim",
+          "category": "pants",
+          "modes": [
+            "classic-casual"
+          ],
+          "tasteScore": 6,
+          "matchedSignals": [
+            "denim",
+            "relaxed",
+            "selvedge"
+          ]
+        },
+        {
+          "id": "okayama-denim-pre-order-studio-dartisan-fox-cotton-denim-painter",
+          "title": "Studio D'Artisan \"Fox Cotton\" Denim Painter Pants",
+          "priceUSD": 195.0,
+          "listPriceUSD": null,
+          "imageUrl": "/product-images/okayama-denim-pre-order-studio-dartisan-fox-cotton-denim-painter.jpg",
+          "url": "https://www.okayamadenim.com/products/pre-order-studio-dartisan-fox-cotton-denim-painter-pants",
+          "retailer": "Okayama Denim",
+          "category": "pants",
+          "modes": [
+            "streetwear",
+            "classic-casual"
+          ],
+          "tasteScore": 4,
+          "matchedSignals": [
+            "denim",
+            "selvedge",
+            "straight",
+            "workwear"
+          ]
+        }
+      ],
+      "evidence": {
+        "sampledMatchingProducts": 11,
+        "discoveryMethod": "trusted multi-brand retailer catalog"
+      },
+      "firstFoundAt": "2026-09-01T17:18:16Z",
+      "lastSeenAt": "2026-09-02T01:49:14Z"
+    },
+    {
+      "id": "brand-samurai",
+      "brand": "Samurai",
+      "confidence": "exploratory",
+      "score": 15,
+      "reason": "Exploratory match from Blue Owl, Okayama Denim: denim, relaxed, selvedge, straight product signals overlap your current taste prior.",
+      "matchedSignals": [
+        "denim",
+        "relaxed",
+        "selvedge",
+        "straight",
+        "wide"
+      ],
+      "learnedSignals": [
+        "relaxed"
+      ],
+      "retailers": [
+        "Blue Owl",
+        "Okayama Denim"
+      ],
+      "representativeProducts": [
+        {
+          "id": "blue-owl-s3000xx15oz-sh-seigaiha-15oz-extra-slub-selvedge-denim-",
+          "title": "S3000XX15oz-SH \"Seigaiha\" 15oz Blue Slub Selvedge Denim - Relaxed Straight Fit",
+          "priceUSD": 465.0,
+          "listPriceUSD": null,
+          "imageUrl": "/product-images/blue-owl-s3000xx15oz-sh-seigaiha-15oz-extra-slub-selvedge-denim-.jpg",
+          "url": "https://www.blueowl.us/products/s3000xx15oz-sh-seigaiha-15oz-extra-slub-selvedge-denim-relaxed-straight-fit",
+          "retailer": "Blue Owl",
+          "category": "pants",
+          "modes": [
+            "classic-casual"
+          ],
+          "tasteScore": 8,
+          "matchedSignals": [
+            "denim",
+            "relaxed",
+            "selvedge",
+            "straight",
+            "wide"
+          ]
+        },
+        {
+          "id": "okayama-denim-samurai-jeans-s310xx19oz-ii-19oz-selvedge-denim-je",
+          "title": "Samurai Jeans S310XX19oz-II 19oz. Selvedge Denim Jeans (Wide Straight)",
+          "priceUSD": 260.0,
+          "listPriceUSD": null,
+          "imageUrl": "/product-images/okayama-denim-samurai-jeans-s310xx19oz-ii-19oz-selvedge-denim-je.jpg",
+          "url": "https://www.okayamadenim.com/products/samurai-jeans-s310xx19oz-ii-19oz-selvedge-denim-jeans-wide-straight",
+          "retailer": "Okayama Denim",
+          "category": "pants",
+          "modes": [
+            "classic-casual"
+          ],
+          "tasteScore": 4,
+          "matchedSignals": [
+            "denim",
+            "selvedge",
+            "straight",
+            "wide"
+          ]
+        },
+        {
+          "id": "okayama-denim-samurai-jeans-s0510xx-bob-aoki-tachikage-selvedge-",
+          "title": "Samurai Jeans S0510XX-BOB \"Aoki Tachikage\" Selvedge Jeans (Regular Straight)",
+          "priceUSD": 345.0,
+          "listPriceUSD": null,
+          "imageUrl": "/product-images/okayama-denim-samurai-jeans-s0510xx-bob-aoki-tachikage-selvedge-.jpg",
+          "url": "https://www.okayamadenim.com/products/samurai-jeans-s0510xx-bob-aoki-tachikage-selvedge-jeans-regular-straight",
+          "retailer": "Okayama Denim",
+          "category": "pants",
+          "modes": [
+            "classic-casual"
+          ],
+          "tasteScore": 3,
+          "matchedSignals": [
+            "denim",
+            "selvedge",
+            "straight"
+          ]
+        }
+      ],
+      "evidence": {
+        "sampledMatchingProducts": 16,
+        "discoveryMethod": "trusted multi-brand retailer catalog"
+      },
+      "firstFoundAt": "2026-09-01T17:18:16Z",
+      "lastSeenAt": "2026-09-02T01:49:14Z"
+    },
+    {
+      "id": "brand-big-john",
+      "brand": "Big John",
+      "confidence": "exploratory",
+      "score": 14,
+      "reason": "Exploratory match from Okayama Denim: denim, relaxed, selvedge, straight product signals overlap your current taste prior.",
+      "matchedSignals": [
+        "denim",
+        "relaxed",
+        "selvedge",
+        "straight",
+        "wide"
+      ],
+      "learnedSignals": [
+        "relaxed"
+      ],
+      "retailers": [
+        "Okayama Denim"
+      ],
+      "representativeProducts": [
+        {
+          "id": "okayama-denim-big-john-14oz-ishikawadai-suvin-gold-selvedge-jean",
+          "title": "Big John 14oz. \"Ishikawadai Suvin Gold\" Selvedge Jeans (Tapered)",
+          "priceUSD": 220.0,
+          "listPriceUSD": null,
+          "imageUrl": "/product-images/okayama-denim-big-john-14oz-ishikawadai-suvin-gold-selvedge-jean.jpg",
+          "url": "https://www.okayamadenim.com/products/big-john-14oz-ishikawadai-suvin-gold-selvedge-jeans-tapered",
+          "retailer": "Okayama Denim",
+          "category": "pants",
+          "modes": [
+            "classic-casual"
+          ],
+          "tasteScore": 6,
+          "matchedSignals": [
+            "denim",
+            "relaxed",
+            "selvedge"
+          ]
+        },
+        {
+          "id": "okayama-denim-big-john-8oz-selvedge-jeans-wide-straight",
+          "title": "Big John 8oz. Selvedge Jeans (Wide Straight)",
+          "priceUSD": 165.0,
+          "listPriceUSD": null,
+          "imageUrl": "/product-images/okayama-denim-big-john-8oz-selvedge-jeans-wide-straight.jpg",
+          "url": "https://www.okayamadenim.com/products/big-john-8oz-selvedge-jeans-wide-straight",
+          "retailer": "Okayama Denim",
+          "category": "pants",
+          "modes": [
+            "classic-casual"
+          ],
+          "tasteScore": 4,
+          "matchedSignals": [
+            "denim",
+            "selvedge",
+            "straight",
+            "wide"
+          ]
+        },
+        {
+          "id": "okayama-denim-big-john-bold-selvedge-jeans-wide-straight",
+          "title": "Big John \"Bold\" Selvedge Jeans (Wide Straight)",
+          "priceUSD": 175.0,
+          "listPriceUSD": null,
+          "imageUrl": "/product-images/okayama-denim-big-john-bold-selvedge-jeans-wide-straight.jpg",
+          "url": "https://www.okayamadenim.com/products/big-john-bold-selvedge-jeans-wide-straight",
+          "retailer": "Okayama Denim",
+          "category": "pants",
+          "modes": [
+            "classic-casual"
+          ],
+          "tasteScore": 4,
+          "matchedSignals": [
+            "denim",
+            "selvedge",
+            "straight",
+            "wide"
+          ]
+        }
+      ],
+      "evidence": {
+        "sampledMatchingProducts": 6,
+        "discoveryMethod": "trusted multi-brand retailer catalog"
+      },
+      "firstFoundAt": "2026-09-01T17:18:16Z",
+      "lastSeenAt": "2026-09-02T01:49:14Z"
+    },
+    {
+      "id": "brand-oni-denim",
+      "brand": "ONI Denim",
+      "confidence": "exploratory",
+      "score": 14,
+      "reason": "Exploratory match from Blue Owl: denim, relaxed, selvedge, straight product signals overlap your current taste prior.",
+      "matchedSignals": [
+        "denim",
+        "relaxed",
+        "selvedge",
+        "straight",
+        "wide"
+      ],
+      "learnedSignals": [
+        "relaxed"
+      ],
+      "retailers": [
+        "Blue Owl"
+      ],
+      "representativeProducts": [
+        {
+          "id": "blue-owl-266-hjs-12oz-jacquard-stripe-selvedge-denim-relaxed-str",
+          "title": "266-HJS 12oz Jacquard Stripe Selvedge Denim - Relaxed Straight Fit",
+          "priceUSD": 295.0,
+          "listPriceUSD": null,
+          "imageUrl": "/product-images/blue-owl-266-hjs-12oz-jacquard-stripe-selvedge-denim-relaxed-str.jpg",
+          "url": "https://www.blueowl.us/products/266-hjs-12oz-jacquard-stripe-selvedge-denim-relaxed-straight-fit",
+          "retailer": "Blue Owl",
+          "category": "pants",
+          "modes": [
+            "classic-casual"
+          ],
+          "tasteScore": 7,
+          "matchedSignals": [
+            "denim",
+            "relaxed",
+            "selvedge",
+            "straight"
+          ]
+        },
+        {
+          "id": "blue-owl-200-gc15-greencast-15oz-selvedge-denim-wide-straight-fi",
+          "title": "200-GC15 \"Greencast\" 15oz Selvedge Denim - Wide Straight Fit",
+          "priceUSD": 295.0,
+          "listPriceUSD": null,
+          "imageUrl": "/product-images/blue-owl-200-gc15-greencast-15oz-selvedge-denim-wide-straight-fi.jpg",
+          "url": "https://www.blueowl.us/products/200-gc15-greencast-15oz-selvedge-denim-wide-straight-fit",
+          "retailer": "Blue Owl",
+          "category": "pants",
+          "modes": [
+            "classic-casual"
+          ],
+          "tasteScore": 4,
+          "matchedSignals": [
+            "denim",
+            "selvedge",
+            "straight",
+            "wide"
+          ]
+        },
+        {
+          "id": "blue-owl-246-gc15-greencast-15oz-selvedge-denim-clean-straight-f",
+          "title": "246-GC15 \"Greencast\" 15oz Selvedge Denim - Clean Straight Fit",
+          "priceUSD": 295.0,
+          "listPriceUSD": null,
+          "imageUrl": "/product-images/blue-owl-246-gc15-greencast-15oz-selvedge-denim-clean-straight-f.jpg",
+          "url": "https://www.blueowl.us/products/246-gc15-greencast-15oz-selvedge-denim-clean-straight-fit",
+          "retailer": "Blue Owl",
+          "category": "pants",
+          "modes": [
+            "classic-casual"
+          ],
+          "tasteScore": 3,
+          "matchedSignals": [
+            "denim",
+            "selvedge",
+            "straight"
+          ]
+        }
+      ],
+      "evidence": {
+        "sampledMatchingProducts": 4,
+        "discoveryMethod": "trusted multi-brand retailer catalog"
+      },
+      "firstFoundAt": "2026-09-01T17:18:16Z",
+      "lastSeenAt": "2026-09-02T01:49:14Z"
+    },
+    {
+      "id": "brand-pure-blue-japan",
+      "brand": "Pure Blue Japan",
+      "confidence": "exploratory",
+      "score": 12,
+      "reason": "Exploratory match from Blue Owl, Okayama Denim: denim, relaxed, selvedge, straight product signals overlap your current taste prior.",
+      "matchedSignals": [
+        "denim",
+        "relaxed",
+        "selvedge",
+        "straight"
+      ],
+      "learnedSignals": [
+        "relaxed"
+      ],
+      "retailers": [
+        "Blue Owl",
+        "Okayama Denim"
+      ],
+      "representativeProducts": [
+        {
+          "id": "okayama-denim-pure-blue-japan-tcd-019-br-black-x-brown-teacore-d",
+          "title": "Pure Blue Japan TCD-019-BR Black x Brown \"Teacore\" Dyed Selvedge Jeans (Relaxed Tapered)",
+          "priceUSD": 315.0,
+          "listPriceUSD": null,
+          "imageUrl": "/product-images/okayama-denim-pure-blue-japan-tcd-019-br-black-x-brown-teacore-d.jpg",
+          "url": "https://www.okayamadenim.com/products/pure-blue-japan-tcd-019-br-black-x-brown-teacore-dyed-selvedge-jeans-relaxed-tapered",
+          "retailer": "Okayama Denim",
+          "category": "pants",
+          "modes": [
+            "classic-casual"
+          ],
+          "tasteScore": 6,
+          "matchedSignals": [
+            "denim",
+            "relaxed",
+            "selvedge"
+          ]
+        },
+        {
+          "id": "okayama-denim-pure-blue-japan-tcd-003-br-black-x-brown-teacore-d",
+          "title": "Pure Blue Japan TCD-003-BR Black x Brown \"Teacore\" Dyed Selvedge Jeans (Regular Straight)",
+          "priceUSD": 315.0,
+          "listPriceUSD": null,
+          "imageUrl": "/product-images/okayama-denim-pure-blue-japan-tcd-003-br-black-x-brown-teacore-d.jpg",
+          "url": "https://www.okayamadenim.com/products/pure-blue-japan-tcd-003-br-black-x-brown-teacore-dyed-selvedge-jeans-regular-straight",
+          "retailer": "Okayama Denim",
+          "category": "pants",
+          "modes": [
+            "classic-casual"
+          ],
+          "tasteScore": 3,
+          "matchedSignals": [
+            "denim",
+            "selvedge",
+            "straight"
+          ]
+        },
+        {
+          "id": "blue-owl-indigo-x-sumi-16oz-rinsed-double-nep-selvedge-denim-reg",
+          "title": "\"Indigo x Sumi\" 16oz Rinsed Double Nep Selvedge Denim - Regular Straight Fit",
+          "priceUSD": 495.0,
+          "listPriceUSD": null,
+          "imageUrl": "/product-images/blue-owl-indigo-x-sumi-16oz-rinsed-double-nep-selvedge-denim-reg.jpg",
+          "url": "https://www.blueowl.us/products/indigo-x-sumi-16oz-rinsed-double-nep-selvedge-denim-regular-straight-fit",
+          "retailer": "Blue Owl",
+          "category": "pants",
+          "modes": [
+            "classic-casual"
+          ],
+          "tasteScore": 3,
+          "matchedSignals": [
+            "denim",
+            "selvedge",
+            "straight"
+          ]
+        }
+      ],
+      "evidence": {
+        "sampledMatchingProducts": 3,
+        "discoveryMethod": "trusted multi-brand retailer catalog"
+      },
+      "firstFoundAt": "2026-09-01T17:18:16Z",
+      "lastSeenAt": "2026-09-02T01:49:14Z"
+    },
+    {
+      "id": "brand-fullcount",
+      "brand": "Fullcount",
+      "confidence": "exploratory",
+      "score": 11,
+      "reason": "Exploratory match from Blue Owl, Okayama Denim: denim, selvedge, straight, wide product signals overlap your current taste prior.",
+      "matchedSignals": [
+        "denim",
+        "selvedge",
+        "straight",
+        "wide",
+        "utility",
+        "workwear",
+        "chore"
+      ],
+      "learnedSignals": [],
+      "retailers": [
+        "Blue Owl",
+        "Okayama Denim"
+      ],
+      "representativeProducts": [
+        {
+          "id": "okayama-denim-fullcount-0105ss-11-5oz-super-smooth-selvedge-jean",
+          "title": "Fullcount 0105SS 11.5oz. \"Super Smooth\" Selvedge Jeans (Wide Straight)",
+          "priceUSD": 240.0,
+          "listPriceUSD": null,
+          "imageUrl": "/product-images/okayama-denim-fullcount-0105ss-11-5oz-super-smooth-selvedge-jean.jpg",
+          "url": "https://www.okayamadenim.com/products/fullcount-0105ss-11-5oz-super-smooth-selvedge-jeans-wide-straight",
+          "retailer": "Okayama Denim",
+          "category": "pants",
+          "modes": [
+            "classic-casual"
+          ],
+          "tasteScore": 4,
+          "matchedSignals": [
+            "denim",
+            "selvedge",
+            "straight",
+            "wide"
+          ]
+        },
+        {
+          "id": "okayama-denim-fullcount-x-gdc-13oz-selvedge-jeans-wide-straight",
+          "title": "Fullcount x GDC 13oz. Selvedge Jeans (Wide Straight)",
+          "priceUSD": 295.0,
+          "listPriceUSD": null,
+          "imageUrl": "/product-images/okayama-denim-fullcount-x-gdc-13oz-selvedge-jeans-wide-straight.jpg",
+          "url": "https://www.okayamadenim.com/products/fullcount-x-gdc-13oz-selvedge-jeans-wide-straight",
+          "retailer": "Okayama Denim",
+          "category": "pants",
+          "modes": [
+            "classic-casual"
+          ],
+          "tasteScore": 4,
+          "matchedSignals": [
+            "denim",
+            "selvedge",
+            "straight",
+            "wide"
+          ]
+        },
+        {
+          "id": "okayama-denim-fullcount-back-satin-utility-trousers-olive",
+          "title": "Fullcount Back Satin Utility Trousers (Olive)",
+          "priceUSD": 270.0,
+          "listPriceUSD": null,
+          "imageUrl": "/product-images/okayama-denim-fullcount-back-satin-utility-trousers-olive.jpg",
+          "url": "https://www.okayamadenim.com/products/fullcount-back-satin-utility-trousers-olive",
+          "retailer": "Okayama Denim",
+          "category": "pants",
+          "modes": [
+            "streetwear",
+            "minimal-clean",
+            "corporate-presentable"
+          ],
+          "tasteScore": 3,
+          "matchedSignals": [
+            "straight",
+            "utility",
+            "workwear"
+          ]
+        }
+      ],
+      "evidence": {
+        "sampledMatchingProducts": 8,
+        "discoveryMethod": "trusted multi-brand retailer catalog"
+      },
+      "firstFoundAt": "2026-09-01T17:18:16Z",
+      "lastSeenAt": "2026-09-02T01:49:14Z"
+    },
+    {
+      "id": "brand-japan-blue",
+      "brand": "Japan Blue",
+      "confidence": "exploratory",
+      "score": 11,
+      "reason": "Exploratory match from Okayama Denim: denim, selvedge, straight, wide product signals overlap your current taste prior.",
+      "matchedSignals": [
+        "denim",
+        "selvedge",
+        "straight",
+        "wide"
+      ],
+      "learnedSignals": [],
+      "retailers": [
+        "Okayama Denim"
+      ],
+      "representativeProducts": [
+        {
+          "id": "okayama-denim-japan-blue-9oz-jeans-wide-straight",
+          "title": "Japan Blue 9oz. Lightweight Jeans (Wide Straight)",
+          "priceUSD": 180.0,
+          "listPriceUSD": null,
+          "imageUrl": "/product-images/okayama-denim-japan-blue-9oz-jeans-wide-straight.jpg",
+          "url": "https://www.okayamadenim.com/products/japan-blue-9oz-jeans-wide-straight",
+          "retailer": "Okayama Denim",
+          "category": "pants",
+          "modes": [
+            "classic-casual"
+          ],
+          "tasteScore": 4,
+          "matchedSignals": [
+            "denim",
+            "selvedge",
+            "straight",
+            "wide"
+          ]
+        },
+        {
+          "id": "okayama-denim-japan-blue-12oz-selvedge-jeans-wide-straight",
+          "title": "Japan Blue 12oz. Selvedge Jeans (Wide Straight)",
+          "priceUSD": 195.0,
+          "listPriceUSD": null,
+          "imageUrl": "/product-images/okayama-denim-japan-blue-12oz-selvedge-jeans-wide-straight.jpg",
+          "url": "https://www.okayamadenim.com/products/japan-blue-12oz-selvedge-jeans-wide-straight",
+          "retailer": "Okayama Denim",
+          "category": "pants",
+          "modes": [
+            "classic-casual"
+          ],
+          "tasteScore": 4,
+          "matchedSignals": [
+            "denim",
+            "selvedge",
+            "straight",
+            "wide"
+          ]
+        },
+        {
+          "id": "okayama-denim-japan-blue-12oz-selvedge-jeans-regular-straight",
+          "title": "Japan Blue 12oz. Selvedge Jeans (Regular Straight)",
+          "priceUSD": 195.0,
+          "listPriceUSD": null,
+          "imageUrl": "/product-images/okayama-denim-japan-blue-12oz-selvedge-jeans-regular-straight.jpg",
+          "url": "https://www.okayamadenim.com/products/japan-blue-12oz-selvedge-jeans-regular-straight",
+          "retailer": "Okayama Denim",
+          "category": "pants",
+          "modes": [
+            "classic-casual"
+          ],
+          "tasteScore": 3,
+          "matchedSignals": [
+            "denim",
+            "selvedge",
+            "straight"
+          ]
+        }
+      ],
+      "evidence": {
+        "sampledMatchingProducts": 3,
+        "discoveryMethod": "trusted multi-brand retailer catalog"
+      },
+      "firstFoundAt": "2026-09-01T17:18:16Z",
+      "lastSeenAt": "2026-09-02T01:49:14Z"
+    },
+    {
+      "id": "brand-momotaro",
+      "brand": "Momotaro",
+      "confidence": "exploratory",
+      "score": 9,
+      "reason": "Exploratory match from Okayama Denim: denim, selvedge, straight, wide product signals overlap your current taste prior.",
+      "matchedSignals": [
+        "denim",
+        "selvedge",
+        "straight",
+        "wide"
+      ],
+      "learnedSignals": [],
+      "retailers": [
+        "Okayama Denim"
+      ],
+      "representativeProducts": [
+        {
+          "id": "okayama-denim-momotaro-11oz-selvedge-jeans-wide-straight",
+          "title": "Momotaro 11oz. Selvedge Jeans (Wide Straight)",
+          "priceUSD": 225.0,
+          "listPriceUSD": null,
+          "imageUrl": "/product-images/okayama-denim-momotaro-11oz-selvedge-jeans-wide-straight.jpg",
+          "url": "https://www.okayamadenim.com/products/momotaro-11oz-selvedge-jeans-wide-straight",
+          "retailer": "Okayama Denim",
+          "category": "pants",
+          "modes": [
+            "classic-casual"
+          ],
+          "tasteScore": 4,
+          "matchedSignals": [
+            "denim",
+            "selvedge",
+            "straight",
+            "wide"
+          ]
+        },
+        {
+          "id": "okayama-denim-momotaro-classic-selvedge-jeans-regular-straight",
+          "title": "Momotaro \"Classic\" Selvedge Jeans (Regular Straight)",
+          "priceUSD": 235.0,
+          "listPriceUSD": null,
+          "imageUrl": "/product-images/okayama-denim-momotaro-classic-selvedge-jeans-regular-straight.jpg",
+          "url": "https://www.okayamadenim.com/products/momotaro-classic-selvedge-jeans-regular-straight",
+          "retailer": "Okayama Denim",
+          "category": "pants",
+          "modes": [
+            "classic-casual"
+          ],
+          "tasteScore": 3,
+          "matchedSignals": [
+            "denim",
+            "selvedge",
+            "straight"
+          ]
+        },
+        {
+          "id": "okayama-denim-momotaro-standard-black-type-2-selvedge-jacket",
+          "title": "Momotaro \"Standard\" Black Type 2 Selvedge Jacket",
+          "priceUSD": 285.0,
+          "listPriceUSD": null,
+          "imageUrl": "/product-images/okayama-denim-momotaro-standard-black-type-2-selvedge-jacket.jpg",
+          "url": "https://www.okayamadenim.com/products/momotaro-standard-black-type-2-selvedge-jacket",
+          "retailer": "Okayama Denim",
+          "category": "outerwear",
+          "modes": [
+            "classic-casual"
+          ],
+          "tasteScore": 2,
+          "matchedSignals": [
+            "denim",
+            "selvedge"
+          ]
+        }
+      ],
+      "evidence": {
+        "sampledMatchingProducts": 4,
+        "discoveryMethod": "trusted multi-brand retailer catalog"
+      },
+      "firstFoundAt": "2026-09-01T17:18:16Z",
+      "lastSeenAt": "2026-09-02T01:49:14Z"
+    },
+    {
+      "id": "brand-les-tien",
+      "brand": "Les Tien",
+      "confidence": "exploratory",
+      "score": 7,
+      "reason": "Exploratory match from Notre: carpenter, workwear, denim product signals overlap your current taste prior.",
+      "matchedSignals": [
+        "carpenter",
+        "workwear",
+        "denim"
+      ],
+      "learnedSignals": [
+        "carpenter"
+      ],
+      "retailers": [
+        "Notre"
+      ],
+      "representativeProducts": [
+        {
+          "id": "notre-heavyweight-carpenter-workwear-pant-in-vintage-faded-black",
+          "title": "Heavyweight Carpenter Workwear Pant in Vintage Faded Black",
+          "priceUSD": 268.0,
+          "listPriceUSD": null,
+          "imageUrl": "/product-images/notre-heavyweight-carpenter-workwear-pant-in-vintage-faded-black.jpg",
+          "url": "https://www.notre-shop.com/products/heavyweight-carpenter-workwear-pant-in-vintage-faded-black",
+          "retailer": "Notre",
+          "category": "pants",
+          "modes": [
+            "streetwear",
+            "classic-casual"
+          ],
+          "tasteScore": 5,
+          "matchedSignals": [
+            "carpenter",
+            "workwear"
+          ]
+        },
+        {
+          "id": "notre-heavyweight-party-pant-in-dark-denim",
+          "title": "Heavyweight Party Pant in Dark Denim",
+          "priceUSD": 195.0,
+          "listPriceUSD": null,
+          "imageUrl": "/product-images/notre-heavyweight-party-pant-in-dark-denim.jpg",
+          "url": "https://www.notre-shop.com/products/heavyweight-party-pant-in-dark-denim",
+          "retailer": "Notre",
+          "category": "pants",
+          "modes": [
+            "classic-casual"
+          ],
+          "tasteScore": 1,
+          "matchedSignals": [
+            "denim"
+          ]
+        },
+        {
+          "id": "notre-heavyweight-hoodie-in-dark-denim",
+          "title": "Heavyweight Hoodie in Dark Denim",
+          "priceUSD": 295.0,
+          "listPriceUSD": null,
+          "imageUrl": "/product-images/notre-heavyweight-hoodie-in-dark-denim.jpg",
+          "url": "https://www.notre-shop.com/products/heavyweight-hoodie-in-dark-denim",
+          "retailer": "Notre",
+          "category": "knit",
+          "modes": [
+            "streetwear",
+            "classic-casual"
+          ],
+          "tasteScore": 1,
+          "matchedSignals": [
+            "denim"
+          ]
+        }
+      ],
+      "evidence": {
+        "sampledMatchingProducts": 3,
+        "discoveryMethod": "trusted multi-brand retailer catalog"
+      },
+      "firstFoundAt": "2026-09-01T17:18:16Z",
+      "lastSeenAt": "2026-09-02T01:49:14Z"
+    },
+    {
+      "id": "brand-arc-teryx-veilance",
+      "brand": "Arc\u2019teryx Veilance",
+      "confidence": "exploratory",
+      "score": 6,
+      "reason": "Exploratory match from Notre: knit, sweater product signals overlap your current taste prior.",
+      "matchedSignals": [
+        "knit",
+        "sweater"
+      ],
+      "learnedSignals": [],
+      "retailers": [
+        "Notre"
+      ],
+      "representativeProducts": [
+        {
+          "id": "notre-conic-wool-midlayer-sweater-in-black",
+          "title": "Conic Wool Midlayer Sweater in Black",
+          "priceUSD": 300.0,
+          "listPriceUSD": null,
+          "imageUrl": "/product-images/notre-conic-wool-midlayer-sweater-in-black.jpg",
+          "url": "https://www.notre-shop.com/products/conic-wool-midlayer-sweater-in-black",
+          "retailer": "Notre",
+          "category": "knit",
+          "modes": [
+            "corporate-presentable",
+            "classic-casual"
+          ],
+          "tasteScore": 2,
+          "matchedSignals": [
+            "knit",
+            "sweater"
+          ]
+        },
+        {
+          "id": "notre-conic-wool-midlayer-sweater-in-passport",
+          "title": "Conic Wool Midlayer Sweater in Passport",
+          "priceUSD": 300.0,
+          "listPriceUSD": null,
+          "imageUrl": "/product-images/notre-conic-wool-midlayer-sweater-in-passport.jpg",
+          "url": "https://www.notre-shop.com/products/conic-wool-midlayer-sweater-in-passport",
+          "retailer": "Notre",
+          "category": "knit",
+          "modes": [
+            "corporate-presentable",
+            "classic-casual"
+          ],
+          "tasteScore": 2,
+          "matchedSignals": [
+            "knit",
+            "sweater"
+          ]
+        },
+        {
+          "id": "notre-conic-wool-half-zip-sweater-in-black",
+          "title": "Conic Wool Half Zip Sweater in Black",
+          "priceUSD": 350.0,
+          "listPriceUSD": null,
+          "imageUrl": "/product-images/notre-conic-wool-half-zip-sweater-in-black.jpg",
+          "url": "https://www.notre-shop.com/products/conic-wool-half-zip-sweater-in-black",
+          "retailer": "Notre",
+          "category": "knit",
+          "modes": [
+            "corporate-presentable",
+            "classic-casual"
+          ],
+          "tasteScore": 2,
+          "matchedSignals": [
+            "knit",
+            "sweater"
+          ]
+        }
+      ],
+      "evidence": {
+        "sampledMatchingProducts": 3,
+        "discoveryMethod": "trusted multi-brand retailer catalog"
+      },
+      "firstFoundAt": "2026-09-01T17:18:16Z",
+      "lastSeenAt": "2026-09-02T01:49:14Z"
+    },
+    {
+      "id": "brand-the-flat-head",
+      "brand": "The Flat Head",
+      "score": 6,
+      "reason": "Found through Okayama Denim with denim, selvedge pieces that overlap your taste.",
+      "matchedSignals": [
+        "denim",
+        "selvedge"
+      ],
+      "retailers": [
+        "Okayama Denim"
+      ],
+      "representativeProducts": [
+        {
+          "id": "okayama-denim-the-flat-head-selvedge-denim-railroad-cap",
+          "title": "The Flat Head Selvedge Denim Railroad Cap",
+          "priceUSD": 130.0,
+          "listPriceUSD": null,
+          "imageUrl": "/product-images/okayama-denim-the-flat-head-selvedge-denim-railroad-cap.jpg",
+          "url": "https://www.okayamadenim.com/products/the-flat-head-selvedge-denim-railroad-cap",
+          "retailer": "Okayama Denim",
+          "category": "accessories",
+          "modes": [
+            "classic-casual"
+          ],
+          "tasteScore": 2,
+          "matchedSignals": [
+            "denim",
+            "selvedge"
+          ]
+        },
+        {
+          "id": "okayama-denim-the-flat-head-12oz-black-selvedge-denim-trucker-ca",
+          "title": "The Flat Head 12oz. Black Selvedge Denim Trucker Cap",
+          "priceUSD": 145.0,
+          "listPriceUSD": null,
+          "imageUrl": "/product-images/okayama-denim-the-flat-head-12oz-black-selvedge-denim-trucker-ca.jpg",
+          "url": "https://www.okayamadenim.com/products/the-flat-head-12oz-black-selvedge-denim-trucker-cap",
+          "retailer": "Okayama Denim",
+          "category": "accessories",
+          "modes": [
+            "classic-casual"
+          ],
+          "tasteScore": 2,
+          "matchedSignals": [
+            "denim",
+            "selvedge"
+          ]
+        },
+        {
+          "id": "okayama-denim-the-flat-head-18oz-selvedge-denim-tote-bag",
+          "title": "The Flat Head 18oz. Selvedge Denim Tote Bag",
+          "priceUSD": 175.0,
+          "listPriceUSD": null,
+          "imageUrl": "/product-images/okayama-denim-the-flat-head-18oz-selvedge-denim-tote-bag.jpg",
+          "url": "https://www.okayamadenim.com/products/the-flat-head-18oz-selvedge-denim-tote-bag",
+          "retailer": "Okayama Denim",
+          "category": "accessories",
+          "modes": [
+            "classic-casual"
+          ],
+          "tasteScore": 2,
+          "matchedSignals": [
+            "denim",
+            "selvedge"
+          ]
+        }
+      ],
+      "evidence": {
+        "sampledMatchingProducts": 3,
+        "discoveryMethod": "trusted multi-brand retailer catalog"
+      },
+      "firstFoundAt": "2026-09-01T17:18:16Z",
+      "lastSeenAt": "2026-09-01T17:18:16Z"
+    },
+    {
+      "id": "brand-warehouse",
+      "brand": "Warehouse",
+      "confidence": "exploratory",
+      "score": 5,
+      "reason": "Exploratory match from Blue Owl, Standard & Strange: denim, selvedge, straight, knit product signals overlap your current taste prior.",
+      "matchedSignals": [
+        "denim",
+        "selvedge",
+        "straight",
+        "knit"
+      ],
+      "learnedSignals": [],
+      "retailers": [
+        "Blue Owl",
+        "Standard & Strange"
+      ],
+      "representativeProducts": [
+        {
+          "id": "blue-owl-lot-s1003xx-ltd-30th-anniversary-14oz-unsanforized-selv",
+          "title": "Lot S1003XX-LTD \"30th Anniversary\" Unsanforized Selvedge Denim - Regular Straight Fit",
+          "priceUSD": 315.0,
+          "listPriceUSD": null,
+          "imageUrl": "/product-images/blue-owl-lot-s1003xx-ltd-30th-anniversary-14oz-unsanforized-selv.jpg",
+          "url": "https://www.blueowl.us/products/lot-s1003xx-ltd-30th-anniversary-14oz-unsanforized-selvedge-denim-regular-straight-fit",
+          "retailer": "Blue Owl",
+          "category": "pants",
+          "modes": [
+            "classic-casual"
+          ],
+          "tasteScore": 3,
+          "matchedSignals": [
+            "denim",
+            "selvedge",
+            "straight"
+          ]
+        },
+        {
+          "id": "blue-owl-4601-loopwheel-tee-in-bordeaux",
+          "title": "4601 Tube Knit Tee in Bordeaux",
+          "priceUSD": 75.0,
+          "listPriceUSD": null,
+          "imageUrl": "/product-images/blue-owl-4601-loopwheel-tee-in-bordeaux.jpg",
+          "url": "https://www.blueowl.us/products/4601-loopwheel-tee-in-bordeaux",
+          "retailer": "Blue Owl",
+          "category": "knit",
+          "modes": [
+            "streetwear",
+            "classic-casual"
+          ],
+          "tasteScore": 1,
+          "matchedSignals": [
+            "knit"
+          ]
+        },
+        {
+          "id": "blue-owl-4601-tube-knit-tee-in-green",
+          "title": "4601 Tube Knit Tee in Green",
+          "priceUSD": 75.0,
+          "listPriceUSD": null,
+          "imageUrl": "/product-images/blue-owl-4601-tube-knit-tee-in-green.jpg",
+          "url": "https://www.blueowl.us/products/4601-tube-knit-tee-in-green",
+          "retailer": "Blue Owl",
+          "category": "knit",
+          "modes": [
+            "streetwear",
+            "classic-casual"
+          ],
+          "tasteScore": 1,
+          "matchedSignals": [
+            "knit"
+          ]
+        }
+      ],
+      "evidence": {
+        "sampledMatchingProducts": 9,
+        "discoveryMethod": "trusted multi-brand retailer catalog"
+      },
+      "firstFoundAt": "2026-09-01T17:18:16Z",
+      "lastSeenAt": "2026-09-02T01:49:14Z"
+    },
+    {
+      "id": "brand-dehen-1920",
+      "brand": "Dehen 1920",
+      "confidence": "exploratory",
+      "score": 4,
+      "reason": "Exploratory match from Blue Owl: knit, sweater product signals overlap your current taste prior.",
+      "matchedSignals": [
+        "knit",
+        "sweater"
+      ],
+      "learnedSignals": [],
+      "retailers": [
+        "Blue Owl"
+      ],
+      "representativeProducts": [
+        {
+          "id": "blue-owl-classic-cardigan-in-charcoal",
+          "title": "Classic Cardigan in Charcoal",
+          "priceUSD": 395.0,
+          "listPriceUSD": null,
+          "imageUrl": "/product-images/blue-owl-classic-cardigan-in-charcoal.jpg",
+          "url": "https://www.blueowl.us/products/classic-cardigan-in-charcoal",
+          "retailer": "Blue Owl",
+          "category": "outerwear",
+          "modes": [
+            "classic-casual"
+          ],
+          "tasteScore": 2,
+          "matchedSignals": [
+            "knit",
+            "sweater"
+          ]
+        },
+        {
+          "id": "blue-owl-classic-cardigan-in-dark-navy",
+          "title": "Classic Cardigan in Dark Navy",
+          "priceUSD": 395.0,
+          "listPriceUSD": null,
+          "imageUrl": "/product-images/blue-owl-classic-cardigan-in-dark-navy.jpg",
+          "url": "https://www.blueowl.us/products/classic-cardigan-in-dark-navy",
+          "retailer": "Blue Owl",
+          "category": "outerwear",
+          "modes": [
+            "classic-casual"
+          ],
+          "tasteScore": 2,
+          "matchedSignals": [
+            "knit",
+            "sweater"
+          ]
+        }
+      ],
+      "evidence": {
+        "sampledMatchingProducts": 2,
+        "discoveryMethod": "trusted multi-brand retailer catalog"
+      },
+      "firstFoundAt": "2026-09-01T17:18:16Z",
+      "lastSeenAt": "2026-09-02T01:49:14Z"
+    },
+    {
+      "id": "brand-freenote-cloth",
+      "brand": "Freenote Cloth",
+      "confidence": "exploratory",
+      "score": 4,
+      "reason": "Exploratory match from Blue Owl: knit, sweater product signals overlap your current taste prior.",
+      "matchedSignals": [
+        "knit",
+        "sweater"
+      ],
+      "learnedSignals": [],
+      "retailers": [
+        "Blue Owl"
+      ],
+      "representativeProducts": [
+        {
+          "id": "blue-owl-deck-sweatshirt-in-midnight",
+          "title": "Deck Sweatshirt in Midnight",
+          "priceUSD": 150.0,
+          "listPriceUSD": null,
+          "imageUrl": "/product-images/blue-owl-deck-sweatshirt-in-midnight.jpg",
+          "url": "https://www.blueowl.us/products/deck-sweatshirt-in-midnight",
+          "retailer": "Blue Owl",
+          "category": "knit",
+          "modes": [
+            "streetwear",
+            "classic-casual"
+          ],
+          "tasteScore": 2,
+          "matchedSignals": [
+            "knit",
+            "sweater"
+          ]
+        },
+        {
+          "id": "blue-owl-deck-sweatshirt-in-navy",
+          "title": "Deck Sweatshirt in Navy",
+          "priceUSD": 150.0,
+          "listPriceUSD": null,
+          "imageUrl": "/product-images/blue-owl-deck-sweatshirt-in-navy.jpg",
+          "url": "https://www.blueowl.us/products/deck-sweatshirt-in-navy",
+          "retailer": "Blue Owl",
+          "category": "knit",
+          "modes": [
+            "streetwear",
+            "classic-casual"
+          ],
+          "tasteScore": 2,
+          "matchedSignals": [
+            "knit",
+            "sweater"
+          ]
+        }
+      ],
+      "evidence": {
+        "sampledMatchingProducts": 2,
+        "discoveryMethod": "trusted multi-brand retailer catalog"
+      },
+      "firstFoundAt": "2026-09-01T17:18:16Z",
+      "lastSeenAt": "2026-09-02T01:49:14Z"
+    },
+    {
+      "id": "brand-plest",
+      "brand": "Plest",
+      "confidence": "exploratory",
+      "score": 4,
+      "reason": "Exploratory match from Okayama Denim: denim, selvedge, straight, wide product signals overlap your current taste prior.",
+      "matchedSignals": [
+        "denim",
+        "selvedge",
+        "straight",
+        "wide"
+      ],
+      "learnedSignals": [],
+      "retailers": [
+        "Okayama Denim"
+      ],
+      "representativeProducts": [
+        {
+          "id": "okayama-denim-plest-101-ecru-selvedge-denim-jeans",
+          "title": "Plest \"101\" Ecru Selvedge Denim Jeans",
+          "priceUSD": 280.0,
+          "listPriceUSD": null,
+          "imageUrl": "/product-images/okayama-denim-plest-101-ecru-selvedge-denim-jeans.jpg",
+          "url": "https://www.okayamadenim.com/products/plest-101-ecru-selvedge-denim-jeans",
+          "retailer": "Okayama Denim",
+          "category": "pants",
+          "modes": [
+            "classic-casual"
+          ],
+          "tasteScore": 4,
+          "matchedSignals": [
+            "denim",
+            "selvedge",
+            "straight",
+            "wide"
+          ]
+        }
+      ],
+      "evidence": {
+        "sampledMatchingProducts": 1,
+        "discoveryMethod": "trusted multi-brand retailer catalog"
+      },
+      "firstFoundAt": "2026-09-01T17:18:16Z",
+      "lastSeenAt": "2026-09-02T01:49:14Z"
+    },
+    {
+      "id": "brand-black-sign",
+      "brand": "Black Sign",
+      "confidence": "exploratory",
+      "score": 3,
+      "reason": "Exploratory match from Standard & Strange: denim, wide product signals overlap your current taste prior.",
+      "matchedSignals": [
+        "denim",
+        "wide"
+      ],
+      "learnedSignals": [],
+      "retailers": [
+        "Standard & Strange"
+      ],
+      "representativeProducts": [
+        {
+          "id": "standard-strange-denim-delta-jacket-15-oz-black-denim",
+          "title": "Denim Delta Jacket - 15 oz Black Denim",
+          "priceUSD": 315.0,
+          "listPriceUSD": null,
+          "imageUrl": "/product-images/standard-strange-denim-delta-jacket-15-oz-black-denim.jpg",
+          "url": "https://www.standardandstrange.com/products/denim-delta-jacket-15-oz-black-denim",
+          "retailer": "Standard & Strange",
+          "category": "outerwear",
+          "modes": [
+            "classic-casual"
+          ],
+          "tasteScore": 1,
+          "matchedSignals": [
+            "denim"
+          ]
+        },
+        {
+          "id": "standard-strange-denim-delta-jacket-dark-indigo",
+          "title": "Denim Delta Jacket - Dark Indigo",
+          "priceUSD": 330.0,
+          "listPriceUSD": null,
+          "imageUrl": "/product-images/standard-strange-denim-delta-jacket-dark-indigo.jpg",
+          "url": "https://www.standardandstrange.com/products/denim-delta-jacket-dark-indigo",
+          "retailer": "Standard & Strange",
+          "category": "outerwear",
+          "modes": [
+            "classic-casual"
+          ],
+          "tasteScore": 1,
+          "matchedSignals": [
+            "denim"
+          ]
+        },
+        {
+          "id": "standard-strange-kyle-lawrence-wide-pants-midnight-black",
+          "title": "Kyle Laurence Wide Pants - Midnight Black",
+          "priceUSD": 355.0,
+          "listPriceUSD": null,
+          "imageUrl": "/product-images/standard-strange-kyle-lawrence-wide-pants-midnight-black.jpg",
+          "url": "https://www.standardandstrange.com/products/kyle-lawrence-wide-pants-midnight-black",
+          "retailer": "Standard & Strange",
+          "category": "pants",
+          "modes": [
+            "minimal-clean",
+            "corporate-presentable"
+          ],
+          "tasteScore": 1,
+          "matchedSignals": [
+            "wide"
+          ]
+        }
+      ],
+      "evidence": {
+        "sampledMatchingProducts": 4,
+        "discoveryMethod": "trusted multi-brand retailer catalog"
+      },
+      "firstFoundAt": "2026-09-01T17:18:16Z",
+      "lastSeenAt": "2026-09-02T01:49:14Z"
+    },
+    {
+      "id": "brand-fdmtl",
+      "brand": "FDMTL",
+      "confidence": "exploratory",
+      "score": 3,
+      "reason": "Exploratory match from Blue Owl: denim, selvedge, straight product signals overlap your current taste prior.",
+      "matchedSignals": [
+        "denim",
+        "selvedge",
+        "straight"
+      ],
+      "learnedSignals": [],
+      "retailers": [
+        "Blue Owl"
+      ],
+      "representativeProducts": [
+        {
+          "id": "blue-owl-mg129-boro-repair-selvedge-denim-classic-straight-fit",
+          "title": "MG129 Sashiko Repair Selvedge Denim - Classic Straight Fit",
+          "priceUSD": 495.0,
+          "listPriceUSD": null,
+          "imageUrl": "/product-images/blue-owl-mg129-boro-repair-selvedge-denim-classic-straight-fit.jpg",
+          "url": "https://www.blueowl.us/products/mg129-boro-repair-selvedge-denim-classic-straight-fit",
+          "retailer": "Blue Owl",
+          "category": "pants",
+          "modes": [
+            "classic-casual"
+          ],
+          "tasteScore": 3,
+          "matchedSignals": [
+            "denim",
+            "selvedge",
+            "straight"
+          ]
+        }
+      ],
+      "evidence": {
+        "sampledMatchingProducts": 1,
+        "discoveryMethod": "trusted multi-brand retailer catalog"
+      },
+      "firstFoundAt": "2026-09-02T01:49:14Z",
+      "lastSeenAt": "2026-09-02T01:49:14Z"
+    },
+    {
+      "id": "brand-hiroshi-kato",
+      "brand": "Hiroshi Kato",
+      "confidence": "exploratory",
+      "score": 3,
+      "reason": "Exploratory match from Blue Owl: denim, selvedge, straight product signals overlap your current taste prior.",
+      "matchedSignals": [
+        "denim",
+        "selvedge",
+        "straight"
+      ],
+      "learnedSignals": [],
+      "retailers": [
+        "Blue Owl"
+      ],
+      "representativeProducts": [
+        {
+          "id": "blue-owl-blue-raw-14oz-indigo-stretch-selvedge-denim-hammer-stra",
+          "title": "\"Blue Raw\" 14oz Indigo Stretch Selvedge Denim - Hammer Straight",
+          "priceUSD": 258.0,
+          "listPriceUSD": null,
+          "imageUrl": "/product-images/blue-owl-blue-raw-14oz-indigo-stretch-selvedge-denim-hammer-stra.jpg",
+          "url": "https://www.blueowl.us/products/blue-raw-14oz-indigo-stretch-selvedge-denim-hammer-straight",
+          "retailer": "Blue Owl",
+          "category": "pants",
+          "modes": [
+            "classic-casual"
+          ],
+          "tasteScore": 3,
+          "matchedSignals": [
+            "denim",
+            "selvedge",
+            "straight"
+          ]
+        }
+      ],
+      "evidence": {
+        "sampledMatchingProducts": 1,
+        "discoveryMethod": "trusted multi-brand retailer catalog"
+      },
+      "firstFoundAt": "2026-09-01T17:18:16Z",
+      "lastSeenAt": "2026-09-01T19:49:11Z"
+    },
+    {
+      "id": "brand-olde-h-daughter",
+      "brand": "Olde H & Daughter",
+      "confidence": "exploratory",
+      "score": 3,
+      "reason": "Exploratory match from Standard & Strange: knit product signals overlap your current taste prior.",
+      "matchedSignals": [
+        "knit"
+      ],
+      "learnedSignals": [],
+      "retailers": [
+        "Standard & Strange"
+      ],
+      "representativeProducts": [
+        {
+          "id": "standard-strange-jyarijyari-silk-crew-pullover-black",
+          "title": "Jyarijyari Silk Crew Pullover - Black",
+          "priceUSD": 515.0,
+          "listPriceUSD": null,
+          "imageUrl": "/product-images/standard-strange-jyarijyari-silk-crew-pullover-black.jpg",
+          "url": "https://www.standardandstrange.com/products/jyarijyari-silk-crew-pullover-black",
+          "retailer": "Standard & Strange",
+          "category": "knit",
+          "modes": [
+            "classic-casual"
+          ],
+          "tasteScore": 1,
+          "matchedSignals": [
+            "knit"
+          ]
+        },
+        {
+          "id": "standard-strange-jyarijyari-silk-crew-pullover-ecru",
+          "title": "Jyarijyari Silk Crew Pullover - Ecru",
+          "priceUSD": 515.0,
+          "listPriceUSD": null,
+          "imageUrl": "/product-images/standard-strange-jyarijyari-silk-crew-pullover-ecru.jpg",
+          "url": "https://www.standardandstrange.com/products/jyarijyari-silk-crew-pullover-ecru",
+          "retailer": "Standard & Strange",
+          "category": "knit",
+          "modes": [
+            "classic-casual"
+          ],
+          "tasteScore": 1,
+          "matchedSignals": [
+            "knit"
+          ]
+        },
+        {
+          "id": "standard-strange-copy-of-silk-heavy-weight-pullover-brown-black-",
+          "title": "Distressed Effect Cotton Pullover - Nitefog 10",
+          "priceUSD": 670.0,
+          "listPriceUSD": null,
+          "imageUrl": "/product-images/standard-strange-copy-of-silk-heavy-weight-pullover-brown-black-.jpg",
+          "url": "https://www.standardandstrange.com/products/copy-of-silk-heavy-weight-pullover-brown-black-10",
+          "retailer": "Standard & Strange",
+          "category": "knit",
+          "modes": [
+            "classic-casual"
+          ],
+          "tasteScore": 1,
+          "matchedSignals": [
+            "knit"
+          ]
+        }
+      ],
+      "evidence": {
+        "sampledMatchingProducts": 4,
+        "discoveryMethod": "trusted multi-brand retailer catalog"
+      },
+      "firstFoundAt": "2026-09-01T17:18:16Z",
+      "lastSeenAt": "2026-09-02T01:49:14Z"
+    },
+    {
+      "id": "brand-rrl",
+      "brand": "RRL",
+      "confidence": "exploratory",
+      "score": 3,
+      "reason": "Exploratory match from Blue Owl: denim, selvedge, straight product signals overlap your current taste prior.",
+      "matchedSignals": [
+        "denim",
+        "selvedge",
+        "straight"
+      ],
+      "learnedSignals": [],
+      "retailers": [
+        "Blue Owl"
+      ],
+      "representativeProducts": [
+        {
+          "id": "blue-owl-givins-wash-16oz-selvedge-denim-vintage-5-pocket-full-s",
+          "title": "\"Givins Wash\"  16oz Selvedge Denim - Vintage 5-Pocket Full Straight Fit",
+          "priceUSD": 495.0,
+          "listPriceUSD": null,
+          "imageUrl": "/product-images/blue-owl-givins-wash-16oz-selvedge-denim-vintage-5-pocket-full-s.jpg",
+          "url": "https://www.blueowl.us/products/givins-wash-16oz-selvedge-denim-vintage-5-pocket-full-straight-fit",
+          "retailer": "Blue Owl",
+          "category": "pants",
+          "modes": [
+            "classic-casual"
+          ],
+          "tasteScore": 3,
+          "matchedSignals": [
+            "denim",
+            "selvedge",
+            "straight"
+          ]
+        }
+      ],
+      "evidence": {
+        "sampledMatchingProducts": 1,
+        "discoveryMethod": "trusted multi-brand retailer catalog"
+      },
+      "firstFoundAt": "2026-09-01T17:18:16Z",
+      "lastSeenAt": "2026-09-02T01:49:14Z"
+    },
+    {
+      "id": "brand-ues",
+      "brand": "UES",
+      "confidence": "exploratory",
+      "score": 3,
+      "reason": "Exploratory match from Blue Owl: denim, selvedge, straight product signals overlap your current taste prior.",
+      "matchedSignals": [
+        "denim",
+        "selvedge",
+        "straight"
+      ],
+      "learnedSignals": [],
+      "retailers": [
+        "Blue Owl"
+      ],
+      "representativeProducts": [
+        {
+          "id": "blue-owl-400ww-post-world-war-ii-14-9oz-selvedge-denim-classic-s",
+          "title": "400-WW \"Post World War II\" 14.9oz Selvedge Denim - Classic Straight Fit",
+          "priceUSD": 295.0,
+          "listPriceUSD": null,
+          "imageUrl": "/product-images/blue-owl-400ww-post-world-war-ii-14-9oz-selvedge-denim-classic-s.jpg",
+          "url": "https://www.blueowl.us/products/400ww-post-world-war-ii-14-9oz-selvedge-denim-classic-straight-fit",
+          "retailer": "Blue Owl",
+          "category": "pants",
+          "modes": [
+            "classic-casual"
+          ],
+          "tasteScore": 3,
+          "matchedSignals": [
+            "denim",
+            "selvedge",
+            "straight"
+          ]
+        }
+      ],
+      "evidence": {
+        "sampledMatchingProducts": 1,
+        "discoveryMethod": "trusted multi-brand retailer catalog"
+      },
+      "firstFoundAt": "2026-09-01T17:18:16Z",
+      "lastSeenAt": "2026-09-02T01:49:14Z"
+    },
+    {
+      "id": "brand-gorsch",
+      "brand": "Gorsch",
+      "confidence": "exploratory",
+      "score": 2,
+      "reason": "Exploratory match from Standard & Strange: wide product signals overlap your current taste prior.",
+      "matchedSignals": [
+        "wide"
+      ],
+      "learnedSignals": [],
+      "retailers": [
+        "Standard & Strange"
+      ],
+      "representativeProducts": [
+        {
+          "id": "standard-strange-wide-silhouette-collar-shirt-khaki-green-french",
+          "title": "Wide Silhouette Collar Shirt - Khaki Green French Linen",
+          "priceUSD": 400.0,
+          "listPriceUSD": null,
+          "imageUrl": "/product-images/standard-strange-wide-silhouette-collar-shirt-khaki-green-french.jpg",
+          "url": "https://www.standardandstrange.com/products/wide-silhouette-collar-shirt-khaki-green-french-linen",
+          "retailer": "Standard & Strange",
+          "category": "tops",
+          "modes": [
+            "minimal-clean",
+            "classic-casual"
+          ],
+          "tasteScore": 1,
+          "matchedSignals": [
+            "wide"
+          ]
+        },
+        {
+          "id": "standard-strange-wide-silhouette-open-collar-shirt-black-french-",
+          "title": "Wide Silhouette Open Collar Shirt - Black French Linen",
+          "priceUSD": 400.0,
+          "listPriceUSD": null,
+          "imageUrl": "/product-images/standard-strange-wide-silhouette-open-collar-shirt-black-french-.jpg",
+          "url": "https://www.standardandstrange.com/products/wide-silhouette-open-collar-shirt-black-french-linen",
+          "retailer": "Standard & Strange",
+          "category": "tops",
+          "modes": [
+            "minimal-clean",
+            "classic-casual"
+          ],
+          "tasteScore": 1,
+          "matchedSignals": [
+            "wide"
+          ]
+        }
+      ],
+      "evidence": {
+        "sampledMatchingProducts": 2,
+        "discoveryMethod": "trusted multi-brand retailer catalog"
+      },
+      "firstFoundAt": "2026-09-01T17:18:16Z",
+      "lastSeenAt": "2026-09-02T01:49:14Z"
+    },
+    {
+      "id": "brand-the-real-mccoy-s",
+      "brand": "The Real McCoy's",
+      "confidence": "exploratory",
+      "score": 2,
+      "reason": "Exploratory match from Standard & Strange: utility, denim product signals overlap your current taste prior.",
+      "matchedSignals": [
+        "utility",
+        "denim"
+      ],
+      "learnedSignals": [],
+      "retailers": [
+        "Standard & Strange"
+      ],
+      "representativeProducts": [
+        {
+          "id": "standard-strange-p-44-utility-coat-sage-green",
+          "title": "P-44 Utility Coat - Sage Green",
+          "priceUSD": 410.0,
+          "listPriceUSD": null,
+          "imageUrl": "/product-images/standard-strange-p-44-utility-coat-sage-green.jpg",
+          "url": "https://www.standardandstrange.com/products/p-44-utility-coat-sage-green",
+          "retailer": "Standard & Strange",
+          "category": "outerwear",
+          "modes": [
+            "classic-casual"
+          ],
+          "tasteScore": 1,
+          "matchedSignals": [
+            "utility"
+          ]
+        },
+        {
+          "id": "standard-strange-wwii-denim-engineer-coat-indigo",
+          "title": "WWII Denim Engineer Coat - Indigo",
+          "priceUSD": 440.0,
+          "listPriceUSD": null,
+          "imageUrl": "/product-images/standard-strange-wwii-denim-engineer-coat-indigo.jpg",
+          "url": "https://www.standardandstrange.com/products/wwii-denim-engineer-coat-indigo",
+          "retailer": "Standard & Strange",
+          "category": "outerwear",
+          "modes": [
+            "classic-casual"
+          ],
+          "tasteScore": 1,
+          "matchedSignals": [
+            "denim"
+          ]
+        }
+      ],
+      "evidence": {
+        "sampledMatchingProducts": 2,
+        "discoveryMethod": "trusted multi-brand retailer catalog"
+      },
+      "firstFoundAt": "2026-09-01T17:18:16Z",
+      "lastSeenAt": "2026-09-02T01:49:14Z"
+    },
+    {
+      "id": "brand-clinch-boots",
+      "brand": "Clinch Boots",
+      "confidence": "exploratory",
+      "score": 1,
+      "reason": "Exploratory match from Standard & Strange: work pant product signals overlap your current taste prior.",
+      "matchedSignals": [
+        "work pant"
+      ],
+      "learnedSignals": [],
+      "retailers": [
+        "Standard & Strange"
+      ],
+      "representativeProducts": [
+        {
+          "id": "standard-strange-bsc-uniform-light-moleskin-french-work-pants-gr",
+          "title": "BSC Uniform Light Moleskin French Work Pants - Green",
+          "priceUSD": 460.0,
+          "listPriceUSD": null,
+          "imageUrl": "/product-images/standard-strange-bsc-uniform-light-moleskin-french-work-pants-gr.jpg",
+          "url": "https://www.standardandstrange.com/products/bsc-uniform-light-moleskin-french-work-pants-green",
+          "retailer": "Standard & Strange",
+          "category": "pants",
+          "modes": [
+            "minimal-clean",
+            "corporate-presentable"
+          ],
+          "tasteScore": 1,
+          "matchedSignals": [
+            "work pant"
+          ]
+        }
+      ],
+      "evidence": {
+        "sampledMatchingProducts": 1,
+        "discoveryMethod": "trusted multi-brand retailer catalog"
+      },
+      "firstFoundAt": "2026-09-01T17:18:16Z",
+      "lastSeenAt": "2026-09-02T01:49:14Z"
+    },
+    {
+      "id": "brand-indi-ash",
+      "brand": "Indi + Ash",
+      "confidence": "exploratory",
+      "score": 1,
+      "reason": "Exploratory match from Standard & Strange: knit product signals overlap your current taste prior.",
+      "matchedSignals": [
+        "knit"
+      ],
+      "learnedSignals": [],
+      "retailers": [
+        "Standard & Strange"
+      ],
+      "representativeProducts": [
+        {
+          "id": "standard-strange-rugby-shirt-handwoven-natural-indigo-ripstop-bl",
+          "title": "Rugby Shirt - Handwoven Natural/Indigo Ripstop Black Print Stripe",
+          "priceUSD": 228.0,
+          "listPriceUSD": null,
+          "imageUrl": "/product-images/standard-strange-rugby-shirt-handwoven-natural-indigo-ripstop-bl.jpg",
+          "url": "https://www.standardandstrange.com/products/rugby-shirt-handwoven-natural-indigo-ripstop-black-print-stripe",
+          "retailer": "Standard & Strange",
+          "category": "knit",
+          "modes": [
+            "classic-casual"
+          ],
+          "tasteScore": 1,
+          "matchedSignals": [
+            "knit"
+          ]
+        }
+      ],
+      "evidence": {
+        "sampledMatchingProducts": 1,
+        "discoveryMethod": "trusted multi-brand retailer catalog"
+      },
+      "firstFoundAt": "2026-09-01T17:18:16Z",
+      "lastSeenAt": "2026-09-02T01:49:14Z"
+    },
+    {
+      "id": "brand-zara",
+      "brand": "Zara",
+      "confidence": "requested",
+      "score": 0,
+      "reason": "Added by you. Zara\u2019s official men\u2019s collection currently shows loose and baggy denim, relaxed trousers, carpenter shorts, textured shirts, and minimal seasonal layers that overlap the current taste prior.",
+      "matchedSignals": [
+        "baggy",
+        "loose",
+        "relaxed",
+        "carpenter",
+        "textured",
+        "minimal"
+      ],
+      "retailers": [
+        "Zara US"
+      ],
+      "representativeProducts": [
+        {
+          "id": "zara-loose-fit-jeans",
+          "title": "Loose Fit Jeans",
+          "priceUSD": 59.9,
+          "listPriceUSD": null,
+          "imageUrl": null,
+          "url": "https://www.zara.com/us/en/man-collection-l622.html",
+          "retailer": "Zara US",
+          "category": "pants",
+          "modes": [
+            "streetwear",
+            "classic-casual"
+          ],
+          "tasteScore": 0,
+          "matchedSignals": [
+            "loose"
+          ]
+        },
+        {
+          "id": "zara-relaxed-fit-carpenter-shorts",
+          "title": "Relaxed Fit Carpenter Shorts",
+          "priceUSD": 59.9,
+          "listPriceUSD": null,
+          "imageUrl": null,
+          "url": "https://www.zara.com/us/en/man-collection-l622.html",
+          "retailer": "Zara US",
+          "category": "shorts",
+          "modes": [
+            "streetwear",
+            "classic-casual"
+          ],
+          "tasteScore": 0,
+          "matchedSignals": [
+            "relaxed",
+            "carpenter"
+          ]
+        },
+        {
+          "id": "zara-relaxed-fit-linen-pants",
+          "title": "100% Linen Relaxed Fit Pants",
+          "priceUSD": 79.9,
+          "listPriceUSD": null,
+          "imageUrl": null,
+          "url": "https://www.zara.com/us/en/man-collection-l622.html",
+          "retailer": "Zara US",
+          "category": "pants",
+          "modes": [
+            "minimal-clean",
+            "corporate-presentable"
+          ],
+          "tasteScore": 0,
+          "matchedSignals": [
+            "relaxed"
+          ]
+        }
+      ],
+      "evidence": {
+        "sampledMatchingProducts": 3,
+        "discoveryMethod": "user-requested brand; official Zara US men\u2019s collection indexed through search"
+      },
+      "firstFoundAt": "2026-09-01T17:30:30Z",
+      "lastSeenAt": "2026-09-01T17:30:30Z"
+    }
+  ]
+}

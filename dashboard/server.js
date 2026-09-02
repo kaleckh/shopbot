@@ -9,22 +9,41 @@ const path = require("path");
 const ROOT = path.join(__dirname, "..");
 const PORT = 7877;
 const MAX_BODY_BYTES = 8 * 1024;
+const BRAND_DISCOVERY_INTERVAL_MS = 6 * 60 * 60 * 1000;
 const ID_RE = /^[a-z0-9][a-z0-9-]{0,63}$/;
 // Product photos are cached locally rather than hotlinked: retailer CDNs reject cross-origin
 // referers and rotate their URLs, so a stored remote URL would rot into a broken card.
 const IMAGE_RE = /^[a-z0-9][a-z0-9-]{0,63}\.(jpg|png|webp|avif)$/i;
 const IMAGE_TYPES = { jpg: "image/jpeg", png: "image/png", webp: "image/webp", avif: "image/avif" };
 const VOTE_SCALE = [
-  { value: -2, label: "Strong dislike", shortLabel: "-2" },
-  { value: -1, label: "Dislike", shortLabel: "-1" },
-  { value: 0, label: "Neutral / clear", shortLabel: "0" },
-  { value: 1, label: "Like", shortLabel: "+1" },
-  { value: 2, label: "Strong like", shortLabel: "+2" },
+  { value: -2, label: "Reject", shortLabel: "-2" },
+  { value: -1, label: "Not for me", shortLabel: "-1" },
+  { value: 0, label: "Clear vote", shortLabel: "0" },
+  { value: 1, label: "Shortlist", shortLabel: "+1" },
+  { value: 2, label: "Verify and watch", shortLabel: "+2" },
+];
+const OUTCOME_OPTIONS = [
+  { value: "bought", label: "Bought" },
+  { value: "kept", label: "Kept" },
+  { value: "returned", label: "Returned" },
+  { value: "repeat-wear", label: "Wear repeatedly" },
+];
+const BRAND_DECISION_OPTIONS = [
+  { value: "follow", label: "Follow brand" },
+  { value: "occasional", label: "Show occasionally" },
+  { value: "reject", label: "Not my style" },
+  { value: "too-expensive", label: "Too expensive" },
 ];
 
 const DEFAULT_PATHS = {
   suggestions: path.join(ROOT, "data", "suggestions.json"),
+  trainingBatch: path.join(ROOT, "data", "training-batch.json"),
   votes: path.join(ROOT, "taste", "votes.json"),
+  outcomes: path.join(ROOT, "taste", "outcomes.json"),
+  brandCandidates: path.join(ROOT, "data", "brand-candidates.json"),
+  crawlerReport: path.join(ROOT, "data", "crawler-last-run.json"),
+  ingestionCandidates: path.join(ROOT, "data", "ingestion-candidates.json"),
+  brandDecisions: path.join(ROOT, "taste", "brand-decisions.json"),
   pinterest: path.join(ROOT, "config", "pinterest.json"),
   watches: path.join(ROOT, "config", "watches.json"),
   corpus: path.join(ROOT, "taste", "corpus"),
@@ -72,6 +91,36 @@ function listenFailureMessage(error, host, port, ownerLookup = listeningProcess)
   return `shopbot dashboard listen failed: host=${host} port=${port} code=${code} owner=${owner || "none found on this address"}`;
 }
 
+function brandDiscoveryCommand(root, platform = process.platform) {
+  const script = path.join(root, "engine", "discover-brands.py");
+  return platform === "win32" ? { command: "py", args: ["-3", script] } : { command: "python3", args: [script] };
+}
+
+function scheduleBrandDiscovery(root, options = {}) {
+  if (options.brandDiscovery === false) return () => {};
+  let child = null;
+  const run = () => {
+    if (child) return;
+    const invocation = brandDiscoveryCommand(root, options.platform);
+    try {
+      child = childProcess.spawn(invocation.command, invocation.args, { cwd: root, stdio: options.silent === true ? "ignore" : "inherit", windowsHide: true });
+      child.once("error", () => { child = null; });
+      child.once("close", () => { child = null; });
+    } catch {
+      child = null;
+    }
+  };
+  run();
+  const interval = Math.max(60_000, Number(options.brandDiscoveryIntervalMs) || BRAND_DISCOVERY_INTERVAL_MS);
+  const timer = setInterval(run, interval);
+  timer.unref();
+  return () => {
+    clearInterval(timer);
+    if (child && !child.killed) child.kill();
+    child = null;
+  };
+}
+
 function latestWatchStatus(root) {
   try {
     const dir = path.join(root, "logs");
@@ -114,6 +163,32 @@ function suggestionList(value) {
     : [];
 }
 
+function trainingBatch(value, suggestions) {
+  const byId = new Map(suggestions.map((item) => [item.id, item]));
+  const sourceIds = value && Array.isArray(value.itemIds) ? value.itemIds : [];
+  const seen = new Set();
+  const itemIds = sourceIds.filter((id) => typeof id === "string" && !seen.has(id) && seen.add(id));
+  const items = itemIds.map((id) => byId.get(id)).filter(Boolean);
+  const missingIds = itemIds.filter((id) => !byId.has(id));
+  const quotas = value && value.quotas && typeof value.quotas === "object" && !Array.isArray(value.quotas)
+    ? Object.fromEntries(Object.entries(value.quotas).filter(([category, count]) => category && Number.isInteger(count) && count > 0))
+    : {};
+  return {
+    version: Number.isInteger(value && value.version) ? value.version : 1,
+    title: typeof (value && value.title) === "string" ? value.title : "Training batch",
+    description: typeof (value && value.description) === "string" ? value.description : "",
+    quotas,
+    items,
+    missingIds,
+  };
+}
+
+function brandCandidateList(value) {
+  return value && Array.isArray(value.candidates)
+    ? value.candidates.filter((item) => item && typeof item === "object" && !Array.isArray(item) && typeof item.id === "string" && ID_RE.test(item.id))
+    : [];
+}
+
 function clampVote(value) {
   if (!Number.isFinite(value)) return null;
   if (value < -2) return -2;
@@ -136,6 +211,34 @@ function normalizedVotes(value) {
   return result;
 }
 
+function normalizedOutcomes(value) {
+  if (!value || typeof value !== "object" || Array.isArray(value)) return {};
+  const allowed = new Set(OUTCOME_OPTIONS.map((option) => option.value));
+  const result = {};
+  for (const [id, entry] of Object.entries(value)) {
+    if (!entry || typeof entry !== "object" || Array.isArray(entry) || !allowed.has(entry.outcome)) continue;
+    result[id] = {
+      outcome: entry.outcome,
+      ...(typeof entry.at === "string" ? { at: entry.at } : {}),
+    };
+  }
+  return result;
+}
+
+function normalizedBrandDecisions(value, knownCandidates) {
+  if (!value || typeof value !== "object" || Array.isArray(value)) return {};
+  const allowed = new Set(BRAND_DECISION_OPTIONS.map((option) => option.value));
+  const result = {};
+  for (const [id, entry] of Object.entries(value)) {
+    if (!knownCandidates.has(id) || !entry || typeof entry !== "object" || Array.isArray(entry) || !allowed.has(entry.decision)) continue;
+    result[id] = {
+      decision: entry.decision,
+      ...(typeof entry.at === "string" ? { at: entry.at } : {}),
+    };
+  }
+  return result;
+}
+
 function knownIds(paths) {
   const corpus = pinterestCorpus(paths.corpus);
   const suggestions = suggestionList(readJson(paths.suggestions, { suggestions: [] }));
@@ -144,6 +247,10 @@ function knownIds(paths) {
     if (item && typeof item.id === "string") ids.add(item.id);
   }
   return ids;
+}
+
+function knownSuggestionIds(paths) {
+  return new Set(suggestionList(readJson(paths.suggestions, { suggestions: [] })).map((item) => item.id).filter(Boolean));
 }
 
 function apiJson(res, status, payload, extraHeaders) {
@@ -222,24 +329,50 @@ function createServer(options = {}) {
   const corpusDir = paths.corpus || path.join(root, "taste", "corpus");
   const imagesDir = paths.productImages || path.join(root, "data", "images");
   let voteQueue = Promise.resolve();
+  let outcomeQueue = Promise.resolve();
+  let brandDecisionQueue = Promise.resolve();
 
   function state() {
     const suggestions = suggestionList(readJson(paths.suggestions, { suggestions: [] }));
+    const training = trainingBatch(readJson(paths.trainingBatch, {}), suggestions);
     const pinterest = readJson(paths.pinterest, { status: "not-connected", boards: [] });
     const watches = readJson(paths.watches, { watches: [] }) || {};
     const taste = pinterestCorpus(corpusDir);
     const votes = normalizedVotes(readJson(paths.votes, {}));
+    const outcomes = normalizedOutcomes(readJson(paths.outcomes, {}));
+    const brandCandidates = brandCandidateList(readJson(paths.brandCandidates, { candidates: [] }));
+    const crawlerReport = readJson(paths.crawlerReport, null);
+    const ingestionData = readJson(paths.ingestionCandidates, { candidates: [], sources: [] });
+    const ingestion = ingestionData && typeof ingestionData === "object" && !Array.isArray(ingestionData)
+      ? {
+          generatedAt: ingestionData.generatedAt || null,
+          candidateCount: Array.isArray(ingestionData.candidates) ? ingestionData.candidates.length : 0,
+          sources: Array.isArray(ingestionData.sources) ? ingestionData.sources : [],
+        }
+      : { generatedAt: null, candidateCount: 0, sources: [] };
+    const candidateIds = new Set(brandCandidates.map((item) => item.id));
+    const brandDecisions = normalizedBrandDecisions(readJson(paths.brandDecisions, {}), candidateIds);
     return {
       suggestions,
+      trainingBatch: training,
       votes,
+      outcomes,
+      brandCandidates,
+      brandDecisions,
+      crawlerReport: crawlerReport && typeof crawlerReport === "object" && !Array.isArray(crawlerReport) ? crawlerReport : null,
+      ingestion,
       pinterest,
       pinterestCorpus: taste,
       watches: Array.isArray(watches.watches) ? watches.watches : [],
       watcher: latestWatchStatus(root),
       voteScale: VOTE_SCALE,
+      outcomeOptions: OUTCOME_OPTIONS,
+      brandDecisionOptions: BRAND_DECISION_OPTIONS,
       tabs: {
         taste: { count: taste.length, items: taste },
+        training: { count: training.items.length, items: training.items },
         suggestions: { count: suggestions.length, items: suggestions },
+        brands: { count: brandCandidates.filter((item) => !brandDecisions[item.id]).length, items: brandCandidates },
       },
     };
   }
@@ -253,6 +386,32 @@ function createServer(options = {}) {
       return votes;
     });
     voteQueue = operation.catch(() => undefined);
+    return operation;
+  }
+
+  function queueOutcome(id, outcome) {
+    const operation = outcomeQueue.then(() => {
+      const outcomes = normalizedOutcomes(readJson(paths.outcomes, {}));
+      if (outcome === "none") delete outcomes[id];
+      else outcomes[id] = { outcome, at: new Date().toISOString() };
+      atomicallyWriteJson(paths.outcomes, outcomes);
+      return outcomes;
+    });
+    outcomeQueue = operation.catch(() => undefined);
+    return operation;
+  }
+
+  function queueBrandDecision(id, decision) {
+    const operation = brandDecisionQueue.then(() => {
+      const candidates = brandCandidateList(readJson(paths.brandCandidates, { candidates: [] }));
+      const known = new Set(candidates.map((item) => item.id));
+      const decisions = normalizedBrandDecisions(readJson(paths.brandDecisions, {}), known);
+      if (decision === "none") delete decisions[id];
+      else decisions[id] = { decision, at: new Date().toISOString() };
+      atomicallyWriteJson(paths.brandDecisions, decisions);
+      return decisions;
+    });
+    brandDecisionQueue = operation.catch(() => undefined);
     return operation;
   }
 
@@ -301,6 +460,84 @@ function createServer(options = {}) {
         }
         const votes = await queueVote(id, vote);
         apiJson(res, 200, { ok: true, votes });
+      } catch (error) {
+        if (res.writableEnded) return;
+        apiJson(res, 500, { ok: false, error: cleanText(error.message || error) });
+      }
+      return;
+    }
+
+    if (url.pathname === "/api/outcome") {
+      if (req.method !== "POST") {
+        apiJson(res, 405, { ok: false, error: "method not allowed" }, { Allow: "POST" });
+        return;
+      }
+      if (String(req.headers["content-type"] || "").toLowerCase().split(";")[0].trim() !== "application/json") {
+        apiJson(res, 415, { ok: false, error: "content-type must be application/json" });
+        return;
+      }
+      try {
+        const body = await requestBody(req, res);
+        let input;
+        try {
+          input = JSON.parse(body);
+        } catch {
+          apiJson(res, 400, { ok: false, error: "invalid JSON" });
+          return;
+        }
+        const id = input && input.id;
+        const outcome = input && input.outcome;
+        const allowed = new Set(["none", ...OUTCOME_OPTIONS.map((option) => option.value)]);
+        if (typeof id !== "string" || !ID_RE.test(id) || !knownSuggestionIds(paths).has(id)) {
+          apiJson(res, 400, { ok: false, error: "unknown or malformed suggestion id" });
+          return;
+        }
+        if (typeof outcome !== "string" || !allowed.has(outcome)) {
+          apiJson(res, 400, { ok: false, error: "unknown outcome" });
+          return;
+        }
+        const outcomes = await queueOutcome(id, outcome);
+        apiJson(res, 200, { ok: true, outcomes });
+      } catch (error) {
+        if (res.writableEnded) return;
+        apiJson(res, 500, { ok: false, error: cleanText(error.message || error) });
+      }
+      return;
+    }
+
+    if (url.pathname === "/api/brand-decision") {
+      if (req.method !== "POST") {
+        apiJson(res, 405, { ok: false, error: "method not allowed" }, { Allow: "POST" });
+        return;
+      }
+      if (String(req.headers["content-type"] || "").toLowerCase().split(";")[0].trim() !== "application/json") {
+        apiJson(res, 415, { ok: false, error: "content-type must be application/json" });
+        return;
+      }
+      try {
+        const body = await requestBody(req, res);
+        let input;
+        try {
+          input = JSON.parse(body);
+        } catch {
+          apiJson(res, 400, { ok: false, error: "invalid JSON" });
+          return;
+        }
+        const id = input && input.id;
+        const decision = input && input.decision;
+        const candidates = brandCandidateList(readJson(paths.brandCandidates, { candidates: [] }));
+        const known = new Set(candidates.map((item) => item.id));
+        const allowed = new Set(["none", ...BRAND_DECISION_OPTIONS.map((option) => option.value)]);
+        if (typeof id !== "string" || !ID_RE.test(id) || !known.has(id)) {
+          apiJson(res, 400, { ok: false, error: "unknown or malformed brand candidate id" });
+          return;
+        }
+        if (typeof decision !== "string" || !allowed.has(decision)) {
+          apiJson(res, 400, { ok: false, error: "unknown brand decision" });
+          return;
+        }
+        const brandDecisions = await queueBrandDecision(id, decision);
+        apiJson(res, 200, { ok: true, brandDecisions });
       } catch (error) {
         if (res.writableEnded) return;
         apiJson(res, 500, { ok: false, error: cleanText(error.message || error) });
@@ -365,6 +602,8 @@ function start(options = {}) {
     };
     const onListening = () => {
       server.off("error", onError);
+      const stopBrandDiscovery = scheduleBrandDiscovery(options.root || ROOT, options);
+      server.once("close", stopBrandDiscovery);
       resolve(server);
     };
     server.once("error", onError);
@@ -386,4 +625,4 @@ if (require.main === module) {
   });
 }
 
-module.exports = { createServer, start, VOTE_SCALE, normalizedVotes, listenFailureMessage };
+module.exports = { createServer, start, VOTE_SCALE, normalizedVotes, normalizedBrandDecisions, trainingBatch, brandDiscoveryCommand, listenFailureMessage };

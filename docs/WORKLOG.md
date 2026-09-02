@@ -1,8 +1,39 @@
 # Worklog
 
+## 2026-09-01 - Balanced training curriculum
+
+- Added a dedicated Training tab backed by a stable 30-item catalog manifest: 6 pants, 6 outerwear, 6 tops, 6 knits, 4 shoes, and 2 accessories across 25 brands.
+- Kept completed cards in place and exposed live rated progress so voting does not silently remove or reshuffle the curriculum.
+- Removed the false default-neutral selection from unvoted cards; `0` now clearly means “Clear vote.”
+- Verified 1,357 dashboard assertions, the exact category quotas, 30 unique/resolvable IDs, no browser console errors, and the rendered 30-card tab in Chrome.
+
+## 2026-09-01 - Declarative catalog ingestion
+
+- Added a dependency-free source ingestion CLI with bounded sitemap recursion, gzip sitemap support, JSON/CSV/XML feed mappings, bounded page templates, environment-only auth headers, response-size limits, transient retries, source URL gates, normalized lead evidence, atomic publication, and last-good/partial-scan preservation.
+- Configured Levi's public US sitemap as the first blocked-storefront discovery route. The full run read 111 sitemap documents, parsed 4,232 raw product URLs, and retained 781 canonical US menswear candidates with product IDs, images, and last-modified dates.
+- Added a compact ingestion health/count object to the dashboard API and header. Detailed candidates stay in `data/ingestion-candidates.json`; none are mislabeled as price- or stock-verified.
+- Verified 23 focused source-ingestion checks before the full regression pass.
+
+## 2026-09-01 - Firecrawl Zara Ingestion
+
+- Added a provider-backed blocked-site scout with official-host/path validation, men's-category audience evidence, deterministic PDP product extraction, shared exclusion rules, local image caching, atomic idempotent publication, bounded transient retries, rate-limit circuit breaking, and safe preservation on total failure.
+- Replaced the temporary six-item global cap with per-source adaptive policy: bootstrap 24, unreviewed backpressure 24, eight later additions, active ceiling 50, four-per-category diversity pressure, positive-vote refresh priority, and vote-derived category/signal weights.
+- Converted Zara from `search-then-pdp`/blocked to the working `firecrawl-search-product` contract. A live run found 119 unique PDPs and expanded the dashboard from six to 17 verified Zara US menswear cards. A later anonymous run hit HTTP 429; it published nothing and preserved all 17 cards.
+- Added `data/firecrawl-last-run.json` and a dashboard catalogue chip for active/target progress and rate-limit state. The report captures discovery, filter reasons, category eligibility/selection, attempts, requests, provider-reported credits, and publication.
+- Replaced the active Firecrawl integration with Shopbot's pinned, self-hosted Crawl4AI browser. A live dry-run rendered five official Zara men's categories, discovered 168 unique PDPs, and verified deterministic ProductGroup extraction. The local profile and Crawl4AI cache avoid repeated remote work; no provider API key or per-page billing remains.
+- Generalized the browser engine across Product/ProductGroup JSON-LD, nested JSON app state, Open Graph/itemprop/rendered price data, canonical and protocol-relative URLs, sale prices, fresh PDP verification, poisoned-cache recovery, transport retries, source-contract validation, extraction-method metrics, and aggregate multi-source dashboard status. American Eagle proved the generic path with 60 eligible men's PDPs and 12 freshly verified cards at $24.97-$41.97. Live probes preserve explicit blocks for Uniqlo, Levi's, Urban Outfitters, and Patagonia.
+- Fixed hoodie jackets being classified as knit by making explicit outerwear terms win before hoodie/knit terms.
+- Verified 23 source-ingestion checks, 68 focused browser-scout assertions, 23 scout assertions, 15 brand-discovery assertions, and 1,350 dashboard assertions. The active browser catalogue holds 24 Zara and 12 American Eagle records.
+
 ## 2026-09-01
 
 - Published the local repo to GitHub as `kaleckh/shopbot` (`https://github.com/kaleckh/shopbot`) and pushed outstanding local work: Shopify scout, sources roster, cached product images, dashboard/suggestion updates, and the `ClaudePriceWatch` registration script.
+- Reworked the dashboard into an actionable learning loop: full-width layout, unvoted review queue, distinct lead/verified/expired states, `+2` verification queue, personalized ranking after 15 suggestion votes, and atomic purchase-outcome storage.
+- Normalized the scout-produced catalogue from 62 ambiguous `other` records to 7 and replaced near-universal mode tags with title/product-derived modes. Added `npm run normalize:catalogue` and a focused classifier regression.
+- Removed ten women's products from mixed-gender Edwin, Marine Layer, Outerknown, and A.P.C. feeds that leaked through title-only filtering. The scout now checks full product metadata and source-specific exclusions before publishing menswear suggestions.
+- Shipped the first automatic brand-discovery loop: trusted multi-brand feeds produced 25 new candidate labels with cached representative products and evidence. Added the Discover Brands queue, atomic profile decisions, recovery filters, six-hour background refresh, transport fallback for retailer WAFs, and focused engine/API/browser verification.
+- Labeled first-pass brand matches as exploratory after auditing the source skew: Blue Owl, Okayama Denim, and Standard & Strange make the queue heavily Japanese-denim oriented while the profile has only one product vote. Added Zara as a followed source through its official US men's collection; the collection is search-indexed but returns HTTP 403 to direct automation, so it uses search-to-PDP discovery.
+- Fed brand decisions back into later discovery scores: follow and occasional reinforce matched style signals, reject suppresses them, and too-expensive remains separate from style. Following Zara now teaches loose, relaxed, carpenter, textured, and minimal without falsely treating its price as taste.
 
 ## 2026-08-17 (fetch methods)
 

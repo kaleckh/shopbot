@@ -2,8 +2,17 @@
   "name": "shopbot",
   "private": true,
   "scripts": {
+    "discover:brands": "python3 engine/discover-brands.py",
+    "ingest:sources": "python3 engine/source-ingest.py",
+    "crawler:setup": "uv run crawl4ai-setup",
+    "scout:web": "uv run python engine/scout-browser.py",
+    "normalize:catalogue": "python3 engine/scout-shopify.py --normalize-existing",
+    "test:brands": "python3 engine/test-discover-brands.py",
+    "test:ingest": "python3 engine/test-source-ingest.py",
+    "test:web": "python3 engine/test-scout-browser.py",
+    "test:scout": "python3 engine/test-scout-shopify.py",
     "test:watcher": "powershell.exe -NoProfile -ExecutionPolicy Bypass -File engine/test-price-watch.ps1",
     "test:dashboard": "node dashboard/test-dashboard.js",
-    "test": "npm run test:watcher && npm run test:dashboard"
+    "test": "npm run test:watcher && npm run test:dashboard && npm run test:scout && npm run test:brands && npm run test:ingest && npm run test:web"
   }
 }

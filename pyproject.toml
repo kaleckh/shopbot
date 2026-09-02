@@ -1,0 +1,11 @@
+[project]
+name = "shopbot-crawler"
+version = "0.1.0"
+description = "Self-hosted browser crawler for Shopbot"
+requires-python = ">=3.10"
+dependencies = [
+  "crawl4ai==0.9.3",
+]
+
+[tool.uv]
+package = false

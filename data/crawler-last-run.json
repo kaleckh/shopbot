@@ -1,0 +1,94 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-09-01T19:07:25Z",
+  "dryRun": false,
+  "engine": "crawl4ai-local",
+  "headed": false,
+  "fresh": false,
+  "sources": [
+    {
+      "sourceId": "zara-us",
+      "existingBefore": 24,
+      "normalizedCategories": 0,
+      "activeBefore": 24,
+      "unreviewedBefore": 24,
+      "backpressure": true,
+      "blocked": false,
+      "policy": {
+        "initialTarget": 24,
+        "maxUnreviewed": 24,
+        "newPerRefresh": 8,
+        "activeCeiling": 50,
+        "bootstrapPerCategory": 4,
+        "refreshLikedLimit": 8
+      },
+      "newBudget": 0,
+      "discovery": {
+        "categoryPages": 0,
+        "uniqueProductLinks": 0
+      },
+      "rejectedBeforeScrape": {},
+      "eligibleByCategory": {},
+      "selectedByCategory": {},
+      "candidateQueueNew": 0,
+      "attemptedNew": 0,
+      "scheduledRefresh": 0,
+      "verifiedNew": 0,
+      "refreshed": 0,
+      "rejectedAfterScrape": {},
+      "rejectionDetails": [],
+      "verifiedCategories": {},
+      "extractionMethods": {},
+      "failures": [],
+      "cacheHits": 0,
+      "requests": {},
+      "networkAttempts": {}
+    },
+    {
+      "sourceId": "ae",
+      "existingBefore": 12,
+      "normalizedCategories": 0,
+      "activeBefore": 12,
+      "unreviewedBefore": 12,
+      "backpressure": true,
+      "blocked": false,
+      "policy": {
+        "initialTarget": 12,
+        "maxUnreviewed": 12,
+        "newPerRefresh": 4,
+        "activeCeiling": 30,
+        "bootstrapPerCategory": 12,
+        "refreshLikedLimit": 4
+      },
+      "newBudget": 0,
+      "discovery": {
+        "categoryPages": 0,
+        "uniqueProductLinks": 0
+      },
+      "rejectedBeforeScrape": {},
+      "eligibleByCategory": {},
+      "selectedByCategory": {},
+      "candidateQueueNew": 0,
+      "attemptedNew": 0,
+      "scheduledRefresh": 0,
+      "verifiedNew": 0,
+      "refreshed": 0,
+      "rejectedAfterScrape": {},
+      "rejectionDetails": [],
+      "verifiedCategories": {},
+      "extractionMethods": {},
+      "failures": [],
+      "cacheHits": 0,
+      "requests": {},
+      "networkAttempts": {}
+    }
+  ],
+  "cacheHits": 0,
+  "requests": {},
+  "networkAttempts": {},
+  "normalizedCategories": 0,
+  "published": {
+    "added": 0,
+    "updated": 0
+  }
+}

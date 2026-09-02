@@ -27,7 +27,7 @@
   button:focus-visible, select:focus-visible, a:focus-visible, summary:focus-visible {
     outline: 3px solid var(--accent); outline-offset: 3px;
   }
-  .shell { width: min(1240px, 100%); margin: 0 auto; padding: 0 24px 60px; }
+  .shell { width: 100%; padding: 0 24px 60px; }
   header { padding: 34px 0 22px; display: flex; align-items: end; gap: 18px; flex-wrap: wrap; }
   .eyebrow { color: var(--accent); font: 700 11px/1.2 "Trebuchet MS", sans-serif; letter-spacing: .17em; text-transform: uppercase; }
   header h1 { margin: 4px 0 0; font: 700 clamp(30px, 5vw, 54px)/.95 Georgia, "Times New Roman", serif; letter-spacing: -.06em; }
@@ -49,6 +49,8 @@
   .panel-heading h2 { margin: 0; font-size: 25px; letter-spacing: -.03em; }
   .panel-heading p { margin: 4px 0 0; color: var(--muted); }
   .result-count { color: var(--muted); font: 12px "Trebuchet MS", sans-serif; white-space: nowrap; }
+  .training-summary { display: flex; flex-wrap: wrap; gap: 7px; margin: -10px 0 22px; }
+  .training-summary span { padding: 5px 9px; border: 1px solid var(--line); border-radius: 99px; color: var(--muted); font: 700 11px "Trebuchet MS", sans-serif; }
   .filters { display: grid; grid-template-columns: repeat(5, minmax(120px, 1fr)) auto; gap: 10px; margin: 0 0 24px; padding: 14px; border: 1px solid var(--line); border-radius: var(--radius); background: var(--panel); }
   .filter { display: grid; gap: 5px; }
   .filter label { color: var(--muted); font: 700 10px "Trebuchet MS", sans-serif; letter-spacing: .1em; text-transform: uppercase; }
@@ -63,7 +65,7 @@
   .status-chip { flex: none; padding: 2px 7px; border: 1px solid var(--line); border-radius: 99px; color: var(--muted); font: 700 10px "Trebuchet MS", sans-serif; letter-spacing: .06em; text-transform: uppercase; }
   .status-chip.verified { color: var(--up); border-color: var(--up); }
   .status-chip.lead { color: var(--warn); border-color: var(--warn); }
-  .status-chip.stale { color: var(--down); border-color: var(--down); }
+  .status-chip.expired { color: var(--down); border-color: var(--down); }
   .verdict.clamp { display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; font-size: 13px; }
   .card-details { margin-top: auto; padding-top: 8px; border-top: 1px solid var(--line); }
   .card-details[open] { padding-bottom: 2px; }
@@ -87,7 +89,7 @@
   .verification { padding: 5px 8px; border-left: 3px solid var(--muted); background: color-mix(in srgb, var(--muted) 9%, transparent); }
   .verification.verified { border-left-color: var(--up); }
   .verification.lead { border-left-color: var(--warn); }
-  .verification.stale { border-left-color: var(--down); }
+  .verification.expired { border-left-color: var(--down); }
   .stock { font-weight: 700; }
   .stock.in-stock { color: var(--up); }
   .stock.limited { color: var(--warn); }
@@ -102,6 +104,18 @@
   .vote-option.vote-negative.is-selected { border-color: var(--down); background: color-mix(in srgb, var(--down) 22%, var(--panel)); }
   .vote-option.vote-neutral.is-selected { border-color: var(--neutral); background: color-mix(in srgb, var(--neutral) 24%, var(--panel)); }
   .vote-option.vote-positive.is-selected { border-color: var(--up); background: color-mix(in srgb, var(--up) 22%, var(--panel)); }
+  .outcome-wrap { display: grid; gap: 5px; }
+  .outcome-wrap label { color: var(--muted); font: 10px "Trebuchet MS", sans-serif; letter-spacing: .1em; text-transform: uppercase; }
+  .outcome-select { min-height: 38px; }
+  .brand-products { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 5px; padding: 8px; background: var(--panel); }
+  .brand-product { min-width: 0; color: var(--muted); text-decoration: none; font: 10px/1.25 "Trebuchet MS", sans-serif; }
+  .brand-product:hover { color: var(--accent); }
+  .brand-product img { width: 100%; aspect-ratio: 4 / 5; display: block; margin-bottom: 5px; border-radius: 6px; object-fit: cover; background: var(--card); }
+  .brand-product span { display: block; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .brand-actions { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 6px; margin-top: auto; padding-top: 7px; }
+  .brand-action { min-height: 42px; padding: 7px 8px; border: 1px solid var(--line); border-radius: 8px; background: var(--panel); color: var(--muted); cursor: pointer; font: 700 11px "Trebuchet MS", sans-serif; }
+  .brand-action:hover { border-color: var(--accent); color: var(--text); }
+  .brand-action.is-selected { border-color: var(--accent); color: var(--text); background: color-mix(in srgb, var(--accent) 16%, var(--panel)); }
   .error { margin: 0; color: var(--down); font-size: 12px; }
   .empty { max-width: 620px; margin: 42px auto; padding: 42px 24px; border: 1px dashed var(--line); border-radius: var(--radius); text-align: center; color: var(--muted); }
   .empty h3 { margin: 0 0 7px; color: var(--text); font-size: 18px; }
@@ -124,12 +138,18 @@
       <span class="chip" id="chip-pinterest"><span class="dot"></span><span>pinterest: ...</span></span>
       <span class="chip" id="chip-watcher"><span class="dot"></span><span>watcher: ...</span></span>
       <span class="chip" id="chip-votes"><span class="dot"></span><span>votes: ...</span></span>
+      <span class="chip" id="chip-ranking"><span class="dot"></span><span>ranking: ...</span></span>
+      <span class="chip" id="chip-verification"><span class="dot"></span><span>verify: ...</span></span>
+      <span class="chip" id="chip-catalog"><span class="dot"></span><span>catalog: ...</span></span>
+      <span class="chip" id="chip-ingestion"><span class="dot"></span><span>ingest: ...</span></span>
     </div>
   </header>
   <div class="tabbar-wrap">
     <div role="tablist" aria-label="Shopbot dashboard sections">
       <button id="tab-taste" role="tab" aria-controls="panel-taste" aria-selected="true" tabindex="0" type="button">Taste <span class="tab-count" id="taste-count">0</span></button>
+      <button id="tab-training" role="tab" aria-controls="panel-training" aria-selected="false" tabindex="-1" type="button">Training <span class="tab-count" id="training-count">0</span></button>
       <button id="tab-suggestions" role="tab" aria-controls="panel-suggestions" aria-selected="false" tabindex="-1" type="button">Suggestions <span class="tab-count" id="suggestions-count">0</span></button>
+      <button id="tab-brands" role="tab" aria-controls="panel-brands" aria-selected="false" tabindex="-1" type="button">Discover brands <span class="tab-count" id="brands-count">0</span></button>
     </div>
   </div>
   <main>
@@ -141,6 +161,15 @@
       <div class="grid" id="taste-grid" role="list"></div>
       <div class="empty" id="taste-empty" hidden><h3>No taste references yet</h3><p>The Pinterest corpus will appear here when it is available.</p></div>
     </section>
+    <section id="panel-training" class="tab-panel" role="tabpanel" aria-labelledby="tab-training" hidden>
+      <div class="panel-heading">
+        <div><h2 id="training-title">Balanced wardrobe baseline</h2><p id="training-description">Rate a deliberately varied menswear set so jeans do not dominate the signal.</p></div>
+        <span class="result-count" id="training-result-count"></span>
+      </div>
+      <div class="training-summary" id="training-summary" aria-label="Training category mix"></div>
+      <div class="grid" id="training-grid" role="list"></div>
+      <div class="empty" id="training-empty" hidden><h3>No training set available</h3><p>The configured products may no longer exist in the catalog.</p></div>
+    </section>
     <section id="panel-suggestions" class="tab-panel" role="tabpanel" aria-labelledby="tab-suggestions" hidden>
       <div class="panel-heading">
         <div><h2>Retail suggestions</h2><p>Candidate finds, with the evidence trail kept close to the product.</p></div>
@@ -149,13 +178,24 @@
       <div class="filters" role="group" aria-label="Suggestion filters">
         <div class="filter"><label for="filter-mode">Style mode</label><select id="filter-mode" data-filter="mode"><option value="all">All modes</option></select></div>
         <div class="filter"><label for="filter-category">Category</label><select id="filter-category" data-filter="category"><option value="all">All categories</option></select></div>
-        <div class="filter"><label for="filter-status">Verification</label><select id="filter-status" data-filter="status"><option value="all">All statuses</option><option value="verified">Verified</option><option value="lead">Lead</option><option value="stale">Stale</option></select></div>
-        <div class="filter"><label for="filter-vote">Vote state</label><select id="filter-vote" data-filter="vote"><option value="any">Any vote</option><option value="unvoted">Unvoted</option><option value="liked">Liked</option><option value="disliked">Disliked</option></select></div>
-        <div class="filter"><label for="filter-sort">Sort</label><select id="filter-sort" data-filter="sort"><option value="newest">Newest</option><option value="price-asc">Price: low to high</option><option value="price-desc">Price: high to low</option></select></div>
+        <div class="filter"><label for="filter-status">Verification</label><select id="filter-status" data-filter="status"><option value="all">All statuses</option><option value="needs-verification">Needs verification</option><option value="verified">Verified</option><option value="lead">Lead</option><option value="expired">Expired verification</option></select></div>
+        <div class="filter"><label for="filter-vote">Vote state</label><select id="filter-vote" data-filter="vote"><option value="unvoted">To review</option><option value="any">Any vote</option><option value="liked">Liked</option><option value="disliked">Disliked</option></select></div>
+        <div class="filter"><label for="filter-sort">Sort</label><select id="filter-sort" data-filter="sort"><option value="for-you">For you</option><option value="newest">Newest</option><option value="price-asc">Price: low to high</option><option value="price-desc">Price: high to low</option></select></div>
         <button class="reset" id="reset-filters" type="button">Reset filters</button>
       </div>
       <div class="grid" id="suggestion-grid" role="list"></div>
       <div class="empty" id="suggestion-empty" hidden><h3>No suggestions match</h3><p>Try the all reset, or wait for a fresh verified candidate.</p></div>
+    </section>
+    <section id="panel-brands" class="tab-panel" role="tabpanel" aria-labelledby="tab-brands" hidden>
+      <div class="panel-heading">
+        <div><h2>Discover brands</h2><p>New labels found automatically through trusted menswear retailers.</p></div>
+        <span class="result-count" id="brand-result-count"></span>
+      </div>
+      <div class="filters" role="group" aria-label="Brand discovery filters">
+        <div class="filter"><label for="brand-filter">Decision</label><select id="brand-filter"><option value="new">New discoveries</option><option value="follow">Following</option><option value="occasional">Occasional</option><option value="reject">Not my style</option><option value="too-expensive">Too expensive</option><option value="all">All discoveries</option></select></div>
+      </div>
+      <div class="grid" id="brand-grid" role="list"></div>
+      <div class="empty" id="brand-empty" hidden><h3>No brands in this view</h3><p>The discovery worker will keep exploring trusted retailers for new labels.</p></div>
     </section>
   </main>
 </div>
@@ -163,9 +203,11 @@
 <script>
 let STATE = null;
 let TAB = "taste";
-const FILTER_DEFAULTS = { mode: "all", category: "all", status: "all", vote: "any", sort: "newest" };
+const FILTER_DEFAULTS = { mode: "all", category: "all", status: "all", vote: "unvoted", sort: "for-you" };
 let FILTERS = { ...FILTER_DEFAULTS };
 let voteErrors = {};
+let brandErrors = {};
+let BRAND_FILTER = "new";
 
 const $ = (id) => document.getElementById(id);
 const esc = (value) => String(value == null ? "" : value).replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
@@ -181,37 +223,42 @@ function readUrl() {
   const saved = (() => { try { return localStorage.getItem("shopbot-tab"); } catch (_) { return null; } })();
   // Suggestions is the default landing tab: browsing candidates is the job, the corpus is
   // training data. An explicit hash wins, then a tab the user actually chose before.
-  TAB = hash === "suggestions" || hash === "taste" ? hash
-      : saved === "suggestions" || saved === "taste" ? saved
+  TAB = ["suggestions", "training", "taste", "brands"].includes(hash) ? hash
+      : ["suggestions", "training", "taste", "brands"].includes(saved) ? saved
       : "suggestions";
   const params = new URLSearchParams(location.search);
   for (const key of Object.keys(FILTERS)) {
     const value = params.get(key);
     if (value) FILTERS[key] = value;
   }
+  const brandState = params.get("brand-state");
+  if (["new", "follow", "occasional", "reject", "too-expensive", "all"].includes(brandState)) BRAND_FILTER = brandState;
 }
 
 function writeUrl() {
   const params = new URLSearchParams();
   for (const [key, value] of Object.entries(FILTERS)) {
-    if ((key === "sort" && value !== "newest") || (key !== "sort" && value !== "all" && value !== "any")) params.set(key, value);
+    if (value !== FILTER_DEFAULTS[key]) params.set(key, value);
   }
+  if (BRAND_FILTER !== "new") params.set("brand-state", BRAND_FILTER);
   const query = params.toString();
   history.replaceState(null, "", (query ? "?" + query : "") + "#" + TAB);
   try { localStorage.setItem("shopbot-tab", TAB); } catch (_) {}
 }
 
 function setTab(name, announceIt) {
-  TAB = name === "suggestions" ? "suggestions" : "taste";
+  TAB = ["taste", "training", "suggestions", "brands"].includes(name) ? name : "suggestions";
   document.querySelectorAll('[role="tab"]').forEach((tab) => {
     const selected = tab.id === "tab-" + TAB;
     tab.setAttribute("aria-selected", String(selected));
     tab.tabIndex = selected ? 0 : -1;
   });
   $("panel-taste").hidden = TAB !== "taste";
+  $("panel-training").hidden = TAB !== "training";
   $("panel-suggestions").hidden = TAB !== "suggestions";
+  $("panel-brands").hidden = TAB !== "brands";
   writeUrl();
-  if (announceIt) announce(TAB === "taste" ? "Taste tab selected" : "Suggestions tab selected");
+  if (announceIt) announce(TAB === "taste" ? "Taste tab selected" : TAB === "training" ? "Training tab selected" : TAB === "brands" ? "Brand discovery tab selected" : "Suggestions tab selected");
 }
 
 function tabKeys(event) {
@@ -225,7 +272,7 @@ function tabKeys(event) {
   else return;
   event.preventDefault();
   tabs[next].focus();
-  setTab(tabs[next].id === "tab-suggestions" ? "suggestions" : "taste", true);
+  setTab(tabs[next].id.replace("tab-", ""), true);
 }
 
 function voteScale() { return STATE && Array.isArray(STATE.voteScale) ? STATE.voteScale : []; }
@@ -237,8 +284,14 @@ function voteGroup(item, currentVote) {
     const value = option.value;
     const selected = currentVote === value;
     const end = value < 0 ? "vote-negative" : value > 0 ? "vote-positive" : "vote-neutral";
-    return '<button type="button" class="vote-option ' + end + (selected ? " is-selected" : "") + '" role="radio" aria-checked="' + selected + '" aria-label="' + esc(option.label + ": " + label) + '" tabindex="' + (selected || (currentVote === 0 && value === 0) ? "0" : "-1") + '" data-id="' + esc(item.id) + '" data-vote="' + value + '">' + esc(option.shortLabel) + '</button>';
+    return '<button type="button" class="vote-option ' + end + (selected ? " is-selected" : "") + '" role="radio" aria-checked="' + selected + '" aria-label="' + esc(option.label + ": " + label) + '" tabindex="' + (selected || (currentVote == null && value === 0) ? "0" : "-1") + '" data-id="' + esc(item.id) + '" data-vote="' + value + '">' + esc(option.shortLabel) + '</button>';
   }).join("") + '</div></div>';
+}
+
+function outcomeGroup(item) {
+  const current = STATE.outcomes && STATE.outcomes[item.id] ? STATE.outcomes[item.id].outcome : "none";
+  const options = [{ value: "none", label: "No purchase outcome" }, ...(STATE.outcomeOptions || [])];
+  return '<div class="outcome-wrap"><label for="outcome-' + esc(item.id) + '">What happened after this?</label><select class="outcome-select" id="outcome-' + esc(item.id) + '" data-outcome-id="' + esc(item.id) + '">' + options.map((option) => '<option value="' + esc(option.value) + '"' + (option.value === current ? " selected" : "") + '>' + esc(option.label) + '</option>').join("") + '</select></div>';
 }
 
 function cardStart(item, type) {
@@ -250,26 +303,33 @@ function cardStart(item, type) {
 }
 
 function tasteCard(item) {
-  const vote = STATE.votes[item.id] ? STATE.votes[item.id].vote : 0;
+  const vote = STATE.votes[item.id] ? STATE.votes[item.id].vote : null;
   return cardStart(item, "taste") + '<p class="brand">Pinterest reference</p><p class="verdict">A visual reference for the taste signal.</p>' + voteGroup(item, vote) + (voteErrors[item.id] ? '<p class="error" role="alert">' + esc(voteErrors[item.id]) + '</p>' : "") + '</div></article>';
 }
 
-function relativeTime(value) {
+function relativeTime(value, verb = "checked") {
   const date = new Date(value);
-  if (!value || Number.isNaN(date.getTime())) return "verification time unavailable";
+  if (!value || Number.isNaN(date.getTime())) return verb + " time unavailable";
   const delta = Date.now() - date.getTime();
   const future = delta < 0;
   const seconds = Math.abs(delta) / 1000;
   const unit = seconds < 60 ? [Math.round(seconds), "s"] : seconds < 3600 ? [Math.round(seconds / 60), "m"] : seconds < 86400 ? [Math.round(seconds / 3600), "h"] : [Math.round(seconds / 86400), "d"];
-  return future ? "verified in " + unit[0] + " " + unit[1] : "verified " + unit[0] + " " + unit[1] + " ago";
+  return future ? verb + " in " + unit[0] + " " + unit[1] : verb + " " + unit[0] + " " + unit[1] + " ago";
 }
 
 const VERIFICATION_STALE_AFTER_MS = 7 * 24 * 60 * 60 * 1000;
 function effectiveStatus(item, now = Date.now()) {
   const verification = item && item.verification || {};
   const stored = ["verified", "lead", "stale"].includes(verification.status) ? verification.status : "unknown";
+  if (stored === "lead") return "lead";
+  if (stored === "stale") return "expired";
   const checkedAt = typeof verification.checkedAt === "string" ? new Date(verification.checkedAt).getTime() : NaN;
-  return !Number.isFinite(checkedAt) || now - checkedAt > VERIFICATION_STALE_AFTER_MS ? "stale" : stored;
+  return stored === "verified" && Number.isFinite(checkedAt) && now - checkedAt <= VERIFICATION_STALE_AFTER_MS ? "verified" : stored === "verified" ? "expired" : stored;
+}
+
+function needsVerification(item) {
+  const vote = STATE && STATE.votes[item.id] ? STATE.votes[item.id].vote : 0;
+  return vote === 2 && effectiveStatus(item) !== "verified";
 }
 
 function reasonList(reasons) {
@@ -285,7 +345,7 @@ function reasonList(reasons) {
 // only what you need to react - photo, price, and whether the price is trustworthy - and
 // keeps the full evidence trail one disclosure away rather than making every card a wall.
 function suggestionCard(item) {
-  const vote = STATE.votes[item.id] ? STATE.votes[item.id].vote : 0;
+  const vote = STATE.votes[item.id] ? STATE.votes[item.id].vote : null;
   const url = safeUrl(item.url);
   const status = effectiveStatus(item);
   const verification = item.verification || {};
@@ -293,7 +353,7 @@ function suggestionCard(item) {
   const listPrice = validNumber(item.listPriceUSD) && validNumber(item.priceUSD) && item.listPriceUSD > item.priceUSD ? '<span class="list-price"><s>' + esc(money(item.listPriceUSD)) + '</s></span>' : "";
   const modes = Array.isArray(item.modes) ? item.modes.filter(Boolean).map((mode) => '<span class="mode">' + esc(mode) + '</span>').join("") : "";
   const provenance = item.provenance || {};
-  const statusLabel = status === "lead" ? "lead" : status === "unknown" ? "unchecked" : status;
+  const statusLabel = status === "lead" ? "lead" : status === "expired" ? "expired" : status === "unknown" ? "unchecked" : status;
   const stockLabel = stock === "unknown" ? "stock unknown" : stock;
   const checkedAt = typeof verification.checkedAt === "string" ? verification.checkedAt : "";
   const retailerLine = url
@@ -306,6 +366,7 @@ function suggestionCard(item) {
       '<span class="status-chip ' + status + '"' + (checkedAt ? ' title="' + esc(checkedAt) + '"' : "") + '>' + esc(statusLabel) + '</span></div>' +
     (item.verdict ? '<p class="verdict clamp">' + esc(item.verdict) + '</p>' : "") +
     voteGroup(item, vote) +
+    (vote > 0 || STATE.outcomes && STATE.outcomes[item.id] ? outcomeGroup(item) : "") +
     (voteErrors[item.id] ? '<p class="error" role="alert">' + esc(voteErrors[item.id]) + '</p>' : "") +
     '<details class="card-details"><summary>Details and evidence</summary>' +
       '<p class="retailer">' + retailerLine + '</p>' +
@@ -316,12 +377,42 @@ function suggestionCard(item) {
         (provenance.evidence ? '<div class="meta-row"><span class="meta-label">Evidence</span> ' + esc(provenance.evidence) + '</div>' : "") +
         (item.imageNote ? '<div class="meta-row"><span class="meta-label">Image</span> ' + esc(item.imageNote) + '</div>' : "") +
         '<div class="meta-row verification ' + status + '"><span class="meta-label">Verification</span> ' +
-          esc(status === "lead" ? "unverified lead - price read off a listing, not the product page" : status === "unknown" ? "verification unavailable" : status) +
-          (checkedAt ? ' - ' + esc(relativeTime(checkedAt)) : "") + '</div>' +
+          esc(status === "lead" ? "discovery lead - price not purchase-ready" : status === "expired" ? "verification expired - recheck before buying" : status === "unknown" ? "verification unavailable" : "retailer page verified") +
+          (checkedAt ? ' - ' + esc(relativeTime(checkedAt, status === "lead" ? "found" : "checked")) : "") + '</div>' +
         '<div class="meta-row"><span class="meta-label">Stock</span> <span class="stock ' + stock + '">' + esc(stockLabel) + '</span></div>' +
       '</div>' +
     '</details>' +
     '</div></article>';
+}
+
+function brandCard(item) {
+  const current = STATE.brandDecisions && STATE.brandDecisions[item.id] ? STATE.brandDecisions[item.id].decision : "none";
+  const products = Array.isArray(item.representativeProducts) ? item.representativeProducts.slice(0, 3) : [];
+  const productTiles = products.map((product) => {
+    const url = safeUrl(product.url);
+    const image = safeUrl(product.imageUrl);
+    const content = (image ? '<img src="' + esc(image) + '" alt="" loading="lazy">' : "") + '<span>' + esc(text(product.title, "Representative product")) + '</span><span>' + esc(money(product.priceUSD)) + '</span>';
+    return url ? '<a class="brand-product" href="' + esc(url) + '" target="_blank" rel="noopener noreferrer">' + content + '</a>' : '<div class="brand-product">' + content + '</div>';
+  }).join("");
+  const actions = (STATE.brandDecisionOptions || []).map((option) => '<button type="button" class="brand-action' + (option.value === current ? " is-selected" : "") + '" data-brand-id="' + esc(item.id) + '" data-brand-decision="' + esc(option.value) + '" aria-pressed="' + (option.value === current) + '">' + esc(option.label) + '</button>').join("");
+  const signals = Array.isArray(item.matchedSignals) ? item.matchedSignals.map((signal) => '<span class="mode">' + esc(signal) + '</span>').join("") : "";
+  const evidence = item.evidence || {};
+  return '<article class="card brand-card" role="listitem" data-card-id="' + esc(item.id) + '">' +
+    '<div class="brand-products">' + productTiles + '</div>' +
+    '<div class="card-body"><div class="card-head"><h3>' + esc(text(item.brand, "Unknown brand")) + '</h3><span class="status-chip lead">' + esc(text(item.confidence, "exploratory")) + '</span></div>' +
+    '<p class="verdict">' + esc(text(item.reason, "Discovered through a trusted retailer.")) + '</p>' +
+    (signals ? '<div class="modes">' + signals + '</div>' : "") +
+    '<div class="meta-row"><span class="meta-label">Evidence</span> ' + esc(text(evidence.sampledMatchingProducts, 0)) + ' matching products via ' + esc((item.retailers || []).join(", ")) + '</div>' +
+    '<div class="brand-actions">' + actions + '</div>' +
+    (brandErrors[item.id] ? '<p class="error" role="alert">' + esc(brandErrors[item.id]) + '</p>' : "") +
+    '</div></article>';
+}
+
+function filteredBrands() {
+  return (STATE.brandCandidates || []).filter((item) => {
+    const decision = STATE.brandDecisions && STATE.brandDecisions[item.id] ? STATE.brandDecisions[item.id].decision : "new";
+    return BRAND_FILTER === "all" || decision === BRAND_FILTER;
+  });
 }
 
 function preserveFocusKey() {
@@ -337,6 +428,16 @@ function restoreFocus(key) {
 
 function chip(id, cls, label) { const el = $(id); el.className = "chip " + cls; el.querySelector("span:last-child").textContent = label; }
 
+function catalogSummary(state) {
+  const reports = state.crawlerReport && Array.isArray(state.crawlerReport.sources) ? state.crawlerReport.sources : [];
+  if (!reports.length) return null;
+  const sourceIds = new Set(reports.map((report) => String(report.sourceId || "")).filter(Boolean));
+  const active = (state.suggestions || []).filter((item) => sourceIds.has(String((item.provenance || {}).sourceId || "")) && (item.verification || {}).stock !== "out-of-stock" && Number((((state.votes || {})[item.id]) || {}).vote || 0) !== -2).length;
+  const target = reports.reduce((sum, report) => sum + Number((report.policy || {}).initialTarget || 0), 0);
+  const status = reports.some((report) => report.blocked) ? "retailer blocked" : reports.some((report) => report.backpressure) ? "waiting for votes" : "ready";
+  return { active, target, status };
+}
+
 function renderHeader() {
   const pinterest = STATE.pinterest || {};
   const watcher = STATE.watcher || {};
@@ -346,6 +447,18 @@ function renderHeader() {
   const up = values.filter((entry) => entry.vote > 0).length;
   const down = values.filter((entry) => entry.vote < 0).length;
   chip("chip-votes", up + down ? "ok" : "warn", "votes: " + up + " up / " + down + " down");
+  const model = personalizationModel(STATE.suggestions || []);
+  chip("chip-ranking", model.ready ? "ok" : "warn", model.ready ? "ranking: personalized" : "ranking: learning " + model.voteCount + "/" + PERSONALIZATION_MIN_VOTES);
+  const verificationCount = (STATE.suggestions || []).filter(needsVerification).length;
+  chip("chip-verification", verificationCount ? "warn" : "ok", "verify: " + verificationCount + " queued");
+  const catalog = catalogSummary(STATE);
+  if (!catalog) chip("chip-catalog", "warn", "catalog: no runs");
+  else {
+    chip("chip-catalog", catalog.status === "ready" ? "ok" : "warn", "catalog: " + catalog.active + (catalog.target ? "/" + catalog.target : "") + " · " + catalog.status);
+  }
+  const ingestion = STATE.ingestion || {};
+  const ingestFailures = (ingestion.sources || []).filter((source) => source.ok === false).length;
+  chip("chip-ingestion", ingestFailures ? "bad" : ingestion.candidateCount ? "ok" : "warn", "ingest: " + Number(ingestion.candidateCount || 0) + " leads" + (ingestFailures ? " · " + ingestFailures + " failed" : ""));
 }
 
 function optionValues(items, field) {
@@ -361,17 +474,57 @@ function updateSelect(id, values, allLabel) {
   FILTERS[select.dataset.filter] = select.value;
 }
 
+const PERSONALIZATION_MIN_VOTES = 15;
+const OUTCOME_WEIGHT = { bought: 1, kept: 3, returned: -3, "repeat-wear": 4 };
+
+function itemFeatures(item) {
+  return [
+    item.category ? "category:" + String(item.category).toLowerCase() : "",
+    item.brand ? "brand:" + String(item.brand).toLowerCase() : "",
+    ...(Array.isArray(item.modes) ? item.modes.map((mode) => "mode:" + String(mode).toLowerCase()) : []),
+  ].filter(Boolean);
+}
+
+function personalizationModel(items) {
+  const byId = new Map(items.map((item) => [item.id, item]));
+  const voted = Object.entries(STATE.votes || {}).filter(([id, entry]) => byId.has(id) && entry && entry.vote);
+  const signalIds = new Set([
+    ...voted.map(([id]) => id),
+    ...Object.keys(STATE.outcomes || {}).filter((id) => byId.has(id)),
+  ]);
+  const signals = {};
+  for (const id of signalIds) {
+    const vote = STATE.votes && STATE.votes[id] ? STATE.votes[id].vote : 0;
+    const outcome = STATE.outcomes && STATE.outcomes[id] ? STATE.outcomes[id].outcome : "";
+    const signal = Math.max(-4, Math.min(4, vote + (OUTCOME_WEIGHT[outcome] || 0)));
+    for (const feature of itemFeatures(byId.get(id))) {
+      const current = signals[feature] || { total: 0, count: 0 };
+      current.total += signal;
+      current.count += 1;
+      signals[feature] = current;
+    }
+  }
+  return { ready: voted.length >= PERSONALIZATION_MIN_VOTES, voteCount: voted.length, signals };
+}
+
+function personalizedScore(item, model) {
+  const scores = itemFeatures(item).map((feature) => model.signals[feature]).filter(Boolean).map((entry) => entry.total / entry.count);
+  return scores.length ? scores.reduce((sum, score) => sum + score, 0) / scores.length : 0;
+}
+
 function filteredSuggestions() {
+  const model = personalizationModel(STATE.suggestions || []);
   let items = (STATE.suggestions || []).filter((item) => {
     const status = effectiveStatus(item);
     const vote = STATE.votes[item.id] ? STATE.votes[item.id].vote : 0;
+    const hasOutcome = Boolean(STATE.outcomes && STATE.outcomes[item.id]);
     return (FILTERS.mode === "all" || (Array.isArray(item.modes) && item.modes.includes(FILTERS.mode))) &&
       (FILTERS.category === "all" || item.category === FILTERS.category) &&
-      (FILTERS.status === "all" || status === FILTERS.status) &&
-      (FILTERS.vote === "any" || FILTERS.vote === "unvoted" && vote === 0 || FILTERS.vote === "liked" && vote > 0 || FILTERS.vote === "disliked" && vote < 0);
+      (FILTERS.status === "all" || FILTERS.status === "needs-verification" && needsVerification(item) || status === FILTERS.status) &&
+      (FILTERS.vote === "any" || FILTERS.vote === "unvoted" && vote === 0 && !hasOutcome || FILTERS.vote === "liked" && vote > 0 || FILTERS.vote === "disliked" && vote < 0);
   });
   const sort = FILTERS.sort;
-  items.sort((a, b) => sort === "price-asc" ? (validNumber(a.priceUSD) ? a.priceUSD : Infinity) - (validNumber(b.priceUSD) ? b.priceUSD : Infinity) : sort === "price-desc" ? (validNumber(b.priceUSD) ? b.priceUSD : -Infinity) - (validNumber(a.priceUSD) ? a.priceUSD : -Infinity) : String(b.addedAt || "").localeCompare(String(a.addedAt || "")));
+  items.sort((a, b) => sort === "price-asc" ? (validNumber(a.priceUSD) ? a.priceUSD : Infinity) - (validNumber(b.priceUSD) ? b.priceUSD : Infinity) : sort === "price-desc" ? (validNumber(b.priceUSD) ? b.priceUSD : -Infinity) - (validNumber(a.priceUSD) ? a.priceUSD : -Infinity) : sort === "for-you" && model.ready ? personalizedScore(b, model) - personalizedScore(a, model) || String(b.addedAt || "").localeCompare(String(a.addedAt || "")) : String(b.addedAt || "").localeCompare(String(a.addedAt || "")));
   return items;
 }
 
@@ -380,13 +533,24 @@ function render(options = {}) {
   const focusKey = options.preserveFocus ? preserveFocusKey() : "";
   renderHeader();
   const taste = Array.isArray(STATE.pinterestCorpus) ? STATE.pinterestCorpus : [];
+  const training = STATE.trainingBatch && Array.isArray(STATE.trainingBatch.items) ? STATE.trainingBatch.items : [];
   const suggestions = Array.isArray(STATE.suggestions) ? STATE.suggestions : [];
+  const brands = Array.isArray(STATE.brandCandidates) ? STATE.brandCandidates : [];
   $("taste-count").textContent = taste.length;
+  $("training-count").textContent = training.length;
   $("suggestions-count").textContent = suggestions.length;
+  $("brands-count").textContent = brands.filter((item) => !(STATE.brandDecisions || {})[item.id]).length;
   $("taste-result-count").textContent = taste.length + (taste.length === 1 ? " reference" : " references");
   const tasteGrid = $("taste-grid");
   tasteGrid.innerHTML = taste.map(tasteCard).join("");
   $("taste-empty").hidden = taste.length > 0;
+  const trainingVotes = training.filter((item) => STATE.votes && STATE.votes[item.id]).length;
+  $("training-title").textContent = text(STATE.trainingBatch && STATE.trainingBatch.title, "Training batch");
+  $("training-description").textContent = text(STATE.trainingBatch && STATE.trainingBatch.description, "Rate this fixed set to train your wardrobe signal.");
+  $("training-result-count").textContent = trainingVotes + " of " + training.length + " rated";
+  $("training-summary").innerHTML = Object.entries(STATE.trainingBatch && STATE.trainingBatch.quotas || {}).map(([category, count]) => '<span>' + esc(category) + ' ' + esc(count) + '</span>').join("");
+  $("training-grid").innerHTML = training.map(suggestionCard).join("");
+  $("training-empty").hidden = training.length > 0;
   updateSelect("filter-mode", optionValues(suggestions, "mode"), "All modes");
   updateSelect("filter-category", optionValues(suggestions, "category"), "All categories");
   // The fixed-option selects still need syncing: a shared ?status=lead#suggestions link seeds
@@ -403,8 +567,15 @@ function render(options = {}) {
   const suggestionGrid = $("suggestion-grid");
   suggestionGrid.innerHTML = shown.map(suggestionCard).join("");
   $("suggestion-empty").hidden = shown.length > 0;
+  $("brand-filter").value = BRAND_FILTER;
+  const shownBrands = filteredBrands();
+  $("brand-result-count").textContent = shownBrands.length + " of " + brands.length + (brands.length === 1 ? " brand" : " brands");
+  $("brand-grid").innerHTML = shownBrands.map(brandCard).join("");
+  $("brand-empty").hidden = shownBrands.length > 0;
   setTab(TAB, false);
   bindVoteGroups();
+  bindOutcomeGroups();
+  bindBrandActions();
   if (options.announceCount) announce(shown.length + " suggestions shown");
   restoreFocus(focusKey);
 }
@@ -426,6 +597,18 @@ function bindVoteGroups() {
   });
 }
 
+function bindOutcomeGroups() {
+  document.querySelectorAll(".outcome-select").forEach((select) => {
+    select.addEventListener("change", () => saveOutcome(select.dataset.outcomeId, select.value));
+  });
+}
+
+function bindBrandActions() {
+  document.querySelectorAll(".brand-action").forEach((button) => {
+    button.addEventListener("click", () => saveBrandDecision(button.dataset.brandId, button.dataset.brandDecision));
+  });
+}
+
 async function saveVote(id, selected) {
   const current = STATE.votes[id] ? STATE.votes[id].vote : 0;
   const next = current === selected ? 0 : selected;
@@ -438,12 +621,44 @@ async function saveVote(id, selected) {
     STATE.votes = result.votes || {};
     render({ preserveFocus: false });
     restoreFocus(focusKey);
-    announce(next === 0 ? "Vote cleared" : "Vote saved: " + next);
+    announce(next === 0 ? "Vote cleared" : next === 2 ? "Added to the verification queue" : next === 1 ? "Added to your shortlist" : "Vote saved: " + next);
   } catch (error) {
     voteErrors[id] = error.message || "Vote could not be saved";
     render({ preserveFocus: false });
     restoreFocus(focusKey);
     announce("Vote could not be saved");
+  }
+}
+
+async function saveOutcome(id, outcome) {
+  try {
+    const response = await fetch("/api/outcome", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ id, outcome }) });
+    const result = await response.json();
+    if (!response.ok || !result.ok) throw new Error(text(result.error, "outcome could not be saved"));
+    STATE.outcomes = result.outcomes || {};
+    render({ preserveFocus: false });
+    announce(outcome === "none" ? "Purchase outcome cleared" : "Purchase outcome saved: " + outcome);
+  } catch (error) {
+    announce(error.message || "Purchase outcome could not be saved");
+    render({ preserveFocus: false });
+  }
+}
+
+async function saveBrandDecision(id, selected) {
+  const current = STATE.brandDecisions && STATE.brandDecisions[id] ? STATE.brandDecisions[id].decision : "none";
+  const decision = current === selected ? "none" : selected;
+  delete brandErrors[id];
+  try {
+    const response = await fetch("/api/brand-decision", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ id, decision }) });
+    const result = await response.json();
+    if (!response.ok || !result.ok) throw new Error(text(result.error, "brand decision could not be saved"));
+    STATE.brandDecisions = result.brandDecisions || {};
+    render({ preserveFocus: false });
+    announce(decision === "none" ? "Brand decision cleared" : "Brand decision saved: " + decision);
+  } catch (error) {
+    brandErrors[id] = error.message || "Brand decision could not be saved";
+    render({ preserveFocus: false });
+    announce("Brand decision could not be saved");
   }
 }
 
@@ -458,9 +673,15 @@ async function load(options = {}) {
   }
 }
 
-document.querySelectorAll('[role="tab"]').forEach((tab) => { tab.addEventListener("click", () => setTab(tab.id === "tab-suggestions" ? "suggestions" : "taste", true)); tab.addEventListener("keydown", tabKeys); });
-document.querySelectorAll("select[data-filter]").forEach((select) => select.addEventListener("change", () => { FILTERS[select.dataset.filter] = select.value; writeUrl(); render({ preserveFocus: true, announceCount: true }); }));
+document.querySelectorAll('[role="tab"]').forEach((tab) => { tab.addEventListener("click", () => setTab(tab.id.replace("tab-", ""), true)); tab.addEventListener("keydown", tabKeys); });
+document.querySelectorAll("select[data-filter]").forEach((select) => select.addEventListener("change", () => {
+  FILTERS[select.dataset.filter] = select.value;
+  if (select.dataset.filter === "status" && select.value === "needs-verification") FILTERS.vote = "any";
+  writeUrl();
+  render({ preserveFocus: true, announceCount: true });
+}));
 $("reset-filters").addEventListener("click", () => { FILTERS = { ...FILTER_DEFAULTS }; writeUrl(); render({ preserveFocus: true, announceCount: true }); });
+$("brand-filter").addEventListener("change", () => { BRAND_FILTER = $("brand-filter").value; writeUrl(); render({ preserveFocus: true }); });
 window.addEventListener("hashchange", () => { readUrl(); setTab(TAB, true); render({ preserveFocus: true }); });
 
 readUrl();
