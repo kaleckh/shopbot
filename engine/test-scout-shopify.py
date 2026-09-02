@@ -16,6 +16,7 @@ def main():
     category_cases = {
         "P550 Basketball Oxfords": "shoes",
         "Japanese Seersucker Short Sleeve Shirt": "tops",
+        "Tin Cloth Short Lined Cruiser Jacket": "outerwear",
         "Terry Sweatshort 7 inch": "shorts",
         "True Guy Selvedge": "pants",
         "Ventile Mac": "outerwear",
@@ -58,6 +59,9 @@ def main():
     assert data["suggestions"][0]["modes"] == ["minimal-clean"]
     assert data["suggestions"][1]["category"] == "tops"
     assert data["suggestions"][1]["modes"] == ["streetwear"]
+    preserved = {"suggestions": [{"id": "raleigh-alexander-stretch-thyme", "title": "Alexander Stretch | Thyme", "category": "pants", "modes": ["classic-casual"], "provenance": {"checkedBy": "shopbot scout-shopify.py"}}]}
+    SCOUT.normalize_existing_scout_records(preserved)
+    assert preserved["suggestions"][0]["category"] == "pants"
     print("scout classifier tests: 23 assertions passed, 0 failed")
 
 

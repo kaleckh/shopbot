@@ -329,7 +329,23 @@ def ingest_sitemaps(source: dict, fetcher=fetch_bytes, limits: dict | None = Non
         delay = max(0.0, float(fetch.get("delaySeconds") or 0.0))
         if delay and queue:
             sleeper(delay)
-    return raw_candidates[:max_candidates], {"sitemapsRead": len(seen_sitemaps), "queuedSitemapsRemaining": len(queue)}
+    candidate_limit_reached = len(raw_candidates) > max_candidates or (len(raw_candidates) >= max_candidates and bool(queue))
+    scan_complete = not queue and len(seen_sitemaps) < max_sitemaps and not candidate_limit_reached
+    return raw_candidates[:max_candidates], {
+        "sitemapsRead": len(seen_sitemaps),
+        "queuedSitemapsRemaining": len(queue),
+        "candidateLimitReached": candidate_limit_reached,
+        "scanComplete": scan_complete,
+    }
+
+
+def preserve_unseen_from_partial_scan(candidates: list[dict], previous: list[dict], stats: dict) -> list[dict]:
+    if stats.get("scanComplete", True):
+        return candidates
+    fresh_urls = {candidate.get("url") for candidate in candidates}
+    preserved = [candidate for candidate in previous if candidate.get("url") not in fresh_urls]
+    stats["preservedUnseenFromPartialScan"] = len(preserved)
+    return candidates + preserved
 
 
 def feed_urls(fetch: dict) -> list[str]:
@@ -427,11 +443,8 @@ def run(args, fetcher=fetch_bytes) -> int:
             minimum = max(1, int((source.get("fetch") or {}).get("minCandidates") or 1))
             if len(candidates) < minimum:
                 raise IngestError(f"accepted {len(candidates)} candidates, below configured minimum {minimum}")
-            if stats.get("queuedSitemapsRemaining") and not args.dry_run:
-                fresh_urls = {candidate.get("url") for candidate in candidates}
-                preserved = [candidate for candidate in previous_by_source.get(source.get("id"), []) if candidate.get("url") not in fresh_urls]
-                candidates.extend(preserved)
-                stats["preservedUnseenFromPartialScan"] = len(preserved)
+            if not args.dry_run:
+                candidates = preserve_unseen_from_partial_scan(candidates, previous_by_source.get(source.get("id"), []), stats)
             all_candidates.extend(candidates)
             reports.append({"sourceId": source.get("id"), "method": (source.get("fetch") or {}).get("method"), "ok": True, **stats})
             successes += 1

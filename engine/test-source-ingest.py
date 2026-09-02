@@ -44,12 +44,21 @@ def main():
 
     candidates, stats = INGEST.ingest_source(sitemap_source, "2026-09-01T00:00:00Z", sitemap_fetcher)
     assert calls == ["https://catalog.example/sitemap.xml", "https://catalog.example/products.xml"]
-    assert stats == {"sitemapsRead": 2, "queuedSitemapsRemaining": 0, "rawCandidates": 2, "acceptedCandidates": 1}
+    assert stats == {"sitemapsRead": 2, "queuedSitemapsRemaining": 0, "candidateLimitReached": False, "scanComplete": True, "rawCandidates": 2, "acceptedCandidates": 1}
     assert candidates[0]["title"] == "Relaxed Jeans"
     assert candidates[0]["imageUrl"] == "https://shop.example/men/123.jpg"
     assert candidates[0]["sku"] == "123"
     assert candidates[0]["evidence"]["status"] == "lead"
     assert candidates[0]["lastModified"] == "2026-09-01"
+
+    limited = source("sitemap-xml", urls=["https://catalog.example/products.xml"], sitemapPathPattern=r"^/.*\.xml$", maxCandidates=1)
+    limited_candidates, limited_stats = INGEST.ingest_source(limited, "now", lambda _url, _fetch: products)
+    assert len(limited_candidates) == 1
+    assert limited_stats["candidateLimitReached"] is True and limited_stats["scanComplete"] is False
+    previous_tail = {"id": "old-tail", "url": "https://shop.example/men/old-tail"}
+    preserved = INGEST.preserve_unseen_from_partial_scan(limited_candidates, [previous_tail], limited_stats)
+    assert [item["id"] for item in preserved if item.get("id")] == [limited_candidates[0]["id"], "old-tail"]
+    assert limited_stats["preservedUnseenFromPartialScan"] == 1
 
     json_source = source(
         "json-feed",

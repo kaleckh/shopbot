@@ -783,18 +783,17 @@ def product_to_record(
     if not usd_variants:
         return reject("missing-usd-variants")
     available = [entry for entry in usd_variants if bool((entry[1].get("availability") or {}).get("inStock"))]
-    price, _ = min(available or usd_variants, key=lambda entry: entry[0])
+    price, selected_variant = min(available or usd_variants, key=lambda entry: entry[0])
     originals = []
-    for _, variant in usd_variants:
-        for key in ("originalPrice", "compareAtPrice"):
-            amount = numeric_amount(variant.get(key))
-            if amount is not None and amount > price:
-                originals.append(amount)
+    for key in ("originalPrice", "compareAtPrice"):
+        amount = numeric_amount(selected_variant.get(key))
+        if amount is not None and amount > price:
+            originals.append(amount)
     list_price = max(originals) if originals else None
     image_source = next(
         (
             str(image.get("url"))
-            for _, variant in usd_variants
+            for variant in [selected_variant, *(entry[1] for entry in usd_variants if entry[1] is not selected_variant)]
             for image in variant.get("images") or []
             if isinstance(image, dict) and image.get("url")
         ),

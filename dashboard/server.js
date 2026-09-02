@@ -225,12 +225,12 @@ function normalizedOutcomes(value) {
   return result;
 }
 
-function normalizedBrandDecisions(value, knownCandidates) {
+function normalizedBrandDecisions(value, knownCandidates = null) {
   if (!value || typeof value !== "object" || Array.isArray(value)) return {};
   const allowed = new Set(BRAND_DECISION_OPTIONS.map((option) => option.value));
   const result = {};
   for (const [id, entry] of Object.entries(value)) {
-    if (!knownCandidates.has(id) || !entry || typeof entry !== "object" || Array.isArray(entry) || !allowed.has(entry.decision)) continue;
+    if (knownCandidates && !knownCandidates.has(id) || !entry || typeof entry !== "object" || Array.isArray(entry) || !allowed.has(entry.decision)) continue;
     result[id] = {
       decision: entry.decision,
       ...(typeof entry.at === "string" ? { at: entry.at } : {}),
@@ -350,8 +350,7 @@ function createServer(options = {}) {
           sources: Array.isArray(ingestionData.sources) ? ingestionData.sources : [],
         }
       : { generatedAt: null, candidateCount: 0, sources: [] };
-    const candidateIds = new Set(brandCandidates.map((item) => item.id));
-    const brandDecisions = normalizedBrandDecisions(readJson(paths.brandDecisions, {}), candidateIds);
+    const brandDecisions = normalizedBrandDecisions(readJson(paths.brandDecisions, {}));
     return {
       suggestions,
       trainingBatch: training,
@@ -403,9 +402,7 @@ function createServer(options = {}) {
 
   function queueBrandDecision(id, decision) {
     const operation = brandDecisionQueue.then(() => {
-      const candidates = brandCandidateList(readJson(paths.brandCandidates, { candidates: [] }));
-      const known = new Set(candidates.map((item) => item.id));
-      const decisions = normalizedBrandDecisions(readJson(paths.brandDecisions, {}), known);
+      const decisions = normalizedBrandDecisions(readJson(paths.brandDecisions, {}));
       if (decision === "none") delete decisions[id];
       else decisions[id] = { decision, at: new Date().toISOString() };
       atomicallyWriteJson(paths.brandDecisions, decisions);

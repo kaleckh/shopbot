@@ -137,6 +137,8 @@ def guess_category(product: dict) -> str:
         [
             str(product.get("product_type") or ""),
             str(product.get("title") or ""),
+            str(product.get("handle") or product.get("id") or ""),
+            str(product.get("url") or ""),
             " ".join(product.get("tags") or []),
         ]
     ).lower()
@@ -144,6 +146,8 @@ def guess_category(product: dict) -> str:
         return "shoes"
     if any(word in blob for word in ("tote", "beanie", "belt", "cap", "hat", "bag", "scarf")):
         return "accessories"
+    if any(word in blob for word in ("jacket", "coat", "chore", "overshirt", "shell", "windshirt", "parka", "shacket", "type 2")) or re.search(r"\bmac\b", blob):
+        return "outerwear"
     shorts_blob = blob.replace("short sleeve", "").replace("short-sleeve", "")
     if re.search(r"\b(short|shorts|sweatshort|swimshort)\b", shorts_blob):
         return "shorts"
@@ -151,8 +155,6 @@ def guess_category(product: dict) -> str:
         return "pants"
     if any(word in blob for word in ("pant", "trouser", "chino", "cargo", "straight leg", "stovepipe", "true guy", "strong guy", "easy guy", "weird guy")):
         return "pants"
-    if any(word in blob for word in ("jacket", "coat", "chore", "overshirt", "shell", "windshirt", "parka", "shacket", "type 2", "ventile mac")):
-        return "outerwear"
     if any(word in blob for word in ("sweater", "knit", "hoodie", "crew", "cardigan", "pullover", "jumper", "v neck vest")):
         return "knit"
     if any(word in blob for word in ("shirt", "tee", "t-shirt", "polo", "rugby", "raglan", "oxford")):
@@ -194,7 +196,8 @@ def normalize_existing_scout_records(existing: dict) -> dict:
             continue
         category = guess_category(item)
         modes = guess_modes(item)
-        item["category"] = category
+        if category != "other" or item.get("category") in (None, "", "other"):
+            item["category"] = category
         item["modes"] = modes
         if before != (category, modes):
             changed += 1

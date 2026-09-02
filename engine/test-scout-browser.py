@@ -90,7 +90,10 @@ def main():
     assert record["id"] == "zara-us-relaxed-fit-jeans-p00840442"
     assert record["category"] == "pants"
     assert record["priceUSD"] == 79.9
-    assert record["listPriceUSD"] == 99.9
+    assert record["listPriceUSD"] is None
+    sale_variant = product()
+    sale_variant["variants"][0]["originalPrice"] = {"amount": 99.9, "currency": "USD"}
+    assert BROWSER.product_to_record(sale_variant, source, refs[0], "now", cache_images=False)["listPriceUSD"] == 99.9
     assert record["verification"]["status"] == "verified"
     assert record["verification"]["stock"] == "in-stock"
     assert record["provenance"]["audienceEvidence"]["categoryUrl"] == category["url"]

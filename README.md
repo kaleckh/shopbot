@@ -43,7 +43,8 @@ so the engine can be lifted behind a web surface once it's proven on daily perso
   preservation, and never labels feed metadata as PDP-verified. See
   `docs/SOURCE_ADAPTERS.md`; run `npm run ingest:sources`.
 - `taste/brand-decisions.json` — the current profile's follow, occasional, reject, and
-  too-expensive decisions. The shared candidate registry stays separate from user taste.
+  too-expensive decisions. The current local candidate registry is also profile-scoped
+  because its scores and explanations incorporate those private taste signals.
 - `data/training-batch.json` — a fixed, balanced 30-item menswear curriculum used by the
   dashboard Training tab. It references catalog item IDs so votes stay attached to the same
   products while the larger Suggestions queue changes.

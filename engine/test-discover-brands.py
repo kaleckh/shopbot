@@ -46,6 +46,9 @@ def main():
     assert {item["title"] for item in candidate["representativeProducts"]} == {"Relaxed Chore Jacket", "Wide Utility Pant"}
     assert candidate["evidence"]["sampledMatchingProducts"] == 2
     assert "Trusted Shop" in candidate["reason"]
+    excluded_source = {**source, "excludeHandles": ["wrong-vendor-product"]}
+    excluded_payload = {"products": [product("Wide Work Pant", "Wrong Vendor", "wrong-vendor-product")]}
+    assert DISCOVER.discover_candidates([(excluded_source, "https://trusted.example/products.json", excluded_payload)], {**roster, "sources": [excluded_source]}, "now") == []
 
     learned = DISCOVER.learned_signal_weights(
         {"candidates": [{"id": "brand-liked", "matchedSignals": ["relaxed", "wide"]}, {"id": "brand-price", "matchedSignals": ["knit"]}]},
@@ -63,6 +66,8 @@ def main():
     assert {item["id"] for item in merged["candidates"]} == {"brand-new-label", "brand-old"}
     merged_again = DISCOVER.merge_candidates(merged, discovered, "later", 10)
     assert len(merged_again["candidates"]) == 2
+    live_candidates = DISCOVER.load_json(Path(__file__).parents[1] / "data" / "brand-candidates.json", {})["candidates"]
+    assert all(item.get("confidence") and isinstance(item.get("learnedSignals"), list) for item in live_candidates)
     print("brand discovery tests: 15 assertions passed, 0 failed")
 
 

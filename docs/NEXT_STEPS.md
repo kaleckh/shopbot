@@ -13,7 +13,7 @@
 
 ## Later
 
-- Resolve followed retailer vendors to canonical brand sites and dedicated feeds, then add authentication so the shared registry can serve multiple private user profiles.
+- Resolve followed retailer vendors to canonical brand sites and dedicated feeds, then split raw shared discovery evidence from profile-private scoring before adding multi-user authentication.
 - Expand discovery beyond the current trusted Shopify stockists into additional retailer directories and editorial adjacency, while preserving provenance, menswear filtering, and source-health reporting.
 - Add a scheduled browser refresh only after measuring retailer stability and local runtime cost; per-source item limits, polite pacing, cache, and review backpressure are enforced.
 - Add at least one fashion watch. `config/watches.json` still holds only the 2TB NVMe entry, so the watcher layer contributes nothing to the fashion side of the tool.

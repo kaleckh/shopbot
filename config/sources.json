@@ -1077,6 +1077,9 @@
       "categories": [
         "outerwear"
       ],
+      "excludeHandles": [
+        "bsc-uniform-light-moleskin-french-work-pants-green"
+      ],
       "tasteFit": "farmer/fisherman jackets, heritage multi-brand",
       "lastProbed": "2026-08-17",
       "notes": ""

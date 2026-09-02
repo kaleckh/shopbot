@@ -407,6 +407,12 @@ async function main() {
     await postBrandDecision(port, "brand-new-label", "follow");
     assert.deepStrictEqual(Object.keys(JSON.parse(fs.readFileSync(brandDecisionsFile, "utf8"))), ["brand-new-label"], "brand decision retries should remain idempotent");
     await postBrandDecision(port, "brand-new-label", "none");
+    fs.writeFileSync(brandDecisionsFile, JSON.stringify({ "brand-evicted": { decision: "follow", at: "old" } }), "utf8");
+    response = await postBrandDecision(port, "brand-new-label", "occasional");
+    assert.strictEqual(response.status, 200);
+    assert.strictEqual(response.json.brandDecisions["brand-evicted"].decision, "follow", "updating a retained brand must preserve an evicted brand decision");
+    assert.strictEqual(JSON.parse(fs.readFileSync(brandDecisionsFile, "utf8"))["brand-evicted"].decision, "follow");
+    fs.writeFileSync(brandDecisionsFile, "{}\n", "utf8");
     const outcomeBurst = Array.from({ length: 20 }, (_, index) => postOutcome(port, "test-suggestion", ["bought", "kept", "returned", "repeat-wear"][index % 4]));
     await Promise.all(outcomeBurst);
     const burstOutcomes = JSON.parse(fs.readFileSync(outcomesFile, "utf8"));
